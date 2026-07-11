@@ -18,9 +18,7 @@ final readonly class TransactionService
     {
         if (ConfirmationTransaction::where('transaction_id', $request->transactionId)->exists())
         {
-            throw new DuplicateTransactionException(
-                $request->transactionId
-            );
+            throw new DuplicateTransactionException($request->transactionId);
         }
     }
 

@@ -24,16 +24,12 @@ final readonly class SmsQueueService
             ->first();
 
         if ($recipient === null) {
-            $this->logger->info(
-                $request->billReference . ' is not maintained for SMS'
-            );
+            $this->logger->info($request->billReference . ' is not maintained for SMS');
 
             return;
         }
 
-        $this->logger->info(
-            $request->billReference . ' maintained for SMS, proceeding to add to SMS Queue'
-        );
+        $this->logger->info($request->billReference . ' maintained for SMS, proceeding to add to SMS Queue');
 
         SmsQueue::create([
             'process' => $post,

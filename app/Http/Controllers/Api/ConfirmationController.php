@@ -25,9 +25,7 @@ final class ConfirmationController extends Controller
     public function __invoke(Request $request): JsonResponse
     {
         try {
-            $payload = ConfirmationRequestData::fromArray(
-                $request->all()
-            );
+            $payload = ConfirmationRequestData::fromArray($request->all());
 
             $this->logger->info(
                 'RECEIVED_PAYLOAD',

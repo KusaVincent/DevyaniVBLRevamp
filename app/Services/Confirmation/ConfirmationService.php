@@ -27,8 +27,8 @@ final readonly class ConfirmationService
     }
 
     /**
-     * @throws AuthenticationFailedException
      * @throws HashValidationException
+     * @throws AuthenticationFailedException
      * @throws BusinessProfileNotFoundException
      */
     public function process(ConfirmationRequestData $request): void
@@ -57,9 +57,7 @@ final readonly class ConfirmationService
         } catch (DuplicateTransactionException $e) {
             $this->logger->notice(
                 $e->getMessage(),
-                [
-                    'transaction_id' => $e->transactionId,
-                ],
+                ['transaction_id' => $e->transactionId],
             );
 
             return;
