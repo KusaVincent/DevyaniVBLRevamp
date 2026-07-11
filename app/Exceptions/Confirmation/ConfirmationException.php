@@ -1,0 +1,20 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Exceptions\Confirmation;
+
+use Exception;
+
+class ConfirmationException extends Exception
+{
+    public function resultCode(): int
+    {
+        return 1;
+    }
+
+    public function resultDescription($message): string
+    {
+        return app()->isProduction() ? $message : $this->getMessage();
+    }
+}

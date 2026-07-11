@@ -1,0 +1,94 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Database\Seeders;
+
+use App\Models\BusinessProfile;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+
+final class BusinessProfileSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $profiles = [
+            [
+                'business_short_code' => '4675',
+                'username' => 'ME',
+                'password' => '6PmjwSleQk9',
+                'credit_account' => '1010663058',
+                'sap_file' => 'public/confirmation/VBL_C2B.csv',
+                'business_transaction' => 'CUSTOMER_ACCOUNTS',
+                'area_code_name' => 'Company Code',
+                'business_area' => '9340',
+                'profit_center' => '9123',
+                'secret_key' => '1347A6D',
+            ],
+            [
+                'business_short_code' => '4884',
+                'username' => 'WOW',
+                'password' => '5PF8zjwSleQk8',
+                'credit_account' => '1953840154',
+                'sap_file' => 'public/confirmation/C2B.csv',
+                'business_transaction' => 'CUSTOMER ACCOUNTS',
+                'area_code_name' => 'Business Area',
+                'business_area' => 'Y091',
+                'profit_center' => 'YT00',
+                'secret_key' => '130E2D5',
+            ],
+        ];
+
+        foreach ($profiles as $profile) {
+            BusinessProfile::updateOrCreate(
+                [
+                    'business_short_code' => $profile['business_short_code'],
+                ],
+                [
+                    'username' => $profile['username'],
+                    'password' => Hash::make($profile['password']),
+                    'secret_key' => $profile['secret_key'],
+                    'credit_account' => $profile['credit_account'],
+                    'sap_file' => $profile['sap_file'],
+                    'business_transaction' => $profile['business_transaction'],
+                    'business_area' => $profile['business_area'],
+                    'profit_center' => $profile['profit_center'],
+                    'sap_headers' => [
+                        [
+                            'header' => 'Business Transaction',
+                            'source' => 'businessTransaction',
+                        ],
+                        [
+                            'header' => 'Amount',
+                            'source' => 'transaction.amount',
+                        ],
+                        [
+                            'header' => 'Text',
+                            'source' => 'transactionText',
+                        ],
+                        [
+                            'header' => 'Cust Code',
+                            'source' => 'transaction.bill_reference',
+                        ],
+                        [
+                            'header' => $profile['area_code_name'],
+                            'source' => 'profile.business_area',
+                        ],
+                        [
+                            'header' => 'Profit Center',
+                            'source' => 'profile.profit_center',
+                        ],
+                        [
+                            'header' => 'Posting Date',
+                            'source' => 'postingDate',
+                        ],
+                        [
+                            'header' => 'Document Date',
+                            'source' => 'documentDate',
+                        ],
+                    ],
+                ]
+            );
+        }
+    }
+}
