@@ -8,8 +8,6 @@ final class HashValidationException extends ConfirmationException
 {
     public function __construct()
     {
-        parent::__construct(
-            'Hash comparison failed. Request cannot be trusted.'
-        );
+        parent::__construct('Hash comparison failed. Request cannot be trusted.');
     }
 }

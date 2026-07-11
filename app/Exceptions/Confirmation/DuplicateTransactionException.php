@@ -6,11 +6,8 @@ namespace App\Exceptions\Confirmation;
 
 final class DuplicateTransactionException extends ConfirmationException
 {
-    public function __construct(
-        public readonly string $transactionId,
-    ) {
-        parent::__construct(
-            "Duplicate transaction detected: {$transactionId}"
-        );
+    public function __construct(public readonly string $transactionId)
+    {
+        parent::__construct("Duplicate transaction detected: {$transactionId}");
     }
 }

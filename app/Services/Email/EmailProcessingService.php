@@ -31,6 +31,8 @@ final readonly class EmailProcessingService
             })
             ->orderBy('id')
             ->chunkById(100, function ($emails) {
+                $this->logger->info('Fetched queued emails');
+
                 foreach ($emails as $email) {
                     $attempt = $email->attempts + 1;
 
@@ -38,6 +40,8 @@ final readonly class EmailProcessingService
                         'status' => Status::PROCESSING,
                         'attempts' => $attempt,
                     ]);
+
+                    $this->logger->info('Email Details', [$email]);
 
                     try {
                         $this->mailer->send(
@@ -60,6 +64,7 @@ final readonly class EmailProcessingService
                             'error' => null,
                         ]);
 
+                        $this->logger->info('Processed queued emails');
                     } catch (EmailDeliveryException $e) {
                         $this->logger->error(
                             'Email delivery failed.',

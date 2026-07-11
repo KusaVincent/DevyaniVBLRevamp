@@ -115,4 +115,5 @@ return [
         'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'Laravel')),
     ],
 
+    'max_attempts' => env('MAIL_MAX_ATTEMPTS', 3),
 ];

@@ -6,4 +6,5 @@ namespace App\Exceptions\Confirmation;
 
 final class TransactionException extends ConfirmationException
 {
+    //
 }

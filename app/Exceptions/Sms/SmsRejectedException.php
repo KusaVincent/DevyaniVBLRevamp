@@ -6,10 +6,8 @@ namespace App\Exceptions\Sms;
 
 final class SmsRejectedException extends SmsException
 {
-    public function __construct(
-        public readonly string $mobile,
-        string $message,
-    ) {
-        parent::__construct($message);
+    public function __construct(public readonly string $mobile, string $message)
+    {
+        parent::__construct($message . ' : ' . $mobile);
     }
 }

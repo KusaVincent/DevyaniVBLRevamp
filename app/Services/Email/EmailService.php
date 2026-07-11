@@ -4,11 +4,17 @@ namespace App\Services\Email;
 
 use App\Exceptions\Email\EmailDeliveryException;
 use App\Mail\ConfirmationMail;
+use App\Services\Logging\LoggingService;
 use Illuminate\Support\Facades\Mail;
 use Throwable;
 
-class EmailService
+readonly class EmailService
 {
+    public function __construct(private LoggingService $logger)
+    {
+        //
+    }
+
     public function send(
         array $recipients,
         string $subject,
@@ -27,6 +33,8 @@ class EmailService
                     )
                 );
             } catch (Throwable $e) {
+                $this->logger->error($e->getMessage());
+
                 throw new EmailDeliveryException(
                     recipient: $recipient,
                     response: [

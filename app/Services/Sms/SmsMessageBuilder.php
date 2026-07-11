@@ -10,7 +10,7 @@ final class SmsMessageBuilder
     {
         return sprintf(
             'Dear %s, Payment for %s of KES %s received from %s at %s. Mpesa reference: %s.',
-            $sms->name,
+            $sms->recipient_name,
             $sms->bill_reference,
             number_format($sms->amount, 2),
             $sms->customer_name,

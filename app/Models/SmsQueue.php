@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @method static create(array $array)
- * @property mixed $name
  * @property mixed $bill_reference
  * @property mixed $amount
  * @property mixed $customer_name
@@ -21,7 +20,6 @@ class SmsQueue extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'name',
         'status',
         'mpesa_ref',
         'bill_reference',
@@ -33,6 +31,10 @@ class SmsQueue extends Model
         'recipient_mobile',
         'post',
         'process',
+        'response',
+        'error',
+        'next_retry_at',
+        'attempts',
     ];
 
     protected function casts(): array

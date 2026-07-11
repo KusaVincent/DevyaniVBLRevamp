@@ -7,13 +7,14 @@ use App\Enum\Status;
 use App\Models\ConfirmationTransaction;
 use App\Models\EmailQueue;
 use App\Services\Business\BusinessProfileService;
+use App\Services\Logging\LoggingService;
 
 final readonly class SapProcessingService
 {
-    public function __construct(
-        private SapFileService $sap,
-        private BusinessProfileService $profiles,
-    ) {}
+    public function __construct(private SapFileService $sap, private BusinessProfileService $profiles, private LoggingService $logger)
+    {
+        //
+    }
 
     public function processPending(): void
     {
@@ -39,6 +40,11 @@ final readonly class SapProcessingService
                         'subject' => 'NCBA M-Pesa C2B',
                         'header' => 'NCBA M-Pesa C2B',
                         'recipients' => config('confirmation.email.recipients'),
+                    ]);
+
+                    $this->logger->info('Completed writing to SAP file and Queuing email', [
+                        'file' => $profile->sapConfiguration()->file(),
+                        'transaction' => $transaction->transaction_id,
                     ]);
                 }
             });

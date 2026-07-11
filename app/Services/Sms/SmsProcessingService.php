@@ -8,15 +8,18 @@ use App\Enum\Status;
 use App\Exceptions\Sms\SmsDeliveryException;
 use App\Exceptions\Sms\SmsRejectedException;
 use App\Models\SmsQueue;
+use App\Services\Logging\LoggingService;
 
 final readonly class SmsProcessingService
 {
-    public function __construct(private CelcomSmsService $sms, private SmsMessageBuilder $builder) {
+    public function __construct(private CelcomSmsService $sms, private SmsMessageBuilder $builder, private LoggingService $logger) {
         //
     }
 
     public function processPending(): void
     {
+        $this->logger->info('Starting SMS processing');
+
         SmsQueue::query()
             ->whereIn('status', [Status::PENDING, Status::FAILED])
             ->where('attempts', '<', $this->maxAttempts())
@@ -27,6 +30,7 @@ final readonly class SmsProcessingService
             })
             ->orderBy('id')
             ->chunkById(100, function ($messages) {
+                $this->logger->info('Fetched from SMS queue');
 
                 foreach ($messages as $message) {
                     $message->update([
@@ -36,7 +40,7 @@ final readonly class SmsProcessingService
 
                     try {
                         $response = $this->sms->send(
-                            $message->mobile,
+                            $message->recipient_mobile,
                             $this->builder->build($message),
                         );
 
@@ -47,12 +51,16 @@ final readonly class SmsProcessingService
                             'error' => null,
                             'next_retry_at' => null,
                         ]);
+
+                        $this->logger->info('Processed SMS');
                     } catch (SmsRejectedException $e) {
                         $message->update([
                             'status' => Status::ABANDONED,
                             'error' => $e->getMessage(),
                             'response' => $e->response,
                         ]);
+
+                        $this->logger->error($e->getMessage());
 
                         report($e);
                     } catch (SmsDeliveryException $e) {
@@ -70,6 +78,8 @@ final readonly class SmsProcessingService
                                 )
                                 : null,
                         ]);
+
+                        $this->logger->error($e->getMessage());
 
                         report($e);
                     }

@@ -12,7 +12,7 @@ use App\Services\Logging\LoggingService;
 
 final readonly class SapFileService
 {
-    public function __construct(private CsvService $csv, private LoggingService $logger,)
+    public function __construct(private CsvService $csv, private LoggingService $logger)
     {
         //
     }
@@ -33,5 +33,10 @@ final readonly class SapFileService
             ],
             $sap->headers(),
         );
+
+        $this->logger->info('Written SAP file', [
+            'file' => $profile->sapConfiguration()->file(),
+            'transaction' => $transaction->transaction_id,
+        ]);
     }
 }
