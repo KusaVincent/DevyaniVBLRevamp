@@ -24,7 +24,7 @@ final readonly class SapArchiveService
         return $prepared;
     }
 
-    public function archive(string $prepared): string
+    public function archive(string $prepared, string $original): string
     {
         if (! File::exists($prepared)) {
             throw new RuntimeException("Prepared SAP file [{$prepared}] does not exist.");
@@ -35,16 +35,9 @@ final readonly class SapArchiveService
             . basename($prepared);
 
         File::move($prepared, $destination);
+        File::delete($original);
 
         return $destination;
-    }
-
-    /**
-     * Remove the original SAP working file.
-     */
-    public function cleanup(string $source): void
-    {
-        File::delete($source);
     }
 
     private function timestampedFilename(string $name): string

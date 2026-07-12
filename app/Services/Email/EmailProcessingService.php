@@ -54,9 +54,7 @@ final readonly class EmailProcessingService
                             attachment: $preparedAttachment,
                         );
 
-                        $newPath = $this->sapArchive->archive($preparedAttachment);
-
-                        $this->sapArchive->cleanup($email->attachment);
+                        $newPath = $this->sapArchive->archive($preparedAttachment, $email->attachment);
 
                         $email->update([
                             'status' => Status::PROCESSED,
