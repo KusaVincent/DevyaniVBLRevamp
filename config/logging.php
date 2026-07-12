@@ -56,7 +56,7 @@ return [
             'driver' => 'monolog',
             'handler' => Monolog\Handler\StreamHandler::class,
             'with' => [
-                'stream' => storage_path('logs/confirmation.log'),
+                'stream' => storage_path( 'logs/confirmation-' . now()->format('Y-m-d') . '.log'),
             ],
             'tap' => [
                 App\Logging\CustomizeConfirmationLogger::class,
@@ -140,4 +140,5 @@ return [
 
     ],
 
+    'retention' => env('LOG_RETENTION_DAYS', 14),
 ];

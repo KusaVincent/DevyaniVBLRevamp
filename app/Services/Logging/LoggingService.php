@@ -28,6 +28,11 @@ final class LoggingService
         $this->write('notice', $message, $context);
     }
 
+    public function warning(string $message, array $context = []): void
+    {
+        $this->write('warning', $message, $context);
+    }
+
     private function write(string $level, string $message, array $context = [],): void
     {
         $uuid = 'console';

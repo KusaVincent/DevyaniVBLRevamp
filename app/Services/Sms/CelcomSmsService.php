@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Http;
 
 final readonly class CelcomSmsService
 {
-    public function __construct(private LoggingService $logger) {
+    public function __construct(private LoggingService $logger)
+    {
         //
     }
 
