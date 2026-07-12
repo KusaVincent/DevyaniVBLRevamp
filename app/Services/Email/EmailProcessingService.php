@@ -8,11 +8,12 @@ use App\Enum\Status;
 use App\Exceptions\Email\EmailDeliveryException;
 use App\Models\EmailQueue;
 use App\Services\Logging\LoggingService;
+use App\Services\Sap\SapArchiveService;
 use Throwable;
 
 final readonly class EmailProcessingService
 {
-    public function __construct(private EmailService $mailer, private LoggingService $logger)
+    public function __construct(private EmailService $mailer, private LoggingService $logger, private SapArchiveService $sapArchive)
     {
         //
     }
@@ -42,6 +43,7 @@ final readonly class EmailProcessingService
                     ]);
 
                     $this->logger->info('Email Details', [$email]);
+                    $preparedAttachment = $this->sapArchive->prepare($email->attachment);
 
                     try {
                         $this->mailer->send(
@@ -49,8 +51,12 @@ final readonly class EmailProcessingService
                             subject: $email->subject,
                             header: $email->header,
                             message: $email->message,
-                            attachment: $email->attachment,
+                            attachment: $preparedAttachment,
                         );
+
+                        $newPath = $this->sapArchive->archive($preparedAttachment);
+
+                        $this->sapArchive->cleanup($email->attachment);
 
                         $email->update([
                             'status' => Status::PROCESSED,
@@ -65,6 +71,11 @@ final readonly class EmailProcessingService
                         ]);
 
                         $this->logger->info('Processed queued emails');
+
+                        $this->logger->info('SAP file archived.', [
+                            'from' => $email->attachment,
+                            'to' => $newPath,
+                        ]);
                     } catch (EmailDeliveryException $e) {
                         $this->logger->error(
                             'Email delivery failed.',

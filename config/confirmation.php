@@ -26,4 +26,7 @@ return [
             'period' => env('CONFIRMATION_HEALTH_CHECK_PERIOD', 3),
         ],
     ],
+    'sap' => [
+        'path' => env('CONFIRMATION_SAP_PATH', ''),
+    ],
 ];
