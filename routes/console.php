@@ -21,4 +21,5 @@ Schedule::command('logs:archive')
     ->dailyAt('00:10');
 
 Schedule::command('confirmation:health')
-    ->hourly();
+    ->hourly()
+    ->between('06:00', '22:00');

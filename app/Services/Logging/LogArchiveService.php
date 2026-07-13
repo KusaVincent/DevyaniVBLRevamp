@@ -9,24 +9,22 @@ use RuntimeException;
 use SplFileInfo;
 use ZipArchive;
 
-final readonly class LogArchiveService
+final class LogArchiveService
 {
-    public function __construct(private LoggingService $logger)
+    public function __construct(private readonly LoggingService $logger, private string $directory = '')
     {
-        //
+        $this->directory = $directory ?: storage_path('logs');
     }
 
     public function archive(): void
     {
-        $directory = storage_path('logs');
-
-        foreach (File::files($directory) as $file) {
+        foreach (File::files($this->directory) as $file) {
             if ($this->shouldArchive($file)) {
                 $this->archiveFile($file);
             }
         }
 
-        $this->deleteExpiredArchives($directory);
+        $this->deleteExpiredArchives($this->directory);
     }
 
     private function shouldArchive(SplFileInfo $file): bool

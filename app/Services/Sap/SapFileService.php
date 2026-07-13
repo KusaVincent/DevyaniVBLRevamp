@@ -27,7 +27,7 @@ final readonly class SapFileService
         $sap = $profile->sapConfiguration();
 
         $this->csv->write(
-            $sap->file(),
+            storage_path($sap->file()),
             [
                 $sap->row($transaction),
             ],

@@ -15,7 +15,6 @@ final class CsvService
             throw new RuntimeException('CSV path cannot be empty.');
         }
 
-        $path = storage_path($path);
         File::ensureDirectoryExists(dirname($path));
 
         $newFile = ! File::exists($path) || File::size($path) === 0;

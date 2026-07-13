@@ -9,45 +9,50 @@ use RuntimeException;
 
 final readonly class SapArchiveService
 {
-    public function prepare(string $source): string
+    public function prepare(string $sourceFile): ?string
     {
-        if (! File::exists($source)) {
-            throw new RuntimeException("SAP file [{$source}] does not exist.");
+        if (! File::exists($sourceFile)) {
+            return null;
         }
 
-        $prepared = dirname($source)
-            . DIRECTORY_SEPARATOR
-            . $this->timestampedFilename(basename($source));
+        $temporary = storage_path(
+            'app/temp/'.basename($this->archiveFilename($sourceFile))
+        );
 
-        File::copy($source, $prepared);
+        File::ensureDirectoryExists(dirname($temporary));
 
-        return $prepared;
+        File::copy($sourceFile, $temporary);
+
+        return $temporary;
     }
 
-    public function archive(string $prepared, string $original): string
+    public function archive(string $temporaryFile, ?string $originalFile = null,): ?string
     {
-        if (! File::exists($prepared)) {
-            throw new RuntimeException("Prepared SAP file [{$prepared}] does not exist.");
+        if (! File::exists($temporaryFile)) {
+            return null;
         }
 
         $destination = $this->archivePath()
-            . DIRECTORY_SEPARATOR
-            . basename($prepared);
+            .DIRECTORY_SEPARATOR
+            .basename($temporaryFile);
 
-        File::move($prepared, $destination);
-        File::delete($original);
+        File::move($temporaryFile, $destination);
+
+        if ($originalFile && File::exists($originalFile)) {
+            File::delete($originalFile);
+        }
 
         return $destination;
     }
 
-    private function timestampedFilename(string $name): string
+    private function archiveFilename(string $source): string
     {
         $timestamp = now()->format('Ymd_His');
 
-        return match ($name) {
-            'C2B.csv' => "{$timestamp}_C2B.csv",
+        return match (basename($source)) {
+            'C2B.csv'     => "{$timestamp}_C2B.csv",
             'VBL_C2B.csv' => "VBL_{$timestamp}_C2B.csv",
-            default => "{$timestamp}_{$name}",
+            default       => basename($source),
         };
     }
 
