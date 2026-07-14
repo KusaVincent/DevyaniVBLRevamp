@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace App\Services\Logging;
 
+use App\Contracts\Logging\LoggingServiceInterface;
 use Illuminate\Support\Facades\Log;
 
-final class LoggingService
+final class LoggingService implements LoggingServiceInterface
 {
     public function info(string $message, array $context = []): void
     {

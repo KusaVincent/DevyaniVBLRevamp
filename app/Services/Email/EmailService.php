@@ -2,13 +2,14 @@
 
 namespace App\Services\Email;
 
+use App\Contracts\Email\EmailServiceInterface;
 use App\Exceptions\Email\EmailDeliveryException;
 use App\Mail\ConfirmationMail;
 use App\Services\Logging\LoggingService;
 use Illuminate\Support\Facades\Mail;
 use Throwable;
 
-readonly class EmailService
+readonly class EmailService implements EmailServiceInterface
 {
     public function __construct(private LoggingService $logger)
     {

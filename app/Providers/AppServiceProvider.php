@@ -2,6 +2,12 @@
 
 namespace App\Providers;
 
+use App\Contracts\Email\EmailServiceInterface;
+use App\Contracts\Logging\LoggingServiceInterface;
+use App\Contracts\Sap\SapArchiveServiceInterface;
+use App\Services\Email\EmailService;
+use App\Services\Logging\LoggingService;
+use App\Services\Sap\SapArchiveService;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
@@ -14,7 +20,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton(EmailServiceInterface::class, EmailService::class);
+        $this->app->singleton(LoggingServiceInterface::class, LoggingService::class);
+        $this->app->singleton(SapArchiveServiceInterface::class, SapArchiveService::class);
     }
 
     /**

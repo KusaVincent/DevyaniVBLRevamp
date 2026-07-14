@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace App\Services\Email;
 
+use App\Contracts\Email\EmailServiceInterface;
+use App\Contracts\Logging\LoggingServiceInterface;
+use App\Contracts\Sap\SapArchiveServiceInterface;
 use App\Enum\Status;
 use App\Exceptions\Email\EmailDeliveryException;
 use App\Models\EmailQueue;
-use App\Services\Logging\LoggingService;
-use App\Services\Sap\SapArchiveService;
-use Throwable;
 
 final readonly class EmailProcessingService
 {
-    public function __construct(private EmailService $mailer, private LoggingService $logger, private SapArchiveService $sapArchive)
+    public function __construct(private EmailServiceInterface $mailer, private LoggingServiceInterface $logger, private SapArchiveServiceInterface $sapArchive)
     {
         //
     }
@@ -44,6 +44,26 @@ final readonly class EmailProcessingService
 
                     $this->logger->info('Email Details', [$email]);
                     $preparedAttachment = $this->sapArchive->prepare($email->attachment);
+
+                    if ($preparedAttachment === null) {
+                        $this->logger->error('SAP attachment not found.', [
+                            'attachment' => $email->attachment,
+                        ]);
+
+                        $email->update([
+                            'status' => Status::ABANDONED,
+                            'error' => 'SAP attachment not found.',
+                            'response' => json_encode([
+                                'success' => false,
+                                'reason' => 'SAP attachment not found.',
+                                'attachment' => $email->attachment,
+                            ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE),
+                            'next_retry_at' => null,
+                            'processed_at' => now(),
+                        ]);
+
+                        continue;
+                    }
 
                     try {
                         $this->mailer->send(

@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace App\Services\Sap;
 
+use App\Contracts\Sap\SapArchiveServiceInterface;
 use Illuminate\Support\Facades\File;
 use RuntimeException;
 
-final readonly class SapArchiveService
+final readonly class SapArchiveService implements SapArchiveServiceInterface
 {
     public function prepare(string $sourceFile): ?string
     {
