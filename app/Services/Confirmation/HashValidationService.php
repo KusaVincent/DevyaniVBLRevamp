@@ -11,7 +11,7 @@ use App\Services\Logging\LoggingService;
 
 final readonly class HashValidationService
 {
-    public function __construct(private LoggingService $logger)
+    public function __construct(private HashGenerator $generator, private LoggingService $logger)
     {
         //
     }
@@ -21,7 +21,7 @@ final readonly class HashValidationService
      */
     public function validate(ConfirmationRequestData $request, BusinessProfile $profile): void
     {
-        $generatedHash = $this->generateHash($request,$profile);
+        $generatedHash = $this->generator->generate($request,$profile);
 
         if ($generatedHash === $request->hash) {
             return;
@@ -37,25 +37,5 @@ final readonly class HashValidationService
         );
 
         throw new HashValidationException();
-    }
-
-    private function generateHash(ConfirmationRequestData $request, BusinessProfile $profile): string
-    {
-        $payload = implode('', [
-            $profile->secret_key,
-            $request->transactionType,
-            $request->transactionId,
-            $request->transactionTime,
-            $request->amount,
-            $profile->credit_account,
-            $request->billReference,
-            $request->mobile,
-            $request->customerName,
-            1,
-        ]);
-
-        return base64_encode(
-            hash('sha256', $payload)
-        );
     }
 }
