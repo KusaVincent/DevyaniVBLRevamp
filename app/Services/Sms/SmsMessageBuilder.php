@@ -2,9 +2,10 @@
 
 namespace App\Services\Sms;
 
+use App\Contracts\Sms\SmsMessageBuilderInterface;
 use App\Models\SmsQueue;
 
-final class SmsMessageBuilder
+final class SmsMessageBuilder implements SmsMessageBuilderInterface
 {
     public function build(SmsQueue $sms): string
     {

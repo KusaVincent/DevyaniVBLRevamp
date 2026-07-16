@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Services\Health;
 
+use App\Contracts\Email\EmailServiceInterface;
+use App\Contracts\Logging\LogArchiveServiceInterface;
+use App\Contracts\Logging\LoggingServiceInterface;
 use App\Enum\ProcessSMSTxn;
 use App\Models\ConfirmationTransaction;
-use App\Services\Email\EmailService;
-use App\Services\Logging\LogArchiveService;
-use App\Services\Logging\LoggingService;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 
@@ -16,7 +16,7 @@ final readonly class ConfirmationHealthService
 {
     private int $period;
     private string $cacheKey;
-    public function __construct(private EmailService $email,private LoggingService $logger,  private LogArchiveService $logArchive)
+    public function __construct(private EmailServiceInterface $email,private LoggingServiceInterface $logger,  private LogArchiveServiceInterface $logArchive)
     {
         $this->cacheKey = config('confirmation.cache.key');
         $this->period   = (int) config('confirmation.health.check.period');
@@ -37,10 +37,12 @@ final readonly class ConfirmationHealthService
             return;
         }
 
-        if ($transaction->created_at->gt(now()->addHours($this->period))) {
+        $cutoff = now()->subHours($this->period)->setMicrosecond(0);
+
+        if ($transaction->created_at >= $cutoff) {
             Cache::forget($this->cacheKey);
 
-            $this->logger->info('Latest confirmation transaction is within the last 3 hours.', [
+            $this->logger->info("Latest confirmation transaction is within the last $this->period hours.", [
                 'transaction' => $transaction->transaction_id,
                 'received_at' => $transaction->created_at,
             ]);
@@ -54,7 +56,7 @@ final readonly class ConfirmationHealthService
             return;
         }
 
-        $this->logger->warning('No confirmation transaction received in over 3 hours.', [
+        $this->logger->warning("No confirmation transaction received in over $this->period hours.", [
             'last_transaction' => $transaction->transaction_id,
             'received_at' => $transaction->created_at,
         ]);

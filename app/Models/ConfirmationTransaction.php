@@ -27,6 +27,7 @@ class ConfirmationTransaction extends Model
         'authenticated',
         'business_short_code',
         'process',
+        'created_at'
     ];
 
     protected $attributes = [
@@ -38,6 +39,8 @@ class ConfirmationTransaction extends Model
     {
         return [
             'status' => Status::class,
+            'created_at' => 'datetime',
+            'updated_at' => 'datetime',
             'process' => ProcessSMSTxn::class,
         ];
     }

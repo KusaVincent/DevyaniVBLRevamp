@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace App\Services\Logging;
 
+use App\Contracts\Logging\LogArchiveServiceInterface;
 use Illuminate\Support\Facades\File;
 use RuntimeException;
 use SplFileInfo;
 use ZipArchive;
 
-final class LogArchiveService
+final class LogArchiveService implements LogArchiveServiceInterface
 {
     public function __construct(private readonly LoggingService $logger, private string $directory = '')
     {

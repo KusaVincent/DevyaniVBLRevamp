@@ -2,17 +2,18 @@
 
 namespace App\Services\Sms;
 
-use App\Console\Commands\ProcessSmsQueue;
+use App\Contracts\Logging\LoggingServiceInterface;
+use App\Contracts\Sms\CelcomSmsServiceInterface;
+use App\Contracts\Sms\SmsMessageBuilderInterface;
 use App\Enum\ProcessSMSTxn;
 use App\Enum\Status;
 use App\Exceptions\Sms\SmsDeliveryException;
 use App\Exceptions\Sms\SmsRejectedException;
 use App\Models\SmsQueue;
-use App\Services\Logging\LoggingService;
 
 final readonly class SmsProcessingService
 {
-    public function __construct(private CelcomSmsService $sms, private SmsMessageBuilder $builder, private LoggingService $logger) {
+    public function __construct(private CelcomSmsServiceInterface $sms, private SmsMessageBuilderInterface $builder, private LoggingServiceInterface $logger) {
         //
     }
 

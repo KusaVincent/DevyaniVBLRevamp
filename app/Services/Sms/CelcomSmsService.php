@@ -2,13 +2,14 @@
 
 namespace App\Services\Sms;
 
+use App\Contracts\Sms\CelcomSmsServiceInterface;
 use App\Exceptions\Sms\SmsDeliveryException;
 use App\Exceptions\Sms\SmsRejectedException;
 use App\Services\Logging\LoggingService;
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Support\Facades\Http;
 
-final readonly class CelcomSmsService
+final readonly class CelcomSmsService implements CelcomSmsServiceInterface
 {
     public function __construct(private LoggingService $logger)
     {

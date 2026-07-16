@@ -44,6 +44,7 @@ class SmsQueue extends Model
             'status' => Status::class,
             'created_at' => 'datetime',
             'processed_at' => 'datetime',
+            'next_retry_at' => 'datetime',
             'process' => ProcessSMSTxn::class,
         ];
     }

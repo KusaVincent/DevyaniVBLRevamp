@@ -63,7 +63,7 @@ final readonly class ConfirmationService
             return;
         }
 
-        if (config('confirmation.debug') && $request->billReference === 'test') {
+        if (config('app.debug') && $request->billReference === 'test') {
             return;
         }
 
