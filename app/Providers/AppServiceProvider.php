@@ -2,18 +2,26 @@
 
 namespace App\Providers;
 
+use App\Contracts\Email\EmailProcessingServiceInterface;
 use App\Contracts\Email\EmailServiceInterface;
+use App\Contracts\Health\ConfirmationHealthServiceInterface;
 use App\Contracts\Logging\LogArchiveServiceInterface;
 use App\Contracts\Logging\LoggingServiceInterface;
 use App\Contracts\Sap\SapArchiveServiceInterface;
+use App\Contracts\Sap\SapProcessingServiceInterface;
 use App\Contracts\Sms\CelcomSmsServiceInterface;
 use App\Contracts\Sms\SmsMessageBuilderInterface;
+use App\Contracts\Sms\SmsProcessingServiceInterface;
+use App\Services\Email\EmailProcessingService;
 use App\Services\Email\EmailService;
+use App\Services\Health\ConfirmationHealthService;
 use App\Services\Logging\LogArchiveService;
 use App\Services\Logging\LoggingService;
 use App\Services\Sap\SapArchiveService;
+use App\Services\Sap\SapProcessingService;
 use App\Services\Sms\CelcomSmsService;
 use App\Services\Sms\SmsMessageBuilder;
+use App\Services\Sms\SmsProcessingService;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
@@ -32,6 +40,11 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(SmsMessageBuilderInterface::class, SmsMessageBuilder::class);
         $this->app->singleton(SapArchiveServiceInterface::class, SapArchiveService::class);
         $this->app->singleton(LogArchiveServiceInterface::class, LogArchiveService::class);
+
+        $this->app->singleton(SmsProcessingServiceInterface::class, SmsProcessingService::class);
+        $this->app->singleton(SapProcessingServiceInterface::class, SapProcessingService::class);
+        $this->app->singleton(EmailProcessingServiceInterface::class, EmailProcessingService::class);
+        $this->app->singleton(ConfirmationHealthServiceInterface::class, ConfirmationHealthService::class);
     }
 
     /**

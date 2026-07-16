@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Services\Logging\LogArchiveService;
+use App\Contracts\Logging\LogArchiveServiceInterface;
 use Illuminate\Console\Attributes\Description;
 use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
@@ -11,7 +11,7 @@ use Illuminate\Console\Command;
 #[Description('Archives old log files')]
 class ArchiveLogs extends Command
 {
-    public function handle(LogArchiveService $service): int
+    public function handle(LogArchiveServiceInterface $service): int
     {
         $service->archive();
 

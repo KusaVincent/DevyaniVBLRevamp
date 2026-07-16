@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Services\Health\ConfirmationHealthService;
+use App\Contracts\Health\ConfirmationHealthServiceInterface;
 use Illuminate\Console\Attributes\Description;
 use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
@@ -11,7 +11,7 @@ use Illuminate\Console\Command;
 #[Description('Checks the confirmation service health')]
 class CheckConfirmationHealth extends Command
 {
-    public function handle(ConfirmationHealthService $service): int
+    public function handle(ConfirmationHealthServiceInterface $service): int
     {
         $service->check();
 

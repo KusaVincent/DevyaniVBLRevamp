@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Services\Email;
 
+use App\Contracts\Email\EmailProcessingServiceInterface;
 use App\Contracts\Email\EmailServiceInterface;
 use App\Contracts\Logging\LoggingServiceInterface;
 use App\Contracts\Sap\SapArchiveServiceInterface;
@@ -11,7 +12,7 @@ use App\Enum\Status;
 use App\Exceptions\Email\EmailDeliveryException;
 use App\Models\EmailQueue;
 
-final readonly class EmailProcessingService
+final readonly class EmailProcessingService implements EmailProcessingServiceInterface
 {
     public function __construct(private EmailServiceInterface $mailer, private LoggingServiceInterface $logger, private SapArchiveServiceInterface $sapArchive)
     {

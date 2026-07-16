@@ -2,6 +2,7 @@
 
 namespace App\Services\Sap;
 
+use App\Contracts\Sap\SapProcessingServiceInterface;
 use App\Enum\ProcessSMSTxn;
 use App\Enum\Status;
 use App\Models\ConfirmationTransaction;
@@ -9,7 +10,7 @@ use App\Models\EmailQueue;
 use App\Services\Business\BusinessProfileService;
 use App\Services\Logging\LoggingService;
 
-final readonly class SapProcessingService
+final readonly class SapProcessingService implements SapProcessingServiceInterface
 {
     public function __construct(private SapFileService $sap, private BusinessProfileService $profiles, private LoggingService $logger)
     {

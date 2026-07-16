@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Services\Health;
 
 use App\Contracts\Email\EmailServiceInterface;
+use App\Contracts\Health\ConfirmationHealthServiceInterface;
 use App\Contracts\Logging\LogArchiveServiceInterface;
 use App\Contracts\Logging\LoggingServiceInterface;
 use App\Enum\ProcessSMSTxn;
@@ -12,7 +13,7 @@ use App\Models\ConfirmationTransaction;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 
-final readonly class ConfirmationHealthService
+final readonly class ConfirmationHealthService implements ConfirmationHealthServiceInterface
 {
     private int $period;
     private string $cacheKey;

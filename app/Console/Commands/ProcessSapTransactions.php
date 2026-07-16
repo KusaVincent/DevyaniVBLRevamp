@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Services\Sap\SapProcessingService;
+use App\Contracts\Sap\SapProcessingServiceInterface;
 use Illuminate\Console\Attributes\Description;
 use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
@@ -14,7 +14,7 @@ class ProcessSapTransactions extends Command
     /**
      * Execute the console command.
      */
-    public function handle(SapProcessingService $processor): int {
+    public function handle(SapProcessingServiceInterface $processor): int {
         $processor->processPending();
 
         return self::SUCCESS;

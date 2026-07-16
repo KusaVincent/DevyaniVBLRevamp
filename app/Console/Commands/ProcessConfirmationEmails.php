@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Services\Email\EmailProcessingService;
+use App\Contracts\Email\EmailProcessingServiceInterface;
 use Illuminate\Console\Attributes\Description;
 use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
@@ -14,7 +14,7 @@ class ProcessConfirmationEmails extends Command
     /**
      * Execute the console command.
      */
-    public function handle(EmailProcessingService $processor): int
+    public function handle(EmailProcessingServiceInterface $processor): int
     {
         $processor->processPending();
 

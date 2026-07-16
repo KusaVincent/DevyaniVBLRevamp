@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Services\Sms\SmsProcessingService;
+use App\Contracts\Sms\SmsProcessingServiceInterface;
 use Illuminate\Console\Attributes\Description;
 use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
@@ -14,7 +14,7 @@ class ProcessSmsQueue extends Command
     /**
      * Execute the console command.
      */
-    public function handle(SmsProcessingService $service): int
+    public function handle(SmsProcessingServiceInterface $service): int
     {
         $service->processPending();
 
