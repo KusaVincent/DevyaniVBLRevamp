@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace App\Services\Confirmation;
 
+use App\Contracts\Confirmation\HashValidationServiceInterface;
 use App\Data\ConfirmationRequestData;
 use App\Exceptions\Confirmation\HashValidationException;
 use App\Models\BusinessProfile;
 use App\Services\Logging\LoggingService;
 
-final readonly class HashValidationService
+final readonly class HashValidationService implements HashValidationServiceInterface
 {
     public function __construct(private HashGenerator $generator, private LoggingService $logger)
     {

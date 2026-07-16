@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Contracts\Business\BusinessProfileServiceInterface;
+use App\Contracts\Confirmation\AuthenticationServiceInterface;
+use App\Contracts\Confirmation\HashValidationServiceInterface;
+use App\Contracts\Confirmation\TransactionServiceInterface;
 use App\Contracts\Email\EmailProcessingServiceInterface;
 use App\Contracts\Email\EmailServiceInterface;
 use App\Contracts\Health\ConfirmationHealthServiceInterface;
@@ -12,6 +16,11 @@ use App\Contracts\Sap\SapProcessingServiceInterface;
 use App\Contracts\Sms\CelcomSmsServiceInterface;
 use App\Contracts\Sms\SmsMessageBuilderInterface;
 use App\Contracts\Sms\SmsProcessingServiceInterface;
+use App\Contracts\Sms\SmsQueueServiceInterface;
+use App\Services\Business\BusinessProfileService;
+use App\Services\Confirmation\AuthenticationService;
+use App\Services\Confirmation\HashValidationService;
+use App\Services\Confirmation\TransactionService;
 use App\Services\Email\EmailProcessingService;
 use App\Services\Email\EmailService;
 use App\Services\Health\ConfirmationHealthService;
@@ -22,6 +31,7 @@ use App\Services\Sap\SapProcessingService;
 use App\Services\Sms\CelcomSmsService;
 use App\Services\Sms\SmsMessageBuilder;
 use App\Services\Sms\SmsProcessingService;
+use App\Services\Sms\SmsQueueService;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
@@ -40,9 +50,14 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(SmsMessageBuilderInterface::class, SmsMessageBuilder::class);
         $this->app->singleton(SapArchiveServiceInterface::class, SapArchiveService::class);
         $this->app->singleton(LogArchiveServiceInterface::class, LogArchiveService::class);
+        $this->app->singleton(TransactionServiceInterface::class, TransactionService::class);
 
+        $this->app->singleton(SmsQueueServiceInterface::class, SmsQueueService::class);
         $this->app->singleton(SmsProcessingServiceInterface::class, SmsProcessingService::class);
         $this->app->singleton(SapProcessingServiceInterface::class, SapProcessingService::class);
+        $this->app->singleton(AuthenticationServiceInterface::class, AuthenticationService::class);
+        $this->app->singleton(HashValidationServiceInterface::class, HashValidationService::class);
+        $this->app->singleton(BusinessProfileServiceInterface::class, BusinessProfileService::class);
         $this->app->singleton(EmailProcessingServiceInterface::class, EmailProcessingService::class);
         $this->app->singleton(ConfirmationHealthServiceInterface::class, ConfirmationHealthService::class);
     }

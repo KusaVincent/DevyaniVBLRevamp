@@ -4,26 +4,30 @@ declare(strict_types=1);
 
 namespace App\Services\Confirmation;
 
+use App\Contracts\Business\BusinessProfileServiceInterface;
+use App\Contracts\Confirmation\AuthenticationServiceInterface;
+use App\Contracts\Confirmation\HashValidationServiceInterface;
+use App\Contracts\Confirmation\TransactionServiceInterface;
+use App\Contracts\Logging\LoggingServiceInterface;
+use App\Contracts\Sms\SmsQueueServiceInterface;
 use App\Data\ConfirmationRequestData;
 use App\Enum\ProcessSMSTxn;
 use App\Exceptions\Confirmation\AuthenticationFailedException;
 use App\Exceptions\Confirmation\BusinessProfileNotFoundException;
 use App\Exceptions\Confirmation\DuplicateTransactionException;
 use App\Exceptions\Confirmation\HashValidationException;
-use App\Services\Business\BusinessProfileService;
-use App\Services\Logging\LoggingService;
-use App\Services\Sms\SmsQueueService;
 
 final readonly class ConfirmationService
 {
     public function __construct(
-        private BusinessProfileService $profiles,
-        private AuthenticationService $authentication,
-        private HashValidationService $hashValidation,
-        private TransactionService $transactions,
-        private SmsQueueService $sms,
-        private LoggingService $logger,
+        private BusinessProfileServiceInterface $profiles,
+        private AuthenticationServiceInterface $authentication,
+        private HashValidationServiceInterface $hashValidation,
+        private TransactionServiceInterface $transactions,
+        private SmsQueueServiceInterface $sms,
+        private LoggingServiceInterface $logger,
     ) {
+        //
     }
 
     /**

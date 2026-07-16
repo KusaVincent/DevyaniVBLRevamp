@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace App\Services\Business;
 
+use App\Contracts\Business\BusinessProfileServiceInterface;
 use App\Data\ConfirmationRequestData;
 use App\Enum\BusinessProfileStatus;
-use App\Enum\ProcessSMSTxn;
 use App\Exceptions\Confirmation\BusinessProfileNotFoundException;
 use App\Models\BusinessProfile;
-use Illuminate\Support\Facades\Cache;
 
-final readonly class BusinessProfileService
+final readonly class BusinessProfileService implements BusinessProfileServiceInterface
 {
     /**
      * @throws BusinessProfileNotFoundException

@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace App\Services\Confirmation;
 
+use App\Contracts\Confirmation\TransactionServiceInterface;
 use App\Data\ConfirmationRequestData;
 use App\Enum\ProcessSMSTxn;
 use App\Models\ConfirmationTransaction;
 use App\Exceptions\Confirmation\DuplicateTransactionException;
 
-final readonly class TransactionService
+final readonly class TransactionService implements TransactionServiceInterface
 {
     /**
      * @throws DuplicateTransactionException

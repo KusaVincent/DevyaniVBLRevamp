@@ -54,7 +54,7 @@ final class ConfirmationController extends Controller
             return response()->json([
                 'ResultCode' => $e->resultCode(),
                 'ResultDesc' => $e->resultDescription('Invalid JSON data'),
-            ]);
+            ], 400);
         } catch (Throwable $e) {
             $this->logger->error(
                 'Unhandled exception.',

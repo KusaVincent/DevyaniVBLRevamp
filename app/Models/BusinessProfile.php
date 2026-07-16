@@ -27,6 +27,13 @@ use Illuminate\Support\Facades\Hash;
  */
 class BusinessProfile extends Model
 {
+    protected $fillable = [
+        'business_short_code',
+        'username',
+        'password',
+        'secret_key',
+        'credit_account',
+    ];
     protected $guarded = [];
 
     protected $hidden = [

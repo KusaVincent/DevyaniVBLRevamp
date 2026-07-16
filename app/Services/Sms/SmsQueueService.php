@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Services\Sms;
 
+use App\Contracts\Sms\SmsQueueServiceInterface;
 use App\Data\ConfirmationRequestData;
 use App\Enum\ProcessSMSTxn;
 use App\Enum\Status;
@@ -11,7 +12,7 @@ use App\Models\CustomerReference;
 use App\Models\SmsQueue;
 use App\Services\Logging\LoggingService;
 
-final readonly class SmsQueueService
+final readonly class SmsQueueService implements SmsQueueServiceInterface
 {
     public function __construct(private LoggingService $logger)
     {
