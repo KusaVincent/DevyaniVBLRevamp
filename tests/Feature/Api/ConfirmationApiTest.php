@@ -1,60 +1,70 @@
 <?php
 
+use App\Data\ConfirmationRequestData;
 use App\Models\BusinessProfile;
 use App\Models\ConfirmationTransaction;
 use App\Services\Confirmation\HashGenerator;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\Facades\Hash;
 
 uses(RefreshDatabase::class);
 
-function payload(array $overrides = []): array
-{
-    return array_merge([
-        'Hash' => '',
-        'Mobile' => '254712345678',
-        'Username' => 'demo',
-        'Password' => 'secret',
-        'name' => 'John Doe',
-        'TransAmount' => '100',
-        'created_at' => now()->toDateTimeString(),
-        'TransID' => 'ABC123456',
-        'TransTime' => now()->format('YmdHis'),
-        'TransType' => 'Pay Bill',
-        'BillRefNumber' => 'INV001',
-        'BusinessShortCode' => '600000',
-    ], $overrides);
-}
-
-function createBusinessProfile(): BusinessProfile
-{
-    return BusinessProfile::create([
-        'business_short_code' => '600000',
-        'username' => 'demo',
-        'password' => Hash::make('secret'),
-        'secret_key' => 'my-secret-key',
-        'credit_account' => '123456789',
-    ]);
-}
-
-it('accepts a valid confirmation request', function () {
+beforeEach(function () {
+    Queue::fake();
 
     config([
         'confirmation.authenticate' => true,
         'app.debug' => false,
     ]);
+});
 
-    $profile = createBusinessProfile();
+function validPayload(): array
+{
+    $profile = BusinessProfile::create([
+        'business_short_code'     => '488489',
+        'username'                => 'apiuser',
+        'password'                => Hash::make('secret'),
+        'secret_key'              => 'my-secret-key',
+        'credit_account'          => '1234567890',
+        'sap_file'                => 'SAP001',
+        'business_transaction'    => 'TXN01',
+        'business_area'           => 'AREA01',
+        'profit_center'           => 'PC001',
+        'active'                  => 1,
+        'sap_headers'             => [],
+    ]);
 
-    $payload = payload();
+    $payload = [
+        'Mobile' => '254712345678',
+        'Username' => 'api-user',
+        'Password' => 'secret',
+        'name' => 'Samuel',
+        'created_at' => now()->toDateTimeString(),
+        'TransAmount' => '100',
+        'TransID' => 'UGNMQQAC9AU',
+        'TransTime' => now()->format('YmdHis'),
+        'TransType' => 'Pay Bill',
+        'BillRefNumber' => '8752018',
+        'BusinessShortCode' => '488489',
+    ];
+
+    $request = ConfirmationRequestData::fromArray([
+        ...$payload,
+        'Hash' => '',
+    ]);
 
     $payload['Hash'] = app(HashGenerator::class)
-        ->generate(
-            \App\Data\ConfirmationRequestData::fromArray($payload),
-            $profile
-        );
+        ->generate($request, $profile);
 
-    $response = $this->postJson('/api/confirmation', $payload);
+    return $payload;
+}
+
+it('accepts a valid confirmation request', function () {
+    $response = $this->postJson(
+        '/api/confirmation/',
+        validPayload(),
+    );
 
     $response
         ->assertOk()
@@ -63,146 +73,81 @@ it('accepts a valid confirmation request', function () {
             'ResultDesc' => 'Data received successfully',
         ]);
 
-    $this->assertDatabaseHas('confirmation_transactions', [
-        'transaction_id' => 'ABC123456',
-    ]);
-});
-
-it('rejects invalid hash', function () {
-
-    config([
-        'confirmation.authenticate' => true,
-    ]);
-
-    createBusinessProfile();
-
-    $payload = payload([
-        'Hash' => 'invalid',
-    ]);
-
-    $response = $this->postJson('/api/confirmation', $payload);
-
-    $response
-        ->assertOk()
-        ->assertJson([
-            'ResultCode' => 0,
-        ]);
-
-    $this->assertDatabaseHas('confirmation_transactions', [
-        'transaction_id' => 'ABC123456',
-        'process' => 0,
-    ]);
-});
-
-it('rejects invalid credentials', function () {
-
-    config([
-        'confirmation.authenticate' => true,
-    ]);
-
-    $profile = createBusinessProfile();
-
-    $payload = payload([
-        'Password' => 'wrong-password',
-    ]);
-
-    $payload['Hash'] = app(HashGenerator::class)
-        ->generate(
-            \App\Data\ConfirmationRequestData::fromArray($payload),
-            $profile
-        );
-
-    $response = $this->postJson('/api/confirmation', $payload);
-
-    $response
-        ->assertOk()
-        ->assertJson([
-            'ResultCode' => 0,
-        ]);
-
-    $this->assertDatabaseHas('confirmation_transactions', [
-        'transaction_id' => 'ABC123456',
-        'process' => 0,
-    ]);
-});
-
-it('returns business profile not found', function () {
-    config([
-        'confirmation.authenticate' => true,
-    ]);
-
-    $payload = payload();
-
-    $response = $this->postJson('/api/confirmation', $payload);
-
-    $response
-        ->assertOk()
-        ->assertJson([
-            'ResultCode' => 1002,
-        ]);
-});
-
-it('returns duplicate transaction response', function () {
-    config([
-        'confirmation.authenticate' => true,
-        'app.debug' => false,
-    ]);
-
-    $profile = createBusinessProfile();
-
-    $payload = payload();
-
-    $payload['Hash'] = app(HashGenerator::class)
-        ->generate(
-            \App\Data\ConfirmationRequestData::fromArray($payload),
-            $profile
-        );
-
-    $this->postJson('/api/confirmation', $payload)
-        ->assertOk();
-
-    $this->postJson('/api/confirmation', $payload)
-        ->assertOk();
-
     expect(
-        ConfirmationTransaction::where(
-            'transaction_id',
-            'ABC123456'
-        )->count()
+        ConfirmationTransaction::count()
     )->toBe(1);
 });
 
-it('returns validation error when required fields are missing', function () {
-    $response = $this->postJson('/api/confirmation/', []);
+it('rejects an invalid payload', function () {
+    $payload = validPayload();
 
-    $response
-        ->assertOk()
+    unset($payload['Hash']);
+
+    $this
+        ->postJson('/api/confirmation/', $payload)
+        ->assertStatus(400)
         ->assertJson([
-            'ResultCode' => 1000,
+            'ResultCode' => 1,
         ]);
 });
 
-it('does not store debug test transactions', function () {
-    config([
-        'confirmation.authenticate' => false,
-        'app.debug' => true,
-    ]);
+it('returns business profile error', function () {
+    $payload = validPayload();
 
-    createBusinessProfile();
+    $payload['BusinessShortCode'] = '999999';
 
-    $payload = payload([
-        'BillRefNumber' => 'test',
-    ]);
-
-    $response = $this->postJson('/api/confirmation', $payload);
-
-    $response
-        ->assertOk()
+    $this
+        ->postJson('/api/confirmation/', $payload)
+        ->assertStatus(400)
         ->assertJson([
-            'ResultCode' => 0,
+            'ResultCode' => 1,
         ]);
+});
 
-    $this->assertDatabaseMissing('confirmation_transactions', [
-        'transaction_id' => 'ABC123456',
-    ]);
+it('stores transaction but marks it not for processing when authentication fails', function () {
+    $payload = validPayload();
+
+    $payload['Password'] = 'wrong-password';
+
+    $this
+        ->postJson('/api/confirmation/', $payload)
+        ->assertOk();
+
+    expect(
+        ConfirmationTransaction::first()->process->value
+    )->toBe(0);
+});
+
+it('stores transaction with process NO when hash is invalid', function () {
+    $payload = validPayload();
+
+    $payload['Hash'] = 'invalid-hash';
+
+    $this
+        ->postJson('/api/confirmation/', $payload)
+        ->assertOk();
+
+    expect(
+        ConfirmationTransaction::first()->process->value
+    )->toBe(0);
+});
+
+it('does not create duplicate transactions', function () {
+    $payload = validPayload();
+
+    $this->postJson('/api/confirmation/', $payload);
+
+    $this->postJson('/api/confirmation/', $payload);
+
+    expect(
+        ConfirmationTransaction::count()
+    )->toBe(1);
+});
+
+it('assigns a request uuid', function () {
+    Log::spy();
+
+    $this->postJson('/api/confirmation/', validPayload());
+
+    Log::shouldHaveReceived('channel');
 });

@@ -33,6 +33,12 @@ class BusinessProfile extends Model
         'password',
         'secret_key',
         'credit_account',
+        'sap_file',
+        'business_transaction',
+        'sap_headers',
+        'active',
+        'profit_center',
+        'business_area',
     ];
     protected $guarded = [];
 
