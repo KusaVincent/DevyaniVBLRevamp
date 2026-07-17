@@ -8,9 +8,9 @@ use App\Models\BusinessProfile;
 use App\Services\Confirmation\AuthenticationService;
 use Illuminate\Support\Facades\Hash;
 
-beforeEach(function () {
+beforeEach(function (): void {
 
-    $this->service = new AuthenticationService();
+    $this->service = new AuthenticationService;
 
     $this->profile = new BusinessProfile([
         'username' => 'api-user',
@@ -19,7 +19,8 @@ beforeEach(function () {
 
 });
 
-function makeConfirmationRequest(string $username = 'api-user', string $password = 'secret'): ConfirmationRequestData {
+function makeConfirmationRequest(string $username = 'api-user', string $password = 'secret'): ConfirmationRequestData
+{
     return new ConfirmationRequestData(
         hash: '',
         mobile: '254712345678',
@@ -36,7 +37,7 @@ function makeConfirmationRequest(string $username = 'api-user', string $password
     );
 }
 
-it('authenticates valid credentials', function () {
+it('authenticates valid credentials', function (): void {
     $this->service->authenticate(
         makeConfirmationRequest(),
         $this->profile,
@@ -45,23 +46,23 @@ it('authenticates valid credentials', function () {
     expect(true)->toBeTrue();
 });
 
-it('throws when username is invalid', function () {
+it('throws when username is invalid', function (): void {
     $this->service->authenticate(
         makeConfirmationRequest(username: 'invalid-user'),
         $this->profile,
     );
 })->throws(AuthenticationFailedException::class);
 
-it('throws when password is invalid', function () {
+it('throws when password is invalid', function (): void {
     $this->service->authenticate(
         makeConfirmationRequest(password: 'wrong-password'),
         $this->profile,
     );
 })->throws(AuthenticationFailedException::class);
 
-it('throws when username and password are invalid', function () {
+it('throws when username and password are invalid', function (): void {
     $this->service->authenticate(
-        makeConfirmationRequest( username: 'invalid-user', password: 'wrong-password'),
+        makeConfirmationRequest(username: 'invalid-user', password: 'wrong-password'),
         $this->profile,
     );
 })->throws(AuthenticationFailedException::class);

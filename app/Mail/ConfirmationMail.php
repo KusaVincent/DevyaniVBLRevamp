@@ -18,8 +18,7 @@ final class ConfirmationMail extends Mailable
         public string $header,
         public string $messageBody,
         public ?string $attachment = null,
-    ) {
-    }
+    ) {}
 
     public function build(): self
     {

@@ -9,8 +9,8 @@ use App\Services\Confirmation\HashGenerator;
 use App\Services\Confirmation\HashValidationService;
 use App\Services\Logging\LoggingService;
 
-beforeEach(function () {
-    $this->generator = new HashGenerator();
+beforeEach(function (): void {
+    $this->generator = new HashGenerator;
 
     $this->logger = app(LoggingService::class);
 
@@ -43,7 +43,7 @@ function makeRequest(string $hash = ''): ConfirmationRequestData
     );
 }
 
-it('accepts a valid hash', function () {
+it('accepts a valid hash', function (): void {
     $request = makeRequest();
 
     $request = new ConfirmationRequestData(
@@ -66,7 +66,7 @@ it('accepts a valid hash', function () {
     expect(true)->toBeTrue();
 });
 
-it('throws when the hash is invalid', function () {
+it('throws when the hash is invalid', function (): void {
     $this->service->validate(
         makeRequest('invalid-hash'),
         $this->profile,

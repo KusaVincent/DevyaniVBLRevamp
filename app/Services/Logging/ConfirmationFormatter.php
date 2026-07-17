@@ -12,7 +12,7 @@ final class ConfirmationFormatter
             $handler->setFormatter(
                 new LineFormatter(
                     "%datetime%|%extra.uuid%|%level_name%|%extra.file%|%extra.function%|%extra.ip%|%extra.line%|%message%\n",
-                    "Y-m-d H:i:s",
+                    'Y-m-d H:i:s',
                     true,
                     true
                 )

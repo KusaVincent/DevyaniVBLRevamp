@@ -5,10 +5,7 @@ declare(strict_types=1);
 namespace App\Models;
 
 use App\Enum\BusinessProfileStatus;
-use App\Enum\ProcessSMSTxn;
-use App\Enum\Status;
 use App\Services\Sap\SapConfiguration;
-use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 
@@ -20,13 +17,15 @@ use Illuminate\Support\Facades\Hash;
  * @property string $business_transaction
  * @property string $area_code
  * @property string $profit_center
- * @property array  $sap_headers
+ * @property array $sap_headers
  * @property string $secret_key
  * @property mixed $credit_account
+ *
  * @method static updateOrCreate(string[] $array, array $array1)
  */
 class BusinessProfile extends Model
 {
+    #[\Override]
     protected $fillable = [
         'business_short_code',
         'username',
@@ -40,17 +39,22 @@ class BusinessProfile extends Model
         'profit_center',
         'business_area',
     ];
+
+    #[\Override]
     protected $guarded = [];
 
+    #[\Override]
     protected $hidden = [
         'password',
         'secret_key',
     ];
 
+    #[\Override]
     protected $attributes = [
         'active' => BusinessProfileStatus::YES,
     ];
 
+    #[\Override]
     protected function casts(): array
     {
         return [
@@ -63,7 +67,7 @@ class BusinessProfile extends Model
 
     public function credentialsMatch(string $username, string $password): bool
     {
-        return $this->username === $username && Hash::check($password, $this->password,);
+        return $this->username === $username && Hash::check($password, $this->password);
     }
 
     public function sapConfiguration(): SapConfiguration

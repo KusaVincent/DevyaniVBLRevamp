@@ -21,8 +21,7 @@ final readonly class ConfirmationRequestData
         public string $transactionTime,
         public string $transactionType,
         public string $businessShortCode,
-    ) {
-    }
+    ) {}
 
     /**
      * @throws InvalidPayloadException
@@ -31,22 +30,22 @@ final readonly class ConfirmationRequestData
     {
         foreach (
             [
-                 'Hash',
-                 'name',
-                 'Mobile',
-                 'TransID',
-                 'Username',
-                 'Password',
-                 'TransTime',
-                 'TransType',
-                 'created_at',
-                 'TransAmount',
-                 'BillRefNumber',
-                 'BusinessShortCode',
+                'Hash',
+                'name',
+                'Mobile',
+                'TransID',
+                'Username',
+                'Password',
+                'TransTime',
+                'TransType',
+                'created_at',
+                'TransAmount',
+                'BillRefNumber',
+                'BusinessShortCode',
             ] as $field) {
             if (! array_key_exists($field, $payload)) {
                 throw new InvalidPayloadException(
-                    "Missing required field: {$field}"
+                    'Missing required field: ' . $field
                 );
             }
         }

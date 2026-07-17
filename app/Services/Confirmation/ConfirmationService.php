@@ -31,8 +31,6 @@ final readonly class ConfirmationService
     }
 
     /**
-     * @throws HashValidationException
-     * @throws AuthenticationFailedException
      * @throws BusinessProfileNotFoundException
      */
     public function process(ConfirmationRequestData $request): void

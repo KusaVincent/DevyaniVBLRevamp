@@ -5,12 +5,12 @@ use App\Models\BusinessProfile;
 use App\Models\ConfirmationTransaction;
 use App\Services\Confirmation\HashGenerator;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Queue;
 
 uses(RefreshDatabase::class);
 
-beforeEach(function () {
+beforeEach(function (): void {
     Queue::fake();
 
     config([
@@ -22,17 +22,17 @@ beforeEach(function () {
 function validPayload(): array
 {
     $profile = BusinessProfile::create([
-        'business_short_code'     => '488489',
-        'username'                => 'apiuser',
-        'password'                => Hash::make('secret'),
-        'secret_key'              => 'my-secret-key',
-        'credit_account'          => '1234567890',
-        'sap_file'                => 'SAP001',
-        'business_transaction'    => 'TXN01',
-        'business_area'           => 'AREA01',
-        'profit_center'           => 'PC001',
-        'active'                  => 1,
-        'sap_headers'             => [],
+        'business_short_code' => '488489',
+        'username' => 'apiuser',
+        'password' => Hash::make('secret'),
+        'secret_key' => 'my-secret-key',
+        'credit_account' => '1234567890',
+        'sap_file' => 'SAP001',
+        'business_transaction' => 'TXN01',
+        'business_area' => 'AREA01',
+        'profit_center' => 'PC001',
+        'active' => 1,
+        'sap_headers' => [],
     ]);
 
     $payload = [
@@ -60,7 +60,7 @@ function validPayload(): array
     return $payload;
 }
 
-it('accepts a valid confirmation request', function () {
+it('accepts a valid confirmation request', function (): void {
     $response = $this->postJson(
         '/api/confirmation/',
         validPayload(),
@@ -78,7 +78,7 @@ it('accepts a valid confirmation request', function () {
     )->toBe(1);
 });
 
-it('rejects an invalid payload', function () {
+it('rejects an invalid payload', function (): void {
     $payload = validPayload();
 
     unset($payload['Hash']);
@@ -91,7 +91,7 @@ it('rejects an invalid payload', function () {
         ]);
 });
 
-it('returns business profile error', function () {
+it('returns business profile error', function (): void {
     $payload = validPayload();
 
     $payload['BusinessShortCode'] = '999999';
@@ -104,7 +104,7 @@ it('returns business profile error', function () {
         ]);
 });
 
-it('stores transaction but marks it not for processing when authentication fails', function () {
+it('stores transaction but marks it not for processing when authentication fails', function (): void {
     $payload = validPayload();
 
     $payload['Password'] = 'wrong-password';
@@ -118,7 +118,7 @@ it('stores transaction but marks it not for processing when authentication fails
     )->toBe(0);
 });
 
-it('stores transaction with process NO when hash is invalid', function () {
+it('stores transaction with process NO when hash is invalid', function (): void {
     $payload = validPayload();
 
     $payload['Hash'] = 'invalid-hash';
@@ -132,7 +132,7 @@ it('stores transaction with process NO when hash is invalid', function () {
     )->toBe(0);
 });
 
-it('does not create duplicate transactions', function () {
+it('does not create duplicate transactions', function (): void {
     $payload = validPayload();
 
     $this->postJson('/api/confirmation/', $payload);
@@ -144,7 +144,7 @@ it('does not create duplicate transactions', function () {
     )->toBe(1);
 });
 
-it('assigns a request uuid', function () {
+it('assigns a request uuid', function (): void {
     Log::spy();
 
     $this->postJson('/api/confirmation/', validPayload());

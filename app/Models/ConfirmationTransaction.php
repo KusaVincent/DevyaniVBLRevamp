@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use App\Enum\ProcessSMSTxn;
@@ -10,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @method static where(string $string, string $transactionId)
  * @method static create(array $array)
+ *
  * @property mixed $transaction_id
  * @property mixed $bill_reference
  * @property mixed $customer_name
@@ -17,6 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class ConfirmationTransaction extends Model
 {
+    #[\Override]
     protected $fillable = [
         'transaction_id',
         'transaction_time',
@@ -27,14 +31,16 @@ class ConfirmationTransaction extends Model
         'authenticated',
         'business_short_code',
         'process',
-        'created_at'
+        'created_at',
     ];
 
+    #[\Override]
     protected $attributes = [
         'process' => ProcessSMSTxn::YES,
         'status' => Status::PENDING,
     ];
 
+    #[\Override]
     protected function casts(): array
     {
         return [
@@ -48,7 +54,7 @@ class ConfirmationTransaction extends Model
     protected function customerName(): Attribute
     {
         return Attribute::make(
-            set: fn (?string $value) => ucwords(mb_strtolower(trim($value ?? ''), 'UTF-8')),
+            set: fn (?string $value): string => ucwords(mb_strtolower(trim($value ?? ''), 'UTF-8')),
         );
     }
 }

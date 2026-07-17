@@ -23,11 +23,11 @@ final readonly class SapProcessingService implements SapProcessingServiceInterfa
             ->where('status', Status::PENDING)
             ->where('process', ProcessSMSTxn::YES)
             ->orderBy('id')
-            ->chunkById(100, function ($transactions) {
+            ->chunkById(100, function ($transactions): void {
                 foreach ($transactions as $transaction) {
                     $profile = $this->profiles->findByShortCode($transaction->business_short_code);
 
-                    $this->sap->write($transaction,$profile);
+                    $this->sap->write($transaction, $profile);
 
                     $transaction->update([
                         'status' => Status::PROCESSED,

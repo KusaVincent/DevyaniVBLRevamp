@@ -2,7 +2,7 @@
 
 use App\Contracts\Sap\SapProcessingServiceInterface;
 
-it('executes the sap processing command', function () {
+it('executes the sap processing command', function (): void {
     $service = Mockery::mock(SapProcessingServiceInterface::class);
 
     $service

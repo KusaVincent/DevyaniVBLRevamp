@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Exceptions\Confirmation;
 
 class BusinessProfileNotFoundException extends ConfirmationException
 {
     public function __construct(public readonly string $businessShortCode)
     {
-        parent::__construct("Business shortcode {$businessShortCode} is not maintained.");
+        parent::__construct(sprintf('Business shortcode %s is not maintained.', $businessShortCode));
     }
 }

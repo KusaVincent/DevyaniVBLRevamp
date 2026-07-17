@@ -1,16 +1,17 @@
 <?php
+
 return [
     'authenticate' => env('CONFIRMATION_AUTHENTICATE', true),
 
     'email' => [
-        'recipients' => collect(explode(',', env('CONFIRMATION_EMAIL_RECIPIENTS', '')))
-            ->map(fn ($email) => trim($email))
+        'recipients' => collect(explode(',', (string) env('CONFIRMATION_EMAIL_RECIPIENTS', '')))
+            ->map(fn ($email): string => trim((string) $email))
             ->filter()
             ->values()
             ->all(),
         'uptime' => [
-            'recipients' => collect(explode(',', env('CONFIRMATION_UPTIME_EMAIL_RECIPIENTS', '')))
-                ->map(fn ($email) => trim($email))
+            'recipients' => collect(explode(',', (string) env('CONFIRMATION_UPTIME_EMAIL_RECIPIENTS', '')))
+                ->map(fn ($email): string => trim((string) $email))
                 ->filter()
                 ->values()
                 ->all(),

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use App\Enum\ProcessSMSTxn;
@@ -9,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @method static create(array $array)
+ *
  * @property mixed $bill_reference
  * @property mixed $amount
  * @property mixed $customer_name
@@ -17,8 +20,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class SmsQueue extends Model
 {
+    #[\Override]
     public $timestamps = false;
 
+    #[\Override]
     protected $fillable = [
         'status',
         'mpesa_ref',
@@ -37,6 +42,7 @@ class SmsQueue extends Model
         'attempts',
     ];
 
+    #[\Override]
     protected function casts(): array
     {
         return [
@@ -49,6 +55,7 @@ class SmsQueue extends Model
         ];
     }
 
+    #[\Override]
     protected $attributes = [
         'status' => Status::PENDING,
         'process' => ProcessSMSTxn::YES,
@@ -58,7 +65,7 @@ class SmsQueue extends Model
     protected function customerName(): Attribute
     {
         return Attribute::make(
-            set: fn (?string $value) => ucwords(mb_strtolower(trim($value ?? ''), 'UTF-8')),
+            set: fn (?string $value): string => ucwords(mb_strtolower(trim($value ?? ''), 'UTF-8')),
         );
     }
 }

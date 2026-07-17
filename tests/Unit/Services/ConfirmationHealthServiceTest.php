@@ -10,7 +10,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 uses(RefreshDatabase::class);
 
-beforeEach(function () {
+beforeEach(function (): void {
     $this->email = Mockery::mock(EmailServiceInterface::class);
 
     $this->logger = Mockery::mock(LoggingServiceInterface::class);
@@ -25,7 +25,7 @@ beforeEach(function () {
         ],
     ]);
 
-    $this->service = new ConfirmationHealthService($this->email, $this->logger,$this->archive);
+    $this->service = new ConfirmationHealthService($this->email, $this->logger, $this->archive);
 });
 
 function createTransaction(array $attributes = []): ConfirmationTransaction
@@ -49,7 +49,7 @@ function createTransaction(array $attributes = []): ConfirmationTransaction
     return $transaction;
 }
 
-it('returns when there are no confirmation transactions', function () {
+it('returns when there are no confirmation transactions', function (): void {
     $this->logger
         ->shouldReceive('info')
         ->once()
@@ -70,7 +70,7 @@ it('returns when there are no confirmation transactions', function () {
 
 });
 
-it('clears cached alert when a recent confirmation transaction exists', function () {
+it('clears cached alert when a recent confirmation transaction exists', function (): void {
     Cache::put(
         config('confirmation.cache.key'),
         true,
@@ -91,10 +91,8 @@ it('clears cached alert when a recent confirmation transaction exists', function
         ->once()
         ->with(
             'Latest confirmation transaction is within the last 3 hours.',
-            Mockery::on(function ($context) use ($transaction) {
-                return $context['transaction'] === $transaction->transaction_id
-                    && $context['received_at']->equalTo($transaction->created_at);
-            })
+            Mockery::on(fn($context) => $context['transaction'] === $transaction->transaction_id
+                && $context['received_at']->equalTo($transaction->created_at))
         );
 
     $this->email
@@ -109,7 +107,7 @@ it('clears cached alert when a recent confirmation transaction exists', function
         ->toBeFalse();
 });
 
-it('does not send another alert when one has already been sent', function () {
+it('does not send another alert when one has already been sent', function (): void {
     Cache::put(
         config('confirmation.cache.key'),
         true,
@@ -142,7 +140,7 @@ it('does not send another alert when one has already been sent', function () {
         ->toBeTrue();
 });
 
-it('sends an alert when no confirmation has been received within the configured period', function () {
+it('sends an alert when no confirmation has been received within the configured period', function (): void {
 
     createTransaction([
         'created_at' => now()->subHours(5),
@@ -157,10 +155,8 @@ it('sends an alert when no confirmation has been received within the configured 
     $this->logger
         ->shouldReceive('warning')
         ->once()
-        ->withArgs(function ($message, $context) {
-            return str_contains($message, 'No confirmation transaction received')
-                && isset($context['last_transaction']);
-        });
+        ->withArgs(fn($message, $context) => str_contains((string) $message, 'No confirmation transaction received')
+            && isset($context['last_transaction']));
 
     $this->archive
         ->shouldReceive('archiveCurrentLog')
@@ -181,7 +177,7 @@ it('sends an alert when no confirmation has been received within the configured 
         ->toBeTrue();
 });
 
-it('deletes the archive even when email sending fails', function () {
+it('deletes the archive even when email sending fails', function (): void {
 
     createTransaction([
         'created_at' => now()->subHours(5),
@@ -215,7 +211,7 @@ it('deletes the archive even when email sending fails', function () {
         ->toThrow(RuntimeException::class);
 });
 
-it('always deletes the temporary archive after sending the email', function () {
+it('always deletes the temporary archive after sending the email', function (): void {
 
     createTransaction([
         'created_at' => now()->subHours(5),

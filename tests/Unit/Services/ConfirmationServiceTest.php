@@ -12,11 +12,10 @@ use App\Exceptions\Confirmation\AuthenticationFailedException;
 use App\Exceptions\Confirmation\BusinessProfileNotFoundException;
 use App\Exceptions\Confirmation\DuplicateTransactionException;
 use App\Exceptions\Confirmation\HashValidationException;
-use App\Exceptions\Confirmation\InvalidPayloadException;
 use App\Models\BusinessProfile;
 use App\Services\Confirmation\ConfirmationService;
 
-beforeEach(function () {
+beforeEach(function (): void {
     config([
         'confirmation.authenticate' => true,
         'app.debug' => false,
@@ -44,7 +43,7 @@ beforeEach(function () {
     );
 });
 
-function requestData(string $billRefNumber = 'INV001',array $overrides = []): ConfirmationRequestData
+function requestData(string $billRefNumber = 'INV001', array $overrides = []): ConfirmationRequestData
 {
     return ConfirmationRequestData::fromArray(array_merge([
         'Hash' => 'dummy-hash',
@@ -72,7 +71,7 @@ function profile(): BusinessProfile
     ]);
 }
 
-it('processes a valid confirmation', function () {
+it('processes a valid confirmation', function (): void {
     $request = requestData();
 
     $profile = profile();
@@ -115,12 +114,12 @@ it('processes a valid confirmation', function () {
     $this->service->process($request);
 });
 
-it('stores transaction and queues sms with process NO when authentication fails', function () {
+it('stores transaction and queues sms with process NO when authentication fails', function (): void {
     config(['confirmation.authenticate' => true]);
 
     $request = requestData();
 
-    $profile = new BusinessProfile();
+    $profile = new BusinessProfile;
 
     $this->profiles
         ->shouldReceive('find')
@@ -152,7 +151,7 @@ it('stores transaction and queues sms with process NO when authentication fails'
     $this->service->process($request);
 });
 
-it('stores transaction with process NO when hash validation fails', function () {
+it('stores transaction with process NO when hash validation fails', function (): void {
     $request = requestData();
 
     $profile = profile();
@@ -168,7 +167,7 @@ it('stores transaction with process NO when hash validation fails', function () 
     $this->hashValidation
         ->shouldReceive('validate')
         ->once()
-        ->andThrow(new HashValidationException());
+        ->andThrow(new HashValidationException);
 
     $this->logger
         ->shouldReceive('notice')
@@ -188,7 +187,7 @@ it('stores transaction with process NO when hash validation fails', function () 
     $this->service->process($request);
 });
 
-it('returns when transaction is duplicate', function () {
+it('returns when transaction is duplicate', function (): void {
     $request = requestData();
 
     $profile = profile();
@@ -226,7 +225,7 @@ it('returns when transaction is duplicate', function () {
     $this->service->process($request);
 });
 
-it('returns immediately for debug test transaction', function () {
+it('returns immediately for debug test transaction', function (): void {
     config(['app.debug' => true]);
 
     $request = requestData('test');
@@ -258,7 +257,7 @@ it('returns immediately for debug test transaction', function () {
     $this->service->process($request);
 });
 
-it('throws when business profile cannot be found', function () {
+it('throws when business profile cannot be found', function (): void {
     $request = requestData();
 
     $this->profiles
@@ -271,7 +270,7 @@ it('throws when business profile cannot be found', function () {
     $this->service->process($request);
 });
 
-it('skips authentication when disabled', function () {
+it('skips authentication when disabled', function (): void {
     config(['confirmation.authenticate' => false]);
 
     $request = requestData();

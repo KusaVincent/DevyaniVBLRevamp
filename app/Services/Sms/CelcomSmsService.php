@@ -44,12 +44,12 @@ final readonly class CelcomSmsService implements CelcomSmsServiceInterface
             );
 
         $this->logger->info('Prepared SMS data', [
-            $payload
+            $payload,
         ]);
 
         if ($response->serverError()) {
             $this->logger->error('SMS gateway unavailable.', [
-                $mobile, $response->json()
+                $mobile, $response->json(),
             ]);
 
             throw new SmsDeliveryException(
@@ -61,7 +61,7 @@ final readonly class CelcomSmsService implements CelcomSmsServiceInterface
 
         if ($response->failed()) {
             $this->logger->error('SMS Failed.', [
-                $mobile, $response->json('message')
+                $mobile, $response->json('message'),
             ]);
 
             throw new SmsRejectedException(

@@ -6,8 +6,8 @@ use App\Data\ConfirmationRequestData;
 use App\Models\BusinessProfile;
 use App\Services\Confirmation\HashGenerator;
 
-beforeEach(function () {
-    $this->generator = new HashGenerator();
+beforeEach(function (): void {
+    $this->generator = new HashGenerator;
 
     $this->profile = new BusinessProfile([
         'secret_key' => 'secret123',
@@ -15,7 +15,7 @@ beforeEach(function () {
     ]);
 });
 
-it('generates the expected hash', function () {
+it('generates the expected hash', function (): void {
     $request = new ConfirmationRequestData(
         hash: '',
         mobile: '254712345678',

@@ -6,11 +6,11 @@ use App\Models\SmsQueue;
 use App\Services\Sms\SmsMessageBuilder;
 use Carbon\Carbon;
 
-beforeEach(function () {
-    $this->builder = new SmsMessageBuilder();
+beforeEach(function (): void {
+    $this->builder = new SmsMessageBuilder;
 });
 
-it('builds the expected sms message', function () {
+it('builds the expected sms message', function (): void {
     $sms = new SmsQueue([
         'recipient_name' => 'Vincent Kusa',
         'bill_reference' => '8752018',
@@ -30,7 +30,7 @@ it('builds the expected sms message', function () {
     );
 });
 
-it('formats decimal amounts correctly', function () {
+it('formats decimal amounts correctly', function (): void {
     $sms = new SmsQueue([
         'recipient_name' => 'Vincent',
         'bill_reference' => '8752018',
@@ -49,7 +49,7 @@ it('formats decimal amounts correctly', function () {
         ->toContain('KES 1,234.50');
 });
 
-it('formats zero amounts correctly', function () {
+it('formats zero amounts correctly', function (): void {
     $sms = new SmsQueue([
         'recipient_name' => 'Vincent',
         'bill_reference' => '8752018',
@@ -68,7 +68,7 @@ it('formats zero amounts correctly', function () {
         ->toContain('KES 0.00');
 });
 
-it('includes all transaction details', function () {
+it('includes all transaction details', function (): void {
     $sms = new SmsQueue([
         'recipient_name' => 'John Doe',
         'bill_reference' => 'INV001',

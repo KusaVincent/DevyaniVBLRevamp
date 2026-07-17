@@ -11,11 +11,12 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 uses(RefreshDatabase::class);
 
-beforeEach(function () {
-    $this->service = new TransactionService();
+beforeEach(function (): void {
+    $this->service = new TransactionService;
 });
 
-function makeTransactionConfirmationRequest(string $transactionId = 'UGNMQQAC9AU'): ConfirmationRequestData {
+function makeTransactionConfirmationRequest(string $transactionId = 'UGNMQQAC9AU'): ConfirmationRequestData
+{
     return new ConfirmationRequestData(
         hash: '',
         mobile: '254712345678',
@@ -32,13 +33,13 @@ function makeTransactionConfirmationRequest(string $transactionId = 'UGNMQQAC9AU
     );
 }
 
-it('does not throw when transaction is unique', function () {
+it('does not throw when transaction is unique', function (): void {
     $this->service->ensureNotDuplicate(makeTransactionConfirmationRequest());
 
     expect(true)->toBeTrue();
 });
 
-it('throws when transaction already exists', function () {
+it('throws when transaction already exists', function (): void {
     ConfirmationTransaction::create([
         'process' => ProcessSMSTxn::YES,
         'amount' => '1100.0',
@@ -52,10 +53,10 @@ it('throws when transaction already exists', function () {
     $this->service->ensureNotDuplicate(makeTransactionConfirmationRequest());
 })->throws(DuplicateTransactionException::class);
 
-it('stores a confirmation transaction', function () {
+it('stores a confirmation transaction', function (): void {
     $request = makeTransactionConfirmationRequest();
 
-    $this->service->store($request,ProcessSMSTxn::YES);
+    $this->service->store($request, ProcessSMSTxn::YES);
 
     $this->assertDatabaseCount(
         'confirmation_transactions',
@@ -75,8 +76,8 @@ it('stores a confirmation transaction', function () {
     );
 });
 
-it('stores process flag correctly', function () {
-    $request = makeTransactionConfirmationRequest(transactionId: 'ABC123456', );
+it('stores process flag correctly', function (): void {
+    $request = makeTransactionConfirmationRequest(transactionId: 'ABC123456');
 
     $this->service->store($request, ProcessSMSTxn::NO);
 
@@ -89,7 +90,7 @@ it('stores process flag correctly', function () {
     );
 });
 
-it('can store multiple unique transactions', function () {
+it('can store multiple unique transactions', function (): void {
     $this->service->store(
         makeTransactionConfirmationRequest('TXN001'), ProcessSMSTxn::YES,
     );

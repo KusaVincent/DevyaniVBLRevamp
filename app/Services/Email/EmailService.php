@@ -39,7 +39,7 @@ readonly class EmailService implements EmailServiceInterface
                 throw new EmailDeliveryException(
                     recipient: $recipient,
                     response: [
-                        'exception' => get_class($e),
+                        'exception' => $e::class,
                         'message' => $e->getMessage(),
                     ],
                     previous: $e,

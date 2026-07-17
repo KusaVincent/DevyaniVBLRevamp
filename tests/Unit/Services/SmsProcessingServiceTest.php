@@ -14,7 +14,7 @@ use Mockery;
 
 uses(RefreshDatabase::class);
 
-beforeEach(function () {
+beforeEach(function (): void {
     config(['services.celcom.max_attempts' => 3]);
 
     $this->sms = Mockery::mock(CelcomSmsServiceInterface::class);
@@ -45,16 +45,14 @@ function createSmsQueue(array $attributes = []): SmsQueue
     ], $attributes));
 }
 
-it('processes a pending sms successfully', function () {
+it('processes a pending sms successfully', function (): void {
     $sms = createSmsQueue();
 
     $this->builder
         ->shouldReceive('build')
         ->once()
         ->with(
-            Mockery::on(function (SmsQueue $message) use ($sms) {
-            return $message->id === $sms->id;
-        }))
+            Mockery::on(fn(SmsQueue $message) => $message->id === $sms->id))
         ->andReturn('SMS message');
 
     $this->sms
@@ -86,7 +84,7 @@ it('processes a pending sms successfully', function () {
         ->toBe(['success' => true]);
 });
 
-it('marks sms as failed and schedules retry when delivery fails', function () {
+it('marks sms as failed and schedules retry when delivery fails', function (): void {
     config(['services.celcom.max_attempts' => 3]);
 
     $sms = createSmsQueue();
@@ -94,7 +92,7 @@ it('marks sms as failed and schedules retry when delivery fails', function () {
     $this->builder
         ->shouldReceive('build')
         ->once()
-        ->with(\Mockery::on(fn (SmsQueue $message) => $message->id === $sms->id))
+        ->with(Mockery::on(fn (SmsQueue $message): bool => $message->id === $sms->id))
         ->andReturn('SMS message');
 
     $this->sms
@@ -144,7 +142,7 @@ it('marks sms as failed and schedules retry when delivery fails', function () {
 
 });
 
-it('marks sms as abandoned after reaching maximum attempts', function () {
+it('marks sms as abandoned after reaching maximum attempts', function (): void {
     config(['services.celcom.max_attempts' => 3]);
 
     $sms = createSmsQueue([
@@ -155,8 +153,8 @@ it('marks sms as abandoned after reaching maximum attempts', function () {
     $this->builder
         ->shouldReceive('build')
         ->once()
-        ->with(\Mockery::on(
-            fn (SmsQueue $message) => $message->id === $sms->id
+        ->with(Mockery::on(
+            fn (SmsQueue $message): bool => $message->id === $sms->id
         ))
         ->andReturn('SMS message');
 
@@ -200,14 +198,14 @@ it('marks sms as abandoned after reaching maximum attempts', function () {
         ->toBeNull();
 });
 
-it('marks sms as abandoned when gateway rejects the sms', function () {
+it('marks sms as abandoned when gateway rejects the sms', function (): void {
     $sms = createSmsQueue();
 
     $this->builder
         ->shouldReceive('build')
         ->once()
-        ->with(\Mockery::on(
-            fn (SmsQueue $message) => $message->id === $sms->id
+        ->with(Mockery::on(
+            fn (SmsQueue $message): bool => $message->id === $sms->id
         ))
         ->andReturn('SMS message');
 
@@ -260,7 +258,7 @@ it('marks sms as abandoned when gateway rejects the sms', function () {
         ->toBeNull();
 });
 
-it('ignores sms scheduled for a future retry', function () {
+it('ignores sms scheduled for a future retry', function (): void {
     $sms = createSmsQueue([
         'status' => Status::FAILED,
         'attempts' => 1,
@@ -292,7 +290,7 @@ it('ignores sms scheduled for a future retry', function () {
         ->not->toBeNull();
 });
 
-it('ignores sms that has already been processed', function () {
+it('ignores sms that has already been processed', function (): void {
     $sms = createSmsQueue([
         'status' => Status::PROCESSED,
         'processed_at' => now(),
@@ -321,7 +319,7 @@ it('ignores sms that has already been processed', function () {
         ->not->toBeNull();
 });
 
-it('ignores sms that has reached maximum attempts', function () {
+it('ignores sms that has reached maximum attempts', function (): void {
     config(['services.celcom.max_attempts' => 3]);
 
     $sms = createSmsQueue([
@@ -352,7 +350,7 @@ it('ignores sms that has reached maximum attempts', function () {
         ->toBeNull();
 });
 
-it('ignores sms marked as do not process', function () {
+it('ignores sms marked as do not process', function (): void {
     $sms = createSmsQueue([
         'process' => ProcessSMSTxn::NO,
         'status' => Status::PENDING,
@@ -387,7 +385,7 @@ it('ignores sms marked as do not process', function () {
         ->toBeNull();
 });
 
-it('processes multiple pending sms messages', function () {
+it('processes multiple pending sms messages', function (): void {
     $sms1 = createSmsQueue([
         'recipient_name' => 'John Doe',
         'recipient_mobile' => '254700000001',
@@ -449,7 +447,7 @@ it('processes multiple pending sms messages', function () {
 
 });
 
-it('continues processing remaining sms when one sms fails', function () {
+it('continues processing remaining sms when one sms fails', function (): void {
     $sms1 = createSmsQueue([
         'recipient_mobile' => '254700000001',
         'mpesa_ref' => 'TXN001',
@@ -528,7 +526,7 @@ it('continues processing remaining sms when one sms fails', function () {
         ->toBe(['success' => true]);
 });
 
-it('does nothing when there are no pending sms', function () {
+it('does nothing when there are no pending sms', function (): void {
     $this->builder
         ->shouldNotReceive('build');
 

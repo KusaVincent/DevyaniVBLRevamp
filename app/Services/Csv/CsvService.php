@@ -22,16 +22,16 @@ final class CsvService
         $handle = fopen($path, $newFile ? 'w' : 'a');
 
         if (! $handle) {
-            throw new RuntimeException("Unable to open {$path}");
+            throw new RuntimeException('Unable to open ' . $path);
         }
 
         try {
-            if ($newFile && ! empty($headers)) {
-                fputcsv($handle, $headers);
+            if ($newFile && $headers !== []) {
+                fputcsv($handle, $headers, escape: '\\');
             }
 
             foreach ($rows as $row) {
-                fputcsv($handle, $row);
+                fputcsv($handle, $row, escape: '\\');
             }
         } finally {
             fclose($handle);
@@ -54,10 +54,10 @@ final class CsvService
 
         try {
             if (! $includeHeader) {
-                fgetcsv($handle);
+                fgetcsv($handle, escape: '\\');
             }
 
-            while (($row = fgetcsv($handle)) !== false) {
+            while (($row = fgetcsv($handle, escape: '\\')) !== false) {
                 $rows[] = $row;
             }
 

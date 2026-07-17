@@ -27,7 +27,7 @@ final readonly class SapArchiveService implements SapArchiveServiceInterface
         return $temporary;
     }
 
-    public function archive(string $temporaryFile, ?string $originalFile = null,): ?string
+    public function archive(string $temporaryFile, ?string $originalFile = null): ?string
     {
         if (! File::exists($temporaryFile)) {
             return null;
@@ -51,9 +51,9 @@ final readonly class SapArchiveService implements SapArchiveServiceInterface
         $timestamp = now()->format('Ymd_His');
 
         return match (basename($source)) {
-            'C2B.csv'     => "{$timestamp}_C2B.csv",
-            'VBL_C2B.csv' => "VBL_{$timestamp}_C2B.csv",
-            default       => basename($source),
+            'C2B.csv' => $timestamp . '_C2B.csv',
+            'VBL_C2B.csv' => sprintf('VBL_%s_C2B.csv', $timestamp),
+            default => basename($source),
         };
     }
 

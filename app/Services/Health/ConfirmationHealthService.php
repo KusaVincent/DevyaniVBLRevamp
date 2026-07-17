@@ -16,11 +16,13 @@ use Illuminate\Support\Facades\File;
 final readonly class ConfirmationHealthService implements ConfirmationHealthServiceInterface
 {
     private int $period;
+
     private string $cacheKey;
-    public function __construct(private EmailServiceInterface $email,private LoggingServiceInterface $logger,  private LogArchiveServiceInterface $logArchive)
+
+    public function __construct(private EmailServiceInterface $email, private LoggingServiceInterface $logger, private LogArchiveServiceInterface $logArchive)
     {
         $this->cacheKey = config('confirmation.cache.key');
-        $this->period   = (int) config('confirmation.health.check.period');
+        $this->period = (int) config('confirmation.health.check.period');
     }
 
     public function check(): void
@@ -43,7 +45,7 @@ final readonly class ConfirmationHealthService implements ConfirmationHealthServ
         if ($transaction->created_at >= $cutoff) {
             Cache::forget($this->cacheKey);
 
-            $this->logger->info("Latest confirmation transaction is within the last $this->period hours.", [
+            $this->logger->info(sprintf('Latest confirmation transaction is within the last %d hours.', $this->period), [
                 'transaction' => $transaction->transaction_id,
                 'received_at' => $transaction->created_at,
             ]);
@@ -57,7 +59,7 @@ final readonly class ConfirmationHealthService implements ConfirmationHealthServ
             return;
         }
 
-        $this->logger->warning("No confirmation transaction received in over $this->period hours.", [
+        $this->logger->warning(sprintf('No confirmation transaction received in over %d hours.', $this->period), [
             'last_transaction' => $transaction->transaction_id,
             'received_at' => $transaction->created_at,
         ]);

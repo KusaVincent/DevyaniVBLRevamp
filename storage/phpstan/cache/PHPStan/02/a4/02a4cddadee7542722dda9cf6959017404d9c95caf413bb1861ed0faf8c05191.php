@@ -1,0 +1,19 @@
+<?php declare(strict_types = 1);
+
+// osfsl-C:/Users/vinsc/Herd/devyanivbl/vendor/composer/../laravel/framework/src/Illuminate/Mail/Attachment.php-presentSymbols
+return \PHPStan\Cache\CacheItem::__set_state(array(
+   'variableKey' => 'v2-c0d9e473de0c82a8c15bfcb08ead5c13e677d84a0130fe565135e409af4f4a00-8.5.8',
+   'data' => 
+  array (
+    'classes' => 
+    array (
+      'illuminate\\mail\\attachment' => true,
+    ),
+    'functions' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+  ),
+));

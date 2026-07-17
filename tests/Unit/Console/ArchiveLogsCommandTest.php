@@ -2,7 +2,7 @@
 
 use App\Contracts\Logging\LogArchiveServiceInterface;
 
-it('executes the log archive processor command', function () {
+it('executes the log archive processor command', function (): void {
     $service = Mockery::mock(LogArchiveServiceInterface::class);
 
     $service

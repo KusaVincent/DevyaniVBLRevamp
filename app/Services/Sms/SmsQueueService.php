@@ -19,18 +19,19 @@ final readonly class SmsQueueService implements SmsQueueServiceInterface
         //
     }
 
-    public function queue(ConfirmationRequestData $request, ProcessSMSTxn $post = ProcessSMSTxn::YES): void {
+    public function queue(ConfirmationRequestData $request, ProcessSMSTxn $post = ProcessSMSTxn::YES): void
+    {
         $recipient = CustomerReference::query()
             ->where('reference', $request->billReference)
             ->first();
 
         if ($recipient === null) {
-            $this->logger->info($request->billReference . ' is not maintained for SMS');
+            $this->logger->info($request->billReference.' is not maintained for SMS');
 
             return;
         }
 
-        $this->logger->info($request->billReference . ' maintained for SMS, proceeding to add to SMS Queue');
+        $this->logger->info($request->billReference.' maintained for SMS, proceeding to add to SMS Queue');
 
         SmsQueue::create([
             'process' => $post,

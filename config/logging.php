@@ -1,5 +1,8 @@
 <?php
 
+declare(strict_types=1);
+
+use App\Logging\CustomizeConfirmationLogger;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
@@ -54,12 +57,12 @@ return [
 
         'confirmation' => [
             'driver' => 'monolog',
-            'handler' => Monolog\Handler\StreamHandler::class,
+            'handler' => StreamHandler::class,
             'with' => [
-                'stream' => storage_path( 'logs/confirmation-' . now()->format('Y-m-d') . '.log'),
+                'stream' => storage_path('logs/confirmation-'.now()->format('Y-m-d').'.log'),
             ],
             'tap' => [
-                App\Logging\CustomizeConfirmationLogger::class,
+                CustomizeConfirmationLogger::class,
             ],
         ],
 

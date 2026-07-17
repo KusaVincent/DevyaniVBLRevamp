@@ -50,7 +50,7 @@ final class LogArchiveService implements LogArchiveServiceInterface
             $file->getBasename('.log'),
         );
 
-        $archive = new ZipArchive();
+        $archive = new ZipArchive;
 
         if ($archive->open($zipPath, ZipArchive::CREATE | ZipArchive::OVERWRITE) !== true) {
             $this->logger->error('Unable to archive log file.', [
@@ -89,7 +89,7 @@ final class LogArchiveService implements LogArchiveServiceInterface
 
         File::ensureDirectoryExists(dirname($zip));
 
-        $archive = new ZipArchive();
+        $archive = new ZipArchive;
 
         if ($archive->open($zip, ZipArchive::CREATE | ZipArchive::OVERWRITE) !== true) {
             throw new RuntimeException('Unable to create log archive.');

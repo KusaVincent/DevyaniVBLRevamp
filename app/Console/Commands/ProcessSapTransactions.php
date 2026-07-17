@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Console\Commands;
 
 use App\Contracts\Sap\SapProcessingServiceInterface;
@@ -14,7 +16,8 @@ class ProcessSapTransactions extends Command
     /**
      * Execute the console command.
      */
-    public function handle(SapProcessingServiceInterface $processor): int {
+    public function handle(SapProcessingServiceInterface $processor): int
+    {
         $processor->processPending();
 
         return self::SUCCESS;

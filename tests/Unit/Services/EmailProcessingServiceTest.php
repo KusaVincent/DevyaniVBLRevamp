@@ -13,7 +13,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 uses(RefreshDatabase::class);
 
-beforeEach(function () {
+beforeEach(function (): void {
     $this->freezeTime();
     config()->set('mail.max_attempts', 3);
 
@@ -46,7 +46,7 @@ function createEmail(array $attributes = []): EmailQueue
     ], $attributes));
 }
 
-it('processes a pending email successfully', function () {
+it('processes a pending email successfully', function (): void {
     $email = createEmail();
 
     $prepared = storage_path('app/temp/20260715_C2B.csv');
@@ -106,7 +106,7 @@ it('processes a pending email successfully', function () {
         ->toHaveKey('processed_at');
 });
 
-it('marks email as failed and schedules retry when delivery fails', function () {
+it('marks email as failed and schedules retry when delivery fails', function (): void {
     config()->set('mail.max_attempts', 3);
 
     $email = createEmail();
@@ -171,7 +171,7 @@ it('marks email as failed and schedules retry when delivery fails', function () 
         ]);
 });
 
-it('marks email as abandoned after reaching maximum attempts', function () {
+it('marks email as abandoned after reaching maximum attempts', function (): void {
     config()->set('mail.max_attempts', 3);
 
     $email = createEmail([
@@ -233,7 +233,7 @@ it('marks email as abandoned after reaching maximum attempts', function () {
         ]);
 });
 
-it('ignores emails scheduled for a future retry', function () {
+it('ignores emails scheduled for a future retry', function (): void {
     $email = createEmail([
         'status' => Status::FAILED,
         'attempts' => 1,
@@ -270,7 +270,7 @@ it('ignores emails scheduled for a future retry', function () {
         ->not->toBeNull();
 });
 
-it('ignores emails that have already been processed', function () {
+it('ignores emails that have already been processed', function (): void {
     $email = createEmail([
         'status' => Status::PROCESSED,
         'processed_at' => now()->subMinute(),
@@ -304,7 +304,7 @@ it('ignores emails that have already been processed', function () {
         ->not->toBeNull();
 });
 
-it('ignores emails that have reached maximum attempts', function () {
+it('ignores emails that have reached maximum attempts', function (): void {
     config()->set('mail.max_attempts', 3);
 
     $email = createEmail([
@@ -343,7 +343,7 @@ it('ignores emails that have reached maximum attempts', function () {
         ->not->toBeNull();
 });
 
-it('processes multiple pending emails', function () {
+it('processes multiple pending emails', function (): void {
     $first = createEmail([
         'attachment' => '/tmp/C2B.csv',
     ]);
@@ -393,7 +393,7 @@ it('processes multiple pending emails', function () {
         ->toBe(1);
 });
 
-it('continues processing remaining emails when one email fails', function () {
+it('continues processing remaining emails when one email fails', function (): void {
     $first = createEmail([
         'subject' => 'First',
         'attachment' => '/tmp/C2B.csv',
@@ -452,7 +452,7 @@ it('continues processing remaining emails when one email fails', function () {
         ->toContain(Status::PROCESSED);
 });
 
-it('does nothing when there are no pending emails', function () {
+it('does nothing when there are no pending emails', function (): void {
     $this->logger
         ->shouldReceive('info')
         ->never();
@@ -474,7 +474,7 @@ it('does nothing when there are no pending emails', function () {
     expect(EmailQueue::count())->toBe(0);
 });
 
-it('marks email as failed when SAP attachment cannot be prepared', function () {
+it('marks email as failed when SAP attachment cannot be prepared', function (): void {
     $email = createEmail();
 
     $this->archive
@@ -516,7 +516,7 @@ it('marks email as failed when SAP attachment cannot be prepared', function () {
         ->and($email->next_retry_at)->toBeNull();
 });
 
-it('stores the success response after processing', function () {
+it('stores the success response after processing', function (): void {
     $email = createEmail();
 
     $this->archive
@@ -558,7 +558,7 @@ it('stores the success response after processing', function () {
         ->and($response['processed_at'])->not->toBeEmpty();
 });
 
-it('increments the attempt counter when processing an email', function () {
+it('increments the attempt counter when processing an email', function (): void {
     $email = createEmail([
         'attempts' => 1,
         'status' => Status::FAILED,
@@ -593,7 +593,7 @@ it('increments the attempt counter when processing an email', function () {
         ->toBe(Status::PROCESSED);
 });
 
-it('logs the archived SAP file path', function () {
+it('logs the archived SAP file path', function (): void {
     $email = createEmail();
 
     $this->archive
@@ -621,7 +621,7 @@ it('logs the archived SAP file path', function () {
 
     $this->logger
         ->shouldReceive('info')
-        ->with('Email Details', \Mockery::type('array'))
+        ->with('Email Details', Mockery::type('array'))
         ->once();
 
     $this->logger

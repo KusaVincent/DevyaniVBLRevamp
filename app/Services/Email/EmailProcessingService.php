@@ -27,12 +27,12 @@ final readonly class EmailProcessingService implements EmailProcessingServiceInt
                 Status::FAILED,
             ])
             ->where('attempts', '<', $this->maxAttempts())
-            ->where(function ($query) {
+            ->where(function ($query): void {
                 $query->whereNull('next_retry_at')
                     ->orWhere('next_retry_at', '<=', now());
             })
             ->orderBy('id')
-            ->chunkById(100, function ($emails) {
+            ->chunkById(100, function ($emails): void {
                 $this->logger->info('Fetched queued emails');
 
                 foreach ($emails as $email) {

@@ -1,0 +1,147 @@
+<?php declare(strict_types = 1);
+
+// odsl-C:\Users\vinsc\Herd\devyanivbl\app\Providers\AppServiceProvider.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Providers\AppServiceProvider
+return \PHPStan\Cache\CacheItem::__set_state(array(
+   'variableKey' => 'v2-6.70.0.3-8.5.8-1b85394c309eb3b4772695b29d02da5f32b6fb4623e9e7040f5cfefae0b0d675',
+   'data' => 
+  array (
+    'locatedSource' => 
+    array (
+      'class' => 'PHPStan\\BetterReflection\\SourceLocator\\Located\\LocatedSource',
+      'data' => 
+      array (
+        'name' => 'App\\Providers\\AppServiceProvider',
+        'filename' => 'C:/Users/vinsc/Herd/devyanivbl/app/Providers/AppServiceProvider.php',
+      ),
+    ),
+    'namespace' => 'App\\Providers',
+    'name' => 'App\\Providers\\AppServiceProvider',
+    'shortName' => 'AppServiceProvider',
+    'isInterface' => false,
+    'isTrait' => false,
+    'isEnum' => false,
+    'isBackedEnum' => false,
+    'modifiers' => 0,
+    'docComment' => NULL,
+    'attributes' => 
+    array (
+    ),
+    'startLine' => 40,
+    'endLine' => 84,
+    'startColumn' => 1,
+    'endColumn' => 1,
+    'parentClassName' => 'Illuminate\\Support\\ServiceProvider',
+    'implementsClassNames' => 
+    array (
+    ),
+    'traitClassNames' => 
+    array (
+    ),
+    'immediateConstants' => 
+    array (
+    ),
+    'immediateProperties' => 
+    array (
+    ),
+    'immediateMethods' => 
+    array (
+      'register' => 
+      array (
+        'name' => 'register',
+        'parameters' => 
+        array (
+        ),
+        'returnsReference' => false,
+        'returnType' => 
+        array (
+          'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+          'data' => 
+          array (
+            'name' => 'void',
+            'isIdentifier' => true,
+          ),
+        ),
+        'attributes' => 
+        array (
+          0 => 
+          array (
+            'name' => 'Override',
+            'isRepeated' => false,
+            'arguments' => 
+            array (
+            ),
+          ),
+        ),
+        'docComment' => '/**
+ * Register any application services.
+ */',
+        'startLine' => 45,
+        'endLine' => 64,
+        'startColumn' => 5,
+        'endColumn' => 5,
+        'couldThrow' => false,
+        'isClosure' => false,
+        'isGenerator' => false,
+        'isVariadic' => false,
+        'modifiers' => 1,
+        'namespace' => 'App\\Providers',
+        'declaringClassName' => 'App\\Providers\\AppServiceProvider',
+        'implementingClassName' => 'App\\Providers\\AppServiceProvider',
+        'currentClassName' => 'App\\Providers\\AppServiceProvider',
+        'aliasName' => NULL,
+      ),
+      'boot' => 
+      array (
+        'name' => 'boot',
+        'parameters' => 
+        array (
+        ),
+        'returnsReference' => false,
+        'returnType' => 
+        array (
+          'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+          'data' => 
+          array (
+            'name' => 'void',
+            'isIdentifier' => true,
+          ),
+        ),
+        'attributes' => 
+        array (
+        ),
+        'docComment' => '/**
+ * Bootstrap any application services.
+ */',
+        'startLine' => 69,
+        'endLine' => 83,
+        'startColumn' => 5,
+        'endColumn' => 5,
+        'couldThrow' => false,
+        'isClosure' => false,
+        'isGenerator' => false,
+        'isVariadic' => false,
+        'modifiers' => 1,
+        'namespace' => 'App\\Providers',
+        'declaringClassName' => 'App\\Providers\\AppServiceProvider',
+        'implementingClassName' => 'App\\Providers\\AppServiceProvider',
+        'currentClassName' => 'App\\Providers\\AppServiceProvider',
+        'aliasName' => NULL,
+      ),
+    ),
+    'traitsData' => 
+    array (
+      'aliases' => 
+      array (
+      ),
+      'modifiers' => 
+      array (
+      ),
+      'precedences' => 
+      array (
+      ),
+      'hashes' => 
+      array (
+      ),
+    ),
+  ),
+));

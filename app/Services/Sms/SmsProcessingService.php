@@ -14,7 +14,8 @@ use App\Models\SmsQueue;
 
 final readonly class SmsProcessingService implements SmsProcessingServiceInterface
 {
-    public function __construct(private CelcomSmsServiceInterface $sms, private SmsMessageBuilderInterface $builder, private LoggingServiceInterface $logger) {
+    public function __construct(private CelcomSmsServiceInterface $sms, private SmsMessageBuilderInterface $builder, private LoggingServiceInterface $logger)
+    {
         //
     }
 
@@ -26,12 +27,12 @@ final readonly class SmsProcessingService implements SmsProcessingServiceInterfa
             ->whereIn('status', [Status::PENDING, Status::FAILED])
             ->where('attempts', '<', $this->maxAttempts())
             ->where('process', ProcessSMSTxn::YES)
-            ->where(function ($query) {
+            ->where(function ($query): void {
                 $query->whereNull('next_retry_at')
                     ->orWhere('next_retry_at', '<=', now());
             })
             ->orderBy('id')
-            ->chunkById(100, function ($messages) {
+            ->chunkById(100, function ($messages): void {
                 $this->logger->info('Fetched from SMS queue');
 
                 foreach ($messages as $message) {

@@ -19,8 +19,7 @@ final class ConfirmationController extends Controller
     public function __construct(
         private readonly ConfirmationService $confirmationService,
         private readonly LoggingService $logger,
-    ) {
-    }
+    ) {}
 
     public function __invoke(Request $request): JsonResponse
     {

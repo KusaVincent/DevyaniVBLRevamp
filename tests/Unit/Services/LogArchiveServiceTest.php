@@ -7,7 +7,7 @@ use App\Services\Logging\LoggingService;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 
-beforeEach(function () {
+beforeEach(function (): void {
     Config::set('logging.retention', 14);
 
     $this->directory = storage_path('logs');
@@ -20,11 +20,11 @@ beforeEach(function () {
     );
 });
 
-afterEach(function () {
+afterEach(function (): void {
     File::cleanDirectory($this->directory);
 });
 
-it('archives an old log file', function () {
+it('archives an old log file', function (): void {
     $log = $this->directory.'/confirmation-2026-01-01.log';
 
     File::put($log, 'test');
@@ -38,7 +38,7 @@ it('archives an old log file', function () {
         ->toBeTrue();
 });
 
-it('does not archive todays log', function () {
+it('does not archive todays log', function (): void {
     $log = sprintf(
         '%s/confirmation-%s.log',
         $this->directory,
@@ -52,7 +52,7 @@ it('does not archive todays log', function () {
     expect(File::exists($log))->toBeTrue();
 });
 
-it('ignores non log files', function () {
+it('ignores non log files', function (): void {
     $txt = $this->directory.'/readme.txt';
 
     File::put($txt, 'abc');
@@ -62,7 +62,7 @@ it('ignores non log files', function () {
     expect(File::exists($txt))->toBeTrue();
 });
 
-it('deletes zip archives older than retention period', function () {
+it('deletes zip archives older than retention period', function (): void {
     $zip = $this->directory.'/old.zip';
 
     File::put($zip, 'abc');
@@ -77,7 +77,7 @@ it('deletes zip archives older than retention period', function () {
     expect(File::exists($zip))->toBeFalse();
 });
 
-it('keeps recent zip archives', function () {
+it('keeps recent zip archives', function (): void {
     $zip = $this->directory.'/recent.zip';
 
     File::put($zip, 'abc');
@@ -92,9 +92,9 @@ it('keeps recent zip archives', function () {
     expect(File::exists($zip))->toBeTrue();
 });
 
-it('creates one archive for each log', function () {
+it('creates one archive for each log', function (): void {
     foreach (range(1, 3) as $i) {
-        $log = $this->directory."/confirmation-$i.log";
+        $log = $this->directory.sprintf('/confirmation-%s.log', $i);
 
         File::put($log, 'abc');
 
@@ -105,7 +105,6 @@ it('creates one archive for each log', function () {
 
     expect(
         collect(File::files($this->directory))
-            ->filter(fn ($file) => $file->getExtension() === 'zip')
+            ->filter(fn ($file): bool => $file->getExtension() === 'zip')
     )->toHaveCount(3);
 });
-

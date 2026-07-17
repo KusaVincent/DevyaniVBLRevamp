@@ -30,7 +30,7 @@ final readonly class SapConfiguration
     public function row(ConfirmationTransaction $transaction): array
     {
         return collect($this->profile->sap_headers)
-            ->map(fn (array $column) => $this->resolve(
+            ->map(fn (array $column): mixed => $this->resolve(
                 $column['source'],
                 $transaction,
             ))
@@ -53,7 +53,7 @@ final readonly class SapConfiguration
             'postingDate',
             'documentDate' => $this->postingDate($transaction),
             default => throw new \InvalidArgumentException(
-                "Unknown SAP source [{$source}]"
+                sprintf('Unknown SAP source [%s]', $source)
             ),
         };
     }

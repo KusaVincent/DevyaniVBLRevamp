@@ -5,8 +5,8 @@ declare(strict_types=1);
 use App\Services\Csv\CsvService;
 use Illuminate\Support\Facades\File;
 
-beforeEach(function () {
-    $this->service = new CsvService();
+beforeEach(function (): void {
+    $this->service = new CsvService;
 
     $this->directory = base_path('tests/Fixtures');
 
@@ -17,11 +17,11 @@ beforeEach(function () {
     File::delete($this->file);
 });
 
-afterEach(function () {
+afterEach(function (): void {
     File::delete($this->file);
 });
 
-it('creates a csv file', function () {
+it('creates a csv file', function (): void {
     $this->service->write(
         $this->file,
         [
@@ -33,7 +33,7 @@ it('creates a csv file', function () {
     expect(File::exists($this->file))->toBeTrue();
 });
 
-it('writes the header only once', function () {
+it('writes the header only once', function (): void {
     $this->service->write(
         $this->file,
         [
@@ -58,7 +58,7 @@ it('writes the header only once', function () {
         ->and($contents[2])->toBe('Jane,2000');
 });
 
-it('appends rows', function () {
+it('appends rows', function (): void {
     $this->service->write(
         $this->file,
         [
@@ -82,7 +82,7 @@ it('appends rows', function () {
     ]);
 });
 
-it('reads rows excluding the header', function () {
+it('reads rows excluding the header', function (): void {
     $this->service->write(
         $this->file,
         [
@@ -100,7 +100,7 @@ it('reads rows excluding the header', function () {
     ]);
 });
 
-it('reads rows including the header', function () {
+it('reads rows including the header', function (): void {
     $this->service->write(
         $this->file,
         [
@@ -117,13 +117,13 @@ it('reads rows including the header', function () {
     ]);
 });
 
-it('returns an empty array when the file does not exist', function () {
+it('returns an empty array when the file does not exist', function (): void {
     expect(
         $this->service->read($this->directory.'/missing.csv')
     )->toBe([]);
 });
 
-it('throws an exception when the path is empty', function () {
+it('throws an exception when the path is empty', function (): void {
     $this->service->write('', []);
 
 })->throws(RuntimeException::class, 'CSV path cannot be empty.');

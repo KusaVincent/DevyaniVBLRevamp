@@ -14,6 +14,7 @@ final class ConfirmationFormatter extends LineFormatter implements FormatterInte
     /**
      * @throws JsonException
      */
+    #[\Override]
     public function format(LogRecord $record): string
     {
         $context = $record->context;
@@ -28,7 +29,7 @@ final class ConfirmationFormatter extends LineFormatter implements FormatterInte
         );
 
         if ($context !== []) {
-            $message .= ': ' . json_encode(
+            $message .= ': '.json_encode(
                 $context,
                 JSON_UNESCAPED_SLASHES
                 | JSON_UNESCAPED_UNICODE
@@ -38,31 +39,32 @@ final class ConfirmationFormatter extends LineFormatter implements FormatterInte
         }
 
         return implode('|', [
-                $record->datetime->format('Y-m-d H:i:s'),
-                $record->extra['uuid']
-                    ?? $record->context['uuid']
-                    ?? '',
-                strtoupper($record->level->getName()),
-                $record->extra['file']
-                    ?? $record->context['file']
-                    ?? '',
-                isset($record->extra['function'])
-                    ? $record->extra['function'] . '()'
-                    : (
-                        isset($record->context['function'])
-                            ? $record->context['function'] . '()'
-                            : ''
-                    ),
-                $record->extra['ip']
-                    ?? $record->context['ip']
-                    ?? '',
-                $record->extra['line']
-                    ?? $record->context['line']
-                    ?? '',
-                $message,
-            ]) . PHP_EOL;
+            $record->datetime->format('Y-m-d H:i:s'),
+            $record->extra['uuid']
+                ?? $record->context['uuid']
+                ?? '',
+            strtoupper($record->level->getName()),
+            $record->extra['file']
+                ?? $record->context['file']
+                ?? '',
+            isset($record->extra['function'])
+                ? $record->extra['function'].'()'
+                : (
+                    isset($record->context['function'])
+                        ? $record->context['function'].'()'
+                        : ''
+                ),
+            $record->extra['ip']
+                ?? $record->context['ip']
+                ?? '',
+            $record->extra['line']
+                ?? $record->context['line']
+                ?? '',
+            $message,
+        ]).PHP_EOL;
     }
 
+    #[\Override]
     public function formatBatch(array $records): string
     {
         return implode(

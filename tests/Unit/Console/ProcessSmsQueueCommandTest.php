@@ -1,9 +1,8 @@
 <?php
 
-
 use App\Contracts\Sms\SmsProcessingServiceInterface;
 
-it('executes the sms queue processor command', function () {
+it('executes the sms queue processor command', function (): void {
     $service = Mockery::mock(SmsProcessingServiceInterface::class);
 
     $service

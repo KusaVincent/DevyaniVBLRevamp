@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App\Services\Confirmation;
 
 use App\Contracts\Confirmation\AuthenticationServiceInterface;
-use App\Models\BusinessProfile;
 use App\Data\ConfirmationRequestData;
 use App\Exceptions\Confirmation\AuthenticationFailedException;
+use App\Models\BusinessProfile;
 
 final readonly class AuthenticationService implements AuthenticationServiceInterface
 {
@@ -17,7 +17,7 @@ final readonly class AuthenticationService implements AuthenticationServiceInter
     public function authenticate(ConfirmationRequestData $request, BusinessProfile $profile): void
     {
         if (! $profile->credentialsMatch($request->username, $request->password)) {
-            throw new AuthenticationFailedException();
+            throw new AuthenticationFailedException;
         }
     }
 }

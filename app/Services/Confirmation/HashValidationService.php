@@ -22,7 +22,7 @@ final readonly class HashValidationService implements HashValidationServiceInter
      */
     public function validate(ConfirmationRequestData $request, BusinessProfile $profile): void
     {
-        $generatedHash = $this->generator->generate($request,$profile);
+        $generatedHash = $this->generator->generate($request, $profile);
 
         if ($generatedHash === $request->hash) {
             return;
@@ -37,6 +37,6 @@ final readonly class HashValidationService implements HashValidationServiceInter
             ],
         );
 
-        throw new HashValidationException();
+        throw new HashValidationException;
     }
 }

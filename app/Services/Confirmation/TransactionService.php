@@ -7,8 +7,8 @@ namespace App\Services\Confirmation;
 use App\Contracts\Confirmation\TransactionServiceInterface;
 use App\Data\ConfirmationRequestData;
 use App\Enum\ProcessSMSTxn;
-use App\Models\ConfirmationTransaction;
 use App\Exceptions\Confirmation\DuplicateTransactionException;
+use App\Models\ConfirmationTransaction;
 
 final readonly class TransactionService implements TransactionServiceInterface
 {
@@ -17,8 +17,7 @@ final readonly class TransactionService implements TransactionServiceInterface
      */
     public function ensureNotDuplicate(ConfirmationRequestData $request): void
     {
-        if (ConfirmationTransaction::where('transaction_id', $request->transactionId)->exists())
-        {
+        if (ConfirmationTransaction::where('transaction_id', $request->transactionId)->exists()) {
             throw new DuplicateTransactionException($request->transactionId);
         }
     }

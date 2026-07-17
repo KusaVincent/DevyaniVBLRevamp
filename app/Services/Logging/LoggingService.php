@@ -34,7 +34,7 @@ final class LoggingService implements LoggingServiceInterface
         $this->write('warning', $message, $context);
     }
 
-    private function write(string $level, string $message, array $context = [],): void
+    private function write(string $level, string $message, array $context = []): void
     {
         $uuid = 'console';
 
@@ -42,19 +42,19 @@ final class LoggingService implements LoggingServiceInterface
 
         $caller = $trace[2] ?? [];
 
-        if (!app()->runningInConsole()) {
-            $uuid = str_replace('-','', request()?->attributes->get('request_uuid'));
+        if (! app()->runningInConsole()) {
+            $uuid = str_replace('-', '', request()?->attributes->get('request_uuid'));
         }
 
         $context += [
-            'uuid'     => $uuid,
-            'ip'       => request()?->ip(),
+            'uuid' => $uuid,
+            'ip' => request()?->ip(),
             'file' => $caller['file'] ?? null,
             'line' => $caller['line'] ?? null,
             'function' => $caller['function'] ?? null,
         ];
 
         Log::channel('confirmation')
-            ->{$level}($message,$context);
+            ->{$level}($message, $context);
     }
 }

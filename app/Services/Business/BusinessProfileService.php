@@ -15,14 +15,16 @@ final readonly class BusinessProfileService implements BusinessProfileServiceInt
     /**
      * @throws BusinessProfileNotFoundException
      */
-    public function find(ConfirmationRequestData $request): BusinessProfile {
+    public function find(ConfirmationRequestData $request): BusinessProfile
+    {
         return $this->findByShortCode($request->businessShortCode);
     }
 
     /**
      * @throws BusinessProfileNotFoundException
      */
-    public function findByShortCode(string $businessShortCode): BusinessProfile {
+    public function findByShortCode(string $businessShortCode): BusinessProfile
+    {
         $profile = BusinessProfile::query()
             ->where('business_short_code', $businessShortCode)
             ->where('active', BusinessProfileStatus::YES)

@@ -2,7 +2,7 @@
 
 use App\Contracts\Health\ConfirmationHealthServiceInterface;
 
-it('executes the confirmation health check command', function () {
+it('executes the confirmation health check command', function (): void {
     $service = Mockery::mock(ConfirmationHealthServiceInterface::class);
 
     $service

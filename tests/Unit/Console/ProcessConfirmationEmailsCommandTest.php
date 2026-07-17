@@ -2,7 +2,7 @@
 
 use App\Contracts\Email\EmailProcessingServiceInterface;
 
-it('executes the confirmation email processor command', function () {
+it('executes the confirmation email processor command', function (): void {
     $service = Mockery::mock(EmailProcessingServiceInterface::class);
 
     $service
