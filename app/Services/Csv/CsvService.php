@@ -9,6 +9,10 @@ use RuntimeException;
 
 final class CsvService
 {
+    /**
+     * @param list<string> $headers
+     * @param list<list<int|float|string|bool|null>> $rows
+     */
     public function write(string $path, array $rows, array $headers = []): void
     {
         if (blank($path)) {
@@ -38,6 +42,9 @@ final class CsvService
         }
     }
 
+    /**
+     * @return list<list<string>>
+     */
     public function read(string $path, bool $includeHeader = false): array
     {
         if (! File::exists($path)) {

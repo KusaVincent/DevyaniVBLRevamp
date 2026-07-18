@@ -138,7 +138,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\SmsQueue.php' => 'e84e59a1af6fbd3b902fb4873f205de19a6c04bad985cd3b33b2b90ee48c1fe6',
+      'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\SmsQueue.php' => 'bd0e264cabb2e520bae7f37ce8cebe5bdb1fe6063c4406390a0ac0f3769de549',
     ),
   ),
 ));

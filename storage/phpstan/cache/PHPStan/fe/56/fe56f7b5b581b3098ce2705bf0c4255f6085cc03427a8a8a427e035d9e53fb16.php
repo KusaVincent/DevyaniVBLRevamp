@@ -2,7 +2,7 @@
 
 // odsl-C:\Users\vinsc\Herd\devyanivbl\app\Contracts\Sms\CelcomSmsServiceInterface.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Contracts\Sms\CelcomSmsServiceInterface
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.3-8.5.8-bde9cc0d18bcc24887b0d3cd101fe3859ab316dafc0267d60814668f709512b9',
+   'variableKey' => 'v2-6.70.0.3-8.5.8-20dbd71db7b104c763219f0c4c7a7a7e674765c0c641b3215fa04f98853448aa',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 7,
-    'endLine' => 10,
+    'endLine' => 13,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => NULL,
@@ -69,8 +69,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 9,
-            'endLine' => 9,
+            'startLine' => 12,
+            'endLine' => 12,
             'startColumn' => 26,
             'endColumn' => 39,
             'parameterIndex' => 0,
@@ -95,8 +95,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 9,
-            'endLine' => 9,
+            'startLine' => 12,
+            'endLine' => 12,
             'startColumn' => 42,
             'endColumn' => 56,
             'parameterIndex' => 1,
@@ -116,9 +116,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'docComment' => NULL,
-        'startLine' => 9,
-        'endLine' => 9,
+        'docComment' => '/**
+ * @return array<string, mixed>
+ */',
+        'startLine' => 12,
+        'endLine' => 12,
         'startColumn' => 5,
         'endColumn' => 65,
         'couldThrow' => false,

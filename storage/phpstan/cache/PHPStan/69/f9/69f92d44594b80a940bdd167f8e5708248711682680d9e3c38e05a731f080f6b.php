@@ -2,7 +2,7 @@
 
 // odsl-C:\Users\vinsc\Herd\devyanivbl\app\Logging\CustomizeConfirmationLogger.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Logging\CustomizeConfirmationLogger
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.3-8.5.8-9e0420ed07e811055165faa365172012cc0568a16ce4d115d6bf47f8d9d6a3d7',
+   'variableKey' => 'v2-6.70.0.3-8.5.8-37b6761f093dc9caa901982bf6f9372d2318307d83ebf2cd2c84dcb7a4281b29',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 9,
-    'endLine' => 17,
+    'endLine' => 18,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => NULL,
@@ -92,7 +92,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         ),
         'docComment' => NULL,
         'startLine' => 11,
-        'endLine' => 16,
+        'endLine' => 17,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

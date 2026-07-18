@@ -2,7 +2,7 @@
 
 // odsl-C:\Users\vinsc\Herd\devyanivbl\app\Models\CustomerReference.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Models\CustomerReference
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.3-8.5.8-c058f8c56b63bf003af752e71f1f09290e0f6c1a4ed967108ad27f0fc7931ce0',
+   'variableKey' => 'v2-6.70.0.3-8.5.8-06df90fb09c7e03f7d10b06d79ffcd11ff497483d7f7045622735243afe17330',
    'data' => 
   array (
     'locatedSource' => 
@@ -32,7 +32,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 16,
-    'endLine' => 31,
+    'endLine' => 34,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Database\\Eloquent\\Model',
@@ -112,9 +112,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'docComment' => NULL,
-        'startLine' => 25,
-        'endLine' => 30,
+        'docComment' => '/**
+ * @return Attribute<never, string>
+ */',
+        'startLine' => 28,
+        'endLine' => 33,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

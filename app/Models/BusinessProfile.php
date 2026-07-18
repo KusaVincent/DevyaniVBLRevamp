@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Hash;
  * @property string $secret_key
  * @property mixed $credit_account
  *
- * @method static updateOrCreate(string[] $array, array $array1)
+ * @method static static updateOrCreate(array<string, mixed> $attributes, array<string, mixed> $values)
  */
 class BusinessProfile extends Model
 {

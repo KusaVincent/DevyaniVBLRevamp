@@ -13,7 +13,7 @@ class ConfirmationException extends Exception
         return 1;
     }
 
-    public function resultDescription($message): string
+    public function resultDescription(string $message): string
     {
         return app()->isProduction() ? $message : $this->getMessage();
     }

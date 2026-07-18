@@ -14,6 +14,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         array (
           'status' => 'App\\Enum\\Status',
           'model' => 'Illuminate\\Database\\Eloquent\\Model',
+          'carbon' => 'Illuminate\\Support\\Carbon',
         ),
          'className' => 'App\\Models\\EmailQueue',
          'functionName' => NULL,
@@ -38,6 +39,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         array (
           'status' => 'App\\Enum\\Status',
           'model' => 'Illuminate\\Database\\Eloquent\\Model',
+          'carbon' => 'Illuminate\\Support\\Carbon',
         ),
          'className' => 'App\\Models\\EmailQueue',
          'functionName' => 'casts',
@@ -51,6 +53,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           array (
             'status' => 'App\\Enum\\Status',
             'model' => 'Illuminate\\Database\\Eloquent\\Model',
+            'carbon' => 'Illuminate\\Support\\Carbon',
           ),
            'className' => 'App\\Models\\EmailQueue',
            'functionName' => NULL,
@@ -81,7 +84,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\EmailQueue.php' => 'f62fb71469f6b32d3716bfce97521bc591c132ca430256d1218d43e194c65c9d',
+      'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\EmailQueue.php' => '3fbd749f04da3ae462707bf225e2b31c213ff31eca31bb54fdaf44017703c9d6',
     ),
   ),
 ));

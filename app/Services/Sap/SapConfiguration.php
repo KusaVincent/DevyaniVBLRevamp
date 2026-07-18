@@ -20,6 +20,9 @@ final readonly class SapConfiguration
         return $this->profile->sap_file;
     }
 
+    /**
+     * @return list<string>
+     */
     public function headers(): array
     {
         return collect($this->profile->sap_headers)
@@ -27,6 +30,9 @@ final readonly class SapConfiguration
             ->all();
     }
 
+    /**
+     * @return list<string>
+     */
     public function row(ConfirmationTransaction $transaction): array
     {
         return collect($this->profile->sap_headers)

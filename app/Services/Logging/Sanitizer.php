@@ -6,11 +6,16 @@ namespace App\Services\Logging;
 
 use App\Data\ConfirmationRequestData;
 
+/**
+ * @phpstan-import-type ConfirmationPayload from ConfirmationRequestData
+ */
 final class Sanitizer
 {
-    public static function payload(
-        ConfirmationRequestData $payload,
-    ): array {
+    /**
+     * @return array<string, mixed>
+     */
+    public static function payload(ConfirmationRequestData $payload): array
+    {
         $data = $payload->toArray();
 
         foreach (['Username', 'Password', 'Hash'] as $field) {

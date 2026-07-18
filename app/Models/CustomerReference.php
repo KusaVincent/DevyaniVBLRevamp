@@ -22,6 +22,9 @@ class CustomerReference extends Model
         'name',
     ];
 
+    /**
+     * @return Attribute<never, string>
+     */
     protected function name(): Attribute
     {
         return Attribute::make(

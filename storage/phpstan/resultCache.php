@@ -1,7 +1,7 @@
 <?php declare(strict_types = 1);
 
 return [
-	'lastFullAnalysisTime' => 1784311607,
+	'lastFullAnalysisTime' => 1784401056,
 	'meta' => array (
   'cacheVersion' => 'v13-packageDependencies',
   'phpstanVersion' => '2.2.5',
@@ -10,11 +10,10 @@ return [
   array (
   ),
   'phpVersion' => 80508,
-  'projectConfig' => '{conditionalTags: {Larastan\\Larastan\\Rules\\NoEnvCallsOutsideOfConfigRule: {phpstan.rules.rule: %noEnvCallsOutsideOfConfig%}, Larastan\\Larastan\\Rules\\NoModelMakeRule: {phpstan.rules.rule: %noModelMake%}, Larastan\\Larastan\\Rules\\NoUnnecessaryCollectionCallRule: {phpstan.rules.rule: %noUnnecessaryCollectionCall%}, Larastan\\Larastan\\Rules\\NoUnnecessaryEnumerableToArrayCallsRule: {phpstan.rules.rule: %noUnnecessaryEnumerableToArrayCalls%}, Larastan\\Larastan\\Rules\\OctaneCompatibilityRule: {phpstan.rules.rule: %checkOctaneCompatibility%}, Larastan\\Larastan\\Rules\\UnusedViewsRule: {phpstan.rules.rule: %checkUnusedViews%}, Larastan\\Larastan\\Rules\\NoMissingTranslationsRule: {phpstan.rules.rule: %checkMissingTranslations%}, Larastan\\Larastan\\Rules\\ModelAppendsRule: {phpstan.rules.rule: %checkModelAppends%}, Larastan\\Larastan\\Rules\\NoPublicModelScopeAndAccessorRule: {phpstan.rules.rule: %checkModelMethodVisibility%}, Larastan\\Larastan\\Rules\\NoAuthFacadeInRequestScopeRule: {phpstan.rules.rule: %checkAuthCallsWhenInRequestScope%}, Larastan\\Larastan\\Rules\\NoAuthHelperInRequestScopeRule: {phpstan.rules.rule: %checkAuthCallsWhenInRequestScope%}, Larastan\\Larastan\\ReturnTypes\\Helpers\\EnvFunctionDynamicFunctionReturnTypeExtension: {phpstan.broker.dynamicFunctionReturnTypeExtension: %generalizeEnvReturnType%}, Larastan\\Larastan\\ReturnTypes\\Helpers\\ConfigFunctionDynamicFunctionReturnTypeExtension: {phpstan.broker.dynamicFunctionReturnTypeExtension: %checkConfigTypes%}, Larastan\\Larastan\\ReturnTypes\\ConfigRepositoryDynamicMethodReturnTypeExtension: {phpstan.broker.dynamicMethodReturnTypeExtension: %checkConfigTypes%}, Larastan\\Larastan\\ReturnTypes\\ConfigFacadeCollectionDynamicStaticMethodReturnTypeExtension: {phpstan.broker.dynamicStaticMethodReturnTypeExtension: %checkConfigTypes%}, Larastan\\Larastan\\Rules\\ConfigCollectionRule: {phpstan.rules.rule: %checkConfigTypes%}}, parameters: {universalObjectCratesClasses: [Illuminate\\Http\\Request, Illuminate\\Support\\Optional], earlyTerminatingFunctionCalls: [abort, dd], mixinExcludeClasses: [Eloquent], bootstrapFiles: [bootstrap.php], checkOctaneCompatibility: false, noEnvCallsOutsideOfConfig: true, noModelMake: true, noUnnecessaryCollectionCall: true, noUnnecessaryCollectionCallOnly: [], noUnnecessaryCollectionCallExcept: [], noUnnecessaryEnumerableToArrayCalls: false, squashedMigrationsPath: [], databaseMigrationsPath: [], disableMigrationScan: false, disableSchemaScan: false, configDirectories: [], viewDirectories: [], translationDirectories: [], checkModelProperties: false, checkUnusedViews: false, checkMissingTranslations: false, checkModelAppends: true, checkModelMethodVisibility: false, generalizeEnvReturnType: false, checkConfigTypes: false, checkAuthCallsWhenInRequestScope: false, parseModelCastsMethod: false, enableMigrationCache: false, paths: [C:\\Users\\vinsc\\Herd\\devyanivbl\\app, C:\\Users\\vinsc\\Herd\\devyanivbl\\tests], level: 1, tmpDir: C:\\Users\\vinsc\\Herd\\devyanivbl\\storage\\phpstan, excludePaths: {analyseAndScan: [vendor, storage], analyse: []}}, rules: [Larastan\\Larastan\\Rules\\UselessConstructs\\NoUselessWithFunctionCallsRule, Larastan\\Larastan\\Rules\\UselessConstructs\\NoUselessValueFunctionCallsRule, Larastan\\Larastan\\Rules\\DeferrableServiceProviderMissingProvidesRule, Larastan\\Larastan\\Rules\\ConsoleCommand\\UndefinedArgumentOrOptionRule], services: {{class: Larastan\\Larastan\\Methods\\RelationForwardsCallsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\ModelForwardsCallsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\EloquentBuilderForwardsCallsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\HigherOrderTapProxyExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\HigherOrderCollectionProxyExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\StorageMethodsClassReflectionExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\ContractsMethodsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\FacadesMethodsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\ManagersMethodsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\AuthsMethodsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\ModelFactoryMethodsClassReflectionExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\RedirectResponseMethodsClassReflectionExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\MacroMethodsClassReflectionExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\ViewWithMethodsClassReflectionExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Properties\\ModelAccessorExtension, tags: [phpstan.broker.propertiesClassReflectionExtension]}, {class: Larastan\\Larastan\\Properties\\ModelPropertyExtension, tags: [phpstan.broker.propertiesClassReflectionExtension]}, {class: Larastan\\Larastan\\Properties\\HigherOrderCollectionProxyPropertyExtension, tags: [phpstan.broker.propertiesClassReflectionExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\HigherOrderTapProxyExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ContainerArrayAccessDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {className: Illuminate\\Contracts\\Container\\Container}}, {class: Larastan\\Larastan\\ReturnTypes\\ContainerArrayAccessDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {className: Illuminate\\Container\\Container}}, {class: Larastan\\Larastan\\ReturnTypes\\ContainerArrayAccessDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {className: Illuminate\\Foundation\\Application}}, {class: Larastan\\Larastan\\ReturnTypes\\ContainerArrayAccessDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {className: Illuminate\\Contracts\\Foundation\\Application}}, {class: Larastan\\Larastan\\Properties\\ModelRelationsExtension, tags: [phpstan.broker.propertiesClassReflectionExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ModelOnlyDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ModelFactoryDynamicStaticMethodReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ModelDynamicStaticMethodReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\AppMakeDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\AuthExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\GuardDynamicStaticMethodReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\AuthManagerExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\DateExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\GuardExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\RequestFileExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\RequestRouteExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\RequestUserExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\EloquentBuilderExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\RelationCollectionExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\TestCaseExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\Support\\CollectionHelper}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\AuthExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\CollectExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\NowAndTodayExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\ResponseExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\ValidatorExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\LiteralExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\CollectionFilterRejectDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\CollectionWhereNotNullDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\NewModelQueryDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\FactoryDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\Types\\AbortIfFunctionTypeSpecifyingExtension, tags: [phpstan.typeSpecifier.functionTypeSpecifyingExtension], arguments: {methodName: abort, negate: false}}, {class: Larastan\\Larastan\\Types\\AbortIfFunctionTypeSpecifyingExtension, tags: [phpstan.typeSpecifier.functionTypeSpecifyingExtension], arguments: {methodName: abort, negate: true}}, {class: Larastan\\Larastan\\Types\\AbortIfFunctionTypeSpecifyingExtension, tags: [phpstan.typeSpecifier.functionTypeSpecifyingExtension], arguments: {methodName: throw, negate: false}}, {class: Larastan\\Larastan\\Types\\AbortIfFunctionTypeSpecifyingExtension, tags: [phpstan.typeSpecifier.functionTypeSpecifyingExtension], arguments: {methodName: throw, negate: true}}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\AppExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\ValueExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\StrExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\TapExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\StorageDynamicStaticMethodReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\Types\\GenericEloquentCollectionTypeNodeResolverExtension, tags: [phpstan.phpDoc.typeNodeResolverExtension]}, {class: Larastan\\Larastan\\Types\\ViewStringTypeNodeResolverExtension, tags: [phpstan.phpDoc.typeNodeResolverExtension]}, {class: Larastan\\Larastan\\Rules\\OctaneCompatibilityRule}, {class: Larastan\\Larastan\\Rules\\NoEnvCallsOutsideOfConfigRule, arguments: {configDirectories: %configDirectories%}}, {class: Larastan\\Larastan\\Rules\\NoModelMakeRule}, {class: Larastan\\Larastan\\Rules\\NoUnnecessaryCollectionCallRule, arguments: {onlyMethods: %noUnnecessaryCollectionCallOnly%, excludeMethods: %noUnnecessaryCollectionCallExcept%}}, {class: Larastan\\Larastan\\Rules\\NoUnnecessaryEnumerableToArrayCallsRule}, {class: Larastan\\Larastan\\Rules\\ModelAppendsRule}, {class: Larastan\\Larastan\\Rules\\NoPublicModelScopeAndAccessorRule}, {class: Larastan\\Larastan\\Types\\GenericEloquentBuilderTypeNodeResolverExtension, tags: [phpstan.phpDoc.typeNodeResolverExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\AppEnvironmentReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {class: Illuminate\\Foundation\\Application}}, {class: Larastan\\Larastan\\ReturnTypes\\AppEnvironmentReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {class: Illuminate\\Contracts\\Foundation\\Application}}, {class: Larastan\\Larastan\\ReturnTypes\\AppFacadeEnvironmentReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\Types\\ModelProperty\\ModelPropertyTypeNodeResolverExtension, tags: [phpstan.phpDoc.typeNodeResolverExtension], arguments: {active: %checkModelProperties%}}, {class: Larastan\\Larastan\\Types\\CollectionOf\\CollectionOfTypeNodeResolverExtension, tags: [phpstan.phpDoc.typeNodeResolverExtension]}, {class: Larastan\\Larastan\\Properties\\MigrationHelper, arguments: {databaseMigrationPath: %databaseMigrationsPath%, disableMigrationScan: %disableMigrationScan%, parser: @migrationsParser, reflectionProvider: @reflectionProvider}}, iamcalSqlParser: {class: Larastan\\Larastan\\SQL\\IamcalSqlParser, autowired: false}, sqlParserFactory: {class: Larastan\\Larastan\\SQL\\SqlParserFactory, arguments: {iamcalSqlParser: @iamcalSqlParser}}, sqlParser: {type: Larastan\\Larastan\\SQL\\SqlParser, factory: [@sqlParserFactory, create]}, {class: Larastan\\Larastan\\Properties\\SquashedMigrationHelper, arguments: {schemaPaths: %squashedMigrationsPath%, disableSchemaScan: %disableSchemaScan%}}, {class: Larastan\\Larastan\\Properties\\ModelCastHelper, arguments: {parser: @currentPhpVersionSimpleDirectParser, parseModelCastsMethod: %parseModelCastsMethod%}}, {class: Larastan\\Larastan\\Properties\\MigrationCache, arguments: {cacheDirectory: %tmpDir%, enabled: %enableMigrationCache%}}, {class: Larastan\\Larastan\\Properties\\ModelPropertyHelper}, {class: Larastan\\Larastan\\Rules\\ModelRuleHelper}, {class: Larastan\\Larastan\\Methods\\BuilderHelper, arguments: {checkProperties: %checkModelProperties%}}, {class: Larastan\\Larastan\\Rules\\RelationExistenceRule, tags: [phpstan.rules.rule]}, {class: Larastan\\Larastan\\Rules\\CheckDispatchArgumentTypesCompatibleWithClassConstructorRule, arguments: {dispatchableClass: Illuminate\\Foundation\\Bus\\Dispatchable}, tags: [phpstan.rules.rule]}, {class: Larastan\\Larastan\\Rules\\CheckDispatchArgumentTypesCompatibleWithClassConstructorRule, arguments: {dispatchableClass: Illuminate\\Foundation\\Events\\Dispatchable}, tags: [phpstan.rules.rule]}, {class: Larastan\\Larastan\\Properties\\Schema\\MySqlDataTypeToPhpTypeConverter}, {class: Larastan\\Larastan\\LarastanStubFilesExtension, tags: [phpstan.stubFilesExtension]}, {class: Larastan\\Larastan\\Rules\\UnusedViewsRule}, {class: Larastan\\Larastan\\Collectors\\UsedViewFunctionCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedEmailViewCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedViewMakeCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedViewFacadeMakeCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedRouteFacadeViewCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedViewInAnotherViewCollector}, {class: Larastan\\Larastan\\Support\\ViewFileHelper, arguments: {viewDirectories: %viewDirectories%}}, {class: Larastan\\Larastan\\Support\\ViewParser, arguments: {parser: @currentPhpVersionSimpleDirectParser}}, {class: Larastan\\Larastan\\Rules\\NoMissingTranslationsRule, arguments: {translationDirectories: %translationDirectories%}}, {class: Larastan\\Larastan\\Collectors\\UsedTranslationFunctionCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedTranslationTranslatorCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedTranslationFacadeCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedTranslationViewCollector}, {class: Larastan\\Larastan\\ReturnTypes\\ApplicationMakeDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ContainerMakeDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ConsoleCommand\\ArgumentDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ConsoleCommand\\HasArgumentDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ConsoleCommand\\OptionDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ConsoleCommand\\HasOptionDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\TranslatorGetReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\LangGetReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\TransHelperReturnTypeExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\DoubleUnderscoreHelperReturnTypeExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\AppMakeHelper}, {class: Larastan\\Larastan\\Internal\\ConsoleApplicationResolver}, {class: Larastan\\Larastan\\Internal\\ConsoleApplicationHelper}, {class: Larastan\\Larastan\\Support\\HigherOrderCollectionProxyHelper}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\ConfigFunctionDynamicFunctionReturnTypeExtension}, {class: Larastan\\Larastan\\ReturnTypes\\ConfigRepositoryDynamicMethodReturnTypeExtension}, {class: Larastan\\Larastan\\ReturnTypes\\ConfigFacadeCollectionDynamicStaticMethodReturnTypeExtension}, {class: Larastan\\Larastan\\Support\\ConfigParser, arguments: {parser: @currentPhpVersionSimpleDirectParser, configPaths: %configDirectories%, treatPhpDocTypesAsCertain: %treatPhpDocTypesAsCertain%}}, {class: Larastan\\Larastan\\Internal\\ConfigHelper}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\EnvFunctionDynamicFunctionReturnTypeExtension}, {class: Larastan\\Larastan\\ReturnTypes\\FormRequestSafeDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\EloquentCollectionMapDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\Rules\\NoAuthFacadeInRequestScopeRule}, {class: Larastan\\Larastan\\Rules\\NoAuthHelperInRequestScopeRule}, {class: Larastan\\Larastan\\Rules\\ConfigCollectionRule}, {class: Illuminate\\Filesystem\\Filesystem, autowired: self}, migrationsParser: {class: PHPStan\\Parser\\CachedParser, arguments: {originalParser: @currentPhpVersionSimpleDirectParser, cachedNodesByStringCountMax: %cache.nodesByStringCountMax%}, autowired: false}}}',
+  'projectConfig' => '{conditionalTags: {Larastan\\Larastan\\Rules\\NoEnvCallsOutsideOfConfigRule: {phpstan.rules.rule: %noEnvCallsOutsideOfConfig%}, Larastan\\Larastan\\Rules\\NoModelMakeRule: {phpstan.rules.rule: %noModelMake%}, Larastan\\Larastan\\Rules\\NoUnnecessaryCollectionCallRule: {phpstan.rules.rule: %noUnnecessaryCollectionCall%}, Larastan\\Larastan\\Rules\\NoUnnecessaryEnumerableToArrayCallsRule: {phpstan.rules.rule: %noUnnecessaryEnumerableToArrayCalls%}, Larastan\\Larastan\\Rules\\OctaneCompatibilityRule: {phpstan.rules.rule: %checkOctaneCompatibility%}, Larastan\\Larastan\\Rules\\UnusedViewsRule: {phpstan.rules.rule: %checkUnusedViews%}, Larastan\\Larastan\\Rules\\NoMissingTranslationsRule: {phpstan.rules.rule: %checkMissingTranslations%}, Larastan\\Larastan\\Rules\\ModelAppendsRule: {phpstan.rules.rule: %checkModelAppends%}, Larastan\\Larastan\\Rules\\NoPublicModelScopeAndAccessorRule: {phpstan.rules.rule: %checkModelMethodVisibility%}, Larastan\\Larastan\\Rules\\NoAuthFacadeInRequestScopeRule: {phpstan.rules.rule: %checkAuthCallsWhenInRequestScope%}, Larastan\\Larastan\\Rules\\NoAuthHelperInRequestScopeRule: {phpstan.rules.rule: %checkAuthCallsWhenInRequestScope%}, Larastan\\Larastan\\ReturnTypes\\Helpers\\EnvFunctionDynamicFunctionReturnTypeExtension: {phpstan.broker.dynamicFunctionReturnTypeExtension: %generalizeEnvReturnType%}, Larastan\\Larastan\\ReturnTypes\\Helpers\\ConfigFunctionDynamicFunctionReturnTypeExtension: {phpstan.broker.dynamicFunctionReturnTypeExtension: %checkConfigTypes%}, Larastan\\Larastan\\ReturnTypes\\ConfigRepositoryDynamicMethodReturnTypeExtension: {phpstan.broker.dynamicMethodReturnTypeExtension: %checkConfigTypes%}, Larastan\\Larastan\\ReturnTypes\\ConfigFacadeCollectionDynamicStaticMethodReturnTypeExtension: {phpstan.broker.dynamicStaticMethodReturnTypeExtension: %checkConfigTypes%}, Larastan\\Larastan\\Rules\\ConfigCollectionRule: {phpstan.rules.rule: %checkConfigTypes%}}, parameters: {universalObjectCratesClasses: [Illuminate\\Http\\Request, Illuminate\\Support\\Optional], earlyTerminatingFunctionCalls: [abort, dd], mixinExcludeClasses: [Eloquent], bootstrapFiles: [bootstrap.php], checkOctaneCompatibility: false, noEnvCallsOutsideOfConfig: true, noModelMake: true, noUnnecessaryCollectionCall: true, noUnnecessaryCollectionCallOnly: [], noUnnecessaryCollectionCallExcept: [], noUnnecessaryEnumerableToArrayCalls: false, squashedMigrationsPath: [], databaseMigrationsPath: [], disableMigrationScan: false, disableSchemaScan: false, configDirectories: [], viewDirectories: [], translationDirectories: [], checkModelProperties: false, checkUnusedViews: false, checkMissingTranslations: false, checkModelAppends: true, checkModelMethodVisibility: false, generalizeEnvReturnType: false, checkConfigTypes: false, checkAuthCallsWhenInRequestScope: false, parseModelCastsMethod: false, enableMigrationCache: false, paths: [C:\\Users\\vinsc\\Herd\\devyanivbl\\app], level: 5, tmpDir: C:\\Users\\vinsc\\Herd\\devyanivbl\\storage\\phpstan, excludePaths: {analyseAndScan: [vendor, storage], analyse: []}}, rules: [Larastan\\Larastan\\Rules\\UselessConstructs\\NoUselessWithFunctionCallsRule, Larastan\\Larastan\\Rules\\UselessConstructs\\NoUselessValueFunctionCallsRule, Larastan\\Larastan\\Rules\\DeferrableServiceProviderMissingProvidesRule, Larastan\\Larastan\\Rules\\ConsoleCommand\\UndefinedArgumentOrOptionRule], services: {{class: Larastan\\Larastan\\Methods\\RelationForwardsCallsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\ModelForwardsCallsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\EloquentBuilderForwardsCallsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\HigherOrderTapProxyExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\HigherOrderCollectionProxyExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\StorageMethodsClassReflectionExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\ContractsMethodsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\FacadesMethodsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\ManagersMethodsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\AuthsMethodsExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\ModelFactoryMethodsClassReflectionExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\RedirectResponseMethodsClassReflectionExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\MacroMethodsClassReflectionExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Methods\\ViewWithMethodsClassReflectionExtension, tags: [phpstan.broker.methodsClassReflectionExtension]}, {class: Larastan\\Larastan\\Properties\\ModelAccessorExtension, tags: [phpstan.broker.propertiesClassReflectionExtension]}, {class: Larastan\\Larastan\\Properties\\ModelPropertyExtension, tags: [phpstan.broker.propertiesClassReflectionExtension]}, {class: Larastan\\Larastan\\Properties\\HigherOrderCollectionProxyPropertyExtension, tags: [phpstan.broker.propertiesClassReflectionExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\HigherOrderTapProxyExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ContainerArrayAccessDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {className: Illuminate\\Contracts\\Container\\Container}}, {class: Larastan\\Larastan\\ReturnTypes\\ContainerArrayAccessDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {className: Illuminate\\Container\\Container}}, {class: Larastan\\Larastan\\ReturnTypes\\ContainerArrayAccessDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {className: Illuminate\\Foundation\\Application}}, {class: Larastan\\Larastan\\ReturnTypes\\ContainerArrayAccessDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {className: Illuminate\\Contracts\\Foundation\\Application}}, {class: Larastan\\Larastan\\Properties\\ModelRelationsExtension, tags: [phpstan.broker.propertiesClassReflectionExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ModelOnlyDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ModelFactoryDynamicStaticMethodReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ModelDynamicStaticMethodReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\AppMakeDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\AuthExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\GuardDynamicStaticMethodReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\AuthManagerExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\DateExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\GuardExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\RequestFileExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\RequestRouteExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\RequestUserExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\EloquentBuilderExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\RelationCollectionExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\TestCaseExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\Support\\CollectionHelper}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\AuthExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\CollectExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\NowAndTodayExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\ResponseExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\ValidatorExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\LiteralExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\CollectionFilterRejectDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\CollectionWhereNotNullDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\NewModelQueryDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\FactoryDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\Types\\AbortIfFunctionTypeSpecifyingExtension, tags: [phpstan.typeSpecifier.functionTypeSpecifyingExtension], arguments: {methodName: abort, negate: false}}, {class: Larastan\\Larastan\\Types\\AbortIfFunctionTypeSpecifyingExtension, tags: [phpstan.typeSpecifier.functionTypeSpecifyingExtension], arguments: {methodName: abort, negate: true}}, {class: Larastan\\Larastan\\Types\\AbortIfFunctionTypeSpecifyingExtension, tags: [phpstan.typeSpecifier.functionTypeSpecifyingExtension], arguments: {methodName: throw, negate: false}}, {class: Larastan\\Larastan\\Types\\AbortIfFunctionTypeSpecifyingExtension, tags: [phpstan.typeSpecifier.functionTypeSpecifyingExtension], arguments: {methodName: throw, negate: true}}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\AppExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\ValueExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\StrExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\TapExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\StorageDynamicStaticMethodReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\Types\\GenericEloquentCollectionTypeNodeResolverExtension, tags: [phpstan.phpDoc.typeNodeResolverExtension]}, {class: Larastan\\Larastan\\Types\\ViewStringTypeNodeResolverExtension, tags: [phpstan.phpDoc.typeNodeResolverExtension]}, {class: Larastan\\Larastan\\Rules\\OctaneCompatibilityRule}, {class: Larastan\\Larastan\\Rules\\NoEnvCallsOutsideOfConfigRule, arguments: {configDirectories: %configDirectories%}}, {class: Larastan\\Larastan\\Rules\\NoModelMakeRule}, {class: Larastan\\Larastan\\Rules\\NoUnnecessaryCollectionCallRule, arguments: {onlyMethods: %noUnnecessaryCollectionCallOnly%, excludeMethods: %noUnnecessaryCollectionCallExcept%}}, {class: Larastan\\Larastan\\Rules\\NoUnnecessaryEnumerableToArrayCallsRule}, {class: Larastan\\Larastan\\Rules\\ModelAppendsRule}, {class: Larastan\\Larastan\\Rules\\NoPublicModelScopeAndAccessorRule}, {class: Larastan\\Larastan\\Types\\GenericEloquentBuilderTypeNodeResolverExtension, tags: [phpstan.phpDoc.typeNodeResolverExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\AppEnvironmentReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {class: Illuminate\\Foundation\\Application}}, {class: Larastan\\Larastan\\ReturnTypes\\AppEnvironmentReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension], arguments: {class: Illuminate\\Contracts\\Foundation\\Application}}, {class: Larastan\\Larastan\\ReturnTypes\\AppFacadeEnvironmentReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\Types\\ModelProperty\\ModelPropertyTypeNodeResolverExtension, tags: [phpstan.phpDoc.typeNodeResolverExtension], arguments: {active: %checkModelProperties%}}, {class: Larastan\\Larastan\\Types\\CollectionOf\\CollectionOfTypeNodeResolverExtension, tags: [phpstan.phpDoc.typeNodeResolverExtension]}, {class: Larastan\\Larastan\\Properties\\MigrationHelper, arguments: {databaseMigrationPath: %databaseMigrationsPath%, disableMigrationScan: %disableMigrationScan%, parser: @migrationsParser, reflectionProvider: @reflectionProvider}}, iamcalSqlParser: {class: Larastan\\Larastan\\SQL\\IamcalSqlParser, autowired: false}, sqlParserFactory: {class: Larastan\\Larastan\\SQL\\SqlParserFactory, arguments: {iamcalSqlParser: @iamcalSqlParser}}, sqlParser: {type: Larastan\\Larastan\\SQL\\SqlParser, factory: [@sqlParserFactory, create]}, {class: Larastan\\Larastan\\Properties\\SquashedMigrationHelper, arguments: {schemaPaths: %squashedMigrationsPath%, disableSchemaScan: %disableSchemaScan%}}, {class: Larastan\\Larastan\\Properties\\ModelCastHelper, arguments: {parser: @currentPhpVersionSimpleDirectParser, parseModelCastsMethod: %parseModelCastsMethod%}}, {class: Larastan\\Larastan\\Properties\\MigrationCache, arguments: {cacheDirectory: %tmpDir%, enabled: %enableMigrationCache%}}, {class: Larastan\\Larastan\\Properties\\ModelPropertyHelper}, {class: Larastan\\Larastan\\Rules\\ModelRuleHelper}, {class: Larastan\\Larastan\\Methods\\BuilderHelper, arguments: {checkProperties: %checkModelProperties%}}, {class: Larastan\\Larastan\\Rules\\RelationExistenceRule, tags: [phpstan.rules.rule]}, {class: Larastan\\Larastan\\Rules\\CheckDispatchArgumentTypesCompatibleWithClassConstructorRule, arguments: {dispatchableClass: Illuminate\\Foundation\\Bus\\Dispatchable}, tags: [phpstan.rules.rule]}, {class: Larastan\\Larastan\\Rules\\CheckDispatchArgumentTypesCompatibleWithClassConstructorRule, arguments: {dispatchableClass: Illuminate\\Foundation\\Events\\Dispatchable}, tags: [phpstan.rules.rule]}, {class: Larastan\\Larastan\\Properties\\Schema\\MySqlDataTypeToPhpTypeConverter}, {class: Larastan\\Larastan\\LarastanStubFilesExtension, tags: [phpstan.stubFilesExtension]}, {class: Larastan\\Larastan\\Rules\\UnusedViewsRule}, {class: Larastan\\Larastan\\Collectors\\UsedViewFunctionCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedEmailViewCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedViewMakeCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedViewFacadeMakeCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedRouteFacadeViewCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedViewInAnotherViewCollector}, {class: Larastan\\Larastan\\Support\\ViewFileHelper, arguments: {viewDirectories: %viewDirectories%}}, {class: Larastan\\Larastan\\Support\\ViewParser, arguments: {parser: @currentPhpVersionSimpleDirectParser}}, {class: Larastan\\Larastan\\Rules\\NoMissingTranslationsRule, arguments: {translationDirectories: %translationDirectories%}}, {class: Larastan\\Larastan\\Collectors\\UsedTranslationFunctionCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedTranslationTranslatorCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedTranslationFacadeCollector, tags: [phpstan.collector]}, {class: Larastan\\Larastan\\Collectors\\UsedTranslationViewCollector}, {class: Larastan\\Larastan\\ReturnTypes\\ApplicationMakeDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ContainerMakeDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ConsoleCommand\\ArgumentDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ConsoleCommand\\HasArgumentDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ConsoleCommand\\OptionDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\ConsoleCommand\\HasOptionDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\TranslatorGetReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\LangGetReturnTypeExtension, tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\TransHelperReturnTypeExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\DoubleUnderscoreHelperReturnTypeExtension, tags: [phpstan.broker.dynamicFunctionReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\AppMakeHelper}, {class: Larastan\\Larastan\\Internal\\ConsoleApplicationResolver}, {class: Larastan\\Larastan\\Internal\\ConsoleApplicationHelper}, {class: Larastan\\Larastan\\Support\\HigherOrderCollectionProxyHelper}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\ConfigFunctionDynamicFunctionReturnTypeExtension}, {class: Larastan\\Larastan\\ReturnTypes\\ConfigRepositoryDynamicMethodReturnTypeExtension}, {class: Larastan\\Larastan\\ReturnTypes\\ConfigFacadeCollectionDynamicStaticMethodReturnTypeExtension}, {class: Larastan\\Larastan\\Support\\ConfigParser, arguments: {parser: @currentPhpVersionSimpleDirectParser, configPaths: %configDirectories%, treatPhpDocTypesAsCertain: %treatPhpDocTypesAsCertain%}}, {class: Larastan\\Larastan\\Internal\\ConfigHelper}, {class: Larastan\\Larastan\\ReturnTypes\\Helpers\\EnvFunctionDynamicFunctionReturnTypeExtension}, {class: Larastan\\Larastan\\ReturnTypes\\FormRequestSafeDynamicMethodReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\ReturnTypes\\EloquentCollectionMapDynamicReturnTypeExtension, tags: [phpstan.broker.dynamicMethodReturnTypeExtension]}, {class: Larastan\\Larastan\\Rules\\NoAuthFacadeInRequestScopeRule}, {class: Larastan\\Larastan\\Rules\\NoAuthHelperInRequestScopeRule}, {class: Larastan\\Larastan\\Rules\\ConfigCollectionRule}, {class: Illuminate\\Filesystem\\Filesystem, autowired: self}, migrationsParser: {class: PHPStan\\Parser\\CachedParser, arguments: {originalParser: @currentPhpVersionSimpleDirectParser, cachedNodesByStringCountMax: %cache.nodesByStringCountMax%}, autowired: false}}}',
   'analysedPaths' => 
   array (
     0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app',
-    1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests',
   ),
   'scannedFiles' => 
   array (
@@ -2089,6057 +2088,810 @@ return [
   'stubFiles' => 
   array (
   ),
-  'level' => '1',
+  'level' => '5',
 ),
 	'projectExtensionFiles' => array (
 ),
 	'errorsCallback' => static function (): array { return array (
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined method Pest\\PendingCalls\\TestCall::postJson().',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-       'line' => 64,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 64,
-       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
-       'identifier' => 'method.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined method Pest\\PendingCalls\\TestCall::postJson().',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-       'line' => 87,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 86,
-       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
-       'identifier' => 'method.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined method Pest\\PendingCalls\\TestCall::postJson().',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-       'line' => 100,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 99,
-       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
-       'identifier' => 'method.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    3 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined method Pest\\PendingCalls\\TestCall::postJson().',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-       'line' => 113,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 112,
-       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
-       'identifier' => 'method.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    4 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined method Pest\\PendingCalls\\TestCall::postJson().',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-       'line' => 127,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 126,
-       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
-       'identifier' => 'method.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    5 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined method Pest\\PendingCalls\\TestCall::postJson().',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-       'line' => 138,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 138,
-       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
-       'identifier' => 'method.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    6 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined method Pest\\PendingCalls\\TestCall::postJson().',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-       'line' => 140,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 140,
-       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
-       'identifier' => 'method.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    7 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined method Pest\\PendingCalls\\TestCall::postJson().',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-       'line' => 150,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 150,
-       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
-       'identifier' => 'method.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    8 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined static method Illuminate\\Support\\Facades\\Log::shouldHaveReceived().',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-       'line' => 152,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 152,
-       'nodeType' => 'PhpParser\\Node\\Expr\\StaticCall',
-       'identifier' => 'staticMethod.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ArchiveLogsCommandTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$app.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ArchiveLogsCommandTest.php',
-       'line' => 12,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ArchiveLogsCommandTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 12,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined method Pest\\PendingCalls\\TestCall::artisan().',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ArchiveLogsCommandTest.php',
-       'line' => 18,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ArchiveLogsCommandTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 17,
-       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
-       'identifier' => 'method.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\CheckConfirmationHealthCommandTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$app.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\CheckConfirmationHealthCommandTest.php',
-       'line' => 12,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\CheckConfirmationHealthCommandTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 12,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined method Pest\\PendingCalls\\TestCall::artisan().',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\CheckConfirmationHealthCommandTest.php',
-       'line' => 18,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\CheckConfirmationHealthCommandTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 17,
-       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
-       'identifier' => 'method.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessConfirmationEmailsCommandTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$app.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessConfirmationEmailsCommandTest.php',
-       'line' => 12,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessConfirmationEmailsCommandTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 12,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined method Pest\\PendingCalls\\TestCall::artisan().',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessConfirmationEmailsCommandTest.php',
-       'line' => 18,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessConfirmationEmailsCommandTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 17,
-       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
-       'identifier' => 'method.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessSapTransactionsCommandTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$app.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessSapTransactionsCommandTest.php',
-       'line' => 12,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessSapTransactionsCommandTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 12,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined method Pest\\PendingCalls\\TestCall::artisan().',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessSapTransactionsCommandTest.php',
-       'line' => 18,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessSapTransactionsCommandTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 17,
-       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
-       'identifier' => 'method.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessSmsQueueCommandTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$app.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessSmsQueueCommandTest.php',
-       'line' => 12,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessSmsQueueCommandTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 12,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined method Pest\\PendingCalls\\TestCall::artisan().',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessSmsQueueCommandTest.php',
-       'line' => 18,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessSmsQueueCommandTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 17,
-       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
-       'identifier' => 'method.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-       'line' => 13,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 13,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$profile.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-       'line' => 15,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 15,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-       'line' => 41,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 41,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    3 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$profile.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-       'line' => 43,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 43,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    4 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-       'line' => 50,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 50,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    5 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$profile.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-       'line' => 52,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 52,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    6 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-       'line' => 57,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 57,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    7 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$profile.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-       'line' => 59,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 59,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    8 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-       'line' => 64,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 64,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    9 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$profile.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-       'line' => 66,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 66,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$email.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 14,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 14,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 16,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 16,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 18,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 18,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    3 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 28,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 28,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    4 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 53,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 53,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    5 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 58,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 58,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    6 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$email.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 63,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 63,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    7 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 66,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 66,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    8 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 69,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 69,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    9 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 84,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 84,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    10 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 89,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 89,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    11 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$email.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 98,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 98,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    12 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 101,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 101,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    13 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 104,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 104,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    14 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 121,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 121,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    15 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 126,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 126,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    16 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$email.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 131,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 131,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    17 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 134,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 134,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    18 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 137,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 137,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    19 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 151,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 151,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    20 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 155,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 155,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    21 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 161,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 161,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    22 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$email.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 166,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 166,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    23 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 174,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 174,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    24 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 188,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 188,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    25 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 192,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 192,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    26 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 196,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 196,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    27 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$email.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 201,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 201,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    28 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 210,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 210,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    29 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 222,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 222,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    30 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 226,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 226,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    31 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 230,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 230,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    32 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$email.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 235,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 235,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    33 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'line' => 243,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 243,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$profiles.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 24,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 24,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$authentication.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 26,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 26,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$hashValidation.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 28,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 28,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    3 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$transactions.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 30,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 30,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    4 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$sms.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 32,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 32,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    5 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 34,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 34,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    6 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 36,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 36,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    7 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$profiles.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 79,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 79,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    8 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$authentication.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 85,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 85,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    9 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$hashValidation.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 90,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 90,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    10 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 95,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 95,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    11 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$transactions.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 99,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 99,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    12 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$transactions.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 104,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 104,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    13 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$sms.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 109,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 109,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    14 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 114,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 114,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    15 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$profiles.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 124,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 124,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    16 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$authentication.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 130,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 130,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    17 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 136,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 136,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    18 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$transactions.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 141,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 141,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    19 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$sms.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 146,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 146,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    20 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 151,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 151,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    21 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$profiles.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 159,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 159,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    22 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$authentication.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 163,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 163,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    23 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$hashValidation.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 167,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 167,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    24 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 172,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 172,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    25 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$transactions.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 177,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 177,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    26 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$sms.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 182,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 182,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    27 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 187,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 187,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    28 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$profiles.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 195,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 195,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    29 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$authentication.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 199,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 199,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    30 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$hashValidation.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 202,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 202,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    31 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 205,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 205,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    32 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$transactions.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 208,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 208,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    33 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Class App\\Exceptions\\Confirmation\\DuplicateTransactionException constructor invoked with 2 parameters, 1 required.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 212,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 212,
-       'nodeType' => 'PhpParser\\Node\\Expr\\New_',
-       'identifier' => 'arguments.count',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    34 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 215,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 215,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    35 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$transactions.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 219,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 219,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    36 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$sms.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 222,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 222,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    37 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 225,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 225,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    38 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$profiles.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 235,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 235,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    39 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$authentication.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 239,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 239,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    40 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$hashValidation.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 242,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 242,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    41 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 245,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 245,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    42 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$transactions.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 248,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 248,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    43 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$transactions.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 251,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 251,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    44 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$sms.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 254,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 254,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    45 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 257,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 257,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    46 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$profiles.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 263,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 263,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    47 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined method Pest\\PendingCalls\\TestCall::expectException().',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 268,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 268,
-       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
-       'identifier' => 'method.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    48 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 270,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 270,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    49 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$profiles.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 280,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 280,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    50 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$authentication.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 284,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 284,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    51 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$hashValidation.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 287,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 287,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    52 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 290,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 290,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    53 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$transactions.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 293,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 293,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    54 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$transactions.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 296,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 296,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    55 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$sms.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 300,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 300,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    56 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'line' => 304,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 304,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 9,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 9,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$directory.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 11,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 11,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$file.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 15,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 15,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    3 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$file.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 21,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 21,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    4 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 25,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 25,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    5 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$file.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 26,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 26,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    6 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$file.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 33,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 33,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    7 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 37,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 37,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    8 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$file.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 38,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 38,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    9 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 45,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 45,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    10 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$file.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 46,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 46,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    11 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$file.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 53,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 53,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    12 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 62,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 62,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    13 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$file.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 63,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 63,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    14 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 70,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 70,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    15 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$file.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 71,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 71,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    16 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$file.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 77,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 77,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    17 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 77,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 77,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    18 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 86,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 86,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    19 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$file.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 87,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 87,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    20 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$file.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 96,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 96,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    21 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 96,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 96,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    22 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 104,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 104,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    23 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$file.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 105,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 105,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    24 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$file.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 113,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 113,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    25 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 113,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 113,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    26 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$directory.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 122,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 122,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    27 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 122,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 122,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    28 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'line' => 127,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 127,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined method Pest\\PendingCalls\\TestCall::freezeTime().',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 17,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 17,
-       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
-       'identifier' => 'method.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$mailer.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 20,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 20,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 22,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 22,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    3 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 24,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 24,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    4 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 26,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 26,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    5 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 56,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 56,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    6 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 60,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 60,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    7 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$mailer.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 66,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 66,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    8 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 77,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 77,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    9 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 86,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 86,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    10 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 124,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 124,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    11 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 128,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 128,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    12 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 132,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 132,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    13 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 138,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 138,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    14 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$mailer.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 141,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 141,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    15 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 146,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 146,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    16 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 192,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 192,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    17 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 196,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 196,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    18 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 200,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 200,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    19 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 206,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 206,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    20 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$mailer.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 209,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 209,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    21 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 214,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 214,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    22 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 243,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 243,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    23 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$mailer.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 247,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 247,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    24 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 251,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 251,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    25 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 255,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 255,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    26 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 259,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 259,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    27 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 279,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 279,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    28 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$mailer.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 283,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 283,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    29 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 287,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 287,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    30 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 291,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 291,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    31 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 295,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 295,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    32 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 316,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 316,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    33 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$mailer.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 320,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 320,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    34 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 324,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 324,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    35 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 328,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 328,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    36 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 332,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 332,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    37 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 356,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 356,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    38 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$mailer.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 361,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 361,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    39 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 365,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 365,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    40 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 370,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 370,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    41 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 375,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 375,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    42 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 407,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 407,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    43 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$mailer.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 412,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 412,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    44 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$mailer.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 425,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 425,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    45 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 429,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 429,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    46 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 434,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 434,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    47 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 439,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 439,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    48 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 443,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 443,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    49 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 456,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 456,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    50 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$mailer.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 460,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 460,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    51 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 464,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 464,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    52 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 468,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 468,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    53 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 472,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 472,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    54 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 480,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 480,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    55 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$mailer.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 486,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 486,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    56 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 489,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 489,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    57 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 492,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 492,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    58 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 496,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 496,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    59 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 506,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 506,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    60 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 522,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 522,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    61 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$mailer.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 527,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 527,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    62 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 531,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 531,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    63 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 536,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 536,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    64 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 541,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 541,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    65 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 567,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 567,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    66 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$mailer.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 572,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 572,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    67 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 576,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 576,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    68 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 581,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 581,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    69 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 586,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 586,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    70 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 599,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 599,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    71 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$mailer.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 604,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 604,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    72 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 608,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 608,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    73 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 617,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 617,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    74 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 622,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 622,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    75 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 627,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 627,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    76 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 632,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 632,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    77 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'line' => 643,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 643,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashGeneratorTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$generator.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashGeneratorTest.php',
-       'line' => 10,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashGeneratorTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 10,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$profile.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashGeneratorTest.php',
-       'line' => 12,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashGeneratorTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 12,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$generator.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashGeneratorTest.php',
-       'line' => 52,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashGeneratorTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 52,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    3 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$profile.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashGeneratorTest.php',
-       'line' => 54,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashGeneratorTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 54,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$generator.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-       'line' => 13,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 13,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-       'line' => 15,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 15,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-       'line' => 17,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 17,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    3 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$profile.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-       'line' => 22,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 22,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    4 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$generator.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-       'line' => 50,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 50,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    5 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$profile.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-       'line' => 50,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 50,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    6 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$profile.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-       'line' => 64,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 64,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    7 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-       'line' => 64,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 64,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    8 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-       'line' => 70,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 70,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    9 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$profile.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-       'line' => 72,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 72,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$directory.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'line' => 13,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 13,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'line' => 18,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 18,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$directory.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'line' => 24,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 24,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    3 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$directory.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'line' => 28,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 28,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    4 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'line' => 34,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 34,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    5 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$directory.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'line' => 44,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 44,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    6 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'line' => 50,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 50,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    7 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$directory.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'line' => 56,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 56,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    8 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'line' => 60,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 60,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    9 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$directory.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'line' => 66,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 66,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    10 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'line' => 75,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 75,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    11 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$directory.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'line' => 81,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 81,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    12 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'line' => 90,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 90,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    13 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$directory.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'line' => 97,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 97,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    14 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'line' => 104,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 104,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    15 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$directory.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'line' => 107,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 107,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 9,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 9,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$source.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 11,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 11,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 13,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 13,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    3 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$source.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 28,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 28,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    4 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$archive.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 29,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 29,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    5 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$source.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 34,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 34,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    6 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 38,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 38,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    7 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$source.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 50,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 50,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    8 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 54,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 54,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    9 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$source.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 63,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 63,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    10 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 67,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 67,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    11 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$source.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 76,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 76,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    12 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 80,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 80,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    13 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 82,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 82,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    14 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 92,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 92,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    15 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$source.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 93,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 93,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    16 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 102,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 102,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    17 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$source.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 103,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 103,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    18 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$source.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 113,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 113,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    19 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 117,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 117,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    20 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 119,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 119,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    21 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$source.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 127,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 127,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    22 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 131,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 131,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    23 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'line' => 133,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 133,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsMessageBuilderTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$builder.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsMessageBuilderTest.php',
-       'line' => 10,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsMessageBuilderTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 10,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$builder.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsMessageBuilderTest.php',
-       'line' => 26,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsMessageBuilderTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 26,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$builder.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsMessageBuilderTest.php',
-       'line' => 46,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsMessageBuilderTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 46,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    3 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$builder.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsMessageBuilderTest.php',
-       'line' => 65,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsMessageBuilderTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 65,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    4 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$builder.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsMessageBuilderTest.php',
-       'line' => 84,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsMessageBuilderTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 84,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$sms.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 20,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 20,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$builder.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 22,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 22,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 24,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 24,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    3 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 26,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 26,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    4 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$builder.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 51,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 51,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    5 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$sms.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 58,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 58,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    6 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 64,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 64,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    7 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 69,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 69,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    8 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$builder.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 92,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 92,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    9 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$sms.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 98,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 98,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    10 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 113,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 113,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    11 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 118,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 118,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    12 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 123,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 123,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    13 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$builder.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 153,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 153,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    14 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$sms.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 161,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 161,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    15 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 173,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 173,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    16 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 178,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 178,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    17 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 183,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 183,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    18 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$builder.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 204,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 204,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    19 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$sms.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 212,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 212,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    20 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 230,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 230,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    21 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 235,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 235,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    22 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 240,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 240,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    23 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$builder.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 268,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 268,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    24 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$sms.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 271,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 271,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    25 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 274,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 274,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    26 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 279,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 279,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    27 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$builder.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 299,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 299,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    28 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$sms.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 302,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 302,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    29 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 305,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 305,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    30 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 310,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 310,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    31 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$builder.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 330,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 330,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    32 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$sms.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 332,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 332,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    33 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 334,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 334,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    34 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 339,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 339,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    35 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$builder.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 359,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 359,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    36 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$sms.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 362,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 362,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    37 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 365,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 365,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    38 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 370,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 370,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    39 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$builder.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 401,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 401,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    40 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$sms.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 406,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 406,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    41 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 413,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 413,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    42 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 418,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 418,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    43 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$builder.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 461,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 461,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    44 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$sms.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 466,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 466,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    45 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$sms.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 478,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 478,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    46 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 484,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 484,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    47 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 489,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 489,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    48 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 494,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 494,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    49 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 499,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 499,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    50 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 504,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 504,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    51 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$builder.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 530,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 530,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    52 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$sms.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 533,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 533,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    53 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$logger.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 536,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 536,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    54 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'line' => 541,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 541,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'line' => 15,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 15,
-       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'line' => 37,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 37,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    2 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'line' => 53,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 53,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    3 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'line' => 59,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 59,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    4 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined method Pest\\PendingCalls\\TestCall::assertDatabaseCount().',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'line' => 61,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 61,
-       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
-       'identifier' => 'method.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    5 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined method Pest\\PendingCalls\\TestCall::assertDatabaseHas().',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'line' => 66,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 66,
-       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
-       'identifier' => 'method.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    6 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'line' => 82,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 82,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    7 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined method Pest\\PendingCalls\\TestCall::assertDatabaseHas().',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'line' => 84,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 84,
-       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
-       'identifier' => 'method.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    8 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'line' => 94,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 94,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    9 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Pest\\PendingCalls\\TestCall::$service.',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'line' => 98,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 98,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    10 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined method Pest\\PendingCalls\\TestCall::assertDatabaseCount().',
-       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'line' => 102,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 102,
-       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
-       'identifier' => 'method.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
 ); },
 	'locallyIgnoredErrorsCallback' => static function (): array { return array (
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Logging\\CustomizeConfirmationLogger.php' => 
+  array (
+    0 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to an undefined method Psr\\Log\\LoggerInterface::getHandlers().',
+       'file' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Logging\\CustomizeConfirmationLogger.php',
+       'line' => 14,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Logging\\CustomizeConfirmationLogger.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 14,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'method.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+  ),
 ); },
 	'linesToIgnore' => array (
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Logging\\CustomizeConfirmationLogger.php' => 
+  array (
+    'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Logging\\CustomizeConfirmationLogger.php' => 
+    array (
+      14 => NULL,
+    ),
+  ),
 ),
 	'unmatchedLineIgnores' => array (
 ),
 	'collectedDataCallback' => static function (): array { return array (
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Data\\ConfirmationRequestData.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Data\\ConfirmationRequestData',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Data\\ConfirmationRequestData',
+        1 => 'formatAmount',
+        2 => 'App\\Data\\ConfirmationRequestData',
+        3 => 
+        array (
+          0 => 'f' . "\0" . 'str_replace',
+        ),
+      ),
+      1 => 
+      array (
+        0 => 'App\\Data\\ConfirmationRequestData',
+        1 => 'toArray',
+        2 => 'App\\Data\\ConfirmationRequestData',
+        3 => 
+        array (
+        ),
+      ),
+      2 => 
+      array (
+        0 => 'App\\Data\\ConfirmationRequestData',
+        1 => 'sanitized',
+        2 => 'App\\Data\\ConfirmationRequestData',
+        3 => 
+        array (
+          0 => 'm' . "\0" . 'app\\data\\confirmationrequestdata' . "\0" . 'toarray',
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\AuthenticationFailedException.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Exceptions\\Confirmation\\AuthenticationFailedException',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\BusinessProfileNotFoundException.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Exceptions\\Confirmation\\BusinessProfileNotFoundException',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\ConfirmationException.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Exceptions\\Confirmation\\ConfirmationException',
+        1 => 'resultCode',
+        2 => 'App\\Exceptions\\Confirmation\\ConfirmationException',
+        3 => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\DuplicateTransactionException.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Exceptions\\Confirmation\\DuplicateTransactionException',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\HashValidationException.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Exceptions\\Confirmation\\HashValidationException',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\InvalidPayloadException.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Exceptions\\Confirmation\\InvalidPayloadException',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Email\\EmailDeliveryException.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Exceptions\\Email\\EmailDeliveryException',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Sms\\SmsDeliveryException.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Exceptions\\Sms\\SmsDeliveryException',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Sms\\SmsRejectedException.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Exceptions\\Sms\\SmsRejectedException',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Http\\Controllers\\Api\\ConfirmationController.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Http\\Controllers\\Api\\ConfirmationController',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Mail\\ConfirmationMail.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Mail\\ConfirmationMail',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Mail\\ConfirmationMail',
+        1 => 'build',
+        2 => 'App\\Mail\\ConfirmationMail',
+        3 => 
+        array (
+          0 => 'm' . "\0" . 'illuminate\\mail\\mailable' . "\0" . 'subject',
+          1 => 'm' . "\0" . 'illuminate\\mail\\mailable' . "\0" . 'html',
+          2 => 'm' . "\0" . 'illuminate\\mail\\mailable' . "\0" . 'attach',
+        ),
+      ),
+    ),
+    'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Illuminate\\Bus\\Queueable',
+      ),
+      1 => 
+      array (
+        0 => 'Illuminate\\Queue\\SerializesModels',
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\BusinessProfile.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Models\\BusinessProfile',
+        1 => 'casts',
+        2 => 'App\\Models\\BusinessProfile',
+        3 => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        0 => 'App\\Models\\BusinessProfile',
+        1 => 'sapConfiguration',
+        2 => 'App\\Models\\BusinessProfile',
+        3 => 
+        array (
+          0 => 'm' . "\0" . 'app\\services\\sap\\sapconfiguration' . "\0" . '__construct',
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\ConfirmationTransaction.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Models\\ConfirmationTransaction',
+        1 => 'casts',
+        2 => 'App\\Models\\ConfirmationTransaction',
+        3 => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        0 => 'App\\Models\\ConfirmationTransaction',
+        1 => 'customerName',
+        2 => 'App\\Models\\ConfirmationTransaction',
+        3 => 
+        array (
+          0 => 'm' . "\0" . 'illuminate\\database\\eloquent\\casts\\attribute' . "\0" . 'make',
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\CustomerReference.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Models\\CustomerReference',
+        1 => 'name',
+        2 => 'App\\Models\\CustomerReference',
+        3 => 
+        array (
+          0 => 'm' . "\0" . 'illuminate\\database\\eloquent\\casts\\attribute' . "\0" . 'make',
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\EmailQueue.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Models\\EmailQueue',
+        1 => 'casts',
+        2 => 'App\\Models\\EmailQueue',
+        3 => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\SmsQueue.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Models\\SmsQueue',
+        1 => 'casts',
+        2 => 'App\\Models\\SmsQueue',
+        3 => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        0 => 'App\\Models\\SmsQueue',
+        1 => 'customerName',
+        2 => 'App\\Models\\SmsQueue',
+        3 => 
+        array (
+          0 => 'm' . "\0" . 'illuminate\\database\\eloquent\\casts\\attribute' . "\0" . 'make',
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\User.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Models\\User',
+        1 => 'casts',
+        2 => 'App\\Models\\User',
+        3 => 
+        array (
+        ),
+      ),
+    ),
+    'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Illuminate\\Notifications\\Notifiable',
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\ConfirmationService.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Services\\Confirmation\\ConfirmationService',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\HashGenerator.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Services\\Confirmation\\HashGenerator',
+        1 => 'generate',
+        2 => 'App\\Services\\Confirmation\\HashGenerator',
+        3 => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\HashValidationService.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Services\\Confirmation\\HashValidationService',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\TransactionService.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\PossiblyPureStaticCallCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Illuminate\\Database\\Eloquent\\Builder',
+        1 => 'create',
+        2 => 27,
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Email\\EmailProcessingService.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Services\\Email\\EmailProcessingService',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Services\\Email\\EmailProcessingService',
+        1 => 'maxAttempts',
+        2 => 'App\\Services\\Email\\EmailProcessingService',
+        3 => 
+        array (
+          0 => 'f' . "\0" . 'config',
+        ),
+      ),
+      1 => 
+      array (
+        0 => 'App\\Services\\Email\\EmailProcessingService',
+        1 => 'retryDelay',
+        2 => 'App\\Services\\Email\\EmailProcessingService',
+        3 => 
+        array (
+        ),
+      ),
+    ),
+    'PHPStan\\Rules\\Methods\\NamedArgumentParameterMethodCallsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Contracts\\Email\\EmailServiceInterface',
+        1 => 'send',
+        2 => 'recipients',
+        3 => 72,
+      ),
+      1 => 
+      array (
+        0 => 'App\\Contracts\\Email\\EmailServiceInterface',
+        1 => 'send',
+        2 => 'subject',
+        3 => 73,
+      ),
+      2 => 
+      array (
+        0 => 'App\\Contracts\\Email\\EmailServiceInterface',
+        1 => 'send',
+        2 => 'header',
+        3 => 74,
+      ),
+      3 => 
+      array (
+        0 => 'App\\Contracts\\Email\\EmailServiceInterface',
+        1 => 'send',
+        2 => 'message',
+        3 => 75,
+      ),
+      4 => 
+      array (
+        0 => 'App\\Contracts\\Email\\EmailServiceInterface',
+        1 => 'send',
+        2 => 'attachment',
+        3 => 76,
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Email\\EmailService.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Services\\Email\\EmailService',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Health\\ConfirmationHealthService.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\PossiblyPureStaticCallCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Illuminate\\Cache\\Repository',
+        1 => 'forget',
+        2 => 46,
+      ),
+      1 => 
+      array (
+        0 => 'Illuminate\\Cache\\Repository',
+        1 => 'put',
+        2 => 85,
+      ),
+      2 => 
+      array (
+        0 => 'Illuminate\\Support\\Facades\\File',
+        1 => 'delete',
+        2 => 89,
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Logging\\LogArchiveService.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Services\\Logging\\LogArchiveService',
+        1 => 
+        array (
+          0 => 'f' . "\0" . 'storage_path',
+        ),
+      ),
+    ),
+    'PHPStan\\Rules\\DeadCode\\PossiblyPureMethodCallCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 
+        array (
+          0 => 'ZipArchive',
+        ),
+        1 => 'addFile',
+        2 => 63,
+      ),
+      1 => 
+      array (
+        0 => 
+        array (
+          0 => 'ZipArchive',
+        ),
+        1 => 'close',
+        2 => 68,
+      ),
+      2 => 
+      array (
+        0 => 
+        array (
+          0 => 'ZipArchive',
+        ),
+        1 => 'addFile',
+        2 => 98,
+      ),
+      3 => 
+      array (
+        0 => 
+        array (
+          0 => 'ZipArchive',
+        ),
+        1 => 'close',
+        2 => 99,
+      ),
+    ),
+    'PHPStan\\Rules\\DeadCode\\PossiblyPureStaticCallCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Illuminate\\Support\\Facades\\File',
+        1 => 'delete',
+        2 => 70,
+      ),
+      1 => 
+      array (
+        0 => 'Illuminate\\Support\\Facades\\File',
+        1 => 'delete',
+        2 => 117,
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Logging\\Sanitizer.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Services\\Logging\\Sanitizer',
+        1 => 'payload',
+        2 => 'App\\Services\\Logging\\Sanitizer',
+        3 => 
+        array (
+          0 => 'm' . "\0" . 'app\\data\\confirmationrequestdata' . "\0" . 'toarray',
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapArchiveService.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\PossiblyPureStaticCallCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Illuminate\\Support\\Facades\\File',
+        1 => 'copy',
+        2 => 25,
+      ),
+      1 => 
+      array (
+        0 => 'Illuminate\\Support\\Facades\\File',
+        1 => 'move',
+        2 => 40,
+      ),
+      2 => 
+      array (
+        0 => 'Illuminate\\Support\\Facades\\File',
+        1 => 'delete',
+        2 => 43,
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapConfiguration.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Services\\Sap\\SapConfiguration',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Services\\Sap\\SapConfiguration',
+        1 => 'file',
+        2 => 'App\\Services\\Sap\\SapConfiguration',
+        3 => 
+        array (
+        ),
+      ),
+      1 => 
+      array (
+        0 => 'App\\Services\\Sap\\SapConfiguration',
+        1 => 'businessTransaction',
+        2 => 'App\\Services\\Sap\\SapConfiguration',
+        3 => 
+        array (
+          0 => 'f' . "\0" . 'str_replace',
+        ),
+      ),
+      2 => 
+      array (
+        0 => 'App\\Services\\Sap\\SapConfiguration',
+        1 => 'transactionText',
+        2 => 'App\\Services\\Sap\\SapConfiguration',
+        3 => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapFileService.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Services\\Sap\\SapFileService',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapProcessingService.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Services\\Sap\\SapProcessingService',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+    'PHPStan\\Rules\\DeadCode\\PossiblyPureStaticCallCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Illuminate\\Database\\Eloquent\\Builder',
+        1 => 'create',
+        2 => 38,
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\CelcomSmsService.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Services\\Sms\\CelcomSmsService',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsProcessingService.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Services\\Sms\\SmsProcessingService',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Services\\Sms\\SmsProcessingService',
+        1 => 'maxAttempts',
+        2 => 'App\\Services\\Sms\\SmsProcessingService',
+        3 => 
+        array (
+          0 => 'f' . "\0" . 'config',
+        ),
+      ),
+      1 => 
+      array (
+        0 => 'App\\Services\\Sms\\SmsProcessingService',
+        1 => 'retryDelay',
+        2 => 'App\\Services\\Sms\\SmsProcessingService',
+        3 => 
+        array (
+        ),
+      ),
+    ),
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsQueueService.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'App\\Services\\Sms\\SmsQueueService',
+        1 => 
+        array (
+        ),
+      ),
+    ),
+    'PHPStan\\Rules\\DeadCode\\PossiblyPureStaticCallCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Illuminate\\Database\\Eloquent\\Builder',
+        1 => 'create',
+        2 => 36,
+      ),
+    ),
+  ),
 ); },
 	'dependencies' => array (
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Console\\Commands\\ArchiveLogs.php' => 
@@ -8186,7 +2938,6 @@ return [
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Business\\BusinessProfileService.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\ConfirmationService.php',
       3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapProcessingService.php',
-      4 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Confirmation\\AuthenticationServiceInterface.php' => 
@@ -8197,8 +2948,6 @@ return [
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\AuthenticationService.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\ConfirmationService.php',
-      3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-      4 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Confirmation\\HashValidationServiceInterface.php' => 
@@ -8209,8 +2958,6 @@ return [
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\ConfirmationService.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\HashValidationService.php',
-      3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-      4 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Confirmation\\TransactionServiceInterface.php' => 
@@ -8221,8 +2968,6 @@ return [
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\ConfirmationService.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\TransactionService.php',
-      3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-      4 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Email\\EmailProcessingServiceInterface.php' => 
@@ -8233,21 +2978,17 @@ return [
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Console\\Commands\\ProcessConfirmationEmails.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Email\\EmailProcessingService.php',
-      3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessConfirmationEmailsCommandTest.php',
-      4 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Email\\EmailServiceInterface.php' => 
   array (
-    'fileHash' => 'ebb5baf712d9b0fad0d3a376d3b73b50f2bd27b3809671d059af4f44e5910df9',
+    'fileHash' => '22a34272a53bc8af3c6bb5b0fe64758f3116717fedace3e14184caa0e1ea0f87',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Email\\EmailProcessingService.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Email\\EmailService.php',
       3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Health\\ConfirmationHealthService.php',
-      4 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-      5 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Health\\ConfirmationHealthServiceInterface.php' => 
@@ -8258,8 +2999,6 @@ return [
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Console\\Commands\\CheckConfirmationHealth.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Health\\ConfirmationHealthService.php',
-      3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\CheckConfirmationHealthCommandTest.php',
-      4 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Logging\\LogArchiveServiceInterface.php' => 
@@ -8271,14 +3010,11 @@ return [
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Health\\ConfirmationHealthService.php',
       3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Logging\\LogArchiveService.php',
-      4 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ArchiveLogsCommandTest.php',
-      5 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-      6 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Logging\\LoggingServiceInterface.php' => 
   array (
-    'fileHash' => 'acefd28eb913572398d4f91b80845150e529037203cf6aafbd16eafc54eb79a7',
+    'fileHash' => '8800958a8138441e09737c9c42321ba0c8d4642f159ac4c1efba80671aa853c0',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Http\\Controllers\\Api\\ConfirmationController.php',
@@ -8295,12 +3031,6 @@ return [
       11 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\CelcomSmsService.php',
       12 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsProcessingService.php',
       13 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsQueueService.php',
-      14 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-      15 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-      16 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-      17 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-      18 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
-      19 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Sap\\SapArchiveServiceInterface.php' => 
@@ -8311,8 +3041,6 @@ return [
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Email\\EmailProcessingService.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapArchiveService.php',
-      3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-      4 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Sap\\SapProcessingServiceInterface.php' => 
@@ -8323,18 +3051,16 @@ return [
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Console\\Commands\\ProcessSapTransactions.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapProcessingService.php',
-      3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessSapTransactionsCommandTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Sms\\CelcomSmsServiceInterface.php' => 
   array (
-    'fileHash' => 'bde9cc0d18bcc24887b0d3cd101fe3859ab316dafc0267d60814668f709512b9',
+    'fileHash' => '20dbd71db7b104c763219f0c4c7a7a7e674765c0c641b3215fa04f98853448aa',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\CelcomSmsService.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsProcessingService.php',
-      3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Sms\\SmsMessageBuilderInterface.php' => 
@@ -8345,8 +3071,6 @@ return [
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsMessageBuilder.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsProcessingService.php',
-      3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsMessageBuilderTest.php',
-      4 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Sms\\SmsProcessingServiceInterface.php' => 
@@ -8357,8 +3081,6 @@ return [
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Console\\Commands\\ProcessSmsQueue.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsProcessingService.php',
-      3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessSmsQueueCommandTest.php',
-      4 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Sms\\SmsQueueServiceInterface.php' => 
@@ -8369,12 +3091,11 @@ return [
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\ConfirmationService.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsQueueService.php',
-      3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Data\\ConfirmationRequestData.php' => 
   array (
-    'fileHash' => '26e073e46a5b772a0b58451b663f8117e99cb907463f11351b0400f3a685f821',
+    'fileHash' => '1f3828bce16e024a4d115c6ad4c597171888fa96f475dc0942f8c0e6cf786e7c',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Business\\BusinessProfileServiceInterface.php',
@@ -8391,12 +3112,6 @@ return [
       11 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\TransactionService.php',
       12 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Logging\\Sanitizer.php',
       13 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsQueueService.php',
-      14 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-      15 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-      16 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-      17 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashGeneratorTest.php',
-      18 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-      19 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Enum\\BusinessProfileStatus.php' => 
@@ -8423,10 +3138,6 @@ return [
       7 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapProcessingService.php',
       8 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsProcessingService.php',
       9 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsQueueService.php',
-      10 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-      11 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-      12 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
-      13 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Enum\\Status.php' => 
@@ -8441,8 +3152,6 @@ return [
       4 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapProcessingService.php',
       5 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsProcessingService.php',
       6 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsQueueService.php',
-      7 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
-      8 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\AuthenticationFailedException.php' => 
@@ -8453,8 +3162,6 @@ return [
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Confirmation\\AuthenticationServiceInterface.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\AuthenticationService.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\ConfirmationService.php',
-      3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-      4 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\BusinessProfileNotFoundException.php' => 
@@ -8465,12 +3172,11 @@ return [
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Business\\BusinessProfileServiceInterface.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Business\\BusinessProfileService.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\ConfirmationService.php',
-      3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\ConfirmationException.php' => 
   array (
-    'fileHash' => 'fb248cebe7b5dadc0f8b8fa8be0a9fd0cd059158b0a884fe0b5dfdce21643c89',
+    'fileHash' => '140709894b24515c1fb598d293f7b2b55fe8cd477b0a88d2886446cef1339b40',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Business\\BusinessProfileServiceInterface.php',
@@ -8493,10 +3199,6 @@ return [
       17 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\ConfirmationService.php',
       18 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\HashValidationService.php',
       19 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\TransactionService.php',
-      20 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-      21 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-      22 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-      23 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\CsvException.php' => 
@@ -8514,8 +3216,6 @@ return [
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Confirmation\\TransactionServiceInterface.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\ConfirmationService.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\TransactionService.php',
-      3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-      4 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\HashValidationException.php' => 
@@ -8526,8 +3226,6 @@ return [
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Confirmation\\HashValidationServiceInterface.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\ConfirmationService.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\HashValidationService.php',
-      3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-      4 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\InvalidPayloadException.php' => 
@@ -8552,7 +3250,6 @@ return [
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Email\\EmailProcessingService.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Email\\EmailService.php',
-      2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Email\\EmailException.php' => 
@@ -8563,7 +3260,6 @@ return [
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Email\\EmailDeliveryException.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Email\\EmailProcessingService.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Email\\EmailService.php',
-      3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Sap\\SapFileException.php' => 
@@ -8580,7 +3276,6 @@ return [
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\CelcomSmsService.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsProcessingService.php',
-      2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Sms\\SmsException.php' => 
@@ -8592,7 +3287,6 @@ return [
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Sms\\SmsRejectedException.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\CelcomSmsService.php',
       3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsProcessingService.php',
-      4 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Sms\\SmsQueueException.php' => 
@@ -8604,12 +3298,11 @@ return [
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Sms\\SmsRejectedException.php' => 
   array (
-    'fileHash' => '7a5a9b36fd8c557e9e2fd78840dcd1dfb7b9119c51e97555d3738e2496c9d063',
+    'fileHash' => '95d589983b499748fa90990f3c921bcf7325a69ead257b3affb5f4051e54d284',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\CelcomSmsService.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsProcessingService.php',
-      2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Http\\Controllers\\Api\\ConfirmationController.php' => 
@@ -8644,7 +3337,7 @@ return [
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Logging\\CustomizeConfirmationLogger.php' => 
   array (
-    'fileHash' => '9e0420ed07e811055165faa365172012cc0568a16ce4d115d6bf47f8d9d6a3d7',
+    'fileHash' => '37b6761f093dc9caa901982bf6f9372d2318307d83ebf2cd2c84dcb7a4281b29',
     'dependentFiles' => 
     array (
     ),
@@ -8659,7 +3352,7 @@ return [
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\BusinessProfile.php' => 
   array (
-    'fileHash' => 'e4271beeb36373bac7095b11fa2f32985b08723e52ef4e71341e06d9d64feada',
+    'fileHash' => '8b5ccccee9d79cf8970a24021f04f6fba2cdb3faf8d2cf7750cb96e4026b3e36',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Business\\BusinessProfileServiceInterface.php',
@@ -8673,16 +3366,11 @@ return [
       8 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapConfiguration.php',
       9 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapFileService.php',
       10 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapProcessingService.php',
-      11 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-      12 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
-      13 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
-      14 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashGeneratorTest.php',
-      15 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\ConfirmationTransaction.php' => 
   array (
-    'fileHash' => '2d85ae6e1f748bb18b989e5e2ab1349fc1bba0eea85e7eb5326316efe2eb4226',
+    'fileHash' => '46eaa2a2698e8e2bbd4f92ddc0251c2c37d2d4d55e3fe1d2b57d04b0fb2839cd',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\TransactionService.php',
@@ -8690,14 +3378,11 @@ return [
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapConfiguration.php',
       3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapFileService.php',
       4 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapProcessingService.php',
-      5 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-      6 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
-      7 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\CustomerReference.php' => 
   array (
-    'fileHash' => 'c058f8c56b63bf003af752e71f1f09290e0f6c1a4ed967108ad27f0fc7931ce0',
+    'fileHash' => '06df90fb09c7e03f7d10b06d79ffcd11ff497483d7f7045622735243afe17330',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsQueueService.php',
@@ -8705,30 +3390,27 @@ return [
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\EmailQueue.php' => 
   array (
-    'fileHash' => 'f62fb71469f6b32d3716bfce97521bc591c132ca430256d1218d43e194c65c9d',
+    'fileHash' => '3fbd749f04da3ae462707bf225e2b31c213ff31eca31bb54fdaf44017703c9d6',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Email\\EmailProcessingService.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapProcessingService.php',
-      2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\SmsQueue.php' => 
   array (
-    'fileHash' => 'e84e59a1af6fbd3b902fb4873f205de19a6c04bad985cd3b33b2b90ee48c1fe6',
+    'fileHash' => 'bd0e264cabb2e520bae7f37ce8cebe5bdb1fe6063c4406390a0ac0f3769de549',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Sms\\SmsMessageBuilderInterface.php',
       1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsMessageBuilder.php',
       2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsProcessingService.php',
       3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsQueueService.php',
-      4 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsMessageBuilderTest.php',
-      5 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\User.php' => 
   array (
-    'fileHash' => 'be189ca61cf460ef62230eafd24334b619d4503a3001985f149d1a3ddace29ec',
+    'fileHash' => '231f200b35e2afe7c67956a7b5f84b1ae565c596effb034f2c11c8306920191e',
     'dependentFiles' => 
     array (
     ),
@@ -8755,7 +3437,6 @@ return [
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
-      1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\ConfirmationService.php' => 
@@ -8764,7 +3445,6 @@ return [
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Http\\Controllers\\Api\\ConfirmationController.php',
-      1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\HashGenerator.php' => 
@@ -8773,9 +3453,6 @@ return [
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\HashValidationService.php',
-      1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php',
-      2 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashGeneratorTest.php',
-      3 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\HashValidationService.php' => 
@@ -8784,7 +3461,6 @@ return [
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
-      1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\TransactionService.php' => 
@@ -8793,25 +3469,22 @@ return [
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
-      1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Csv\\CsvService.php' => 
   array (
-    'fileHash' => 'a7c63551f1964ad2a5a8ec84c24a1ae09cb97b801e707ea122830e543cc308fe',
+    'fileHash' => '06cd38f82d1664a6bdc2f80e97a14e8d3b3761af07c47ab89decb87a45ece693',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapFileService.php',
-      1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Email\\EmailProcessingService.php' => 
   array (
-    'fileHash' => '14b0c693f23be1bf87e6f4fde271c8dfae86d89e6670dd6456c66caaea98147b',
+    'fileHash' => 'eb758281e7bdbaf8a0f2c0841f5426c7fb05236635b772e4196e342db0c7fe26',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
-      1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Email\\EmailService.php' => 
@@ -8828,7 +3501,6 @@ return [
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
-      1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Logging\\ConfirmationContextProcessor.php' => 
@@ -8851,12 +3523,11 @@ return [
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
-      1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Logging\\LoggingService.php' => 
   array (
-    'fileHash' => '89dcdfb3f1ffae656f9bb03c4c738eec66ff76ba8af72919966110ea46d64caa',
+    'fileHash' => '975880ec211448b4f88e6b3a225c9529ea4049a398261b2a5b4de5b1fcb850b9',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Http\\Controllers\\Api\\ConfirmationController.php',
@@ -8868,13 +3539,11 @@ return [
       6 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapProcessingService.php',
       7 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\CelcomSmsService.php',
       8 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsQueueService.php',
-      9 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php',
-      10 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Logging\\Sanitizer.php' => 
   array (
-    'fileHash' => 'fc812c72385767a882b1348adcc17f74b8d3d687087f2129d042ade9b6d2b9ee',
+    'fileHash' => '84c89c35dd26b7b3164a641864fc537e728c5d2fa81ee36aad846a3488f9bcf0',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Http\\Controllers\\Api\\ConfirmationController.php',
@@ -8886,12 +3555,11 @@ return [
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
-      1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapConfiguration.php' => 
   array (
-    'fileHash' => '46b470db6db5a92b73981835fb9b550a8337e5cbe57c98e8cad7ebd7eaae666f',
+    'fileHash' => '7fcb874cc4c4ad3b73862d0bc0f23f4fcc5e54402a5257ce0576e67a5f8c4001',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\BusinessProfile.php',
@@ -8917,7 +3585,7 @@ return [
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\CelcomSmsService.php' => 
   array (
-    'fileHash' => '7cae11d0003ce46513a0551e878d0f49942a86fa4f94d84116d9ab8610afe605',
+    'fileHash' => '0793d6103ce9a04093b17cefd22ef6e3e81b17663517a85feb86908606f0d456',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
@@ -8929,7 +3597,6 @@ return [
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
-      1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsMessageBuilderTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsProcessingService.php' => 
@@ -8938,7 +3605,6 @@ return [
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
-      1 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php',
     ),
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsQueueService.php' => 
@@ -8949,195 +3615,54 @@ return [
       0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Providers\\AppServiceProvider.php',
     ),
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php' => 
-  array (
-    'fileHash' => '3ea9d9cdfff190aae33308a16e1c4f9d44d1453492185a902d8513f4f4688e68',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Pest.php' => 
-  array (
-    'fileHash' => 'eeb9b16b09d39c78b3b080fef881fd36da8dc4d4f779acc41e746500b8d045ee',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\TestCase.php' => 
-  array (
-    'fileHash' => '1cdd2af8e86d6edbfad0d36d61b9708d208831a30b18b4d02e566fc1bbcb19df',
-    'dependentFiles' => 
-    array (
-      0 => 'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Pest.php',
-    ),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ArchiveLogsCommandTest.php' => 
-  array (
-    'fileHash' => 'f800412316bdfc70b32551fa238e287f61f7bc5530decfd19ecdf8d0aaaa20d8',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\CheckConfirmationHealthCommandTest.php' => 
-  array (
-    'fileHash' => '5724d13d60fe28a1b7ef439fc79ce031dc0fbfa8e2f18da7b0780755c6c73aed',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessConfirmationEmailsCommandTest.php' => 
-  array (
-    'fileHash' => '35d8723306ace76e92e4a7116b3eb1c119da7672d423fa91f246d9ebb130053b',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessSapTransactionsCommandTest.php' => 
-  array (
-    'fileHash' => '0b90e791c722323c9088528e151bb6b15102b3ea4e87f5791a62dbf5d693d8f8',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessSmsQueueCommandTest.php' => 
-  array (
-    'fileHash' => 'cd148cef0a3e8c40436683fca2621ae0c93bb0285b8fa0d34fbad9abfdc56ccc',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php' => 
-  array (
-    'fileHash' => '978dc44e83185d023eb3aa5bd1654f46ed60573c0aa6e13fea23f4733026b3d6',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php' => 
-  array (
-    'fileHash' => 'c4031f3d2e99396b2571eb74875ae8f0bfb8694550768c31a6b139cc0d91e6c2',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php' => 
-  array (
-    'fileHash' => 'e50881feb8d8701494eae91585882b3439a828ca837d1677714839a2c5065575',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php' => 
-  array (
-    'fileHash' => 'd23844a45e8944f32a9e9f5615f04aff971f5769c086395d099aa9c9ae94116c',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php' => 
-  array (
-    'fileHash' => '53717bd3cb20b9b49496668ef1b2034385744e8468745f894621be1bcf6ccd0e',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashGeneratorTest.php' => 
-  array (
-    'fileHash' => '1945578f9d86da16e49612d3e065b28d55301eb761d96ef1c66f35df4c742e2d',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php' => 
-  array (
-    'fileHash' => 'df3ff3751cd6da4e6138e56899507b3396144c1f8590091ed33163552cf5cf1d',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php' => 
-  array (
-    'fileHash' => '51dfa25263afab5d607f66bba48e5414bd714d2811a2b6b92cee2a7272f627b9',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php' => 
-  array (
-    'fileHash' => 'bc188efab514d972ec81c3b37d2aa330ebb19a3535a993764114ffbbcfd05717',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsMessageBuilderTest.php' => 
-  array (
-    'fileHash' => 'e1a168d55140dcec0bb3c43c4d8fe31d89c3339b59b8e7c02f0ad321aa85d912',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php' => 
-  array (
-    'fileHash' => 'd1dce480f81ff7770e003e790e0592e25c15e820cf9eebed3bd3a0a3c623aab4',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php' => 
-  array (
-    'fileHash' => 'e6b778963bb99f695e680138cb7b2504e7b0b7cd64fc3663094f52682f02e16e',
-    'dependentFiles' => 
-    array (
-    ),
-  ),
 ),
 	'packageDependencies' => array (
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Console\\Commands\\ArchiveLogs.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Console\\Commands\\CheckConfirmationHealth.php' => 
   array (
     0 => 'symfony/console',
     1 => 'laravel/framework',
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Console\\Commands\\ProcessConfirmationEmails.php' => 
-  array (
-    0 => 'symfony/console',
-    1 => 'laravel/framework',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Sap\\SapArchiveServiceInterface.php' => 
-  array (
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Sms\\SmsMessageBuilderInterface.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Business\\BusinessProfileServiceInterface.php' => 
   array (
     0 => 'laravel/framework',
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Sms\\CelcomSmsServiceInterface.php' => 
+  array (
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Sms\\SmsProcessingServiceInterface.php' => 
   array (
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Data\\ConfirmationRequestData.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Sms\\SmsQueueServiceInterface.php' => 
   array (
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\ConfirmationException.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\AuthenticationFailedException.php' => 
+  array (
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Sap\\SapFileException.php' => 
+  array (
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Sms\\SmsException.php' => 
+  array (
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Http\\Middleware\\AssignRequestUuid.php' => 
   array (
     0 => 'laravel/framework',
-    1 => 'symfony/http-kernel',
-    2 => 'psr/container',
+    1 => 'symfony/http-foundation',
+    2 => 'ramsey/uuid',
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\CsvException.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Mail\\ConfirmationMail.php' => 
   array (
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Email\\EmailDeliveryException.php' => 
-  array (
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Sms\\SmsDeliveryException.php' => 
-  array (
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Sms\\SmsRejectedException.php' => 
-  array (
+    0 => 'laravel/framework',
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\BusinessProfile.php' => 
   array (
     0 => 'laravel/framework',
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\User.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\ConfirmationTransaction.php' => 
+  array (
+    0 => 'laravel/framework',
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\EmailQueue.php' => 
   array (
     0 => 'laravel/framework',
   ),
@@ -9147,87 +3672,9 @@ return [
     1 => 'psr/container',
     2 => 'symfony/http-kernel',
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\HashValidationService.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\AuthenticationService.php' => 
   array (
     0 => 'laravel/framework',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\CelcomSmsService.php' => 
-  array (
-    0 => 'laravel/framework',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsQueueService.php' => 
-  array (
-    0 => 'laravel/framework',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php' => 
-  array (
-    0 => 'pestphp/pest',
-    1 => 'laravel/framework',
-    2 => 'phpunit/phpunit',
-    3 => 'mockery/mockery',
-    4 => 'pestphp/pest-plugin-arch',
-    5 => 'nesbot/carbon',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\LogArchiveServiceTest.php' => 
-  array (
-    0 => 'pestphp/pest',
-    1 => 'phpunit/phpunit',
-    2 => 'laravel/framework',
-    3 => 'nesbot/carbon',
-    4 => 'pestphp/pest-plugin-arch',
-    5 => 'symfony/finder',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Console\\Commands\\ProcessSapTransactions.php' => 
-  array (
-    0 => 'symfony/console',
-    1 => 'laravel/framework',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Confirmation\\AuthenticationServiceInterface.php' => 
-  array (
-    0 => 'laravel/framework',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Confirmation\\TransactionServiceInterface.php' => 
-  array (
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Health\\ConfirmationHealthServiceInterface.php' => 
-  array (
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Logging\\LogArchiveServiceInterface.php' => 
-  array (
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Sms\\CelcomSmsServiceInterface.php' => 
-  array (
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Sms\\SmsQueueServiceInterface.php' => 
-  array (
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Enum\\BusinessProfileStatus.php' => 
-  array (
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\AuthenticationFailedException.php' => 
-  array (
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Http\\Controllers\\Api\\ConfirmationController.php' => 
-  array (
-    0 => 'laravel/framework',
-    1 => 'symfony/http-foundation',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Logging\\ConfirmationFormatter.php' => 
-  array (
-    0 => 'monolog/monolog',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Business\\BusinessProfileService.php' => 
-  array (
-    0 => 'laravel/framework',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\HashGenerator.php' => 
-  array (
-    0 => 'laravel/framework',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Email\\EmailService.php' => 
-  array (
-    0 => 'laravel/framework',
-    1 => 'symfony/mailer',
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Health\\ConfirmationHealthService.php' => 
   array (
@@ -9236,34 +3683,17 @@ return [
     2 => 'psr/simple-cache',
     3 => 'symfony/finder',
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsProcessingService.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Logging\\ConfirmationContextProcessor.php' => 
+  array (
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Logging\\Sanitizer.php' => 
+  array (
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\CelcomSmsService.php' => 
   array (
     0 => 'laravel/framework',
-    1 => 'nesbot/carbon',
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Pest.php' => 
-  array (
-    0 => 'pestphp/pest',
-    1 => 'phpunit/phpunit',
-    2 => 'laravel/framework',
-    3 => 'pestphp/pest-plugin-arch',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessSmsQueueCommandTest.php' => 
-  array (
-    0 => 'pestphp/pest',
-    1 => 'phpunit/phpunit',
-    2 => 'mockery/mockery',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php' => 
-  array (
-    0 => 'pestphp/pest',
-    1 => 'laravel/framework',
-    2 => 'phpunit/phpunit',
-    3 => 'mockery/mockery',
-    4 => 'nesbot/carbon',
-    5 => 'pestphp/pest-plugin-arch',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Console\\Commands\\ProcessSmsQueue.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Console\\Commands\\ProcessConfirmationEmails.php' => 
   array (
     0 => 'symfony/console',
     1 => 'laravel/framework',
@@ -9275,101 +3705,19 @@ return [
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Email\\EmailServiceInterface.php' => 
   array (
   ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Sap\\SapArchiveServiceInterface.php' => 
+  array (
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Sap\\SapProcessingServiceInterface.php' => 
+  array (
+  ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Enum\\ProcessSMSTxn.php' => 
   array (
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Enum\\Status.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\DuplicateTransactionException.php' => 
   array (
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\BusinessProfileNotFoundException.php' => 
-  array (
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\TransactionException.php' => 
-  array (
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\ConfirmationTransaction.php' => 
-  array (
-    0 => 'laravel/framework',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\AuthenticationService.php' => 
-  array (
-    0 => 'laravel/framework',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Logging\\LoggingService.php' => 
-  array (
-    0 => 'laravel/framework',
-    1 => 'symfony/http-kernel',
-    2 => 'psr/container',
-    3 => 'symfony/http-foundation',
-    4 => 'psr/log',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapFileService.php' => 
-  array (
-    0 => 'laravel/framework',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php' => 
-  array (
-    0 => 'pestphp/pest',
-    1 => 'laravel/framework',
-    2 => 'phpunit/phpunit',
-    3 => 'nesbot/carbon',
-    4 => 'pestphp/pest-plugin-arch',
-    5 => 'mockery/mockery',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\TestCase.php' => 
-  array (
-    0 => 'phpunit/phpunit',
-    1 => 'laravel/framework',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessConfirmationEmailsCommandTest.php' => 
-  array (
-    0 => 'pestphp/pest',
-    1 => 'phpunit/phpunit',
-    2 => 'mockery/mockery',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ProcessSapTransactionsCommandTest.php' => 
-  array (
-    0 => 'pestphp/pest',
-    1 => 'phpunit/phpunit',
-    2 => 'mockery/mockery',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php' => 
-  array (
-    0 => 'pestphp/pest',
-    1 => 'phpunit/phpunit',
-    2 => 'laravel/framework',
-    3 => 'pestphp/pest-plugin-arch',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php' => 
-  array (
-    0 => 'pestphp/pest',
-    1 => 'phpunit/phpunit',
-    2 => 'laravel/framework',
-    3 => 'mockery/mockery',
-    4 => 'nesbot/carbon',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsMessageBuilderTest.php' => 
-  array (
-    0 => 'pestphp/pest',
-    1 => 'phpunit/phpunit',
-    2 => 'laravel/framework',
-    3 => 'pestphp/pest-plugin-arch',
-    4 => 'nesbot/carbon',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php' => 
-  array (
-    0 => 'pestphp/pest',
-    1 => 'laravel/framework',
-    2 => 'phpunit/phpunit',
-    3 => 'pestphp/pest-plugin-arch',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Email\\EmailProcessingServiceInterface.php' => 
-  array (
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Logging\\LoggingServiceInterface.php' => 
-  array (
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\HashValidationException.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Email\\EmailDeliveryException.php' => 
   array (
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Email\\EmailException.php' => 
@@ -9378,15 +3726,10 @@ return [
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Sms\\SmsQueueException.php' => 
   array (
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Logging\\CustomizeConfirmationLogger.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Http\\Controllers\\Api\\ConfirmationController.php' => 
   array (
     0 => 'laravel/framework',
-    1 => 'psr/log',
-    2 => 'monolog/monolog',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Mail\\ConfirmationMail.php' => 
-  array (
-    0 => 'laravel/framework',
+    1 => 'symfony/http-foundation',
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\CustomerReference.php' => 
   array (
@@ -9396,8 +3739,14 @@ return [
   array (
     0 => 'laravel/framework',
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Logging\\ConfirmationContextProcessor.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\TransactionService.php' => 
   array (
+    0 => 'laravel/framework',
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Email\\EmailProcessingService.php' => 
+  array (
+    0 => 'laravel/framework',
+    1 => 'nesbot/carbon',
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Logging\\ConfirmationFormatter.php' => 
   array (
@@ -9409,87 +3758,63 @@ return [
     1 => 'symfony/finder',
     2 => 'nesbot/carbon',
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapConfiguration.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapFileService.php' => 
   array (
     0 => 'laravel/framework',
-    1 => 'nesbot/carbon',
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapProcessingService.php' => 
   array (
     0 => 'laravel/framework',
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\ArchiveLogsCommandTest.php' => 
-  array (
-    0 => 'pestphp/pest',
-    1 => 'phpunit/phpunit',
-    2 => 'mockery/mockery',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Console\\CheckConfirmationHealthCommandTest.php' => 
-  array (
-    0 => 'pestphp/pest',
-    1 => 'phpunit/phpunit',
-    2 => 'mockery/mockery',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php' => 
-  array (
-    0 => 'pestphp/pest',
-    1 => 'laravel/framework',
-    2 => 'phpunit/phpunit',
-    3 => 'mockery/mockery',
-    4 => 'nesbot/carbon',
-    5 => 'pestphp/pest-plugin-arch',
-    6 => 'psr/simple-cache',
-    7 => 'symfony/finder',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\CsvServiceTest.php' => 
-  array (
-    0 => 'pestphp/pest',
-    1 => 'phpunit/phpunit',
-    2 => 'laravel/framework',
-    3 => 'pestphp/pest-plugin-arch',
-    4 => 'symfony/finder',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashGeneratorTest.php' => 
-  array (
-    0 => 'pestphp/pest',
-    1 => 'phpunit/phpunit',
-    2 => 'laravel/framework',
-    3 => 'pestphp/pest-plugin-arch',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Console\\Commands\\CheckConfirmationHealth.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Console\\Commands\\ArchiveLogs.php' => 
   array (
     0 => 'symfony/console',
     1 => 'laravel/framework',
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Business\\BusinessProfileServiceInterface.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Console\\Commands\\ProcessSapTransactions.php' => 
+  array (
+    0 => 'symfony/console',
+    1 => 'laravel/framework',
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Health\\ConfirmationHealthServiceInterface.php' => 
+  array (
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Logging\\LogArchiveServiceInterface.php' => 
+  array (
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Logging\\LoggingServiceInterface.php' => 
+  array (
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Sms\\SmsMessageBuilderInterface.php' => 
   array (
     0 => 'laravel/framework',
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Sap\\SapProcessingServiceInterface.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\BusinessProfileNotFoundException.php' => 
   array (
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\DuplicateTransactionException.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\CsvException.php' => 
   array (
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\InvalidPayloadException.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\HashValidationException.php' => 
   array (
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Sap\\SapFileException.php' => 
-  array (
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Sms\\SmsException.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Sms\\SmsDeliveryException.php' => 
   array (
   ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Http\\Controllers\\Controller.php' => 
   array (
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Http\\Middleware\\AssignRequestUuid.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Logging\\ConfirmationFormatter.php' => 
+  array (
+    0 => 'monolog/monolog',
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Logging\\CustomizeConfirmationLogger.php' => 
   array (
     0 => 'laravel/framework',
-    1 => 'symfony/http-foundation',
-    2 => 'ramsey/uuid',
+    1 => 'psr/log',
+    2 => 'monolog/monolog',
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\EmailQueue.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\User.php' => 
   array (
     0 => 'laravel/framework',
   ),
@@ -9497,7 +3822,69 @@ return [
   array (
     0 => 'laravel/framework',
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\TransactionService.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\HashValidationService.php' => 
+  array (
+    0 => 'laravel/framework',
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapArchiveService.php' => 
+  array (
+    0 => 'laravel/framework',
+    1 => 'symfony/finder',
+    2 => 'nesbot/carbon',
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsProcessingService.php' => 
+  array (
+    0 => 'laravel/framework',
+    1 => 'nesbot/carbon',
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsQueueService.php' => 
+  array (
+    0 => 'laravel/framework',
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Console\\Commands\\ProcessSmsQueue.php' => 
+  array (
+    0 => 'symfony/console',
+    1 => 'laravel/framework',
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Confirmation\\AuthenticationServiceInterface.php' => 
+  array (
+    0 => 'laravel/framework',
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Confirmation\\TransactionServiceInterface.php' => 
+  array (
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Contracts\\Email\\EmailProcessingServiceInterface.php' => 
+  array (
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Data\\ConfirmationRequestData.php' => 
+  array (
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Enum\\BusinessProfileStatus.php' => 
+  array (
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Enum\\Status.php' => 
+  array (
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\ConfirmationException.php' => 
+  array (
+    0 => 'laravel/framework',
+    1 => 'symfony/http-kernel',
+    2 => 'psr/container',
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\InvalidPayloadException.php' => 
+  array (
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Confirmation\\TransactionException.php' => 
+  array (
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Exceptions\\Sms\\SmsRejectedException.php' => 
+  array (
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Business\\BusinessProfileService.php' => 
+  array (
+    0 => 'laravel/framework',
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Confirmation\\HashGenerator.php' => 
   array (
     0 => 'laravel/framework',
   ),
@@ -9506,38 +3893,27 @@ return [
     0 => 'laravel/framework',
     1 => 'symfony/finder',
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Email\\EmailProcessingService.php' => 
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Email\\EmailService.php' => 
+  array (
+    0 => 'laravel/framework',
+    1 => 'symfony/mailer',
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Logging\\LoggingService.php' => 
+  array (
+    0 => 'laravel/framework',
+    1 => 'symfony/http-kernel',
+    2 => 'psr/container',
+    3 => 'symfony/http-foundation',
+    4 => 'psr/log',
+  ),
+  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapConfiguration.php' => 
   array (
     0 => 'laravel/framework',
     1 => 'nesbot/carbon',
   ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Logging\\Sanitizer.php' => 
-  array (
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sap\\SapArchiveService.php' => 
-  array (
-    0 => 'laravel/framework',
-    1 => 'symfony/finder',
-    2 => 'nesbot/carbon',
-  ),
   'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Services\\Sms\\SmsMessageBuilder.php' => 
   array (
     0 => 'laravel/framework',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php' => 
-  array (
-    0 => 'pestphp/pest',
-    1 => 'phpunit/phpunit',
-    2 => 'laravel/framework',
-    3 => 'pestphp/pest-plugin-arch',
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SapArchiveServiceTest.php' => 
-  array (
-    0 => 'pestphp/pest',
-    1 => 'phpunit/phpunit',
-    2 => 'laravel/framework',
-    3 => 'pestphp/pest-plugin-arch',
-    4 => 'symfony/finder',
   ),
 ),
 	'exportedNodesCallback' => static function (): array { return array (
@@ -10310,7 +4686,19 @@ return [
         0 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'send',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @param array<int, string> $recipients
+     */',
+             'namespace' => 'App\\Contracts\\Email',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -10489,7 +4877,19 @@ return [
         0 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'info',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @param array<string, mixed> $context
+     */',
+             'namespace' => 'App\\Contracts\\Logging',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -10533,7 +4933,19 @@ return [
         1 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'notice',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @param array<string, mixed> $context
+     */',
+             'namespace' => 'App\\Contracts\\Logging',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -10577,7 +4989,19 @@ return [
         2 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'warning',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @param array<string, mixed> $context
+     */',
+             'namespace' => 'App\\Contracts\\Logging',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -10621,7 +5045,19 @@ return [
         3 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'error',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @param array<string, mixed> $context
+     */',
+             'namespace' => 'App\\Contracts\\Logging',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -10800,7 +5236,19 @@ return [
         0 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'send',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return array<string, mixed>
+     */',
+             'namespace' => 'App\\Contracts\\Sms',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -10984,7 +5432,33 @@ return [
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
        'name' => 'App\\Data\\ConfirmationRequestData',
-       'phpDoc' => NULL,
+       'phpDoc' => 
+      \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+         'phpDocString' => '/**
+ * @phpstan-type ConfirmationPayload array{
+ *     Hash: string,
+ *     Mobile: string,
+ *     Username: string,
+ *     Password: string,
+ *     name: string,
+ *     TransAmount: string,
+ *     created_at: string,
+ *     TransID: string,
+ *     TransTime: string,
+ *     TransType: string,
+ *     BillRefNumber: string,
+ *     BusinessShortCode: string
+ * }
+ */',
+         'namespace' => 'App\\Data',
+         'uses' => 
+        array (
+          'invalidpayloadexception' => 'App\\Exceptions\\Confirmation\\InvalidPayloadException',
+        ),
+         'constUses' => 
+        array (
+        ),
+      )),
        'abstract' => false,
        'final' => true,
        'extends' => NULL,
@@ -11179,6 +5653,7 @@ return [
            'phpDoc' => 
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
+     * @param array<string, mixed> $payload
      * @throws InvalidPayloadException
      */',
              'namespace' => 'App\\Data',
@@ -11535,7 +6010,7 @@ return [
             0 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'message',
-               'type' => NULL,
+               'type' => 'string',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -12111,7 +6586,19 @@ return [
         0 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => '__construct',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return void
+     */',
+             'namespace' => 'App\\Exceptions\\Sms',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -12679,7 +7166,7 @@ return [
  * @property string $secret_key
  * @property mixed $credit_account
  *
- * @method static updateOrCreate(string[] $array, array $array1)
+ * @method static static updateOrCreate(array<string, mixed> $attributes, array<string, mixed> $values)
  */',
          'namespace' => 'App\\Models',
          'uses' => 
@@ -12937,7 +7424,7 @@ return [
       \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
          'phpDocString' => '/**
  * @method static where(string $string, string $transactionId)
- * @method static create(array $array)
+ * @method static static create(array<string, mixed> $attributes)
  *
  * @property mixed $transaction_id
  * @property mixed $bill_reference
@@ -13062,7 +7549,23 @@ return [
         3 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'customerName',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Attribute<never, string>
+     */',
+             'namespace' => 'App\\Models',
+             'uses' => 
+            array (
+              'processsmstxn' => 'App\\Enum\\ProcessSMSTxn',
+              'status' => 'App\\Enum\\Status',
+              'attribute' => 'Illuminate\\Database\\Eloquent\\Casts\\Attribute',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => false,
            'private' => false,
@@ -13155,7 +7658,21 @@ return [
         1 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'name',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Attribute<never, string>
+     */',
+             'namespace' => 'App\\Models',
+             'uses' => 
+            array (
+              'attribute' => 'Illuminate\\Database\\Eloquent\\Casts\\Attribute',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => false,
            'private' => false,
@@ -13184,13 +7701,24 @@ return [
        'phpDoc' => 
       \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
          'phpDocString' => '/**
- * @method static create(array $array)
+ * @property array<int, string> $recipients
+ * @property string $subject
+ * @property string $header
+ * @property string $attachment
+ * @property string $message
+ * @property Status $status
+ * @property int $attempts
+ * @property Carbon|null $processed_at
+ * @property Carbon|null $next_retry_at
+ *
+ * @method static static create(array<string, mixed> $attributes)
  */',
          'namespace' => 'App\\Models',
          'uses' => 
         array (
           'status' => 'App\\Enum\\Status',
           'model' => 'Illuminate\\Database\\Eloquent\\Model',
+          'carbon' => 'Illuminate\\Support\\Carbon',
         ),
          'constUses' => 
         array (
@@ -13313,7 +7841,7 @@ return [
        'phpDoc' => 
       \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
          'phpDocString' => '/**
- * @method static create(array $array)
+ * @method static static create(array<string, mixed> $attributes)
  *
  * @property mixed $bill_reference
  * @property mixed $amount
@@ -13471,7 +7999,23 @@ return [
         4 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'customerName',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return Attribute<never, string>
+     */',
+             'namespace' => 'App\\Models',
+             'uses' => 
+            array (
+              'processsmstxn' => 'App\\Enum\\ProcessSMSTxn',
+              'status' => 'App\\Enum\\Status',
+              'attribute' => 'Illuminate\\Database\\Eloquent\\Casts\\Attribute',
+              'model' => 'Illuminate\\Database\\Eloquent\\Model',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => false,
            'private' => false,
@@ -13506,8 +8050,7 @@ return [
       ),
        'usedTraits' => 
       array (
-        0 => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
-        1 => 'Illuminate\\Notifications\\Notifiable',
+        0 => 'Illuminate\\Notifications\\Notifiable',
       ),
        'traitUseAdaptations' => 
       array (
@@ -14473,7 +9016,22 @@ return [
         0 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'write',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @param list<string> $headers
+     * @param list<list<int|float|string|bool|null>> $rows
+     */',
+             'namespace' => 'App\\Services\\Csv',
+             'uses' => 
+            array (
+              'file' => 'Illuminate\\Support\\Facades\\File',
+              'runtimeexception' => 'RuntimeException',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -14530,7 +9088,21 @@ return [
         1 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'read',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return list<list<string>>
+     */',
+             'namespace' => 'App\\Services\\Csv',
+             'uses' => 
+            array (
+              'file' => 'Illuminate\\Support\\Facades\\File',
+              'runtimeexception' => 'RuntimeException',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -15136,7 +9708,21 @@ return [
         0 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'info',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @param array<string, mixed> $context
+     */',
+             'namespace' => 'App\\Services\\Logging',
+             'uses' => 
+            array (
+              'loggingserviceinterface' => 'App\\Contracts\\Logging\\LoggingServiceInterface',
+              'log' => 'Illuminate\\Support\\Facades\\Log',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -15180,7 +9766,21 @@ return [
         1 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'error',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @param array<string, mixed> $context
+     */',
+             'namespace' => 'App\\Services\\Logging',
+             'uses' => 
+            array (
+              'loggingserviceinterface' => 'App\\Contracts\\Logging\\LoggingServiceInterface',
+              'log' => 'Illuminate\\Support\\Facades\\Log',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -15224,7 +9824,21 @@ return [
         2 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'debug',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @param array<string, mixed> $context
+     */',
+             'namespace' => 'App\\Services\\Logging',
+             'uses' => 
+            array (
+              'loggingserviceinterface' => 'App\\Contracts\\Logging\\LoggingServiceInterface',
+              'log' => 'Illuminate\\Support\\Facades\\Log',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -15268,7 +9882,21 @@ return [
         3 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'notice',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @param array<string, mixed> $context
+     */',
+             'namespace' => 'App\\Services\\Logging',
+             'uses' => 
+            array (
+              'loggingserviceinterface' => 'App\\Contracts\\Logging\\LoggingServiceInterface',
+              'log' => 'Illuminate\\Support\\Facades\\Log',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -15312,7 +9940,21 @@ return [
         4 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'warning',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @param array<string, mixed> $context
+     */',
+             'namespace' => 'App\\Services\\Logging',
+             'uses' => 
+            array (
+              'loggingserviceinterface' => 'App\\Contracts\\Logging\\LoggingServiceInterface',
+              'log' => 'Illuminate\\Support\\Facades\\Log',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -15364,7 +10006,20 @@ return [
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
        'name' => 'App\\Services\\Logging\\Sanitizer',
-       'phpDoc' => NULL,
+       'phpDoc' => 
+      \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+         'phpDocString' => '/**
+ * @phpstan-import-type ConfirmationPayload from ConfirmationRequestData
+ */',
+         'namespace' => 'App\\Services\\Logging',
+         'uses' => 
+        array (
+          'confirmationrequestdata' => 'App\\Data\\ConfirmationRequestData',
+        ),
+         'constUses' => 
+        array (
+        ),
+      )),
        'abstract' => false,
        'final' => true,
        'extends' => NULL,
@@ -15382,7 +10037,20 @@ return [
         0 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'payload',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return array<string, mixed>
+     */',
+             'namespace' => 'App\\Services\\Logging',
+             'uses' => 
+            array (
+              'confirmationrequestdata' => 'App\\Data\\ConfirmationRequestData',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -15590,7 +10258,22 @@ return [
         2 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'headers',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return list<string>
+     */',
+             'namespace' => 'App\\Services\\Sap',
+             'uses' => 
+            array (
+              'businessprofile' => 'App\\Models\\BusinessProfile',
+              'confirmationtransaction' => 'App\\Models\\ConfirmationTransaction',
+              'carbon' => 'Carbon\\Carbon',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -15608,7 +10291,22 @@ return [
         3 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'row',
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * @return list<string>
+     */',
+             'namespace' => 'App\\Services\\Sap',
+             'uses' => 
+            array (
+              'businessprofile' => 'App\\Models\\BusinessProfile',
+              'confirmationtransaction' => 'App\\Models\\ConfirmationTransaction',
+              'carbon' => 'Carbon\\Carbon',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'byRef' => false,
            'public' => true,
            'private' => false,
@@ -16233,306 +10931,6 @@ return [
            'attributes' => 
           array (
           ),
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Feature\\Api\\ConfirmationApiTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedFunctionNode::__set_state(array(
-       'name' => 'validPayload',
-       'phpDoc' => NULL,
-       'byRef' => false,
-       'returnType' => 'array',
-       'parameters' => 
-      array (
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Pest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedFunctionNode::__set_state(array(
-       'name' => 'something',
-       'phpDoc' => NULL,
-       'byRef' => false,
-       'returnType' => 'void',
-       'parameters' => 
-      array (
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\TestCase.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'Tests\\TestCase',
-       'phpDoc' => NULL,
-       'abstract' => true,
-       'final' => false,
-       'extends' => 'Illuminate\\Foundation\\Testing\\TestCase',
-       'implements' => 
-      array (
-      ),
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\AuthenticationServiceTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedFunctionNode::__set_state(array(
-       'name' => 'makeConfirmationRequest',
-       'phpDoc' => NULL,
-       'byRef' => false,
-       'returnType' => 'App\\Data\\ConfirmationRequestData',
-       'parameters' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-           'name' => 'username',
-           'type' => 'string',
-           'byRef' => false,
-           'variadic' => false,
-           'hasDefault' => true,
-           'attributes' => 
-          array (
-          ),
-           'phpDoc' => NULL,
-           'flags' => 0,
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-           'name' => 'password',
-           'type' => 'string',
-           'byRef' => false,
-           'variadic' => false,
-           'hasDefault' => true,
-           'attributes' => 
-          array (
-          ),
-           'phpDoc' => NULL,
-           'flags' => 0,
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationHealthServiceTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedFunctionNode::__set_state(array(
-       'name' => 'createTransaction',
-       'phpDoc' => NULL,
-       'byRef' => false,
-       'returnType' => 'App\\Models\\ConfirmationTransaction',
-       'parameters' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-           'name' => 'attributes',
-           'type' => 'array',
-           'byRef' => false,
-           'variadic' => false,
-           'hasDefault' => true,
-           'attributes' => 
-          array (
-          ),
-           'phpDoc' => NULL,
-           'flags' => 0,
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\ConfirmationServiceTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedFunctionNode::__set_state(array(
-       'name' => 'requestData',
-       'phpDoc' => NULL,
-       'byRef' => false,
-       'returnType' => 'App\\Data\\ConfirmationRequestData',
-       'parameters' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-           'name' => 'billRefNumber',
-           'type' => 'string',
-           'byRef' => false,
-           'variadic' => false,
-           'hasDefault' => true,
-           'attributes' => 
-          array (
-          ),
-           'phpDoc' => NULL,
-           'flags' => 0,
-        )),
-        1 => 
-        \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-           'name' => 'overrides',
-           'type' => 'array',
-           'byRef' => false,
-           'variadic' => false,
-           'hasDefault' => true,
-           'attributes' => 
-          array (
-          ),
-           'phpDoc' => NULL,
-           'flags' => 0,
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-    1 => 
-    \PHPStan\Dependency\ExportedNode\ExportedFunctionNode::__set_state(array(
-       'name' => 'profile',
-       'phpDoc' => NULL,
-       'byRef' => false,
-       'returnType' => 'App\\Models\\BusinessProfile',
-       'parameters' => 
-      array (
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\EmailProcessingServiceTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedFunctionNode::__set_state(array(
-       'name' => 'createEmail',
-       'phpDoc' => NULL,
-       'byRef' => false,
-       'returnType' => 'App\\Models\\EmailQueue',
-       'parameters' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-           'name' => 'attributes',
-           'type' => 'array',
-           'byRef' => false,
-           'variadic' => false,
-           'hasDefault' => true,
-           'attributes' => 
-          array (
-          ),
-           'phpDoc' => NULL,
-           'flags' => 0,
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\HashValidationServiceTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedFunctionNode::__set_state(array(
-       'name' => 'makeRequest',
-       'phpDoc' => NULL,
-       'byRef' => false,
-       'returnType' => 'App\\Data\\ConfirmationRequestData',
-       'parameters' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-           'name' => 'hash',
-           'type' => 'string',
-           'byRef' => false,
-           'variadic' => false,
-           'hasDefault' => true,
-           'attributes' => 
-          array (
-          ),
-           'phpDoc' => NULL,
-           'flags' => 0,
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\SmsProcessingServiceTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedFunctionNode::__set_state(array(
-       'name' => 'createSmsQueue',
-       'phpDoc' => NULL,
-       'byRef' => false,
-       'returnType' => 'App\\Models\\SmsQueue',
-       'parameters' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-           'name' => 'attributes',
-           'type' => 'array',
-           'byRef' => false,
-           'variadic' => false,
-           'hasDefault' => true,
-           'attributes' => 
-          array (
-          ),
-           'phpDoc' => NULL,
-           'flags' => 0,
-        )),
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
-  'C:\\Users\\vinsc\\Herd\\devyanivbl\\tests\\Unit\\Services\\TransactionServiceTest.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedFunctionNode::__set_state(array(
-       'name' => 'makeTransactionConfirmationRequest',
-       'phpDoc' => NULL,
-       'byRef' => false,
-       'returnType' => 'App\\Data\\ConfirmationRequestData',
-       'parameters' => 
-      array (
-        0 => 
-        \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-           'name' => 'transactionId',
-           'type' => 'string',
-           'byRef' => false,
-           'variadic' => false,
-           'hasDefault' => true,
-           'attributes' => 
-          array (
-          ),
-           'phpDoc' => NULL,
-           'flags' => 0,
         )),
       ),
        'attributes' => 

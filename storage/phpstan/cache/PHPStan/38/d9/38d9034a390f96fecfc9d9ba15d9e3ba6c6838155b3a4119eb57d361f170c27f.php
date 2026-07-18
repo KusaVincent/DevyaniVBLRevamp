@@ -2,7 +2,7 @@
 
 // odsl-C:\Users\vinsc\Herd\devyanivbl\app\Models\SmsQueue.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Models\SmsQueue
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.3-8.5.8-e84e59a1af6fbd3b902fb4873f205de19a6c04bad985cd3b33b2b90ee48c1fe6',
+   'variableKey' => 'v2-6.70.0.3-8.5.8-bd0e264cabb2e520bae7f37ce8cebe5bdb1fe6063c4406390a0ac0f3769de549',
    'data' => 
   array (
     'locatedSource' => 
@@ -23,7 +23,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     'isBackedEnum' => false,
     'modifiers' => 0,
     'docComment' => '/**
- * @method static create(array $array)
+ * @method static static create(array<string, mixed> $attributes)
  *
  * @property mixed $bill_reference
  * @property mixed $amount
@@ -35,7 +35,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 21,
-    'endLine' => 71,
+    'endLine' => 74,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Database\\Eloquent\\Model',
@@ -65,9 +65,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 24,
             'endLine' => 24,
             'startTokenPos' => 57,
-            'startFilePos' => 476,
+            'startFilePos' => 503,
             'endTokenPos' => 57,
-            'endFilePos' => 480,
+            'endFilePos' => 507,
           ),
         ),
         'docComment' => NULL,
@@ -108,9 +108,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 27,
             'endLine' => 43,
             'startTokenPos' => 70,
-            'startFilePos' => 527,
+            'startFilePos' => 554,
             'endTokenPos' => 117,
-            'endFilePos' => 858,
+            'endFilePos' => 885,
           ),
         ),
         'docComment' => NULL,
@@ -151,9 +151,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 59,
             'endLine' => 63,
             'startTokenPos' => 202,
-            'startFilePos' => 1249,
+            'startFilePos' => 1276,
             'endTokenPos' => 229,
-            'endFilePos' => 1358,
+            'endFilePos' => 1385,
           ),
         ),
         'docComment' => NULL,
@@ -244,9 +244,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'docComment' => NULL,
-        'startLine' => 65,
-        'endLine' => 70,
+        'docComment' => '/**
+ * @return Attribute<never, string>
+ */',
+        'startLine' => 68,
+        'endLine' => 73,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

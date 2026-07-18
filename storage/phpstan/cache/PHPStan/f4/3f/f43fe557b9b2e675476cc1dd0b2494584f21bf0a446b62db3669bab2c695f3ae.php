@@ -2,7 +2,7 @@
 
 // odsl-C:\Users\vinsc\Herd\devyanivbl\app\Exceptions\Sms\SmsRejectedException.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Exceptions\Sms\SmsRejectedException
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.3-8.5.8-7a5a9b36fd8c557e9e2fd78840dcd1dfb7b9119c51e97555d3738e2496c9d063',
+   'variableKey' => 'v2-6.70.0.3-8.5.8-95d589983b499748fa90990f3c921bcf7325a69ead257b3affb5f4051e54d284',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 7,
-    'endLine' => 13,
+    'endLine' => 16,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'App\\Exceptions\\Sms\\SmsException',
@@ -62,8 +62,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'startLine' => 9,
-        'endLine' => 9,
+        'startLine' => 12,
+        'endLine' => 12,
         'startColumn' => 33,
         'endColumn' => 62,
         'isPromoted' => true,
@@ -112,20 +112,20 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => 'null',
           'attributes' => 
           array (
-            'startLine' => 9,
-            'endLine' => 9,
-            'startTokenPos' => 58,
-            'startFilePos' => 236,
-            'endTokenPos' => 58,
-            'endFilePos' => 239,
+            'startLine' => 12,
+            'endLine' => 12,
+            'startTokenPos' => 60,
+            'startFilePos' => 272,
+            'endTokenPos' => 60,
+            'endFilePos' => 275,
           ),
         ),
         'docComment' => NULL,
         'attributes' => 
         array (
         ),
-        'startLine' => 9,
-        'endLine' => 9,
+        'startLine' => 12,
+        'endLine' => 12,
         'startColumn' => 82,
         'endColumn' => 120,
         'isPromoted' => true,
@@ -162,8 +162,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 9,
-            'endLine' => 9,
+            'startLine' => 12,
+            'endLine' => 12,
             'startColumn' => 33,
             'endColumn' => 62,
             'parameterIndex' => 0,
@@ -188,8 +188,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 9,
-            'endLine' => 9,
+            'startLine' => 12,
+            'endLine' => 12,
             'startColumn' => 65,
             'endColumn' => 79,
             'parameterIndex' => 1,
@@ -203,12 +203,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               'code' => 'null',
               'attributes' => 
               array (
-                'startLine' => 9,
-                'endLine' => 9,
-                'startTokenPos' => 58,
-                'startFilePos' => 236,
-                'endTokenPos' => 58,
-                'endFilePos' => 239,
+                'startLine' => 12,
+                'endLine' => 12,
+                'startTokenPos' => 60,
+                'startFilePos' => 272,
+                'endTokenPos' => 60,
+                'endFilePos' => 275,
               ),
             ),
             'type' => 
@@ -245,8 +245,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 9,
-            'endLine' => 9,
+            'startLine' => 12,
+            'endLine' => 12,
             'startColumn' => 82,
             'endColumn' => 120,
             'parameterIndex' => 2,
@@ -258,9 +258,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'docComment' => NULL,
-        'startLine' => 9,
-        'endLine' => 12,
+        'docComment' => '/**
+ * @return void
+ */',
+        'startLine' => 12,
+        'endLine' => 15,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

@@ -2,7 +2,7 @@
 
 // odsl-C:\Users\vinsc\Herd\devyanivbl\app\Models\EmailQueue.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Models\EmailQueue
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.3-8.5.8-f62fb71469f6b32d3716bfce97521bc591c132ca430256d1218d43e194c65c9d',
+   'variableKey' => 'v2-6.70.0.3-8.5.8-3fbd749f04da3ae462707bf225e2b31c213ff31eca31bb54fdaf44017703c9d6',
    'data' => 
   array (
     'locatedSource' => 
@@ -23,13 +23,23 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     'isBackedEnum' => false,
     'modifiers' => 0,
     'docComment' => '/**
- * @method static create(array $array)
+ * @property array<int, string> $recipients
+ * @property string $subject
+ * @property string $header
+ * @property string $attachment
+ * @property string $message
+ * @property Status $status
+ * @property int $attempts
+ * @property Carbon|null $processed_at
+ * @property Carbon|null $next_retry_at
+ *
+ * @method static static create(array<string, mixed> $attributes)
  */',
     'attributes' => 
     array (
     ),
-    'startLine' => 13,
-    'endLine' => 47,
+    'startLine' => 24,
+    'endLine' => 58,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Database\\Eloquent\\Model',
@@ -56,12 +66,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '[\'subject\', \'header\', \'attachment\', \'recipients\', \'status\', \'attempts\', \'next_retry_at\', \'processed_at\', \'response\', \'error\', \'message\']',
           'attributes' => 
           array (
-            'startLine' => 16,
-            'endLine' => 28,
-            'startTokenPos' => 47,
-            'startFilePos' => 241,
-            'endTokenPos' => 82,
-            'endFilePos' => 471,
+            'startLine' => 27,
+            'endLine' => 39,
+            'startTokenPos' => 52,
+            'startFilePos' => 598,
+            'endTokenPos' => 87,
+            'endFilePos' => 828,
           ),
         ),
         'docComment' => NULL,
@@ -76,8 +86,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             ),
           ),
         ),
-        'startLine' => 15,
-        'endLine' => 28,
+        'startLine' => 26,
+        'endLine' => 39,
         'startColumn' => 5,
         'endColumn' => 6,
         'isPromoted' => false,
@@ -99,12 +109,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           'code' => '[\'status\' => \\App\\Enum\\Status::PENDING, \'attempts\' => 0]',
           'attributes' => 
           array (
-            'startLine' => 43,
-            'endLine' => 46,
-            'startTokenPos' => 158,
-            'startFilePos' => 814,
-            'endTokenPos' => 176,
-            'endFilePos' => 882,
+            'startLine' => 54,
+            'endLine' => 57,
+            'startTokenPos' => 163,
+            'startFilePos' => 1171,
+            'endTokenPos' => 181,
+            'endFilePos' => 1239,
           ),
         ),
         'docComment' => NULL,
@@ -119,8 +129,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             ),
           ),
         ),
-        'startLine' => 42,
-        'endLine' => 46,
+        'startLine' => 53,
+        'endLine' => 57,
         'startColumn' => 5,
         'endColumn' => 6,
         'isPromoted' => false,
@@ -161,8 +171,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           ),
         ),
         'docComment' => NULL,
-        'startLine' => 30,
-        'endLine' => 40,
+        'startLine' => 41,
+        'endLine' => 51,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

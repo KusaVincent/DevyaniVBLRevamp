@@ -6,9 +6,20 @@ namespace App\Models;
 
 use App\Enum\Status;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 /**
- * @method static create(array $array)
+ * @property array<int, string> $recipients
+ * @property string $subject
+ * @property string $header
+ * @property string $attachment
+ * @property string $message
+ * @property Status $status
+ * @property int $attempts
+ * @property Carbon|null $processed_at
+ * @property Carbon|null $next_retry_at
+ *
+ * @method static static create(array<string, mixed> $attributes)
  */
 class EmailQueue extends Model
 {

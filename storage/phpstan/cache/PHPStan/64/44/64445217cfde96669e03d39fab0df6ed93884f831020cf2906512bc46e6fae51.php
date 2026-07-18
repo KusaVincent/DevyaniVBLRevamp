@@ -2,7 +2,7 @@
 
 // odsl-C:\Users\vinsc\Herd\devyanivbl\app\Models\BusinessProfile.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Models\BusinessProfile
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.3-8.5.8-e4271beeb36373bac7095b11fa2f32985b08723e52ef4e71341e06d9d64feada',
+   'variableKey' => 'v2-6.70.0.3-8.5.8-8b5ccccee9d79cf8970a24021f04f6fba2cdb3faf8d2cf7750cb96e4026b3e36',
    'data' => 
   array (
     'locatedSource' => 
@@ -34,7 +34,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  * @property string $secret_key
  * @property mixed $credit_account
  *
- * @method static updateOrCreate(string[] $array, array $array1)
+ * @method static static updateOrCreate(array<string, mixed> $attributes, array<string, mixed> $values)
  */',
     'attributes' => 
     array (
@@ -70,9 +70,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 29,
             'endLine' => 41,
             'startTokenPos' => 57,
-            'startFilePos' => 704,
+            'startFilePos' => 743,
             'endTokenPos' => 92,
-            'endFilePos' => 972,
+            'endFilePos' => 1011,
           ),
         ),
         'docComment' => NULL,
@@ -113,9 +113,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 44,
             'endLine' => 44,
             'startTokenPos' => 105,
-            'startFilePos' => 1018,
+            'startFilePos' => 1057,
             'endTokenPos' => 106,
-            'endFilePos' => 1019,
+            'endFilePos' => 1058,
           ),
         ),
         'docComment' => NULL,
@@ -156,9 +156,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 47,
             'endLine' => 50,
             'startTokenPos' => 119,
-            'startFilePos' => 1064,
+            'startFilePos' => 1103,
             'endTokenPos' => 127,
-            'endFilePos' => 1112,
+            'endFilePos' => 1151,
           ),
         ),
         'docComment' => NULL,
@@ -199,9 +199,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 53,
             'endLine' => 55,
             'startTokenPos' => 140,
-            'startFilePos' => 1161,
+            'startFilePos' => 1200,
             'endTokenPos' => 151,
-            'endFilePos' => 1215,
+            'endFilePos' => 1254,
           ),
         ),
         'docComment' => NULL,

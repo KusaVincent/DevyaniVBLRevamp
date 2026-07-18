@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @method static create(array $array)
+ * @method static static create(array<string, mixed> $attributes)
  *
  * @property mixed $bill_reference
  * @property mixed $amount
@@ -62,6 +62,9 @@ class SmsQueue extends Model
         'attempts' => 0,
     ];
 
+    /**
+     * @return Attribute<never, string>
+     */
     protected function customerName(): Attribute
     {
         return Attribute::make(

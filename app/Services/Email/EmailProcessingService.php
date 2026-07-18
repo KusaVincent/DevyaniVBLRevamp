@@ -43,7 +43,8 @@ final readonly class EmailProcessingService implements EmailProcessingServiceInt
                         'attempts' => $attempt,
                     ]);
 
-                    $this->logger->info('Email Details', [$email]);
+                    $this->logger->info('Email Details', ['email' => $email]);
+
                     $preparedAttachment = $this->sapArchive->prepare($email->attachment);
 
                     if ($preparedAttachment === null) {

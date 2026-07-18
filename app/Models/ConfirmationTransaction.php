@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @method static where(string $string, string $transactionId)
- * @method static create(array $array)
+ * @method static static create(array<string, mixed> $attributes)
  *
  * @property mixed $transaction_id
  * @property mixed $bill_reference
@@ -51,6 +51,9 @@ class ConfirmationTransaction extends Model
         ];
     }
 
+    /**
+     * @return Attribute<never, string>
+     */
     protected function customerName(): Attribute
     {
         return Attribute::make(

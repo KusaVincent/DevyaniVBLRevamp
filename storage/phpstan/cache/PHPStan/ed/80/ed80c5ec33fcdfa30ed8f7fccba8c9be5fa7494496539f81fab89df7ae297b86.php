@@ -22,6 +22,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'parent' => NULL,
          'typeAliasesMap' => 
         array (
+          'ConfirmationPayload' => true,
         ),
          'bypassTypeAliases' => false,
          'constUses' => 
@@ -42,9 +43,33 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'templatePhpDocNodes' => 
         array (
         ),
-         'parent' => NULL,
+         'parent' => 
+        \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+           'namespace' => 'App\\Data',
+           'uses' => 
+          array (
+            'invalidpayloadexception' => 'App\\Exceptions\\Confirmation\\InvalidPayloadException',
+          ),
+           'className' => 'App\\Data\\ConfirmationRequestData',
+           'functionName' => NULL,
+           'templatePhpDocNodes' => 
+          array (
+          ),
+           'parent' => NULL,
+           'typeAliasesMap' => 
+          array (
+            'ConfirmationPayload' => true,
+          ),
+           'bypassTypeAliases' => false,
+           'constUses' => 
+          array (
+          ),
+           'typeAliasClassName' => NULL,
+           'traitData' => NULL,
+        )),
          'typeAliasesMap' => 
         array (
+          'ConfirmationPayload' => true,
         ),
          'bypassTypeAliases' => false,
          'constUses' => 
@@ -65,9 +90,33 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'templatePhpDocNodes' => 
         array (
         ),
-         'parent' => NULL,
+         'parent' => 
+        \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+           'namespace' => 'App\\Data',
+           'uses' => 
+          array (
+            'invalidpayloadexception' => 'App\\Exceptions\\Confirmation\\InvalidPayloadException',
+          ),
+           'className' => 'App\\Data\\ConfirmationRequestData',
+           'functionName' => NULL,
+           'templatePhpDocNodes' => 
+          array (
+          ),
+           'parent' => NULL,
+           'typeAliasesMap' => 
+          array (
+            'ConfirmationPayload' => true,
+          ),
+           'bypassTypeAliases' => false,
+           'constUses' => 
+          array (
+          ),
+           'typeAliasClassName' => NULL,
+           'traitData' => NULL,
+        )),
          'typeAliasesMap' => 
         array (
+          'ConfirmationPayload' => true,
         ),
          'bypassTypeAliases' => false,
          'constUses' => 
@@ -88,9 +137,33 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'templatePhpDocNodes' => 
         array (
         ),
-         'parent' => NULL,
+         'parent' => 
+        \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+           'namespace' => 'App\\Data',
+           'uses' => 
+          array (
+            'invalidpayloadexception' => 'App\\Exceptions\\Confirmation\\InvalidPayloadException',
+          ),
+           'className' => 'App\\Data\\ConfirmationRequestData',
+           'functionName' => NULL,
+           'templatePhpDocNodes' => 
+          array (
+          ),
+           'parent' => NULL,
+           'typeAliasesMap' => 
+          array (
+            'ConfirmationPayload' => true,
+          ),
+           'bypassTypeAliases' => false,
+           'constUses' => 
+          array (
+          ),
+           'typeAliasClassName' => NULL,
+           'traitData' => NULL,
+        )),
          'typeAliasesMap' => 
         array (
+          'ConfirmationPayload' => true,
         ),
          'bypassTypeAliases' => false,
          'constUses' => 
@@ -111,9 +184,33 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'templatePhpDocNodes' => 
         array (
         ),
-         'parent' => NULL,
+         'parent' => 
+        \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+           'namespace' => 'App\\Data',
+           'uses' => 
+          array (
+            'invalidpayloadexception' => 'App\\Exceptions\\Confirmation\\InvalidPayloadException',
+          ),
+           'className' => 'App\\Data\\ConfirmationRequestData',
+           'functionName' => NULL,
+           'templatePhpDocNodes' => 
+          array (
+          ),
+           'parent' => NULL,
+           'typeAliasesMap' => 
+          array (
+            'ConfirmationPayload' => true,
+          ),
+           'bypassTypeAliases' => false,
+           'constUses' => 
+          array (
+          ),
+           'typeAliasClassName' => NULL,
+           'traitData' => NULL,
+        )),
          'typeAliasesMap' => 
         array (
+          'ConfirmationPayload' => true,
         ),
          'bypassTypeAliases' => false,
          'constUses' => 
@@ -134,9 +231,33 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
          'templatePhpDocNodes' => 
         array (
         ),
-         'parent' => NULL,
+         'parent' => 
+        \PHPStan\Analyser\IntermediaryNameScope::__set_state(array(
+           'namespace' => 'App\\Data',
+           'uses' => 
+          array (
+            'invalidpayloadexception' => 'App\\Exceptions\\Confirmation\\InvalidPayloadException',
+          ),
+           'className' => 'App\\Data\\ConfirmationRequestData',
+           'functionName' => NULL,
+           'templatePhpDocNodes' => 
+          array (
+          ),
+           'parent' => NULL,
+           'typeAliasesMap' => 
+          array (
+            'ConfirmationPayload' => true,
+          ),
+           'bypassTypeAliases' => false,
+           'constUses' => 
+          array (
+          ),
+           'typeAliasClassName' => NULL,
+           'traitData' => NULL,
+        )),
          'typeAliasesMap' => 
         array (
+          'ConfirmationPayload' => true,
         ),
          'bypassTypeAliases' => false,
          'constUses' => 
@@ -148,7 +269,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Data\\ConfirmationRequestData.php' => '26e073e46a5b772a0b58451b663f8117e99cb907463f11351b0400f3a685f821',
+      'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Data\\ConfirmationRequestData.php' => '1f3828bce16e024a4d115c6ad4c597171888fa96f475dc0942f8c0e6cf786e7c',
     ),
   ),
 ));

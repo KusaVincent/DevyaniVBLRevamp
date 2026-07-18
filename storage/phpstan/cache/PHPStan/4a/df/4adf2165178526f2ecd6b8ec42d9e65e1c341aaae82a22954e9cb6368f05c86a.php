@@ -2,7 +2,7 @@
 
 // odsl-C:\Users\vinsc\Herd\devyanivbl\app\Services\Email\EmailProcessingService.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Services\Email\EmailProcessingService
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.3-8.5.8-14b0c693f23be1bf87e6f4fde271c8dfae86d89e6670dd6456c66caaea98147b',
+   'variableKey' => 'v2-6.70.0.3-8.5.8-eb758281e7bdbaf8a0f2c0841f5426c7fb05236635b772e4196e342db0c7fe26',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 15,
-    'endLine' => 143,
+    'endLine' => 144,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => NULL,
@@ -265,7 +265,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         ),
         'docComment' => NULL,
         'startLine' => 22,
-        'endLine' => 127,
+        'endLine' => 128,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -299,8 +299,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         array (
         ),
         'docComment' => NULL,
-        'startLine' => 129,
-        'endLine' => 132,
+        'startLine' => 130,
+        'endLine' => 133,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -338,8 +338,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 134,
-            'endLine' => 134,
+            'startLine' => 135,
+            'endLine' => 135,
             'startColumn' => 33,
             'endColumn' => 44,
             'parameterIndex' => 0,
@@ -360,8 +360,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         array (
         ),
         'docComment' => NULL,
-        'startLine' => 134,
-        'endLine' => 142,
+        'startLine' => 135,
+        'endLine' => 143,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

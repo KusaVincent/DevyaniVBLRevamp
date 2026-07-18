@@ -2,7 +2,7 @@
 
 // odsl-C:\Users\vinsc\Herd\devyanivbl\app\Contracts\Email\EmailServiceInterface.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Contracts\Email\EmailServiceInterface
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.3-8.5.8-ebb5baf712d9b0fad0d3a376d3b73b50f2bd27b3809671d059af4f44e5910df9',
+   'variableKey' => 'v2-6.70.0.3-8.5.8-22a34272a53bc8af3c6bb5b0fe64758f3116717fedace3e14184caa0e1ea0f87',
    'data' => 
   array (
     'locatedSource' => 
@@ -27,7 +27,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 7,
-    'endLine' => 16,
+    'endLine' => 19,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => NULL,
@@ -69,8 +69,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 10,
-            'endLine' => 10,
+            'startLine' => 13,
+            'endLine' => 13,
             'startColumn' => 9,
             'endColumn' => 25,
             'parameterIndex' => 0,
@@ -95,8 +95,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 11,
-            'endLine' => 11,
+            'startLine' => 14,
+            'endLine' => 14,
             'startColumn' => 9,
             'endColumn' => 23,
             'parameterIndex' => 1,
@@ -121,8 +121,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 12,
-            'endLine' => 12,
+            'startLine' => 15,
+            'endLine' => 15,
             'startColumn' => 9,
             'endColumn' => 22,
             'parameterIndex' => 2,
@@ -147,8 +147,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 13,
-            'endLine' => 13,
+            'startLine' => 16,
+            'endLine' => 16,
             'startColumn' => 9,
             'endColumn' => 23,
             'parameterIndex' => 3,
@@ -162,12 +162,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               'code' => 'null',
               'attributes' => 
               array (
-                'startLine' => 14,
-                'endLine' => 14,
-                'startTokenPos' => 55,
-                'startFilePos' => 256,
-                'endTokenPos' => 55,
-                'endFilePos' => 259,
+                'startLine' => 17,
+                'endLine' => 17,
+                'startTokenPos' => 57,
+                'startFilePos' => 317,
+                'endTokenPos' => 57,
+                'endFilePos' => 320,
               ),
             ),
             'type' => 
@@ -204,8 +204,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 14,
-            'endLine' => 14,
+            'startLine' => 17,
+            'endLine' => 17,
             'startColumn' => 9,
             'endColumn' => 34,
             'parameterIndex' => 4,
@@ -225,9 +225,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'docComment' => NULL,
-        'startLine' => 9,
-        'endLine' => 15,
+        'docComment' => '/**
+ * @param array<int, string> $recipients
+ */',
+        'startLine' => 12,
+        'endLine' => 18,
         'startColumn' => 5,
         'endColumn' => 12,
         'couldThrow' => false,

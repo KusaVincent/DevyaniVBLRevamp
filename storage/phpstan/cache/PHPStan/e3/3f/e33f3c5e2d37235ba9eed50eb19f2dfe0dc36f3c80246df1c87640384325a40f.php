@@ -2,7 +2,7 @@
 
 // odsl-C:\Users\vinsc\Herd\devyanivbl\app\Models\User.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Models\User
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.3-8.5.8-be189ca61cf460ef62230eafd24334b619d4503a3001985f149d1a3ddace29ec',
+   'variableKey' => 'v2-6.70.0.3-8.5.8-231f200b35e2afe7c67956a7b5f84b1ae565c596effb034f2c11c8306920191e',
    'data' => 
   array (
     'locatedSource' => 
@@ -69,7 +69,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       ),
     ),
     'startLine' => 15,
-    'endLine' => 34,
+    'endLine' => 33,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Foundation\\Auth\\User',
@@ -78,8 +78,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'traitClassNames' => 
     array (
-      0 => 'Illuminate\\Database\\Eloquent\\Factories\\HasFactory',
-      1 => 'Illuminate\\Notifications\\Notifiable',
+      0 => 'Illuminate\\Notifications\\Notifiable',
     ),
     'immediateConstants' => 
     array (
@@ -121,8 +120,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
  *
  * @return array<string, string>
  */',
-        'startLine' => 26,
-        'endLine' => 33,
+        'startLine' => 25,
+        'endLine' => 32,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

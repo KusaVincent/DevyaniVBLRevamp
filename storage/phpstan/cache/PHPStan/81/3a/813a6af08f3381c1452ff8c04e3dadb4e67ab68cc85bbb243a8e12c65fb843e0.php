@@ -189,7 +189,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\BusinessProfile.php' => 'e4271beeb36373bac7095b11fa2f32985b08723e52ef4e71341e06d9d64feada',
+      'C:\\Users\\vinsc\\Herd\\devyanivbl\\app\\Models\\BusinessProfile.php' => '8b5ccccee9d79cf8970a24021f04f6fba2cdb3faf8d2cf7750cb96e4026b3e36',
     ),
   ),
 ));

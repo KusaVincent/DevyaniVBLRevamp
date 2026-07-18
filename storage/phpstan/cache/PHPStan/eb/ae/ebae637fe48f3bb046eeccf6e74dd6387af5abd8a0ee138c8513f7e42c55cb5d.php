@@ -2,7 +2,7 @@
 
 // odsl-C:\Users\vinsc\Herd\devyanivbl\app\Models\ConfirmationTransaction.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Models\ConfirmationTransaction
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.3-8.5.8-2d85ae6e1f748bb18b989e5e2ab1349fc1bba0eea85e7eb5326316efe2eb4226',
+   'variableKey' => 'v2-6.70.0.3-8.5.8-46eaa2a2698e8e2bbd4f92ddc0251c2c37d2d4d55e3fe1d2b57d04b0fb2839cd',
    'data' => 
   array (
     'locatedSource' => 
@@ -24,7 +24,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     'modifiers' => 0,
     'docComment' => '/**
  * @method static where(string $string, string $transactionId)
- * @method static create(array $array)
+ * @method static static create(array<string, mixed> $attributes)
  *
  * @property mixed $transaction_id
  * @property mixed $bill_reference
@@ -35,7 +35,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     array (
     ),
     'startLine' => 21,
-    'endLine' => 60,
+    'endLine' => 63,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => 'Illuminate\\Database\\Eloquent\\Model',
@@ -65,9 +65,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 24,
             'endLine' => 35,
             'startTokenPos' => 57,
-            'startFilePos' => 533,
+            'startFilePos' => 560,
             'endTokenPos' => 89,
-            'endFilePos' => 777,
+            'endFilePos' => 804,
           ),
         ),
         'docComment' => NULL,
@@ -108,9 +108,9 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 38,
             'endLine' => 41,
             'startTokenPos' => 102,
-            'startFilePos' => 826,
+            'startFilePos' => 853,
             'endTokenPos' => 122,
-            'endFilePos' => 910,
+            'endFilePos' => 937,
           ),
         ),
         'docComment' => NULL,
@@ -201,9 +201,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'docComment' => NULL,
-        'startLine' => 54,
-        'endLine' => 59,
+        'docComment' => '/**
+ * @return Attribute<never, string>
+ */',
+        'startLine' => 57,
+        'endLine' => 62,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

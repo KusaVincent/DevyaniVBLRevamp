@@ -2,7 +2,7 @@
 
 // odsl-C:\Users\vinsc\Herd\devyanivbl\app\Exceptions\Confirmation\ConfirmationException.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Exceptions\Confirmation\ConfirmationException
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.3-8.5.8-fb248cebe7b5dadc0f8b8fa8be0a9fd0cd059158b0a884fe0b5dfdce21643c89',
+   'variableKey' => 'v2-6.70.0.3-8.5.8-140709894b24515c1fb598d293f7b2b55fe8cd477b0a88d2886446cef1339b40',
    'data' => 
   array (
     'locatedSource' => 
@@ -89,7 +89,15 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
           array (
             'name' => 'message',
             'default' => NULL,
-            'type' => NULL,
+            'type' => 
+            array (
+              'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+              'data' => 
+              array (
+                'name' => 'string',
+                'isIdentifier' => true,
+              ),
+            ),
             'isVariadic' => false,
             'byRef' => false,
             'isPromoted' => false,
@@ -99,7 +107,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'startLine' => 16,
             'endLine' => 16,
             'startColumn' => 39,
-            'endColumn' => 46,
+            'endColumn' => 53,
             'parameterIndex' => 0,
             'isOptional' => false,
           ),

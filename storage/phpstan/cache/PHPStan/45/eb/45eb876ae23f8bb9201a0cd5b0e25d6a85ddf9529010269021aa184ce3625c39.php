@@ -2,7 +2,7 @@
 
 // odsl-C:\Users\vinsc\Herd\devyanivbl\app\Services\Logging\Sanitizer.php-PHPStan\BetterReflection\Reflection\ReflectionClass-App\Services\Logging\Sanitizer
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.70.0.3-8.5.8-fc812c72385767a882b1348adcc17f74b8d3d687087f2129d042ade9b6d2b9ee',
+   'variableKey' => 'v2-6.70.0.3-8.5.8-84c89c35dd26b7b3164a641864fc537e728c5d2fa81ee36aad846a3488f9bcf0',
    'data' => 
   array (
     'locatedSource' => 
@@ -22,12 +22,14 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     'isEnum' => false,
     'isBackedEnum' => false,
     'modifiers' => 32,
-    'docComment' => NULL,
+    'docComment' => '/**
+ * @phpstan-import-type ConfirmationPayload from ConfirmationRequestData
+ */',
     'attributes' => 
     array (
     ),
-    'startLine' => 9,
-    'endLine' => 24,
+    'startLine' => 12,
+    'endLine' => 29,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => NULL,
@@ -69,10 +71,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 12,
-            'endLine' => 12,
-            'startColumn' => 9,
-            'endColumn' => 40,
+            'startLine' => 17,
+            'endLine' => 17,
+            'startColumn' => 36,
+            'endColumn' => 67,
             'parameterIndex' => 0,
             'isOptional' => false,
           ),
@@ -90,9 +92,11 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         'attributes' => 
         array (
         ),
-        'docComment' => NULL,
-        'startLine' => 11,
-        'endLine' => 23,
+        'docComment' => '/**
+ * @return array<string, mixed>
+ */',
+        'startLine' => 17,
+        'endLine' => 28,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

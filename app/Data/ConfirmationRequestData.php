@@ -6,6 +6,22 @@ namespace App\Data;
 
 use App\Exceptions\Confirmation\InvalidPayloadException;
 
+/**
+ * @phpstan-type ConfirmationPayload array{
+ *     Hash: string,
+ *     Mobile: string,
+ *     Username: string,
+ *     Password: string,
+ *     name: string,
+ *     TransAmount: string,
+ *     created_at: string,
+ *     TransID: string,
+ *     TransTime: string,
+ *     TransType: string,
+ *     BillRefNumber: string,
+ *     BusinessShortCode: string
+ * }
+ */
 final readonly class ConfirmationRequestData
 {
     public function __construct(
@@ -24,6 +40,7 @@ final readonly class ConfirmationRequestData
     ) {}
 
     /**
+     * @param array<string, mixed> $payload
      * @throws InvalidPayloadException
      */
     public static function fromArray(array $payload): self
