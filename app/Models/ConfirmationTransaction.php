@@ -8,6 +8,7 @@ use App\Enum\ProcessSMSTxn;
 use App\Enum\Status;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * @method static where(string $string, string $transactionId)
@@ -32,6 +33,8 @@ class ConfirmationTransaction extends Model
         'business_short_code',
         'process',
         'created_at',
+        'narrative',
+        'ft_ref',
     ];
 
     #[\Override]
@@ -49,6 +52,15 @@ class ConfirmationTransaction extends Model
             'updated_at' => 'datetime',
             'process' => ProcessSMSTxn::class,
         ];
+    }
+
+    public function businessProfile(): BelongsTo
+    {
+        return $this->belongsTo(
+            BusinessProfile::class,
+            'business_short_code',
+            'business_short_code'
+        );
     }
 
     /**

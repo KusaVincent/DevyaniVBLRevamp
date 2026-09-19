@@ -4,8 +4,38 @@ declare(strict_types=1);
 
 namespace App\Enum;
 
-enum ProcessSMSTxn: int
+use Filament\Support\Colors\Color;
+use Filament\Support\Contracts\HasColor;
+use Filament\Support\Contracts\HasIcon;
+use Filament\Support\Contracts\HasLabel;
+use Filament\Support\Icons\Heroicon;
+
+enum ProcessSMSTxn: int implements  HasLabel, HasIcon, HasColor
 {
     case NO = 0;
     case YES = 1;
+
+    public function getLabel(): string
+    {
+        return match ($this) {
+            self::NO => 'No',
+            self::YES => 'Yes',
+        };
+    }
+
+    public function getColor(): array
+    {
+        return match ($this) {
+            self::NO => Color::Yellow,
+            self::YES => Color::Green,
+        };
+    }
+
+    public function getIcon(): Heroicon
+    {
+        return match ($this) {
+            self::NO => Heroicon::XMark,
+            self::YES => Heroicon::Check,
+        };
+    }
 }

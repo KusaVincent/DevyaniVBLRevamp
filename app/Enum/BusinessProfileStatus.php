@@ -4,8 +4,38 @@ declare(strict_types=1);
 
 namespace App\Enum;
 
-enum BusinessProfileStatus: int
+use Filament\Support\Colors\Color;
+use Filament\Support\Contracts\HasColor;
+use Filament\Support\Contracts\HasIcon;
+use Filament\Support\Contracts\HasLabel;
+use Filament\Support\Icons\Heroicon;
+
+enum BusinessProfileStatus: int implements  HasColor, HasIcon, HasLabel
 {
     case NO = 0;
     case YES = 1;
+
+    public function getLabel(): string
+    {
+        return match ($this) {
+            self::NO => 'Normal',
+            self::YES => 'Till',
+        };
+    }
+
+    public function getColor(): array
+    {
+        return match ($this) {
+            self::NO => Color::Teal,
+            self::YES => Color::Sky,
+        };
+    }
+
+    public function getIcon(): Heroicon
+    {
+        return match ($this) {
+            self::NO => Heroicon::XMark,
+            self::YES => Heroicon::Check,
+        };
+    }
 }

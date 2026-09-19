@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
+use App\Enum\BusinessProfileType;
 use App\Models\BusinessProfile;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -37,6 +38,19 @@ final class BusinessProfileSeeder extends Seeder
                 'profit_center' => 'PK00',
                 'secret_key' => '1345425670107A6D20EB99CFB8C0E2D5',
             ],
+            [
+                'type' => BusinessProfileType::NCBA_TILL,
+                'business_short_code' => '880100',
+                'username' => 'DevyaniTill',
+                'password' => '6Pm4WXtbeZ00cd7uF8zjwSleQk8',
+                'credit_account' => '1953840154',
+                'sap_file' => 'app/public/confirmation/Till_C2B.csv',
+                'business_transaction' => 'CUSTOMER ACCOUNTS',
+                'area_code_name' => 'Business Area',
+                'business_area' => 'YN01',
+                'profit_center' => 'PK00',
+                'secret_key' => '1345425670107A6D20EB99CFB8C0E2D5',
+            ],
         ];
 
         foreach ($profiles as $profile) {
@@ -45,6 +59,7 @@ final class BusinessProfileSeeder extends Seeder
                     'business_short_code' => $profile['business_short_code'],
                 ],
                 [
+                    'type' => $profile['type'] ?? BusinessProfileType::NORMAL,
                     'username' => $profile['username'],
                     'password' => Hash::make($profile['password']),
                     'secret_key' => $profile['secret_key'],

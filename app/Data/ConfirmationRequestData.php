@@ -13,13 +13,15 @@ use App\Exceptions\Confirmation\InvalidPayloadException;
  *     Username: string,
  *     Password: string,
  *     name: string,
- *     TransAmount: string,
- *     created_at: string,
+ *     TransAmount: string|int|float,
  *     TransID: string,
  *     TransTime: string,
  *     TransType: string,
  *     BillRefNumber: string,
- *     BusinessShortCode: string
+ *     BusinessShortCode: string,
+ *     FTRef?: string,
+ *     Narrative?: string,
+ *     created_at?: string
  * }
  */
 final readonly class ConfirmationRequestData
@@ -28,9 +30,11 @@ final readonly class ConfirmationRequestData
         public string $hash,
         public string $mobile,
         public string $amount,
+        public ?string $ftRef,
         public string $username,
         public string $password,
-        public string $createdAt,
+        public ?string $createdAt,
+        public ?string $narrative,
         public string $customerName,
         public string $billReference,
         public string $transactionId,
@@ -55,11 +59,11 @@ final readonly class ConfirmationRequestData
                 'Password',
                 'TransTime',
                 'TransType',
-                'created_at',
                 'TransAmount',
                 'BillRefNumber',
                 'BusinessShortCode',
-            ] as $field) {
+            ] as $field
+        ) {
             if (! array_key_exists($field, $payload)) {
                 throw new InvalidPayloadException(
                     'Missing required field: ' . $field
@@ -70,43 +74,79 @@ final readonly class ConfirmationRequestData
         return new self(
             hash: (string) $payload['Hash'],
             mobile: (string) $payload['Mobile'],
+
             amount: self::formatAmount($payload['TransAmount']),
+            ftRef: array_key_exists('FTRef', $payload)
+                ? (string) $payload['FTRef']
+                : null,
+
             username: (string) $payload['Username'],
             password: (string) $payload['Password'],
-            createdAt: (string) $payload['created_at'],
-            customerName: trim((string) $payload['name']),
+
+            createdAt: array_key_exists('created_at', $payload)
+                ? (string) $payload['created_at']
+                : null,
+            narrative: array_key_exists('Narrative', $payload)
+                ? (string) $payload['Narrative']
+                : null,
+
+            customerName: (string) $payload['name'],
             billReference: (string) $payload['BillRefNumber'],
             transactionId: (string) $payload['TransID'],
+
             transactionTime: (string) $payload['TransTime'],
             transactionType: (string) $payload['TransType'],
             businessShortCode: (string) $payload['BusinessShortCode'],
         );
     }
 
+    /**
+     * @return array<string, string>
+     */
     public function toArray(): array
     {
-        return [
+        $data = [
             'Hash' => $this->hash,
             'Mobile' => $this->mobile,
             'Username' => $this->username,
             'Password' => $this->password,
             'name' => $this->customerName,
             'TransAmount' => $this->amount,
-            'created_at' => $this->createdAt,
             'TransID' => $this->transactionId,
             'TransTime' => $this->transactionTime,
             'TransType' => $this->transactionType,
             'BillRefNumber' => $this->billReference,
             'BusinessShortCode' => $this->businessShortCode,
         ];
+
+        if ($this->createdAt !== null) {
+            $data['created_at'] = $this->createdAt;
+        }
+
+        if ($this->ftRef !== null) {
+            $data['FTRef'] = $this->ftRef;
+        }
+
+        if ($this->narrative !== null) {
+            $data['Narrative'] = $this->narrative;
+        }
+
+        return $data;
     }
 
+    /**
+     * Return payload data safe for logging.
+     *
+     * @return array<string, string>
+     */
     public function sanitized(): array
     {
         $data = $this->toArray();
 
         foreach (['Username', 'Password', 'Hash'] as $field) {
-            $data[$field] = '***';
+            if (array_key_exists($field, $data)) {
+                $data[$field] = '***';
+            }
         }
 
         return $data;

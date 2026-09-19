@@ -26,7 +26,9 @@ final readonly class TransactionService implements TransactionServiceInterface
     {
         ConfirmationTransaction::create([
             'process' => $process,
+            'ft_ref' => $request->ftRef,
             'amount' => $request->amount,
+            'narrative' => $request->narrative,
             'customer_name' => $request->customerName,
             'transaction_id' => $request->transactionId,
             'bill_reference' => $request->billReference,

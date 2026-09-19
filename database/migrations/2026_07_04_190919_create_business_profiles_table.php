@@ -16,6 +16,7 @@ return new class extends Migration
 
             $table->string('business_short_code')
                 ->unique();
+            $table->string('type');
             $table->string('username');
             $table->string('password');
             $table->text('secret_key');

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Logging;
 
+use App\Services\Logging\Sanitizer;
 use JsonException;
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Formatter\LineFormatter;
@@ -44,23 +45,13 @@ final class ConfirmationFormatter extends LineFormatter implements FormatterInte
                 ?? $record->context['uuid']
                 ?? '',
             strtoupper($record->level->getName()),
-            $record->extra['file']
-                ?? $record->context['file']
-                ?? '',
-            isset($record->extra['function'])
-                ? $record->extra['function'].'()'
-                : (
-                    isset($record->context['function'])
-                        ? $record->context['function'].'()'
-                        : ''
-                ),
             $record->extra['ip']
                 ?? $record->context['ip']
                 ?? '',
             $record->extra['line']
                 ?? $record->context['line']
                 ?? '',
-            $message,
+            Sanitizer::sanitizeSensitivePaths($message),
         ]).PHP_EOL;
     }
 

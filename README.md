@@ -1,206 +1,73 @@
-# DevyaniVBLRevamp
+# M-Pesa Middleware Application
 
-A Laravel API application that processes incoming API requests, generates confirmation alerts, and prepares SAP integration files.
+A Laravel API middleware application that processes incoming payment notifications, processes transactional alerts, and prepares downstream integration files.
+
+---
 
 ## Features
 
-- REST API for processing incoming requests
-- Email confirmation processing
-- SMS confirmation processing
-- SAP file generation for downstream consumption
-- Log archival
-- Health checks for confirmation processing
+- REST API endpoints for processing incoming payment callbacks
+- Asynchronous task processing & SMS/Email notification alerts
+- Automated background task scheduling and worker services
+- Health check endpoints for integration monitoring
+- Production-ready Docker containerization with PostgreSQL & Nginx
+- Multi-stage build Dockerfile based on PHP 8.4 Alpine
+- Dual-stage optimization pipeline (`build-optimize.sh` during image build & `runtime-optimize.sh` on container boot via entrypoint)
 
 ---
 
-## Requirements
+## System Requirements
 
-- PHP 8.5+
-- Composer
-- SQLite (default) or another supported database
-
----
-
-## Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/KusaVincent/DevyaniVBLRevamp.git
-cd DevyaniVBLRevamp
-```
-
-Install dependencies:
-
-```bash
-composer install
-```
-
-Create the environment file:
-
-```bash
-cp .env.example .env
-```
-
-Generate the application key:
-
-```bash
-php artisan key:generate
-```
-
-Create the SQLite database:
-
-```bash
-touch database/database.sqlite
-```
-
-Run migrations and seed the database:
-
-```bash
-php artisan migrate:fresh --seed
-```
-
-Start the development server:
-
-```bash
-php artisan serve
-```
-
-The API will be available at:
-
-```
-http://127.0.0.1:8000/api/confirmation/
-```
+- **PHP:** 8.4
+- **Database:** PostgreSQL 17 (Production) or SQLite (Local Development)
+- **Containerization:** Docker & Docker Compose V2
 
 ---
 
-# Available Artisan Commands
+## Docker Optimization Architecture
 
-## Seed the Database
+### 1. Build-Time Optimization Script (`docker/build-optimize.sh`)
+Executed inside Stage 2 of the `Dockerfile` during `docker compose build` to cache static configurations and components:
 
-```bash
-php artisan migrate:fresh --seed
+```sh
+#!/bin/sh
+set -e
+
+echo "=== Running Build-Time Optimization ==="
+php artisan optimize:clear || true
+php artisan event:cache || true
+php artisan icons:cache || true
 ```
+
+### 2. Runtime Boot Script (`docker/runtime-optimize.sh`)
+Executed when containers spawn in `docker-compose.yml` to apply framework optimizations with active environment context:
 
 ---
 
-## Process SAP Files
+## Production Deployment Steps
 
-Processes pending records and generates files for SAP consumption.
+1. **Configure Environment File:**
+   ```bash
+   cp .env.example .env.production
+   ```
 
-```bash
-php artisan sap:process -v
-```
+2. **Build and Deploy Containers:**
+   ```bash
+   docker compose up -d --build
+   ```
 
----
-
-## Process Email Confirmations
-
-Processes queued email confirmations.
-
-```bash
-php artisan email:confirmation -v
-```
-
----
-
-## Process SMS Confirmations
-
-Processes queued SMS confirmations.
-
-```bash
-php artisan sms:process -v
-```
+3. **Initialize Application State:**
+   ```bash
+   docker compose exec app php artisan key:generate --force
+   docker compose exec app php artisan migrate --force
+   ```
 
 ---
 
-## Archive Logs
+## Full Technology Stack
 
-Archives processed application logs.
-
-```bash
-php artisan logs:archive -v
-```
-
----
-
-## Confirmation Health Check
-
-Displays the health status of the confirmation processing pipeline.
-
-```bash
-php artisan confirmation:health -v
-```
-
----
-
-# Typical Processing Workflow
-
-Run the commands in the following order:
-
-```bash
-php artisan migrate:fresh --seed
-
-php artisan sap:process -v
-
-php artisan email:confirmation -v
-
-php artisan sms:process -v
-
-php artisan logs:archive -v
-
-php artisan confirmation:health -v
-```
-
----
-
-## Project Structure
-
-```
-app/
-├── Console/
-├── Http/
-├── Models/
-├── Services/
-└── Jobs/
-
-database/
-├── migrations/
-├── seeders/
-└── database.sqlite
-
-storage/
-├── logs/
-└── app/
-
-routes/
-└── api.php
-```
-
----
-
-## Technology Stack
-
-- Laravel
-- PHP
-- SQLite (default)
-- Artisan Console Commands
-- SAP File Integration
-- Email Notifications
-- SMS Notifications
-
----
-
-## Development
-
-Run the local server:
-
-```bash
-php artisan serve
-```
-
-For verbose command output, append the `-v` flag:
-
-```bash
-php artisan <command> -v
-```
+- **Framework:** Laravel 11 / Filament 5
+- **Runtime:** PHP 8.4 FPM (Alpine 3.21)
+- **Database:** PostgreSQL 17 (Docker) / SQLite (Dev)
+- **Web Server:** Nginx 1.26 (Alpine) with SSL Termination
+- **Containerization:** Docker Compose V2

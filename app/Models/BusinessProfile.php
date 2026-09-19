@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Models;
 
 use App\Enum\BusinessProfileStatus;
+use App\Enum\BusinessProfileType;
 use App\Services\Sap\SapConfiguration;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
@@ -51,6 +52,7 @@ class BusinessProfile extends Model
 
     #[\Override]
     protected $attributes = [
+        'type' => BusinessProfileType::NORMAL,
         'active' => BusinessProfileStatus::YES,
     ];
 
@@ -61,6 +63,7 @@ class BusinessProfile extends Model
             'password' => 'hashed',
             'sap_headers' => 'array',
             'secret_key' => 'encrypted',
+            'type' => BusinessProfileType::class,
             'active' => BusinessProfileStatus::class,
         ];
     }
