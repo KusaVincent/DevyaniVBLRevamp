@@ -6,7 +6,7 @@ namespace App\Exceptions\Sms;
 
 use RuntimeException;
 
-class SmsException extends RuntimeException
+final class SmsException extends RuntimeException
 {
     //
 }

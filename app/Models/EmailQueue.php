@@ -7,6 +7,7 @@ namespace App\Models;
 use App\Enum\Status;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
+use Override;
 
 /**
  * @property array<int, string> $recipients
@@ -21,9 +22,9 @@ use Illuminate\Support\Carbon;
  *
  * @method static static create(array<string, mixed> $attributes)
  */
-class EmailQueue extends Model
+final class EmailQueue extends Model
 {
-    #[\Override]
+    #[Override]
     protected $fillable = [
         'subject',
         'header',
@@ -38,7 +39,13 @@ class EmailQueue extends Model
         'message',
     ];
 
-    #[\Override]
+    #[Override]
+    protected $attributes = [
+        'status' => Status::PENDING,
+        'attempts' => 0,
+    ];
+
+    #[Override]
     protected function casts(): array
     {
         return [
@@ -49,10 +56,4 @@ class EmailQueue extends Model
             'status' => Status::class,
         ];
     }
-
-    #[\Override]
-    protected $attributes = [
-        'status' => Status::PENDING,
-        'attempts' => 0,
-    ];
 }

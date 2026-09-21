@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Contracts\Email\EmailProcessingServiceInterface;
 
 it('executes the confirmation email processor command', function (): void {

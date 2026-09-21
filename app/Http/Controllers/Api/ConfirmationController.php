@@ -44,7 +44,6 @@ final class ConfirmationController extends Controller
                     'exception' => [
                         'class' => $e::class,
                         'message' => $e->getMessage(),
-                        'file' => $e->getFile(),
                         'line' => $e->getLine(),
                     ],
                 ]
@@ -61,7 +60,6 @@ final class ConfirmationController extends Controller
                     'exception' => [
                         'class' => $e::class,
                         'message' => $e->getMessage(),
-                        'file' => $e->getFile(),
                         'line' => $e->getLine(),
                     ],
                 ]

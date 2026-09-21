@@ -44,7 +44,8 @@ final readonly class ConfirmationRequestData
     ) {}
 
     /**
-     * @param array<string, mixed> $payload
+     * @param  array<string, mixed>  $payload
+     *
      * @throws InvalidPayloadException
      */
     public static function fromArray(array $payload): self
@@ -66,7 +67,7 @@ final readonly class ConfirmationRequestData
         ) {
             if (! array_key_exists($field, $payload)) {
                 throw new InvalidPayloadException(
-                    'Missing required field: ' . $field
+                    'Missing required field: '.$field
                 );
             }
         }

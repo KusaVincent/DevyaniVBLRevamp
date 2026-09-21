@@ -6,7 +6,7 @@ namespace App\Exceptions\Confirmation;
 
 use Exception;
 
-class ConfirmationException extends Exception
+final class ConfirmationException extends Exception
 {
     public function resultCode(): int
     {

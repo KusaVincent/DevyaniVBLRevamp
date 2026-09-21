@@ -10,8 +10,8 @@ use RuntimeException;
 final class CsvService
 {
     /**
-     * @param list<string> $headers
-     * @param list<list<int|float|string|bool|null>> $rows
+     * @param  list<string>  $headers
+     * @param  list<list<int|float|string|bool|null>>  $rows
      */
     public function write(string $path, array $rows, array $headers = []): void
     {
@@ -26,7 +26,7 @@ final class CsvService
         $handle = fopen($path, $newFile ? 'w' : 'a');
 
         if (! $handle) {
-            throw new RuntimeException('Unable to open ' . $path);
+            throw new RuntimeException('Unable to open '.$path);
         }
 
         try {

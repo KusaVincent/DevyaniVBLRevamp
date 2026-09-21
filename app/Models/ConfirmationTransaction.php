@@ -9,6 +9,7 @@ use App\Enum\Status;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Override;
 
 /**
  * @method static where(string $string, string $transactionId)
@@ -19,9 +20,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property mixed $customer_name
  * @property mixed $created_at
  */
-class ConfirmationTransaction extends Model
+final class ConfirmationTransaction extends Model
 {
-    #[\Override]
+    #[Override]
     protected $fillable = [
         'transaction_id',
         'transaction_time',
@@ -37,22 +38,11 @@ class ConfirmationTransaction extends Model
         'ft_ref',
     ];
 
-    #[\Override]
+    #[Override]
     protected $attributes = [
         'process' => ProcessSMSTxn::YES,
         'status' => Status::PENDING,
     ];
-
-    #[\Override]
-    protected function casts(): array
-    {
-        return [
-            'status' => Status::class,
-            'created_at' => 'datetime',
-            'updated_at' => 'datetime',
-            'process' => ProcessSMSTxn::class,
-        ];
-    }
 
     public function businessProfile(): BelongsTo
     {
@@ -63,13 +53,24 @@ class ConfirmationTransaction extends Model
         );
     }
 
+    #[Override]
+    protected function casts(): array
+    {
+        return [
+            'status' => Status::class,
+            'created_at' => 'datetime',
+            'updated_at' => 'datetime',
+            'process' => ProcessSMSTxn::class,
+        ];
+    }
+
     /**
      * @return Attribute<never, string>
      */
     protected function customerName(): Attribute
     {
         return Attribute::make(
-            set: fn (?string $value): string => ucwords(mb_strtolower(trim($value ?? ''), 'UTF-8')),
+            set: fn (?string $value): string => ucwords(mb_strtolower(mb_trim($value ?? ''), 'UTF-8')),
         );
     }
 }

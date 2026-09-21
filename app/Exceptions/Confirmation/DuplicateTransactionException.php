@@ -8,6 +8,6 @@ final class DuplicateTransactionException extends ConfirmationException
 {
     public function __construct(public readonly string $transactionId)
     {
-        parent::__construct('Duplicate transaction detected: ' . $transactionId);
+        parent::__construct('Duplicate transaction detected: '.$transactionId);
     }
 }

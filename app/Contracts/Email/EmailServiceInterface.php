@@ -7,7 +7,7 @@ namespace App\Contracts\Email;
 interface EmailServiceInterface
 {
     /**
-     * @param array<int, string> $recipients
+     * @param  array<int, string>  $recipients
      */
     public function send(
         array $recipients,

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Contracts\Logging\LoggingServiceInterface;
 use App\Contracts\Sms\CelcomSmsServiceInterface;
 use App\Contracts\Sms\SmsMessageBuilderInterface;
@@ -52,7 +54,7 @@ it('processes a pending sms successfully', function (): void {
         ->shouldReceive('build')
         ->once()
         ->with(
-            Mockery::on(fn(SmsQueue $message) => $message->id === $sms->id))
+            Mockery::on(fn (SmsQueue $message): bool => $message->id === $sms->id))
         ->andReturn('SMS message');
 
     $this->sms

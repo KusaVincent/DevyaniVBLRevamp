@@ -30,7 +30,7 @@ final class Sanitizer
     public static function sanitizeSensitivePaths(string $text): string
     {
         $text = preg_replace(
-            '#(?<![A-Za-z0-9_])([A-Za-z]:[\\\\/])(?:[^\\s"\'<>|,:;]+[\\\\/])*[^\\s"\'<>|,:;]+#',
+            '#(?<!\w)([A-Za-z]:[\\\\/])(?:[^\s"\'<>|,:;]+[\\\\/])*[^\s"\'<>|,:;]+#',
             '***',
             $text
         );
@@ -38,13 +38,13 @@ final class Sanitizer
         $text = preg_replace(
             '#\\\\\\\\[^\\s"\'<>|,:;]+(?:\\\\[^\\s"\'<>|,:;]+)+#',
             '***',
-            $text
+            (string) $text
         );
 
         $text = preg_replace(
             '#(?<![\w:])/(?:[A-Za-z0-9._-]+/)+[A-Za-z0-9._-]+#',
             '***',
-            $text
+            (string) $text
         );
 
         $sensitiveFields = [
@@ -58,15 +58,15 @@ final class Sanitizer
             $fieldPattern = preg_quote($field, '/');
 
             $text = preg_replace(
-                '/("' . $fieldPattern . '"\s*:\s*)"[^"]*"/i',
+                '/("'.$fieldPattern.'"\s*:\s*)"[^"]*"/i',
                 '$1"***"',
-                $text
+                (string) $text
             );
 
             $text = preg_replace(
-                '/(\b' . $fieldPattern . '\b\s*[=:]\s*)([^\s,|}&]+)/i',
+                '/(\b'.$fieldPattern.'\b\s*[=:]\s*)([^\s,|}&]+)/i',
                 '$1***',
-                $text
+                (string) $text
             );
         }
 

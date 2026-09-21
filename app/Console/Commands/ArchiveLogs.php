@@ -11,7 +11,7 @@ use Illuminate\Console\Command;
 
 #[Signature('logs:archive')]
 #[Description('Archives old log files')]
-class ArchiveLogs extends Command
+final class ArchiveLogs extends Command
 {
     public function handle(LogArchiveServiceInterface $service): int
     {

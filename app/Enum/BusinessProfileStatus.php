@@ -10,7 +10,7 @@ use Filament\Support\Contracts\HasIcon;
 use Filament\Support\Contracts\HasLabel;
 use Filament\Support\Icons\Heroicon;
 
-enum BusinessProfileStatus: int implements  HasColor, HasIcon, HasLabel
+enum BusinessProfileStatus: int implements HasColor, HasIcon, HasLabel
 {
     case NO = 0;
     case YES = 1;

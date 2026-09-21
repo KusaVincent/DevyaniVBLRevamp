@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\ConfirmationTransactions\Schemas;
 
 use App\Enum\ProcessSMSTxn;
@@ -8,7 +10,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
-class ConfirmationTransactionForm
+final class ConfirmationTransactionForm
 {
     public static function configure(Schema $schema): Schema
     {

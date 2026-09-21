@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Services\Email;
 
 use App\Contracts\Email\EmailServiceInterface;
@@ -9,7 +11,7 @@ use App\Services\Logging\LoggingService;
 use Illuminate\Support\Facades\Mail;
 use Throwable;
 
-readonly class EmailService implements EmailServiceInterface
+final readonly class EmailService implements EmailServiceInterface
 {
     public function __construct(private LoggingService $logger)
     {

@@ -11,7 +11,7 @@ use Illuminate\Console\Command;
 
 #[Signature('confirmation:health')]
 #[Description('Checks the confirmation service health')]
-class CheckConfirmationHealth extends Command
+final class CheckConfirmationHealth extends Command
 {
     public function handle(ConfirmationHealthServiceInterface $service): int
     {

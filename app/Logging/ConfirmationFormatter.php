@@ -9,13 +9,14 @@ use JsonException;
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Formatter\LineFormatter;
 use Monolog\LogRecord;
+use Override;
 
 final class ConfirmationFormatter extends LineFormatter implements FormatterInterface
 {
     /**
      * @throws JsonException
      */
-    #[\Override]
+    #[Override]
     public function format(LogRecord $record): string
     {
         $context = $record->context;
@@ -44,7 +45,7 @@ final class ConfirmationFormatter extends LineFormatter implements FormatterInte
             $record->extra['uuid']
                 ?? $record->context['uuid']
                 ?? '',
-            strtoupper($record->level->getName()),
+            mb_strtoupper($record->level->getName()),
             $record->extra['ip']
                 ?? $record->context['ip']
                 ?? '',
@@ -55,7 +56,7 @@ final class ConfirmationFormatter extends LineFormatter implements FormatterInte
         ]).PHP_EOL;
     }
 
-    #[\Override]
+    #[Override]
     public function formatBatch(array $records): string
     {
         return implode(

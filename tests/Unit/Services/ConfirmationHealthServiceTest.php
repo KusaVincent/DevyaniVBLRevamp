@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Contracts\Email\EmailServiceInterface;
 use App\Contracts\Logging\LogArchiveServiceInterface;
 use App\Contracts\Logging\LoggingServiceInterface;
@@ -91,7 +93,7 @@ it('clears cached alert when a recent confirmation transaction exists', function
         ->once()
         ->with(
             'Latest confirmation transaction is within the last 3 hours.',
-            Mockery::on(fn($context) => $context['transaction'] === $transaction->transaction_id
+            Mockery::on(fn ($context): bool => $context['transaction'] === $transaction->transaction_id
                 && $context['received_at']->equalTo($transaction->created_at))
         );
 
@@ -155,7 +157,7 @@ it('sends an alert when no confirmation has been received within the configured 
     $this->logger
         ->shouldReceive('warning')
         ->once()
-        ->withArgs(fn($message, $context) => str_contains((string) $message, 'No confirmation transaction received')
+        ->withArgs(fn ($message, $context): bool => str_contains((string) $message, 'No confirmation transaction received')
             && isset($context['last_transaction']));
 
     $this->archive

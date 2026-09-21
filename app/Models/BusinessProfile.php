@@ -9,6 +9,7 @@ use App\Enum\BusinessProfileType;
 use App\Services\Sap\SapConfiguration;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
+use Override;
 
 /**
  * @property string $username
@@ -24,9 +25,9 @@ use Illuminate\Support\Facades\Hash;
  *
  * @method static static updateOrCreate(array<string, mixed> $attributes, array<string, mixed> $values)
  */
-class BusinessProfile extends Model
+final class BusinessProfile extends Model
 {
-    #[\Override]
+    #[Override]
     protected $fillable = [
         'business_short_code',
         'username',
@@ -41,32 +42,20 @@ class BusinessProfile extends Model
         'business_area',
     ];
 
-    #[\Override]
+    #[Override]
     protected $guarded = [];
 
-    #[\Override]
+    #[Override]
     protected $hidden = [
         'password',
         'secret_key',
     ];
 
-    #[\Override]
+    #[Override]
     protected $attributes = [
         'type' => BusinessProfileType::NORMAL,
         'active' => BusinessProfileStatus::YES,
     ];
-
-    #[\Override]
-    protected function casts(): array
-    {
-        return [
-            'password' => 'hashed',
-            'sap_headers' => 'array',
-            'secret_key' => 'encrypted',
-            'type' => BusinessProfileType::class,
-            'active' => BusinessProfileStatus::class,
-        ];
-    }
 
     public function credentialsMatch(string $username, string $password): bool
     {
@@ -76,5 +65,17 @@ class BusinessProfile extends Model
     public function sapConfiguration(): SapConfiguration
     {
         return new SapConfiguration($this);
+    }
+
+    #[Override]
+    protected function casts(): array
+    {
+        return [
+            'password' => 'hashed',
+            'sap_headers' => 'array',
+            'secret_key' => 'encrypted',
+            'type' => BusinessProfileType::class,
+            'active' => BusinessProfileStatus::class,
+        ];
     }
 }

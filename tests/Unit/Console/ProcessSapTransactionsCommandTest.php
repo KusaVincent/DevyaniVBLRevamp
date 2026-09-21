@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Contracts\Sap\SapProcessingServiceInterface;
 
 it('executes the sap processing command', function (): void {

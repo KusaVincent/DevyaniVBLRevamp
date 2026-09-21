@@ -11,7 +11,7 @@ use Illuminate\Console\Command;
 
 #[Signature('sms:process')]
 #[Description('Command description')]
-class ProcessSmsQueue extends Command
+final class ProcessSmsQueue extends Command
 {
     /**
      * Execute the console command.

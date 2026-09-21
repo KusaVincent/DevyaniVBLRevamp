@@ -1,5 +1,1 @@
-<?php
-
-use Illuminate\Support\Facades\Route;
-
-Route::redirect('/', '/mpesa');
+<?php declare(strict_types=1);

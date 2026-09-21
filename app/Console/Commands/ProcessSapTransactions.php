@@ -11,7 +11,7 @@ use Illuminate\Console\Command;
 
 #[Signature('sap:process')]
 #[Description('Command description')]
-class ProcessSapTransactions extends Command
+final class ProcessSapTransactions extends Command
 {
     /**
      * Execute the console command.

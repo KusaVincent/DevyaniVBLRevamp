@@ -51,8 +51,9 @@ final readonly class SapArchiveService implements SapArchiveServiceInterface
         $timestamp = now()->format('Ymd_His');
 
         return match (basename($source)) {
-            'C2B.csv' => $timestamp . '_C2B.csv',
+            'C2B.csv' => $timestamp.'_C2B.csv',
             'VBL_C2B.csv' => sprintf('VBL_%s_C2B.csv', $timestamp),
+            'TILL_C2B.csv' => sprintf('TILL_%s_C2B.csv', $timestamp),
             default => basename($source),
         };
     }

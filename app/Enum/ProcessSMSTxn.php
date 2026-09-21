@@ -10,7 +10,7 @@ use Filament\Support\Contracts\HasIcon;
 use Filament\Support\Contracts\HasLabel;
 use Filament\Support\Icons\Heroicon;
 
-enum ProcessSMSTxn: int implements  HasLabel, HasIcon, HasColor
+enum ProcessSMSTxn: int implements HasColor, HasIcon, HasLabel
 {
     case NO = 0;
     case YES = 1;

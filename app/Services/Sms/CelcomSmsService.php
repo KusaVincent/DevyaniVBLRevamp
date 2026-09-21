@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Services\Sms;
 
 use App\Contracts\Sms\CelcomSmsServiceInterface;
@@ -44,12 +46,12 @@ final readonly class CelcomSmsService implements CelcomSmsServiceInterface
             );
 
         $this->logger->info('Prepared SMS data', [
-            'payload' =>$payload,
+            'payload' => $payload,
         ]);
 
         if ($response->serverError()) {
             $this->logger->error('SMS gateway unavailable.', [
-                'error' =>  [$mobile, $response->json()],
+                'error' => [$mobile, $response->json()],
             ]);
 
             throw new SmsDeliveryException(

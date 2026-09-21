@@ -7,6 +7,7 @@ namespace App\Services\Sap;
 use App\Models\BusinessProfile;
 use App\Models\ConfirmationTransaction;
 use Carbon\Carbon;
+use InvalidArgumentException;
 
 final readonly class SapConfiguration
 {
@@ -46,11 +47,11 @@ final readonly class SapConfiguration
     private function resolve(string $source, ConfirmationTransaction $transaction): mixed
     {
         if (str_starts_with($source, 'profile.')) {
-            return $this->profile->getAttribute(substr($source, 8));
+            return $this->profile->getAttribute(mb_substr($source, 8));
         }
 
         if (str_starts_with($source, 'transaction.')) {
-            return $transaction->getAttribute(substr($source, 12));
+            return $transaction->getAttribute(mb_substr($source, 12));
         }
 
         return match ($source) {
@@ -58,7 +59,7 @@ final readonly class SapConfiguration
             'transactionText' => $this->transactionText($transaction),
             'postingDate',
             'documentDate' => $this->postingDate($transaction),
-            default => throw new \InvalidArgumentException(
+            default => throw new InvalidArgumentException(
                 sprintf('Unknown SAP source [%s]', $source)
             ),
         };

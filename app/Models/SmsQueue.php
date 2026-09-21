@@ -8,6 +8,7 @@ use App\Enum\ProcessSMSTxn;
 use App\Enum\Status;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
+use Override;
 
 /**
  * @method static static create(array<string, mixed> $attributes)
@@ -18,12 +19,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property mixed $created_at
  * @property mixed $mpesa_ref
  */
-class SmsQueue extends Model
+final class SmsQueue extends Model
 {
-    #[\Override]
+    #[Override]
     public $timestamps = false;
 
-    #[\Override]
+    #[Override]
     protected $fillable = [
         'status',
         'mpesa_ref',
@@ -42,7 +43,14 @@ class SmsQueue extends Model
         'attempts',
     ];
 
-    #[\Override]
+    #[Override]
+    protected $attributes = [
+        'status' => Status::PENDING,
+        'process' => ProcessSMSTxn::YES,
+        'attempts' => 0,
+    ];
+
+    #[Override]
     protected function casts(): array
     {
         return [
@@ -55,20 +63,13 @@ class SmsQueue extends Model
         ];
     }
 
-    #[\Override]
-    protected $attributes = [
-        'status' => Status::PENDING,
-        'process' => ProcessSMSTxn::YES,
-        'attempts' => 0,
-    ];
-
     /**
      * @return Attribute<never, string>
      */
     protected function customerName(): Attribute
     {
         return Attribute::make(
-            set: fn (?string $value): string => ucwords(mb_strtolower(trim($value ?? ''), 'UTF-8')),
+            set: fn (?string $value): string => ucwords(mb_strtolower(mb_trim($value ?? ''), 'UTF-8')),
         );
     }
 }

@@ -28,6 +28,32 @@ final class LogArchiveService implements LogArchiveServiceInterface
         $this->deleteExpiredArchives($this->directory);
     }
 
+    public function archiveCurrentLog(): string
+    {
+        $log = storage_path(sprintf(
+            'logs/confirmation-%s.log',
+            now()->format('Y-m-d'),
+        ));
+
+        $zip = storage_path(sprintf(
+            'app/temp/confirmation-log-%s.zip',
+            now()->format('YmdHis'),
+        ));
+
+        File::ensureDirectoryExists(dirname($zip));
+
+        $archive = new ZipArchive;
+
+        if ($archive->open($zip, ZipArchive::CREATE | ZipArchive::OVERWRITE) !== true) {
+            throw new RuntimeException('Unable to create log archive.');
+        }
+
+        $archive->addFile($log, basename($log));
+        $archive->close();
+
+        return $zip;
+    }
+
     private function shouldArchive(SplFileInfo $file): bool
     {
         return $file->getExtension() === 'log'
@@ -73,32 +99,6 @@ final class LogArchiveService implements LogArchiveServiceInterface
             'log' => $file->getFilename(),
             'archive' => basename($zipPath),
         ]);
-    }
-
-    public function archiveCurrentLog(): string
-    {
-        $log = storage_path(sprintf(
-            'logs/confirmation-%s.log',
-            now()->format('Y-m-d'),
-        ));
-
-        $zip = storage_path(sprintf(
-            'app/temp/confirmation-log-%s.zip',
-            now()->format('YmdHis'),
-        ));
-
-        File::ensureDirectoryExists(dirname($zip));
-
-        $archive = new ZipArchive;
-
-        if ($archive->open($zip, ZipArchive::CREATE | ZipArchive::OVERWRITE) !== true) {
-            throw new RuntimeException('Unable to create log archive.');
-        }
-
-        $archive->addFile($log, basename($log));
-        $archive->close();
-
-        return $zip;
     }
 
     private function deleteExpiredArchives(string $directory): void

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Data\ConfirmationRequestData;
 use App\Models\BusinessProfile;
 use App\Models\ConfirmationTransaction;

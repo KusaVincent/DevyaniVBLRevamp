@@ -7,22 +7,22 @@ namespace App\Contracts\Logging;
 interface LoggingServiceInterface
 {
     /**
-     * @param array<string, mixed> $context
+     * @param  array<string, mixed>  $context
      */
     public function info(string $message, array $context = []): void;
 
     /**
-     * @param array<string, mixed> $context
+     * @param  array<string, mixed>  $context
      */
     public function notice(string $message, array $context = []): void;
 
     /**
-     * @param array<string, mixed> $context
+     * @param  array<string, mixed>  $context
      */
     public function warning(string $message, array $context = []): void;
 
     /**
-     * @param array<string, mixed> $context
+     * @param  array<string, mixed>  $context
      */
     public function error(string $message, array $context = []): void;
 }

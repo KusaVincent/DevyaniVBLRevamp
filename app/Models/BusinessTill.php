@@ -1,14 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Override;
 
 /**
  * @method static updateOrCreate(array $array, array $array1)
  */
-class BusinessTill extends Model
+final class BusinessTill extends Model
 {
-    #[\Override]
+    #[Override]
     protected $guarded = [];
 }

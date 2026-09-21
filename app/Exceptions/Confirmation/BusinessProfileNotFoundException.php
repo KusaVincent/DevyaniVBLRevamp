@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Exceptions\Confirmation;
 
-class BusinessProfileNotFoundException extends ConfirmationException
+final class BusinessProfileNotFoundException extends ConfirmationException
 {
     public function __construct(public readonly string $businessShortCode)
     {

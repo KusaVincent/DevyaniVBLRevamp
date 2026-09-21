@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Contracts\Business\BusinessProfileServiceInterface;
 use App\Contracts\Confirmation\AuthenticationServiceInterface;
 use App\Contracts\Confirmation\HashValidationServiceInterface;

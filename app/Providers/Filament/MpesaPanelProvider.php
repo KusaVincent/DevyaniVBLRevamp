@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Providers\Filament;
 
 use Filament\Http\Middleware\Authenticate;
@@ -20,7 +22,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
-class MpesaPanelProvider extends PanelProvider
+final class MpesaPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
@@ -65,7 +67,7 @@ class MpesaPanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->authMiddleware([
-//                Authenticate::class,
+                //                Authenticate::class,
             ]);
     }
 }

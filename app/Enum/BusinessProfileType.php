@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Enum;
 
 use Filament\Support\Colors\Color;
@@ -8,7 +10,7 @@ use Filament\Support\Contracts\HasIcon;
 use Filament\Support\Contracts\HasLabel;
 use Filament\Support\Icons\Heroicon;
 
-enum BusinessProfileType: int implements HasLabel, HasIcon, HasColor
+enum BusinessProfileType: int implements HasColor, HasIcon, HasLabel
 {
     case NORMAL = 0;
     case NCBA_TILL = 1;

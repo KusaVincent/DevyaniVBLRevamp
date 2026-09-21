@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\ConfirmationTransactions;
 
 use App\Filament\Resources\ConfirmationTransactions\Pages\CreateConfirmationTransaction;
@@ -14,24 +16,30 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 
-class ConfirmationTransactionResource extends Resource
+final class ConfirmationTransactionResource extends Resource
 {
+    #[\Override]
     protected static ?string $model = ConfirmationTransaction::class;
 
+    #[\Override]
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    #[\Override]
     protected static ?string $recordTitleAttribute = 'id';
 
+    #[\Override]
     public static function form(Schema $schema): Schema
     {
         return ConfirmationTransactionForm::configure($schema);
     }
 
+    #[\Override]
     public static function table(Table $table): Table
     {
         return ConfirmationTransactionsTable::configure($table);
     }
 
+    #[\Override]
     public static function getRelations(): array
     {
         return [
@@ -39,6 +47,7 @@ class ConfirmationTransactionResource extends Resource
         ];
     }
 
+    #[\Override]
     public static function getPages(): array
     {
         return [

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Contracts\Sms\SmsProcessingServiceInterface;
 
 it('executes the sms queue processor command', function (): void {

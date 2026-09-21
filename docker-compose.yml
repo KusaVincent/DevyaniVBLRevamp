@@ -38,7 +38,7 @@ services:
 
     postgres:
         image: postgres:18-alpine3.24
-        container_name: postgres
+        container_name: db
         restart: always
         environment:
             POSTGRES_DB: ${DB_DATABASE:-mpesa}

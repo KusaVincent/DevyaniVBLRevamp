@@ -1,19 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\ConfirmationTransactions\Pages;
 
 use App\Filament\Resources\ConfirmationTransactions\ConfirmationTransactionResource;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditConfirmationTransaction extends EditRecord
+final class EditConfirmationTransaction extends EditRecord
 {
+    #[\Override]
     protected static string $resource = ConfirmationTransactionResource::class;
 
+    #[\Override]
     protected function getHeaderActions(): array
     {
         return [
-//            DeleteAction::make(),
+            //            DeleteAction::make(),
         ];
     }
 }

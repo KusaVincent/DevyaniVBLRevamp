@@ -44,7 +44,7 @@ final class BusinessProfileSeeder extends Seeder
                 'username' => 'DevyaniTill',
                 'password' => '6Pm4WXtbeZ00cd7uF8zjwSleQk8',
                 'credit_account' => '1953840154',
-                'sap_file' => 'app/public/confirmation/Till_C2B.csv',
+                'sap_file' => 'app/public/confirmation/TILL_C2B.csv',
                 'business_transaction' => 'CUSTOMER ACCOUNTS',
                 'area_code_name' => 'Business Area',
                 'business_area' => 'YN01',

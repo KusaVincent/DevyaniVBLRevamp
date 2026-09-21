@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Contracts\Health\ConfirmationHealthServiceInterface;
 
 it('executes the confirmation health check command', function (): void {

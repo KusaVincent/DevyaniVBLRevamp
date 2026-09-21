@@ -11,7 +11,7 @@ use Illuminate\Console\Command;
 
 #[Signature('email:confirmation')]
 #[Description('Process pending confirmation emails')]
-class ProcessConfirmationEmails extends Command
+final class ProcessConfirmationEmails extends Command
 {
     /**
      * Execute the console command.

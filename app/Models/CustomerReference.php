@@ -6,6 +6,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
+use Override;
 
 /**
  * @property mixed $name
@@ -13,9 +14,9 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @method static updateOrCreate(string[] $array, string[] $reference)
  */
-class CustomerReference extends Model
+final class CustomerReference extends Model
 {
-    #[\Override]
+    #[Override]
     protected $fillable = [
         'reference',
         'mobile',
@@ -28,7 +29,7 @@ class CustomerReference extends Model
     protected function name(): Attribute
     {
         return Attribute::make(
-            set: fn (?string $value): string => ucwords(mb_strtolower(trim($value ?? ''), 'UTF-8')),
+            set: fn (?string $value): string => ucwords(mb_strtolower(mb_trim($value ?? ''), 'UTF-8')),
         );
     }
 }
