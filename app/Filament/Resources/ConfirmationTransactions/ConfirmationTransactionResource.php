@@ -15,31 +15,32 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Override;
 
 final class ConfirmationTransactionResource extends Resource
 {
-    #[\Override]
+    protected static ?int $navigationSort = 1;
+    #[Override]
+    protected static ?string $recordTitleAttribute = 'transaction_id';
+    #[Override]
     protected static ?string $model = ConfirmationTransaction::class;
-
-    #[\Override]
+    protected static ?string $navigationLabel = 'Received Transactions';
+    #[Override]
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    #[\Override]
-    protected static ?string $recordTitleAttribute = 'id';
-
-    #[\Override]
+    #[Override]
     public static function form(Schema $schema): Schema
     {
         return ConfirmationTransactionForm::configure($schema);
     }
 
-    #[\Override]
+    #[Override]
     public static function table(Table $table): Table
     {
         return ConfirmationTransactionsTable::configure($table);
     }
 
-    #[\Override]
+    #[Override]
     public static function getRelations(): array
     {
         return [
@@ -47,7 +48,7 @@ final class ConfirmationTransactionResource extends Resource
         ];
     }
 
-    #[\Override]
+    #[Override]
     public static function getPages(): array
     {
         return [

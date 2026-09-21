@@ -18,16 +18,16 @@ enum BusinessProfileStatus: int implements HasColor, HasIcon, HasLabel
     public function getLabel(): string
     {
         return match ($this) {
-            self::NO => 'Normal',
-            self::YES => 'Till',
+            self::NO => 'No',
+            self::YES => 'Yes',
         };
     }
 
     public function getColor(): array
     {
         return match ($this) {
-            self::NO => Color::Teal,
-            self::YES => Color::Sky,
+            self::NO => Color::Amber,
+            self::YES => Color::Green,
         };
     }
 

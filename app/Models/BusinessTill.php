@@ -4,14 +4,19 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Guarded;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Override;
 
 /**
  * @method static updateOrCreate(array $array, array $array1)
  */
+#[Guarded([])]
 final class BusinessTill extends Model
 {
-    #[Override]
-    protected $guarded = [];
+    public function businessProfile(): BelongsTo
+    {
+        return $this->belongsTo(BusinessProfile::class);
+    }
 }

@@ -56,7 +56,7 @@
         ],
         "pint": "vendor/bin/pint",
         "rector": "vendor/bin/rector process",
-        "phpstan": "docker/php -d memory_limit=1G vendor/bin/phpstan analyse",
+        "phpstan": "php -d memory_limit=1G vendor/bin/phpstan analyse",
         "quality": [
             "@pint",
             "@phpstan",

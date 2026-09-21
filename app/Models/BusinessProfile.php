@@ -7,6 +7,8 @@ namespace App\Models;
 use App\Enum\BusinessProfileStatus;
 use App\Enum\BusinessProfileType;
 use App\Services\Sap\SapConfiguration;
+use Illuminate\Database\Eloquent\Attributes\Guarded;
+use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 use Override;
@@ -25,32 +27,10 @@ use Override;
  *
  * @method static static updateOrCreate(array<string, mixed> $attributes, array<string, mixed> $values)
  */
+#[Guarded([])]
+#[Hidden(['password', 'secret_key'])]
 final class BusinessProfile extends Model
 {
-    #[Override]
-    protected $fillable = [
-        'business_short_code',
-        'username',
-        'password',
-        'secret_key',
-        'credit_account',
-        'sap_file',
-        'business_transaction',
-        'sap_headers',
-        'active',
-        'profit_center',
-        'business_area',
-    ];
-
-    #[Override]
-    protected $guarded = [];
-
-    #[Override]
-    protected $hidden = [
-        'password',
-        'secret_key',
-    ];
-
     #[Override]
     protected $attributes = [
         'type' => BusinessProfileType::NORMAL,

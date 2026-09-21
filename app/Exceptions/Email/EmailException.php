@@ -6,7 +6,7 @@ namespace App\Exceptions\Email;
 
 use RuntimeException;
 
-final class EmailException extends RuntimeException
+class EmailException extends RuntimeException
 {
     //
 }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Models;
 
 use App\Enum\Status;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 use Override;
@@ -22,23 +23,9 @@ use Override;
  *
  * @method static static create(array<string, mixed> $attributes)
  */
+#[Fillable(['subject','header','attachment','recipients','status','attempts','next_retry_at','processed_at','response','error','message'])]
 final class EmailQueue extends Model
 {
-    #[Override]
-    protected $fillable = [
-        'subject',
-        'header',
-        'attachment',
-        'recipients',
-        'status',
-        'attempts',
-        'next_retry_at',
-        'processed_at',
-        'response',
-        'error',
-        'message',
-    ];
-
     #[Override]
     protected $attributes = [
         'status' => Status::PENDING,

@@ -9,7 +9,7 @@ use Illuminate\Http\JsonResponse;
 Route::post('/confirmation', ConfirmationController::class)
     ->middleware(AssignRequestUuid::class);
 
-Route::get('/confirmation', static fn(): JsonResponse => response()->json([
+Route::get('/confirmation', static fn (): JsonResponse => response()->json([
     'ResultCode' => 1,
     'ResultDesc' => 'Invalid request method',
 ], 405));

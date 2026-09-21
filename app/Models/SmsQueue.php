@@ -6,6 +6,7 @@ namespace App\Models;
 
 use App\Enum\ProcessSMSTxn;
 use App\Enum\Status;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Override;
@@ -19,29 +20,11 @@ use Override;
  * @property mixed $created_at
  * @property mixed $mpesa_ref
  */
+#[Fillable(['status','mpesa_ref','bill_reference','amount','created_at','processed_at','customer_name','recipient_name','recipient_mobile','post','process','response','error','next_retry_at','attempts'])]
 final class SmsQueue extends Model
 {
     #[Override]
     public $timestamps = false;
-
-    #[Override]
-    protected $fillable = [
-        'status',
-        'mpesa_ref',
-        'bill_reference',
-        'amount',
-        'created_at',
-        'processed_at',
-        'customer_name',
-        'recipient_name',
-        'recipient_mobile',
-        'post',
-        'process',
-        'response',
-        'error',
-        'next_retry_at',
-        'attempts',
-    ];
 
     #[Override]
     protected $attributes = [
@@ -69,7 +52,10 @@ final class SmsQueue extends Model
     protected function customerName(): Attribute
     {
         return Attribute::make(
-            set: fn (?string $value): string => ucwords(mb_strtolower(mb_trim($value ?? ''), 'UTF-8')),
+            set: fn (?string $value): string => ''
+                    |> mb_trim(...)
+                    |> (fn($x) => mb_strtolower($x, 'UTF-8'))
+                    |> ucwords(...),
         );
     }
 }

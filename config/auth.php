@@ -116,4 +116,6 @@ return [
 
     'password_timeout' => env('AUTH_PASSWORD_TIMEOUT', 10800),
 
+    'mfa_enabled' => env('AUTH_MFA_ENABLED', 0),
+    'mfa_email_expiry' => env('AUTH_MFA_EMAIL_EXPIRY', 5),
 ];

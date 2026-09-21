@@ -6,6 +6,7 @@ namespace App\Models;
 
 use App\Enum\ProcessSMSTxn;
 use App\Enum\Status;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -20,24 +21,9 @@ use Override;
  * @property mixed $customer_name
  * @property mixed $created_at
  */
+#[Fillable(['transaction_id','transaction_time','bill_reference','customer_name','amount','status','authenticated','business_short_code','process','created_at','narrative','ft_ref'])]
 final class ConfirmationTransaction extends Model
 {
-    #[Override]
-    protected $fillable = [
-        'transaction_id',
-        'transaction_time',
-        'bill_reference',
-        'customer_name',
-        'amount',
-        'status',
-        'authenticated',
-        'business_short_code',
-        'process',
-        'created_at',
-        'narrative',
-        'ft_ref',
-    ];
-
     #[Override]
     protected $attributes = [
         'process' => ProcessSMSTxn::YES,
