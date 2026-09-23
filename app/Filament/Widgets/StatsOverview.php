@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Widgets;
 
 use App\Models\ConfirmationTransaction;
@@ -8,11 +10,14 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Widgets\StatsOverviewWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 use Illuminate\Support\Carbon;
+use Override;
 
 class StatsOverview extends StatsOverviewWidget
 {
+    #[Override]
     protected static ?int $sort = 1;
 
+    #[Override]
     protected int|array|null $columns = [
         'sm' => 1,
         'md' => 2,
@@ -20,6 +25,7 @@ class StatsOverview extends StatsOverviewWidget
         'xl' => 4,
     ];
 
+    #[Override]
     protected ?string $pollingInterval = '60s';
 
     protected function getStats(): array
@@ -64,9 +70,9 @@ class StatsOverview extends StatsOverviewWidget
             $trendPercent = $currentPeriodCount > 0 ? 100 : 0;
         } else {
             $trendPercent = (
-                    ($currentPeriodCount - $previousPeriodCount)
-                    / $previousPeriodCount
-                ) * 100;
+                ($currentPeriodCount - $previousPeriodCount)
+                / $previousPeriodCount
+            ) * 100;
         }
 
         $isGrowth = $trendPercent >= 0;
@@ -112,8 +118,7 @@ class StatsOverview extends StatsOverviewWidget
 
         return collect(range(6, 0))
             ->map(
-                fn ($daysAgo) =>
-                    $data[now()->subDays($daysAgo)->format('Y-m-d')] ?? 0
+                fn ($daysAgo) => $data[now()->subDays($daysAgo)->format('Y-m-d')] ?? 0
             )
             ->toArray();
     }

@@ -20,7 +20,7 @@ use Override;
  * @property mixed $created_at
  * @property mixed $mpesa_ref
  */
-#[Fillable(['status','mpesa_ref','bill_reference','amount','created_at','processed_at','customer_name','recipient_name','recipient_mobile','post','process','response','error','next_retry_at','attempts'])]
+#[Fillable(['status', 'mpesa_ref', 'bill_reference', 'amount', 'created_at', 'processed_at', 'customer_name', 'recipient_name', 'recipient_mobile', 'post', 'process', 'response', 'error', 'next_retry_at', 'attempts'])]
 final class SmsQueue extends Model
 {
     #[Override]
@@ -54,7 +54,7 @@ final class SmsQueue extends Model
         return Attribute::make(
             set: fn (?string $value): string => ''
                     |> mb_trim(...)
-                    |> (fn($x) => mb_strtolower($x, 'UTF-8'))
+                    |> (fn ($x): string => mb_strtolower($x, 'UTF-8'))
                     |> ucwords(...),
         );
     }

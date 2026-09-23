@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\BusinessTills;
 
 use App\Filament\Resources\BusinessTills\Pages\CreateBusinessTill;
@@ -13,13 +15,17 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Override;
 
 class BusinessTillResource extends Resource
 {
+    #[Override]
     protected static ?string $model = BusinessTill::class;
 
+    #[Override]
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    #[Override]
     protected static ?string $recordTitleAttribute = 'till';
 
     public static function form(Schema $schema): Schema

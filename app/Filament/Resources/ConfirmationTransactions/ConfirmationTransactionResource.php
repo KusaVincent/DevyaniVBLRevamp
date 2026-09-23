@@ -19,12 +19,18 @@ use Override;
 
 final class ConfirmationTransactionResource extends Resource
 {
+    #[Override]
     protected static ?int $navigationSort = 1;
+
     #[Override]
     protected static ?string $recordTitleAttribute = 'transaction_id';
+
     #[Override]
     protected static ?string $model = ConfirmationTransaction::class;
+
+    #[Override]
     protected static ?string $navigationLabel = 'Received Transactions';
+
     #[Override]
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 

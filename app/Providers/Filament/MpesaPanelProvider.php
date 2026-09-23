@@ -63,16 +63,15 @@ final class MpesaPanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->authMiddleware([
-                //                Authenticate::class,
+                Authenticate::class,
             ])
-//            ->multiFactorAuthentication(
-//                [
-//                    AppAuthentication::make()->recoverable(),
-//                    EmailAuthentication::make()
-//                        ->codeExpiryMinutes((int) config('auth.mfa_email_expiry', 5)),
-//                ],
-//                isRequired: (bool) config('auth.mfa_enabled', ! app()->isLocal())
-//            )
-            ;
+            ->multiFactorAuthentication(
+                [
+                    AppAuthentication::make()->recoverable(),
+                    EmailAuthentication::make()
+                        ->codeExpiryMinutes((int) config('auth.mfa_email_expiry', 5)),
+                ],
+                isRequired: (bool) config('auth.mfa_enabled', ! app()->isLocal())
+            );
     }
 }

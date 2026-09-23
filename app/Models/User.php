@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Enum\UserRole;
 use Filament\Auth\MultiFactor\App\Concerns\InteractsWithAppAuthentication;
 use Filament\Auth\MultiFactor\App\Concerns\InteractsWithAppAuthenticationRecovery;
 use Filament\Auth\MultiFactor\App\Contracts\HasAppAuthentication;
@@ -23,7 +24,20 @@ use Override;
 #[Hidden(['password', 'remember_token'])]
 final class User extends Authenticatable implements FilamentUser, HasAppAuthentication, HasAppAuthenticationRecovery, HasEmailAuthentication, MustVerifyEmail
 {
-    use InteractsWithAppAuthentication, InteractsWithAppAuthenticationRecovery,InteractsWithEmailAuthentication, Notifiable;
+    use InteractsWithAppAuthentication;
+    use InteractsWithAppAuthenticationRecovery;
+    use InteractsWithEmailAuthentication;
+    use Notifiable;
+
+    #[Override]
+    protected $attributes = [
+        'role' => UserRole::NORMAL,
+    ];
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return true;
+    }
 
     /**
      * @return array<string, string>
@@ -32,13 +46,9 @@ final class User extends Authenticatable implements FilamentUser, HasAppAuthenti
     protected function casts(): array
     {
         return [
-            'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'role' => UserRole::class,
+            'email_verified_at' => 'datetime',
         ];
-    }
-
-    public function canAccessPanel(Panel $panel): bool
-    {
-        return true;
     }
 }

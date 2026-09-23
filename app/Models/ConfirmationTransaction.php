@@ -21,7 +21,7 @@ use Override;
  * @property mixed $customer_name
  * @property mixed $created_at
  */
-#[Fillable(['transaction_id','transaction_time','bill_reference','customer_name','amount','status','authenticated','business_short_code','process','created_at','narrative','ft_ref'])]
+#[Fillable(['transaction_id', 'transaction_time', 'bill_reference', 'customer_name', 'amount', 'status', 'authenticated', 'business_short_code', 'process', 'created_at', 'narrative', 'ft_ref'])]
 final class ConfirmationTransaction extends Model
 {
     #[Override]

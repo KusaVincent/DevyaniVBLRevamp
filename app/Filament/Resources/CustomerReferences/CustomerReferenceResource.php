@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\CustomerReferences;
 
 use App\Filament\Resources\CustomerReferences\Pages\CreateCustomerReference;
@@ -13,13 +15,17 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Override;
 
 class CustomerReferenceResource extends Resource
 {
+    #[Override]
     protected static ?string $model = CustomerReference::class;
 
+    #[Override]
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    #[Override]
     protected static ?string $recordTitleAttribute = 'reference';
 
     public static function form(Schema $schema): Schema

@@ -7,7 +7,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Attributes\Guarded;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
-use Override;
 
 /**
  * @property mixed $name
@@ -26,7 +25,7 @@ final class CustomerReference extends Model
         return Attribute::make(
             set: fn (?string $value): string => ''
                     |> mb_trim(...)
-                    |> (fn($x) => mb_strtolower($x, 'UTF-8'))
+                    |> (fn ($x): string => mb_strtolower($x, 'UTF-8'))
                     |> ucwords(...),
         );
     }

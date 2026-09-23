@@ -23,7 +23,7 @@ use Override;
  *
  * @method static static create(array<string, mixed> $attributes)
  */
-#[Fillable(['subject','header','attachment','recipients','status','attempts','next_retry_at','processed_at','response','error','message'])]
+#[Fillable(['subject', 'header', 'attachment', 'recipients', 'status', 'attempts', 'next_retry_at', 'processed_at', 'response', 'error', 'message'])]
 final class EmailQueue extends Model
 {
     #[Override]

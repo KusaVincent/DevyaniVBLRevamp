@@ -71,3 +71,17 @@ Executed when containers spawn in `docker-compose.yml` to apply framework optimi
 - **Database:** PostgreSQL 17 (Docker) / SQLite (Dev)
 - **Web Server:** Nginx 1.26 (Alpine) with SSL Termination
 - **Containerization:** Docker Compose V2
+
+```
+docker compose run --rm --entrypoint "" app php artisan migrate --seed --force
+docker compose restart app
+docker compose ps
+
+docker compose exec app php artisan tinker
+    $user = new \App\Models\User();
+    $user->name = 'Test User';
+    $user->email = 'test@example.com';
+    $user->password = \Illuminate\Support\Facades\Hash::make('Password123!');
+    $user->email_verified_at = now();
+    $user->save();
+```

@@ -26,7 +26,7 @@ return new class extends Migration
 
             $table->timestamps();
 
-            $table->unique(['business_short_code_id', 'till']);
+            $table->unique(['business_profile_id', 'till']);
         });
     }
 };
