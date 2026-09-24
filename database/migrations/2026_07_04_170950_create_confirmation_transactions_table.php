@@ -26,9 +26,9 @@ return new class extends Migration
             $table->string('business_short_code');
             $table->unsignedTinyInteger('process');
 
-            $table->json('ft_ref')
+            $table->string('ft_ref')
                 ->nullable();
-            $table->json('narrative')
+            $table->string('narrative')
                 ->nullable();
 
             $table->timestamps();

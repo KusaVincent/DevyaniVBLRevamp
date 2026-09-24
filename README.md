@@ -84,4 +84,8 @@ docker compose exec app php artisan tinker
     $user->password = \Illuminate\Support\Facades\Hash::make('Password123!');
     $user->email_verified_at = now();
     $user->save();
+    
+docker compose down
+docker compose build --no-cache app
+docker compose up -d --force-recreate
 ```

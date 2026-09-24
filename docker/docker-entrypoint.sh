@@ -40,3 +40,4 @@ ls -la /var/www/html/storage/logs
 echo "=== Starting application ==="
 
 exec "$@"
+

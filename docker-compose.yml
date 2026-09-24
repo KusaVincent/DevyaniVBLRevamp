@@ -47,7 +47,7 @@ services:
             POSTGRES_USER: ${DB_USERNAME:-mpesa}
             POSTGRES_PASSWORD: ${DB_PASSWORD:-secret}
         volumes:
-            - postgres_data:/var/lib/postgresql/data
+            - postgres_data:/var/lib/postgresql
         healthcheck:
             test: ["CMD-SHELL", "pg_isready -U ${DB_USERNAME:-mpesa} -d ${DB_DATABASE:-mpesa}"]
             interval: 5s
@@ -84,3 +84,4 @@ volumes:
             o: bind
             device: /var/log/application/devyanivbl/storage
     postgres_data:
+
