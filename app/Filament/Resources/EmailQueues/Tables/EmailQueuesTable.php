@@ -18,6 +18,7 @@ class EmailQueuesTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->poll('60s')
             ->columns([
                 TextColumn::make('subject')
                     ->label('Subject')
