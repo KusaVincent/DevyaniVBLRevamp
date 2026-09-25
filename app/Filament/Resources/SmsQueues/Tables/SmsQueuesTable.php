@@ -95,7 +95,7 @@ class SmsQueuesTable
                 ViewAction::make(),
 
                 Action::make('reprocess')
-                    ->label('Reprocess')
+                    ->label('Process')
                     ->icon(Heroicon::ArrowPath)
                     ->color('success')
                     ->visible(
@@ -107,7 +107,7 @@ class SmsQueuesTable
                     ->modalDescription(
                         'Are you sure you want to mark this SMS for processing again?'
                     )
-                    ->modalSubmitActionLabel('Reprocess')
+                    ->modalSubmitActionLabel('Process')
                     ->action(function (SmsQueue $record): void {
                         $record->update([
                             'process' => ProcessSMSTxn::YES,
