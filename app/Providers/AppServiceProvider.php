@@ -19,6 +19,9 @@ use App\Contracts\Sms\CelcomSmsServiceInterface;
 use App\Contracts\Sms\SmsMessageBuilderInterface;
 use App\Contracts\Sms\SmsProcessingServiceInterface;
 use App\Contracts\Sms\SmsQueueServiceInterface;
+use App\Enum\UserRole;
+use App\Models\User;
+use App\Policies\AuditPolicy;
 use App\Services\Business\BusinessProfileService;
 use App\Services\Confirmation\AuthenticationService;
 use App\Services\Confirmation\HashValidationService;
@@ -36,9 +39,11 @@ use App\Services\Sms\SmsProcessingService;
 use App\Services\Sms\SmsQueueService;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Override;
+use OwenIt\Auditing\Models\Audit;
 
 final class AppServiceProvider extends ServiceProvider
 {
@@ -83,5 +88,40 @@ final class AppServiceProvider extends ServiceProvider
         if ($this->app->isProduction()) {
             URL::forceScheme('https');
         }
+
+        $this->gates();
+    }
+
+    private function gates(): void
+    {
+        Gate::policy(Audit::class, AuditPolicy::class);
+
+        Gate::define('admin', function (User $user): bool {
+            return $user->role === UserRole::ADMIN;
+        });
+
+        Gate::define('manage-users', function (User $user): bool {
+            return $user->role === UserRole::ADMIN;
+        });
+
+        Gate::define('view-audits', function (User $user): bool {
+            return $user->role === UserRole::ADMIN;
+        });
+
+        Gate::define('manage-business-profiles', function (User $user): bool {
+            return $user->role === UserRole::ADMIN;
+        });
+
+        Gate::define('manage-business-tills', function (User $user): bool {
+            return $user->role === UserRole::ADMIN;
+        });
+
+        Gate::define('retry-queues', function (User $user): bool {
+            return in_array($user->role, [UserRole::NORMAL, UserRole::ADMIN], true);
+        });
+
+        Gate::define('reprocess-queues', function (User $user): bool {
+            return in_array($user->role, [UserRole::NORMAL, UserRole::ADMIN], true);
+        });
     }
 }

@@ -17,7 +17,7 @@ class EditSmsQueue extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
+            //
         ];
     }
 }

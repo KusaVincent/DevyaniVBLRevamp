@@ -8,6 +8,7 @@ use App\Filament\Resources\SmsQueues\Pages\CreateSmsQueue;
 use App\Filament\Resources\SmsQueues\Pages\EditSmsQueue;
 use App\Filament\Resources\SmsQueues\Pages\ListSmsQueues;
 use App\Filament\Resources\SmsQueues\Schemas\SmsQueueForm;
+use App\Filament\Resources\SmsQueues\Schemas\SmsQueueInfolist;
 use App\Filament\Resources\SmsQueues\Tables\SmsQueuesTable;
 use App\Models\SmsQueue;
 use BackedEnum;
@@ -16,21 +17,27 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Override;
+use Tapp\FilamentAuditing\RelationManagers\AuditsRelationManager;
 
 class SmsQueueResource extends Resource
 {
     #[Override]
-    protected static ?string $model = SmsQueue::class;
-
+    protected static ?int $navigationSort = 1;
     #[Override]
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static ?string $model = SmsQueue::class;
+    #[Override]
+    protected static ?string $navigationLabel = 'SMS Queue';
+    #[Override]
+    protected static string|null|\UnitEnum $navigationGroup = 'Queues';
+    #[Override]
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedChatBubbleLeftRight;
 
     #[Override]
     protected static ?string $recordTitleAttribute = 'id';
 
-    public static function form(Schema $schema): Schema
+    public static function infolist(Schema $schema): Schema
     {
-        return SmsQueueForm::configure($schema);
+        return SmsQueueInfolist::configure($schema);
     }
 
     public static function table(Table $table): Table
@@ -41,7 +48,7 @@ class SmsQueueResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            AuditsRelationManager::class,
         ];
     }
 
@@ -49,8 +56,6 @@ class SmsQueueResource extends Resource
     {
         return [
             'index' => ListSmsQueues::route('/'),
-            'create' => CreateSmsQueue::route('/create'),
-            'edit' => EditSmsQueue::route('/{record}/edit'),
         ];
     }
 }

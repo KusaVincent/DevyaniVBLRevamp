@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Override;
+use OwenIt\Auditing\Contracts\Auditable;
 
 /**
  * @method static where(string $string, string $transactionId)
@@ -22,8 +23,10 @@ use Override;
  * @property mixed $created_at
  */
 #[Fillable(['transaction_id', 'transaction_time', 'bill_reference', 'customer_name', 'amount', 'status', 'authenticated', 'business_short_code', 'process', 'created_at', 'narrative', 'ft_ref'])]
-final class ConfirmationTransaction extends Model
+final class ConfirmationTransaction extends Model implements Auditable
 {
+    use \OwenIt\Auditing\Auditable;
+
     #[Override]
     protected $attributes = [
         'process' => ProcessSMSTxn::YES,
@@ -56,7 +59,10 @@ final class ConfirmationTransaction extends Model
     protected function customerName(): Attribute
     {
         return Attribute::make(
-            set: fn (?string $value): string => ucwords(mb_strtolower(mb_trim($value ?? ''), 'UTF-8')),
+            set: fn (?string $value): string => ''
+                    |> mb_trim(...)
+                    |> (fn($x) => mb_strtolower($x, 'UTF-8'))
+                    |> ucwords(...),
         );
     }
 }

@@ -4,9 +4,13 @@ declare(strict_types=1);
 
 namespace App\Filament\Resources\SmsQueues\Tables;
 
+use App\Enum\ProcessSMSTxn;
+use App\Enum\Status;
+use App\Models\SmsQueue;
+use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -16,49 +20,125 @@ class SmsQueuesTable
     {
         return $table
             ->columns([
-                TextColumn::make('customer_name')
-                    ->searchable(),
                 TextColumn::make('recipient_name')
-                    ->searchable(),
+                    ->label('Recipient')
+                    ->searchable()
+                    ->sortable()
+                    ->weight('medium')
+                    ->icon(Heroicon::User),
                 TextColumn::make('recipient_mobile')
-                    ->searchable(),
-                TextColumn::make('status')
-                    ->badge()
-                    ->searchable(),
+                    ->label('Mobile')
+                    ->searchable()
+                    ->copyable()
+                    ->icon(Heroicon::Phone),
+                TextColumn::make('customer_name')
+                    ->label('Customer')
+                    ->searchable()
+                    ->sortable()
+                    ->icon(Heroicon::UserCircle),
+
                 TextColumn::make('amount')
-                    ->numeric()
-                    ->sortable(),
+                    ->label('Amount')
+                    ->numeric(
+                        decimalPlaces: 2,
+                        decimalSeparator: '.',
+                        thousandsSeparator: ',',
+                    )
+                    ->prefix('KES ')
+                    ->sortable()
+                    ->alignEnd(),
                 TextColumn::make('mpesa_ref')
-                    ->searchable(),
+                    ->label('M-Pesa Ref')
+                    ->searchable()
+                    ->copyable()
+                    ->sortable()
+                    ->icon(Heroicon::Hashtag),
                 TextColumn::make('bill_reference')
-                    ->searchable(),
+                    ->label('Bill Reference')
+                    ->searchable()
+                    ->copyable()
+                    ->sortable(),
+                TextColumn::make('status')
+                    ->label('Status')
+                    ->badge()
+                    ->searchable()
+                    ->sortable(),
                 TextColumn::make('process')
+                    ->label('Process')
                     ->badge()
                     ->sortable(),
                 TextColumn::make('attempts')
+                    ->label('Attempts')
                     ->numeric()
-                    ->sortable(),
+                    ->sortable()
+                    ->alignCenter(),
+                TextColumn::make('processed_at')
+                    ->label('Processed')
+                    ->dateTime('M d, Y H:i')
+                    ->sortable()
+                    ->placeholder('Not processed'),
+                TextColumn::make('next_retry_at')
+                    ->label('Next Retry')
+                    ->dateTime('M d, Y H:i')
+                    ->sortable()
+                    ->placeholder('—'),
                 TextColumn::make('created_at')
-                    ->dateTime()
+                    ->label('Queued')
+                    ->dateTime('M d, Y H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('processed_at')
-                    ->dateTime()
-                    ->sortable(),
-                TextColumn::make('next_retry_at')
-                    ->dateTime()
-                    ->sortable(),
             ])
             ->filters([
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                ViewAction::make(),
+
+                Action::make('reprocess')
+                    ->label('Reprocess')
+                    ->icon(Heroicon::ArrowPath)
+                    ->color('success')
+                    ->visible(
+                        fn (SmsQueue $record): bool =>
+                            auth()->user()?->can('reprocess-queues') && $record->process === ProcessSMSTxn::NO
+                    )
+                    ->requiresConfirmation()
+                    ->modalHeading('Reprocess SMS')
+                    ->modalDescription(
+                        'Are you sure you want to mark this SMS for processing again?'
+                    )
+                    ->modalSubmitActionLabel('Reprocess')
+                    ->action(function (SmsQueue $record): void {
+                        $record->update([
+                            'process' => ProcessSMSTxn::YES,
+                        ]);
+                    }),
+                Action::make('retry')
+                    ->label('Retry')
+                    ->icon(Heroicon::ArrowPath)
+                    ->color('warning')
+                    ->visible(
+                        fn (SmsQueue $record): bool =>
+                            auth()->user()?->can('retry-queues') &&
+                            ($record->status === Status::PROCESSED ||  $record->status === Status::ABANDONED)
+                    )
+                    ->requiresConfirmation()
+                    ->modalHeading('Retry SMS')
+                    ->modalDescription(
+                        'This will change the SMS status from Processed back to Pending.'
+                    )
+                    ->modalSubmitActionLabel('Retry')
+                    ->action(function (SmsQueue $record): void {
+                        $record->update([
+                            'status' => Status::PENDING,
+                        ]);
+                    }),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
+                    //
                 ]),
-            ]);
+            ])
+            ->defaultSort('created_at', 'desc');
     }
 }

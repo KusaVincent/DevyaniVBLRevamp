@@ -35,7 +35,7 @@ final readonly class ConfirmationService
      */
     public function process(ConfirmationRequestData $request): void
     {
-        $process = ProcessSMSTxn::YES;
+        $process = ProcessSMSTxn::NO;
         $profile = $this->profiles->find($request);
 
         try {

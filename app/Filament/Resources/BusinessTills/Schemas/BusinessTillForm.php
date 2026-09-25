@@ -4,8 +4,13 @@ declare(strict_types=1);
 
 namespace App\Filament\Resources\BusinessTills\Schemas;
 
+use App\Models\BusinessProfile;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
 
 class BusinessTillForm
 {
@@ -13,13 +18,39 @@ class BusinessTillForm
     {
         return $schema
             ->components([
-                TextInput::make('business_profile_id')
-                    ->required()
-                    ->numeric(),
-                TextInput::make('till')
-                    ->required(),
-                TextInput::make('for'),
-                TextInput::make('additional_details'),
+                Section::make('Till Configuration')
+                    ->description('Assign a till to a business profile.')
+                    ->icon(Heroicon::DevicePhoneMobile)
+                    ->schema([
+                        Select::make('business_profile_id')
+                            ->label('Business Profile')
+                            ->relationship('businessProfile', 'business_short_code')
+                            ->searchable()
+                            ->preload()
+                            ->required()
+                            ->native(false)
+                            ->prefixIcon(Heroicon::BuildingOffice),
+
+                        TextInput::make('till')
+                            ->label('Till Number')
+                            ->required()
+                            ->maxLength(255)
+                            ->prefixIcon(Heroicon::DevicePhoneMobile),
+
+                        TextInput::make('for')
+                            ->label('For')
+                            ->placeholder('e.g. Customer payments')
+                            ->maxLength(255)
+                            ->prefixIcon(Heroicon::User),
+
+                        Textarea::make('additional_details')
+                            ->label('Additional Details')
+                            ->rows(4)
+                            ->placeholder('Add any additional information about this till...')
+                            ->columnSpanFull(),
+                    ])
+                    ->columns(3)
+                    ->columnSpanFull(),
             ]);
     }
 }

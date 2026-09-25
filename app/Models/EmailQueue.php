@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 use Override;
+use OwenIt\Auditing\Contracts\Auditable;
 
 /**
  * @property array<int, string> $recipients
@@ -24,8 +25,10 @@ use Override;
  * @method static static create(array<string, mixed> $attributes)
  */
 #[Fillable(['subject', 'header', 'attachment', 'recipients', 'status', 'attempts', 'next_retry_at', 'processed_at', 'response', 'error', 'message'])]
-final class EmailQueue extends Model
+final class EmailQueue extends Model implements Auditable
 {
+    use \OwenIt\Auditing\Auditable;
+
     #[Override]
     protected $attributes = [
         'status' => Status::PENDING,

@@ -16,6 +16,7 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Override;
+use Tapp\FilamentAuditing\RelationManagers\AuditsRelationManager;
 
 final class ConfirmationTransactionResource extends Resource
 {
@@ -23,22 +24,15 @@ final class ConfirmationTransactionResource extends Resource
     protected static ?int $navigationSort = 1;
 
     #[Override]
-    protected static ?string $recordTitleAttribute = 'transaction_id';
-
-    #[Override]
     protected static ?string $model = ConfirmationTransaction::class;
-
+    #[Override]
+    protected static string|null|\UnitEnum $navigationGroup = 'M-Pesa';
+    #[Override]
+    protected static ?string $recordTitleAttribute = 'transaction_id';
     #[Override]
     protected static ?string $navigationLabel = 'Received Transactions';
-
     #[Override]
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
-
-    #[Override]
-    public static function form(Schema $schema): Schema
-    {
-        return ConfirmationTransactionForm::configure($schema);
-    }
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBanknotes;
 
     #[Override]
     public static function table(Table $table): Table
@@ -50,7 +44,7 @@ final class ConfirmationTransactionResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            AuditsRelationManager::class,
         ];
     }
 
@@ -59,8 +53,6 @@ final class ConfirmationTransactionResource extends Resource
     {
         return [
             'index' => ListConfirmationTransactions::route('/'),
-            'create' => CreateConfirmationTransaction::route('/create'),
-            'edit' => EditConfirmationTransaction::route('/{record}/edit'),
         ];
     }
 }

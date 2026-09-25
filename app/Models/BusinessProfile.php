@@ -12,25 +12,28 @@ use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 use Override;
+use OwenIt\Auditing\Contracts\Auditable;
 
 /**
  * @property string $username
  * @property string $password
- * @property string $business_short_code
  * @property string $sap_file
- * @property string $business_transaction
  * @property string $area_code
- * @property string $profit_center
  * @property array $sap_headers
  * @property string $secret_key
  * @property mixed $credit_account
+ * @property string $profit_center
+ * @property string $business_short_code
+ * @property string $business_transaction
  *
  * @method static static updateOrCreate(array<string, mixed> $attributes, array<string, mixed> $values)
  */
 #[Guarded([])]
 #[Hidden(['password', 'secret_key'])]
-final class BusinessProfile extends Model
+final class BusinessProfile extends Model implements Auditable
 {
+    use \OwenIt\Auditing\Auditable;
+
     #[Override]
     protected $attributes = [
         'type' => BusinessProfileType::NORMAL,

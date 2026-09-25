@@ -7,6 +7,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Attributes\Guarded;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
+use OwenIt\Auditing\Contracts\Auditable;
 
 /**
  * @property mixed $name
@@ -15,8 +16,10 @@ use Illuminate\Database\Eloquent\Model;
  * @method static updateOrCreate(string[] $array, string[] $reference)
  */
 #[Guarded([])]
-final class CustomerReference extends Model
+final class CustomerReference extends Model implements Auditable
 {
+    use \OwenIt\Auditing\Auditable;
+
     /**
      * @return Attribute<never, string>
      */
