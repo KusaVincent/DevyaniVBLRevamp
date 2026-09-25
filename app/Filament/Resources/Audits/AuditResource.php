@@ -5,27 +5,37 @@ declare(strict_types=1);
 namespace App\Filament\Resources\Audits;
 
 use App\Filament\Resources\Audits\Pages\ListAudits;
+use BackedEnum;
 use Filament\Navigation\NavigationItem;
 use Filament\Resources\Resource;
 use Filament\Support\Icons\Heroicon;
 use Illuminate\Database\Eloquent\Model;
+use Override;
 use OwenIt\Auditing\Models\Audit;
+use UnitEnum;
 
 final class AuditResource extends Resource
 {
+    #[Override]
     protected static ?string $model = Audit::class;
 
-    protected static string|\BackedEnum|null $navigationIcon =
+    #[Override]
+    protected static string|BackedEnum|null $navigationIcon =
         Heroicon::OutlinedClipboardDocumentList;
 
+    #[Override]
     protected static ?string $navigationLabel = 'Audits';
 
+    #[Override]
     protected static ?string $modelLabel = 'Audit';
 
+    #[Override]
     protected static ?string $pluralModelLabel = 'Audits';
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Administration';
+    #[Override]
+    protected static string|UnitEnum|null $navigationGroup = 'Administration';
 
+    #[Override]
     protected static ?int $navigationSort = 2;
 
     public static function getNavigationGroup(): string
@@ -35,21 +45,21 @@ final class AuditResource extends Resource
 
     public static function shouldRegisterNavigation(): bool
     {
-        return static::canViewAny();
+        return self::canViewAny();
     }
 
     public static function getNavigationItems(): array
     {
-        if (! static::canViewAny()) {
+        if (! self::canViewAny()) {
             return [];
         }
 
         return [
-            NavigationItem::make(static::getNavigationLabel())
+            NavigationItem::make(self::getNavigationLabel())
                 ->group('Administration')
-                ->icon(static::getNavigationIcon())
-                ->sort(static::getNavigationSort())
-                ->url(static::getUrl('index')),
+                ->icon(self::getNavigationIcon())
+                ->sort(self::getNavigationSort())
+                ->url(self::getUrl('index')),
         ];
     }
 

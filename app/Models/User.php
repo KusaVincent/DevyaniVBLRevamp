@@ -24,7 +24,7 @@ use OwenIt\Auditing\Contracts\Auditable;
 
 #[Guarded([])]
 #[Hidden(['password', 'remember_token'])]
-final class User extends Authenticatable implements FilamentUser, HasAppAuthentication, HasAppAuthenticationRecovery, HasEmailAuthentication, MustVerifyEmail, Auditable
+final class User extends Authenticatable implements Auditable, FilamentUser, HasAppAuthentication, HasAppAuthenticationRecovery, HasEmailAuthentication, MustVerifyEmail
 {
     use InteractsWithAppAuthentication;
     use InteractsWithAppAuthenticationRecovery;
@@ -43,6 +43,11 @@ final class User extends Authenticatable implements FilamentUser, HasAppAuthenti
         return $this->status === UserStatus::ACTIVE;
     }
 
+    public function isAdmin(): bool
+    {
+        return $this->role === UserRole::ADMIN;
+    }
+
     /**
      * @return array<string, string>
      */
@@ -55,10 +60,5 @@ final class User extends Authenticatable implements FilamentUser, HasAppAuthenti
             'status' => UserStatus::class,
             'email_verified_at' => 'datetime',
         ];
-    }
-
-    public function isAdmin(): bool
-    {
-        return $this->role === UserRole::ADMIN;
     }
 }

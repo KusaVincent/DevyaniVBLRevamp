@@ -18,19 +18,25 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Override;
 use Tapp\FilamentAuditing\RelationManagers\AuditsRelationManager;
+use UnitEnum;
 
 class UserResource extends Resource
 {
     #[Override]
     protected static ?int $navigationSort = 1;
+
     #[Override]
     protected static ?string $model = User::class;
+
     #[Override]
     protected static ?string $navigationLabel = 'Users';
+
     #[Override]
     protected static ?string $recordTitleAttribute = 'name';
+
     #[Override]
-    protected static string|null|\UnitEnum $navigationGroup = 'Administration';
+    protected static string|null|UnitEnum $navigationGroup = 'Administration';
+
     #[Override]
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUsers;
 

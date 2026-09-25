@@ -16,13 +16,22 @@ final class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call([
-            UserSeeder::class,
+        $this->call($this->seed());
+    }
 
+    private function seed(): array
+    {
+        $seed = [
             BusinessProfileSeeder::class,
             CustomerReferenceSeeder::class,
 
             BusinessTillSeeder::class,
-        ]);
+        ];
+
+        if (! app()->isProduction()) {
+            $seed[] = UserSeeder::class;
+        }
+
+        return $seed;
     }
 }

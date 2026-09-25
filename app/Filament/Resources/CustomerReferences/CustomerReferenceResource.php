@@ -18,17 +18,22 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Override;
 use Tapp\FilamentAuditing\RelationManagers\AuditsRelationManager;
+use UnitEnum;
 
 class CustomerReferenceResource extends Resource
 {
     #[Override]
     protected static ?int $navigationSort = 4;
+
     #[Override]
     protected static ?string $model = CustomerReference::class;
+
     #[Override]
     protected static ?string $navigationLabel = 'Customer References';
+
     #[Override]
-    protected static string|null|\UnitEnum $navigationGroup = 'M-Pesa';
+    protected static string|null|UnitEnum $navigationGroup = 'M-Pesa';
+
     #[Override]
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedIdentification;
 

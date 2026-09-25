@@ -99,8 +99,7 @@ class SmsQueuesTable
                     ->icon(Heroicon::ArrowPath)
                     ->color('success')
                     ->visible(
-                        fn (SmsQueue $record): bool =>
-                            auth()->user()?->can('reprocess-queues') && $record->process === ProcessSMSTxn::NO
+                        fn (SmsQueue $record): bool => auth()->user()?->can('reprocess-queues') && $record->process === ProcessSMSTxn::NO
                     )
                     ->requiresConfirmation()
                     ->modalHeading('Reprocess SMS')
@@ -118,9 +117,8 @@ class SmsQueuesTable
                     ->icon(Heroicon::ArrowPath)
                     ->color('warning')
                     ->visible(
-                        fn (SmsQueue $record): bool =>
-                            auth()->user()?->can('retry-queues') &&
-                            ($record->status === Status::PROCESSED ||  $record->status === Status::ABANDONED)
+                        fn (SmsQueue $record): bool => auth()->user()?->can('retry-queues') &&
+                            ($record->status === Status::PROCESSED || $record->status === Status::ABANDONED)
                     )
                     ->requiresConfirmation()
                     ->modalHeading('Retry SMS')

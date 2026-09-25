@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Filament\Resources\BusinessTills\Schemas;
 
-use App\Models\BusinessProfile;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;

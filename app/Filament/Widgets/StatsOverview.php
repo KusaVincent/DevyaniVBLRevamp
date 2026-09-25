@@ -11,9 +11,11 @@ use App\Models\SmsQueue;
 use Filament\Widgets\StatsOverviewWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 use Illuminate\Support\Carbon;
+use Override;
 
 final class StatsOverview extends StatsOverviewWidget
 {
+    #[Override]
     protected static ?int $sort = 1;
 
     protected function getStats(): array
@@ -141,7 +143,7 @@ final class StatsOverview extends StatsOverviewWidget
 
             Stat::make(
                 'Success Rate',
-                number_format($successRate, 1) . '%'
+                number_format($successRate, 1).'%'
             )
                 ->description("Today's processing rate")
                 ->descriptionIcon('heroicon-m-chart-bar')
@@ -154,10 +156,10 @@ final class StatsOverview extends StatsOverviewWidget
 
             Stat::make(
                 "Today's Value",
-                'KES ' . number_format((float) $transactionValueToday, 2)
+                'KES '.number_format((float) $transactionValueToday, 2)
             )
                 ->description(
-                    'Processed: KES ' .
+                    'Processed: KES '.
                     number_format((float) $processedValueToday, 2)
                 )
                 ->descriptionIcon('heroicon-m-banknotes')
@@ -169,8 +171,8 @@ final class StatsOverview extends StatsOverviewWidget
                 number_format($retryingSms + $retryingEmail)
             )
                 ->description(
-                    $retryingSms . ' SMS · ' .
-                    $retryingEmail . ' Email'
+                    $retryingSms.' SMS · '.
+                    $retryingEmail.' Email'
                 )
                 ->descriptionIcon('heroicon-m-arrow-path')
                 ->icon('heroicon-o-arrow-path')

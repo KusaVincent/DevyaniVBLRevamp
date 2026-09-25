@@ -61,7 +61,7 @@ final class ConfirmationTransaction extends Model implements Auditable
         return Attribute::make(
             set: fn (?string $value): string => ''
                     |> mb_trim(...)
-                    |> (fn($x) => mb_strtolower($x, 'UTF-8'))
+                    |> (fn ($x): string => mb_strtolower($x, 'UTF-8'))
                     |> ucwords(...),
         );
     }

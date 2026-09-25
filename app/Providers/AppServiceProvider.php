@@ -96,32 +96,18 @@ final class AppServiceProvider extends ServiceProvider
     {
         Gate::policy(Audit::class, AuditPolicy::class);
 
-        Gate::define('admin', function (User $user): bool {
-            return $user->role === UserRole::ADMIN;
-        });
+        Gate::define('admin', fn (User $user): bool => $user->role === UserRole::ADMIN);
 
-        Gate::define('manage-users', function (User $user): bool {
-            return $user->role === UserRole::ADMIN;
-        });
+        Gate::define('manage-users', fn (User $user): bool => $user->role === UserRole::ADMIN);
 
-        Gate::define('view-audits', function (User $user): bool {
-            return $user->role === UserRole::ADMIN;
-        });
+        Gate::define('view-audits', fn (User $user): bool => $user->role === UserRole::ADMIN);
 
-        Gate::define('manage-business-profiles', function (User $user): bool {
-            return $user->role === UserRole::ADMIN;
-        });
+        Gate::define('manage-business-profiles', fn (User $user): bool => $user->role === UserRole::ADMIN);
 
-        Gate::define('manage-business-tills', function (User $user): bool {
-            return $user->role === UserRole::ADMIN;
-        });
+        Gate::define('manage-business-tills', fn (User $user): bool => $user->role === UserRole::ADMIN);
 
-        Gate::define('retry-queues', function (User $user): bool {
-            return in_array($user->role, [UserRole::NORMAL, UserRole::ADMIN], true);
-        });
+        Gate::define('retry-queues', fn (User $user): bool => in_array($user->role, [UserRole::NORMAL, UserRole::ADMIN], true));
 
-        Gate::define('reprocess-queues', function (User $user): bool {
-            return in_array($user->role, [UserRole::NORMAL, UserRole::ADMIN], true);
-        });
+        Gate::define('reprocess-queues', fn (User $user): bool => in_array($user->role, [UserRole::NORMAL, UserRole::ADMIN], true));
     }
 }

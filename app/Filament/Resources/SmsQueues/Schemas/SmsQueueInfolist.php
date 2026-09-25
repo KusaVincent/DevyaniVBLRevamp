@@ -52,7 +52,7 @@ class SmsQueueInfolist
                                         TextEntry::make('attempts')
                                             ->label('Attempts')
                                             ->numeric(),
-                                        ])
+                                    ])
                                     ->columns(3),
                                 Section::make()
                                     ->schema([
@@ -64,7 +64,7 @@ class SmsQueueInfolist
                                             ->label('Processed At')
                                             ->dateTime('M d, Y • H:i')
                                             ->placeholder('Not processed'),
-                                        ])
+                                    ])
                                     ->columns(),
                             ])
                             ->columnSpanFull(),

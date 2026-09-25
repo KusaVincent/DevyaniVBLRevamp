@@ -9,8 +9,6 @@ use App\Enum\Status;
 use App\Models\ConfirmationTransaction;
 use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -98,8 +96,7 @@ final class ConfirmationTransactionsTable
                     ->icon(Heroicon::Play)
                     ->color('success')
                     ->visible(
-                        fn (ConfirmationTransaction $record): bool =>
-                            $record->process === ProcessSMSTxn::NO
+                        fn (ConfirmationTransaction $record): bool => $record->process === ProcessSMSTxn::NO
                     )
                     ->requiresConfirmation()
                     ->modalHeading('Process Transaction')
@@ -118,8 +115,7 @@ final class ConfirmationTransactionsTable
                     ->icon(Heroicon::ArrowPath)
                     ->color('warning')
                     ->visible(
-                        fn (ConfirmationTransaction $record): bool =>
-                            $record->status === Status::PROCESSED
+                        fn (ConfirmationTransaction $record): bool => $record->status === Status::PROCESSED
                     )
                     ->requiresConfirmation()
                     ->modalHeading('Retry Transaction')

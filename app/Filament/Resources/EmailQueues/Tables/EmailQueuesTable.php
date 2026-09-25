@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Filament\Resources\EmailQueues\Tables;
 
-use App\Enum\ProcessSMSTxn;
 use App\Enum\Status;
 use App\Models\EmailQueue;
 use Filament\Actions\Action;
@@ -86,9 +85,8 @@ class EmailQueuesTable
                     ->icon(Heroicon::ArrowPath)
                     ->color('warning')
                     ->visible(
-                        fn (EmailQueue $record): bool =>
-                            auth()->user()?->can('retry-queues') &&
-                            ($record->status === Status::PROCESSED ||  $record->status === Status::ABANDONED)
+                        fn (EmailQueue $record): bool => auth()->user()?->can('retry-queues') &&
+                            ($record->status === Status::PROCESSED || $record->status === Status::ABANDONED)
                     )
                     ->requiresConfirmation()
                     ->modalHeading('Retry Email')

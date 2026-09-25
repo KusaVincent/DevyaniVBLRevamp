@@ -18,19 +18,25 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Override;
 use Tapp\FilamentAuditing\RelationManagers\AuditsRelationManager;
+use UnitEnum;
 
 class BusinessTillResource extends Resource
 {
     #[Override]
     protected static ?int $navigationSort = 3;
+
     #[Override]
     protected static ?string $model = BusinessTill::class;
+
     #[Override]
     protected static ?string $recordTitleAttribute = 'till';
+
     #[Override]
     protected static ?string $navigationLabel = 'Business Tills';
+
     #[Override]
-    protected static string|null|\UnitEnum $navigationGroup = 'M-Pesa';
+    protected static string|null|UnitEnum $navigationGroup = 'M-Pesa';
+
     #[Override]
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBuildingStorefront;
 

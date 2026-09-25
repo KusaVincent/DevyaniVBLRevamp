@@ -18,23 +18,31 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Override;
 use Tapp\FilamentAuditing\RelationManagers\AuditsRelationManager;
+use UnitEnum;
 
 class BusinessProfileResource extends Resource
 {
     #[Override]
     protected static ?int $navigationSort = 2;
+
     #[Override]
     protected static ?string $model = BusinessProfile::class;
+
     #[Override]
     protected static ?string $modelLabel = 'Business Profile';
+
     #[Override]
     protected static ?string $navigationLabel = 'Business Profiles';
+
     #[Override]
     protected static ?string $pluralModelLabel = 'Business Profiles';
+
     #[Override]
-    protected static string|null|\UnitEnum $navigationGroup = 'M-Pesa';
+    protected static string|null|UnitEnum $navigationGroup = 'M-Pesa';
+
     #[Override]
     protected static ?string $recordTitleAttribute = 'business_short_code';
+
     #[Override]
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBuildingOffice2;
 

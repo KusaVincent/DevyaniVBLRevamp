@@ -4,10 +4,7 @@ declare(strict_types=1);
 
 namespace App\Filament\Resources\EmailQueues;
 
-use App\Filament\Resources\EmailQueues\Pages\CreateEmailQueue;
-use App\Filament\Resources\EmailQueues\Pages\EditEmailQueue;
 use App\Filament\Resources\EmailQueues\Pages\ListEmailQueues;
-use App\Filament\Resources\EmailQueues\Schemas\EmailQueueForm;
 use App\Filament\Resources\EmailQueues\Schemas\EmailQueueInfolist;
 use App\Filament\Resources\EmailQueues\Tables\EmailQueuesTable;
 use App\Models\EmailQueue;
@@ -18,19 +15,25 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Override;
 use Tapp\FilamentAuditing\RelationManagers\AuditsRelationManager;
+use UnitEnum;
 
 class EmailQueueResource extends Resource
 {
     #[Override]
     protected static ?int $navigationSort = 2;
+
     #[Override]
     protected static ?string $model = EmailQueue::class;
+
     #[Override]
     protected static ?string $recordTitleAttribute = 'id';
+
     #[Override]
     protected static ?string $navigationLabel = 'Email Queue';
+
     #[Override]
-    protected static string|null|\UnitEnum $navigationGroup = 'Queues';
+    protected static string|null|UnitEnum $navigationGroup = 'Queues';
+
     #[Override]
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedEnvelope;
 

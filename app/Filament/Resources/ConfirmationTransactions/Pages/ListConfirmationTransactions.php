@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Filament\Resources\ConfirmationTransactions\Pages;
 
 use App\Filament\Resources\ConfirmationTransactions\ConfirmationTransactionResource;
-use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 use Override;
 

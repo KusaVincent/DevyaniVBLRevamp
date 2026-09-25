@@ -134,6 +134,7 @@ class BusinessProfileForm
                                                 'SAP Headers must contain valid JSON.'
                                             );
                                         }
+
                                         return $decoded;
                                     })
                                     ->helperText('Enter valid JSON.')

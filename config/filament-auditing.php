@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Tapp\FilamentAuditing\Filament\Resources\Audits\AuditResource;
 
 return [

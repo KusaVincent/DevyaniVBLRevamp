@@ -55,14 +55,12 @@ class BusinessProfileInfolist
                                     ->icon(Heroicon::User),
                                 TextEntry::make('password')
                                     ->label('Password')
-                                    ->formatStateUsing(fn ($state): string =>
-                                    filled($state) ? '••••••••' : 'Not configured'
+                                    ->formatStateUsing(fn ($state): string => filled($state) ? '••••••••' : 'Not configured'
                                     )
                                     ->icon(Heroicon::Key),
                                 TextEntry::make('secret_key')
                                     ->label('Secret Key')
-                                    ->formatStateUsing(fn ($state): string =>
-                                    filled($state) ? '••••••••••••••••' : 'Not configured'
+                                    ->formatStateUsing(fn ($state): string => filled($state) ? '••••••••••••••••' : 'Not configured'
                                     )
                                     ->icon(Heroicon::LockClosed),
                             ])
@@ -105,8 +103,7 @@ class BusinessProfileInfolist
                                     ->fontFamily('mono')
                                     ->columnSpanFull(),
                             ])
-                            ->columns()
-                            ->columnSpanFull(2),
+                            ->columns()->columnSpanFull(),
 
                         Section::make('System Information')
                             ->description('Record metadata.')

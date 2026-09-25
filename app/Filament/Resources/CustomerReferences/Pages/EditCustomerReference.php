@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Filament\Resources\CustomerReferences\Pages;
 
 use App\Filament\Resources\CustomerReferences\CustomerReferenceResource;
-use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 use Override;
 
