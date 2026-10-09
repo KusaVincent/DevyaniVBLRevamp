@@ -8,11 +8,12 @@ use App\Enum\UserRole;
 use App\Enum\UserStatus;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 
-class UserForm
+final class UserForm
 {
     public static function configure(Schema $schema): Schema
     {
@@ -44,11 +45,25 @@ class UserForm
                             ->prefixIcon(Heroicon::UserGroup)
                             ->placeholder('Select a role'),
                         Select::make('status')
+                            ->label('Account status')
                             ->options(UserStatus::class)
                             ->required()
                             ->native(false)
                             ->prefixIcon(Heroicon::UserCircle)
-                            ->placeholder('Select a role'),
+                            ->placeholder('Select a status'),
+                        TextInput::make('password')
+                            ->password()
+                            ->revealable()
+                            ->label('Password')
+                            ->prefixIcon(Heroicon::Key)
+                            ->autocomplete('new-password')
+                            ->dehydrated(fn (?string $state): bool => filled($state))
+//                            ->required(fn (string $operation): bool => $operation === 'create')
+                            ->helperText('Leave empty to auto-generate a secure temporary password and email it to the user.'),
+
+                        Toggle::make('must_change_password')
+                            ->default(true)
+                            ->label('Force Password Change on Next Login'),
                     ])
                     ->columns(),
             ])

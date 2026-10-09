@@ -46,16 +46,49 @@ final readonly class SapArchiveService implements SapArchiveServiceInterface
         return $destination;
     }
 
+    public function restore(string $path): ?string
+    {
+        if (File::exists($path)) {
+            return $path;
+        }
+
+        $archivePath = $this->archivePath()
+            .DIRECTORY_SEPARATOR
+            .basename($path);
+
+        if (! File::exists($archivePath)) {
+            return null;
+        }
+
+        File::ensureDirectoryExists(dirname($path));
+
+        File::move($archivePath, $path);
+
+        return $path;
+    }
+
     private function archiveFilename(string $source): string
     {
+        $filename = basename($source);
         $timestamp = now()->format('Ymd_His');
 
-        return match (basename($source)) {
-            'C2B.csv' => $timestamp.'_C2B.csv',
-            'VBL_C2B.csv' => sprintf('VBL_%s_C2B.csv', $timestamp),
-            'TILL_C2B.csv' => sprintf('TILL_%s_C2B.csv', $timestamp),
-            default => basename($source),
-        };
+        $sapAppendedName = config('confirmation.sap.appended_name', '_C2B.csv');
+
+        $baseAppendedName = mb_ltrim($sapAppendedName, '_');
+
+        if ($filename === $baseAppendedName) {
+            return $timestamp.$sapAppendedName;
+        }
+
+        if (! str_ends_with($filename, $sapAppendedName)) {
+            return $filename;
+        }
+
+        $prefix = mb_substr($filename, 0, -mb_strlen($sapAppendedName));
+
+        return $prefix === ''
+            ? $timestamp.$sapAppendedName
+            : $prefix.'_'.$timestamp.$sapAppendedName;
     }
 
     private function archivePath(): string

@@ -1,43 +1,34 @@
 #!/bin/sh
 set -e
 
-echo "=== Laravel storage permission initialization ==="
+# Fast check: create required directories only if they don't exist
+# (e.g., when external volumes are mounted at runtime over /var/www/html/storage)
+for dir in \
+    storage/app \
+    storage/framework/cache \
+    storage/framework/sessions \
+    storage/framework/views \
+    storage/logs \
+    storage/phpstan \
+    bootstrap/cache; do
 
-# Ensure required Laravel directories exist.
-mkdir -p \
-    /var/www/html/storage/app \
-    /var/www/html/storage/framework/cache \
-    /var/www/html/storage/framework/sessions \
-    /var/www/html/storage/framework/views \
-    /var/www/html/storage/logs \
-    /var/www/html/storage/phpstan \
-    /var/www/html/bootstrap/cache
-
-# Make www-data the owner.
-chown -R www-data:www-data \
-    /var/www/html/storage \
-    /var/www/html/bootstrap/cache
-
-# Directories
-find /var/www/html/storage \
-    /var/www/html/bootstrap/cache \
-    -type d \
-    -exec chmod 2775 {} \;
-
-# Files
-find /var/www/html/storage \
-    /var/www/html/bootstrap/cache \
-    -type f \
-    -exec chmod 0664 {} \;
-
-echo "Storage permissions:"
-ls -ld /var/www/html/storage
-ls -ld /var/www/html/storage/logs
-
-echo "Log directory:"
-ls -la /var/www/html/storage/logs
+    if [ ! -d "/var/www/html/$dir" ]; then
+        mkdir -p "/var/www/html/$dir"
+        chown -R www-data:www-data "/var/www/html/$dir"
+        chmod 2775 "/var/www/html/$dir"
+    fi
+done
 
 echo "=== Starting application ==="
 
-exec "$@"
+# Execute Laravel runtime initialization/optimization
+if [ -x "/var/www/html/docker/entrypoint.sh" ]; then
+    /var/www/html/docker/entrypoint.sh
+else
+    echo "ERROR: /var/www/html/docker/entrypoint.sh not found or not executable"
+    exit 1
+fi
 
+echo "=== Starting container command: $* ==="
+
+exec "$@"

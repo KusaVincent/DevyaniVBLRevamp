@@ -7,15 +7,19 @@ namespace App\Filament\Resources\SmsQueues\Tables;
 use App\Enum\ProcessSMSTxn;
 use App\Enum\Status;
 use App\Models\SmsQueue;
+use App\Traits\HasDateFilters;
 use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\ViewAction;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 
 class SmsQueuesTable
 {
+    use HasDateFilters;
+
     public static function configure(Table $table): Table
     {
         return $table
@@ -90,7 +94,12 @@ class SmsQueuesTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                SelectFilter::make('status')
+                    ->options(Status::class),
+                SelectFilter::make('process')
+                    ->options(ProcessSMSTxn::class),
+                self::getDateFilter('created_at', 'Queued Date Range'),
+                self::getDateFilter('processed_at', 'Processed Date Range'),
             ])
             ->recordActions([
                 ViewAction::make(),
@@ -130,6 +139,7 @@ class SmsQueuesTable
                     ->action(function (SmsQueue $record): void {
                         $record->update([
                             'status' => Status::PENDING,
+                            'attempts' => 1
                         ]);
                     }),
             ])

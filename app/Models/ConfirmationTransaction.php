@@ -22,7 +22,7 @@ use OwenIt\Auditing\Contracts\Auditable;
  * @property mixed $customer_name
  * @property mixed $created_at
  */
-#[Fillable(['transaction_id', 'transaction_time', 'bill_reference', 'customer_name', 'amount', 'status', 'authenticated', 'business_short_code', 'process', 'created_at', 'narrative', 'ft_ref'])]
+#[Fillable(['transaction_id', 'transaction_time', 'bill_reference', 'customer_name', 'amount', 'status', 'authenticated', 'business_short_code', 'process', 'created_at', 'narrative', 'ft_ref', 'supplied_till'])]
 final class ConfirmationTransaction extends Model implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
@@ -59,7 +59,7 @@ final class ConfirmationTransaction extends Model implements Auditable
     protected function customerName(): Attribute
     {
         return Attribute::make(
-            set: fn (?string $value): string => ''
+            set: fn (?string $value): string => ($value ?? '')
                     |> mb_trim(...)
                     |> (fn ($x): string => mb_strtolower($x, 'UTF-8'))
                     |> ucwords(...),

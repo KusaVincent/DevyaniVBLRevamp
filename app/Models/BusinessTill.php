@@ -11,6 +11,7 @@ use OwenIt\Auditing\Contracts\Auditable;
 
 /**
  * @method static updateOrCreate(array $array, array $array1)
+ * @method static firstOrNew(array $array)
  */
 #[Guarded([])]
 final class BusinessTill extends Model implements Auditable

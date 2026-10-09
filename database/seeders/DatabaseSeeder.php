@@ -22,10 +22,11 @@ final class DatabaseSeeder extends Seeder
     private function seed(): array
     {
         $seed = [
-            BusinessProfileSeeder::class,
-            CustomerReferenceSeeder::class,
 
-            BusinessTillSeeder::class,
+            //            BusinessProfileSeeder::class,
+            //            CustomerReferenceSeeder::class,
+            //
+            //            BusinessTillSeeder::class,
         ];
 
         if (! app()->isProduction()) {

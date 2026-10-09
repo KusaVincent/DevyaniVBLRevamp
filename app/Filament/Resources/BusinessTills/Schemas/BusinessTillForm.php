@@ -8,6 +8,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 
@@ -34,7 +35,19 @@ class BusinessTillForm
                             ->label('Till Number')
                             ->required()
                             ->maxLength(255)
-                            ->prefixIcon(Heroicon::DevicePhoneMobile),
+                            ->prefixIcon(Heroicon::DevicePhoneMobile)
+                            ->live(onBlur: true)
+                            ->afterStateUpdated(function (?string $state, Set $set): void {
+                                if (! empty($state)) {
+                                    $set('cust_code', '8.'.mb_trim($state));
+                                }
+                            }),
+
+                        TextInput::make('cust_code')
+                            ->label('Customer Code')
+                            ->placeholder('e.g. 8.123456')
+                            ->maxLength(255)
+                            ->prefixIcon(Heroicon::Identification),
 
                         TextInput::make('for')
                             ->label('For')
@@ -48,7 +61,7 @@ class BusinessTillForm
                             ->placeholder('Add any additional information about this till...')
                             ->columnSpanFull(),
                     ])
-                    ->columns(3)
+                    ->columns(2)
                     ->columnSpanFull(),
             ]);
     }

@@ -34,7 +34,10 @@ class EmailQueueInfolist
                                     ->prose()
                                     ->columnSpanFull(),
                                 TextEntry::make('attachment')
-                                    ->label('Attachment')
+                                    ->placeholder('No attachment')
+                                    ->icon(Heroicon::PaperClip),
+                                TextEntry::make('archived_at_file')
+                                    ->label('File Archived_At')
                                     ->placeholder('No attachment')
                                     ->icon(Heroicon::PaperClip),
                             ])

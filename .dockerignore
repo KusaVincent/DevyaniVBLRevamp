@@ -1,3 +1,109 @@
+# ============================================================
+# Git
+# ============================================================
+.git
+.gitignore
+.gitattributes
+
+# ============================================================
+# Environment / secrets
+# ============================================================
 .env
 .env.*
 !.env.example
+
+# ============================================================
+# Tests / development
+# ============================================================
+tests/
+phpunit.xml
+.phpunit.result.cache
+
+# ============================================================
+# Local development tooling
+# ============================================================
+docker-compose.dev.yml
+docker-compose.override.yml
+docker-compose.local.yml
+docker-compose.prod.yml
+
+# ============================================================
+# IDEs / editors
+# ============================================================
+.codex/
+.cursor/
+.idea/
+.nova/
+.vscode/
+.zed/
+.phpactor.json
+_ide_helper.php
+_ide_helper_models.php
+.phpstorm.meta.php
+*.swp
+*.swo
+
+# ============================================================
+# Documentation / project metadata
+# ============================================================
+README.md
+CHANGELOG.md
+CONTRIBUTING.md
+*.md
+
+# ============================================================
+# Local runtime data
+# ============================================================
+storage/app/*
+!storage/app/.gitignore
+storage/framework/cache/*
+!storage/framework/cache/.gitignore
+storage/framework/sessions/*
+!storage/framework/sessions/.gitignore
+storage/framework/testing/*
+storage/framework/views/*
+!storage/framework/views/.gitignore
+storage/logs/*
+!storage/logs/.gitignore
+storage/pail
+storage/phpstan
+.phpstan.cache
+
+# ============================================================
+# Node / frontend development
+# ============================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+yarn-error.log*
+
+# ============================================================
+# Coverage / profiling
+# ============================================================
+coverage/
+.phpunit.cache/
+
+# ============================================================
+# OS files
+# ============================================================
+.DS_Store
+Thumbs.db
+
+# ============================================================
+# Temporary files
+# ============================================================
+*.log
+*.tmp
+*.bak
+
+# ============================================================
+# Laravel Vendor
+# ============================================================
+vendor/
+
+# ============================================================
+# Database
+# ============================================================
+database/database.sqlite
+database/seeders

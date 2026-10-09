@@ -21,10 +21,12 @@ use OwenIt\Auditing\Contracts\Auditable;
  * @property int $attempts
  * @property Carbon|null $processed_at
  * @property Carbon|null $next_retry_at
+ * @property mixed $new_path
+ * @property mixed $archived_at_file
  *
  * @method static static create(array<string, mixed> $attributes)
  */
-#[Fillable(['subject', 'header', 'attachment', 'recipients', 'status', 'attempts', 'next_retry_at', 'processed_at', 'response', 'error', 'message'])]
+#[Fillable(['subject', 'header', 'attachment', 'recipients', 'status', 'attempts', 'next_retry_at', 'processed_at', 'response', 'error', 'message', 'archived_at_file'])]
 final class EmailQueue extends Model implements Auditable
 {
     use \OwenIt\Auditing\Auditable;

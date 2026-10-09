@@ -10,6 +10,7 @@ use App\Services\Sap\SapConfiguration;
 use Illuminate\Database\Eloquent\Attributes\Guarded;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Hash;
 use Override;
 use OwenIt\Auditing\Contracts\Auditable;
@@ -25,6 +26,7 @@ use OwenIt\Auditing\Contracts\Auditable;
  * @property string $profit_center
  * @property string $business_short_code
  * @property string $business_transaction
+ * @property mixed $type
  *
  * @method static static updateOrCreate(array<string, mixed> $attributes, array<string, mixed> $values)
  */
@@ -48,6 +50,11 @@ final class BusinessProfile extends Model implements Auditable
     public function sapConfiguration(): SapConfiguration
     {
         return new SapConfiguration($this);
+    }
+
+    public function tills(): HasMany
+    {
+        return $this->hasMany(BusinessTill::class);
     }
 
     #[Override]

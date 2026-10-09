@@ -28,6 +28,9 @@ final readonly class SapProcessingService implements SapProcessingServiceInterfa
             ->chunkById(100, function ($transactions): void {
                 foreach ($transactions as $transaction) {
                     $profile = $this->profiles->findByShortCode($transaction->business_short_code);
+                    $file = storage_path($profile->sapConfiguration()->file());
+
+                    $fileAlreadyExists = file_exists($file);
 
                     $this->sap->write($transaction, $profile);
 
@@ -35,7 +38,14 @@ final readonly class SapProcessingService implements SapProcessingServiceInterfa
                         'status' => Status::PROCESSED,
                     ]);
 
-                    $file = storage_path($profile->sapConfiguration()->file());
+                    if ($fileAlreadyExists) {
+                        $this->logger->info('Appended to SAP file. Skipped queuing email as job already queued for existing file', [
+                            'file' => $file,
+                            'transaction' => $transaction->transaction_id,
+                        ]);
+
+                        continue;
+                    }
 
                     EmailQueue::create([
                         'message' => '.',
@@ -45,7 +55,7 @@ final readonly class SapProcessingService implements SapProcessingServiceInterfa
                         'recipients' => config('confirmation.email.recipients'),
                     ]);
 
-                    $this->logger->info('Completed writing to SAP file and Queuing email', [
+                    $this->logger->info('Created new SAP file and queued email', [
                         'file' => $profile->sapConfiguration()->file(),
                         'transaction' => $transaction->transaction_id,
                     ]);

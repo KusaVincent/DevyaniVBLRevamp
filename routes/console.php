@@ -25,3 +25,13 @@ Schedule::command('logs:archive')
 Schedule::command('confirmation:health')
     ->hourly()
     ->between('06:00', '22:00');
+
+Schedule::command('auth:send-password-expiration-reminders')
+    ->dailyAt('09:00')
+    ->withoutOverlapping()
+    ->onOneServer();
+
+Schedule::command('auth:lock-inactive-users')
+    ->dailyAt('01:00')
+    ->withoutOverlapping()
+    ->onOneServer();

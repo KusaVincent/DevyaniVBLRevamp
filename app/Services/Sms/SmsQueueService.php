@@ -11,6 +11,7 @@ use App\Enum\Status;
 use App\Models\CustomerReference;
 use App\Models\SmsQueue;
 use App\Services\Logging\LoggingService;
+use Illuminate\Support\Carbon;
 
 final readonly class SmsQueueService implements SmsQueueServiceInterface
 {
@@ -43,9 +44,10 @@ final readonly class SmsQueueService implements SmsQueueServiceInterface
             'recipient_mobile' => $recipient->mobile,
 
             'amount' => $request->amount,
-            'created_at' => $request->createdAt,
             'mpesa_ref' => $request->transactionId,
             'bill_reference' => $request->billReference,
+
+            'created_at' => $request->createdAt ?? Carbon::createFromFormat('YmdHis', (string)$request->transactionTime) ?? now(),
         ]);
     }
 }

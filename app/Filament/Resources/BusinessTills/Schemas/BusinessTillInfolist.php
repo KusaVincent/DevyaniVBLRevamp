@@ -24,20 +24,29 @@ class BusinessTillInfolist
                             ->weight('bold')
                             ->copyable()
                             ->icon(Heroicon::DevicePhoneMobile),
+
+                        TextEntry::make('cust_code')
+                            ->label('Customer Code')
+                            ->copyable()
+                            ->placeholder('Not specified')
+                            ->icon(Heroicon::Identification),
+
                         TextEntry::make('businessProfile.business_short_code')
                             ->label('Business')
                             ->badge()
                             ->icon(Heroicon::BuildingOffice),
+
                         TextEntry::make('for')
                             ->label('For')
                             ->placeholder('Not specified')
                             ->icon(Heroicon::User),
+
                         TextEntry::make('additional_details')
                             ->label('Additional Details')
                             ->placeholder('No additional details')
                             ->columnSpanFull(),
                     ])
-                    ->columns(3)
+                    ->columns(2)
                     ->columnSpanFull(),
 
                 Section::make('Record Information')
@@ -48,6 +57,7 @@ class BusinessTillInfolist
                             ->label('Created')
                             ->dateTime('M d, Y • H:i')
                             ->icon(Heroicon::Calendar),
+
                         TextEntry::make('updated_at')
                             ->label('Last Updated')
                             ->dateTime('M d, Y • H:i')

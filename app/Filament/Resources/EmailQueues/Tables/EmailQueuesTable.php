@@ -6,15 +6,19 @@ namespace App\Filament\Resources\EmailQueues\Tables;
 
 use App\Enum\Status;
 use App\Models\EmailQueue;
+use App\Traits\HasDateFilters;
 use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\ViewAction;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 
 class EmailQueuesTable
 {
+    use HasDateFilters;
+
     public static function configure(Table $table): Table
     {
         return $table
@@ -53,12 +57,16 @@ class EmailQueuesTable
                     ->sortable()
                     ->placeholder('Not processed'),
                 TextColumn::make('attachment')
-                    ->label('Attachment')
                     ->searchable()
                     ->limit(35)
                     ->placeholder('None')
                     ->toggleable(),
-
+                TextColumn::make('archived_at_file')
+                    ->label('File Archived_At')
+                    ->searchable()
+                    ->limit(35)
+                    ->placeholder('None')
+                    ->toggleable(),
                 TextColumn::make('message')
                     ->label('Message')
                     ->searchable()
@@ -76,7 +84,10 @@ class EmailQueuesTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                SelectFilter::make('status')
+                    ->options(Status::class),
+                self::getDateFilter('created_at', 'Queued Date Range'),
+                self::getDateFilter('processed_at', 'Processed Date Range'),
             ])
             ->recordActions([
                 ViewAction::make(),
@@ -98,6 +109,7 @@ class EmailQueuesTable
                     ->action(function (EmailQueue $record): void {
                         $record->update([
                             'status' => Status::PENDING,
+                            'attempts' => 1
                         ]);
                     }),
             ])

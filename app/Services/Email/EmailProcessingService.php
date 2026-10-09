@@ -11,6 +11,9 @@ use App\Contracts\Sap\SapArchiveServiceInterface;
 use App\Enum\Status;
 use App\Exceptions\Email\EmailDeliveryException;
 use App\Models\EmailQueue;
+use Illuminate\Support\Facades\File;
+use RuntimeException;
+use Throwable;
 
 final readonly class EmailProcessingService implements EmailProcessingServiceInterface
 {
@@ -28,46 +31,43 @@ final readonly class EmailProcessingService implements EmailProcessingServiceInt
             ])
             ->where('attempts', '<', $this->maxAttempts())
             ->where(function ($query): void {
-                $query->whereNull('next_retry_at')
+                $query
+                    ->whereNull('next_retry_at')
                     ->orWhere('next_retry_at', '<=', now());
             })
             ->orderBy('id')
             ->chunkById(100, function ($emails): void {
-                $this->logger->info('Fetched queued emails');
+                $this->logger->info('Fetched queued emails', [
+                    'count' => $emails->count(),
+                ]);
 
                 foreach ($emails as $email) {
                     $attempt = $email->attempts + 1;
 
-                    $email->update([
-                        'status' => Status::PROCESSING,
-                        'attempts' => $attempt,
-                    ]);
-
-                    $this->logger->info('Email Details', ['email' => $email]);
-
-                    $preparedAttachment = $this->sapArchive->prepare($email->attachment);
-
-                    if ($preparedAttachment === null) {
-                        $this->logger->error('SAP attachment not found.', [
-                            'attachment' => $email->attachment,
-                        ]);
-
-                        $email->update([
-                            'status' => Status::ABANDONED,
-                            'error' => 'SAP attachment not found.',
-                            'response' => json_encode([
-                                'success' => false,
-                                'reason' => 'SAP attachment not found.',
-                                'attachment' => $email->attachment,
-                            ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE),
-                            'next_retry_at' => null,
-                            'processed_at' => now(),
-                        ]);
-
-                        continue;
-                    }
-
                     try {
+                        $email->update([
+                            'status' => Status::PROCESSING,
+                            'attempts' => $attempt,
+                            'error' => null,
+                        ]);
+
+                        $archivedAtFile = $email->archived_at_file ?? null;
+
+                        $this->logger->info('Processing queued email.', [
+                            'email_id' => $email->id,
+                            'attempt' => $attempt,
+                            'attachment' => $email->attachment,
+                            'archived_at_file' => $archivedAtFile,
+                        ]);
+
+                        $preparedAttachment = $this->resolveAttachment($email);
+
+                        if ($preparedAttachment === null) {
+                            throw new RuntimeException(
+                                'SAP attachment not found: '.$email->attachment
+                            );
+                        }
+
                         $this->mailer->send(
                             recipients: $email->recipients,
                             subject: $email->subject,
@@ -76,55 +76,80 @@ final readonly class EmailProcessingService implements EmailProcessingServiceInt
                             attachment: $preparedAttachment,
                         );
 
-                        $newPath = $this->sapArchive->archive($preparedAttachment, $email->attachment);
+                        $newPath = $email->archived_at_file;
+
+                        $newPath ??= $this->sapArchive->archive(
+                            $preparedAttachment,
+                            $email->attachment,
+                        );
 
                         $email->update([
                             'status' => Status::PROCESSED,
+                            'archived_at_file' => $newPath,
                             'processed_at' => now(),
                             'next_retry_at' => null,
                             'response' => json_encode([
                                 'success' => true,
                                 'attempt' => $attempt,
                                 'processed_at' => now()->toDateTimeString(),
-                            ]),
+                            ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE),
                             'error' => null,
                         ]);
 
-                        $this->logger->info('Processed queued emails');
+                        $this->logger->info('Processed queued email.', [
+                            'email_id' => $email->id,
+                            'attempt' => $attempt,
+                        ]);
 
                         $this->logger->info('SAP file archived.', [
+                            'email_id' => $email->id,
                             'from' => $email->attachment,
                             'to' => $newPath,
                         ]);
                     } catch (EmailDeliveryException $e) {
-                        $this->logger->error(
-                            'Email delivery failed.',
-                            [
-                                'recipient' => $e->recipient,
-                                'response' => $e->response,
-                            ]
+                        $this->handleFailure(
+                            email: $email,
+                            attempt: $attempt,
+                            e: $e,
                         );
-
-                        $status = $attempt >= $this->maxAttempts()
-                            ? Status::ABANDONED
-                            : Status::FAILED;
-
-                        $email->update([
-                            'status' => $status,
-                            'error' => $e->getMessage(),
-                            'response' => json_encode(
-                                $e->response,
-                                JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE,
-                            ),
-                            'next_retry_at' => $status === Status::FAILED
-                                ? now()->addMinutes($this->retryDelay($attempt))
-                                : null,
-                        ]);
-
-                        report($e);
+                    } catch (Throwable $e) {
+                        $this->handleUnexpectedFailure(
+                            email: $email,
+                            attempt: $attempt,
+                            e: $e,
+                        );
                     }
                 }
             });
+    }
+
+    private function resolveAttachment(EmailQueue $email): ?string
+    {
+        if ($email->archived_at_file !== null) {
+            if (File::exists($email->archived_at_file)) {
+                return $email->archived_at_file;
+            }
+
+            $archivedFileName = basename($email->archived_at_file);
+            $archiveDir = dirname($email->archived_at_file);
+            $archivePath = $archiveDir.'/archive/'.$archivedFileName;
+
+            if (File::exists($archivePath)) {
+                $destination = $archiveDir.'/'.$archivedFileName;
+
+                File::move($archivePath, $destination);
+
+                return $destination;
+            }
+        }
+
+        $preparedAttachment = $this->sapArchive->prepare($email->attachment);
+
+        if ($preparedAttachment !== null && File::exists($preparedAttachment)) {
+            return $preparedAttachment;
+        }
+
+        return null;
     }
 
     private function maxAttempts(): int
@@ -137,8 +162,75 @@ final readonly class EmailProcessingService implements EmailProcessingServiceInt
         return match ($attempt) {
             1 => 1,
             2 => 5,
-            3 => 15,   // retry after 15 minutes
+            3 => 15,
             default => 30,
         };
+    }
+
+    private function handleFailure(EmailQueue $email, int $attempt, EmailDeliveryException $e): void
+    {
+        $status = $attempt >= $this->maxAttempts()
+            ? Status::ABANDONED
+            : Status::FAILED;
+
+        $email->update([
+            'status' => $status,
+            'error' => $e->getMessage(),
+            'response' => json_encode(
+                $e->response,
+                JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE,
+            ),
+            'next_retry_at' => $status === Status::FAILED
+                ? now()->addMinutes($this->retryDelay($attempt))
+                : null,
+            'processed_at' => $status === Status::ABANDONED
+                ? now()
+                : null,
+        ]);
+
+        $this->logger->error('Email delivery failed.', [
+            'email_id' => $email->id,
+            'attempt' => $attempt,
+            'recipient' => $e->recipient,
+            'response' => $e->response,
+        ]);
+
+        report($e);
+    }
+
+    private function handleUnexpectedFailure(EmailQueue $email, int $attempt, Throwable $e): void
+    {
+        $status = $attempt >= $this->maxAttempts()
+            ? Status::ABANDONED
+            : Status::FAILED;
+
+        $email->update([
+            'status' => $status,
+            'error' => $e->getMessage(),
+            'response' => json_encode([
+                'success' => false,
+                'attempt' => $attempt,
+                'exception' => $e::class,
+                'message' => $e->getMessage(),
+            ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE),
+            'next_retry_at' => $status === Status::FAILED
+                ? now()->addMinutes($this->retryDelay($attempt))
+                : null,
+            'processed_at' => $status === Status::ABANDONED
+                ? now()
+                : null,
+        ]);
+
+        $this->logger->error(
+            'Unexpected email processing failure.',
+            [
+                'email_id' => $email->id,
+                'attempt' => $attempt,
+                'exception' => $e::class,
+                'message' => $e->getMessage(),
+            ]
+        );
+
+        report($e);
     }
 }

@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace App\Providers\Filament;
 
+use App\Filament\Pages\Auth\CustomLogin;
+use App\Filament\Pages\Auth\Profile;
+use App\Http\Middleware\EnsurePasswordIsChanged;
+use App\Http\Middleware\EnsureUserIsNotLocked;
 use Filament\Auth\MultiFactor\App\AppAuthentication;
 use Filament\Auth\MultiFactor\Email\EmailAuthentication;
 use Filament\Http\Middleware\Authenticate;
@@ -31,7 +35,7 @@ final class MpesaPanelProvider extends PanelProvider
     {
         return $panel
             ->spa()
-            ->login()
+            ->profile(Profile::class)
             ->default()
             ->id('mpesa')
             ->passwordReset()
@@ -39,14 +43,14 @@ final class MpesaPanelProvider extends PanelProvider
             ->font('Poppins')
             ->sidebarCollapsibleOnDesktop()
             ->brandLogoHeight('3rem')
-            ->colors(['primary' => Color::Teal])
+            ->login(CustomLogin::class)
+            ->colors(['primary' => Color::Blue])
             ->emailVerification(isRequired: ! app()->isLocal())
 
+            ->brandLogo(asset('logo.png'))
+            ->favicon(asset('favicon.png'))
             ->maxContentWidth(Width::Full)
-//            ->favicon(asset('storage/favicon.png'))
-//            ->brandLogo(asset('storage/logo/logo.png'))
             ->globalSearchKeyBindings(['command+k', 'ctrl+k'])
-//            ->darkModeBrandLogo(asset('storage/logo/logo.png'))
 
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
@@ -67,6 +71,8 @@ final class MpesaPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
+                EnsureUserIsNotLocked::class,
+                EnsurePasswordIsChanged::class,
             ])
             ->multiFactorAuthentication([
                 AppAuthentication::make()

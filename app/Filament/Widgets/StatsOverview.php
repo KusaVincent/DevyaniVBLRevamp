@@ -21,6 +21,8 @@ final class StatsOverview extends StatsOverviewWidget
 {
     #[Override]
     protected static ?int $sort = 1;
+
+    #[Override]
     protected ?string $pollingInterval = '60s';
 
     protected function getStats(): array
@@ -98,7 +100,7 @@ final class StatsOverview extends StatsOverviewWidget
 
             Stat::make('Pending SMS', number_format($pendingSms))
                 ->description('Awaiting delivery')
-                ->url(SmsQueueResource::getUrl('index' ))
+                ->url(SmsQueueResource::getUrl('index'))
                 ->icon(Heroicon::OutlinedChatBubbleLeftRight)
                 ->descriptionIcon(Heroicon::ChatBubbleLeftRight)
                 ->color($pendingSms > 0 ? 'warning' : 'success'),
@@ -123,7 +125,7 @@ final class StatsOverview extends StatsOverviewWidget
                 ->color($successRate >= 95 ? 'success' : ($successRate >= 80 ? 'warning' : 'danger')),
 
             Stat::make("Today's Value", 'KES '.number_format((float) $transactionValueToday, 2))
-                ->description('Processed: KES '. number_format((float) $processedValueToday, 2))
+                ->description('Processed: KES '.number_format((float) $processedValueToday, 2))
                 ->descriptionIcon(Heroicon::Banknotes)
                 ->icon(Heroicon::OutlinedCurrencyDollar)
                 ->color('primary'),
@@ -132,7 +134,7 @@ final class StatsOverview extends StatsOverviewWidget
                 ->icon(Heroicon::OutlinedArrowPath)
                 ->descriptionIcon(Heroicon::ArrowPath)
                 ->description($retryingSms.' SMS · '.$retryingEmail.' Email')
-                ->color(($retryingSms + $retryingEmail) > 0  ? 'warning' : 'success'),
+                ->color(($retryingSms + $retryingEmail) > 0 ? 'warning' : 'success'),
         ];
     }
 }

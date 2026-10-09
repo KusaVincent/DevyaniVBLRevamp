@@ -7,18 +7,24 @@ namespace App\Filament\Resources\ConfirmationTransactions\Tables;
 use App\Enum\ProcessSMSTxn;
 use App\Enum\Status;
 use App\Models\ConfirmationTransaction;
+use App\Traits\HasDateFilters;
 use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 
 final class ConfirmationTransactionsTable
 {
+    use HasDateFilters;
+
     public static function configure(Table $table): Table
     {
         return $table
             ->poll('60s')
+            ->defaultPaginationPageOption(25)
+            ->paginationPageOptions([10, 25, 50, 100])
             ->columns([
                 TextColumn::make('transaction_id')
                     ->label('Transaction ID')
@@ -89,7 +95,12 @@ final class ConfirmationTransactionsTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                SelectFilter::make('status')
+                    ->options(Status::class),
+                SelectFilter::make('process')
+                    ->options(ProcessSMSTxn::class),
+                self::getDateFilter('transaction_time', 'Transaction Date Range'),
+                self::getDateFilter('created_at', 'Created Date Range'),
             ])
             ->recordActions([
                 Action::make('process')

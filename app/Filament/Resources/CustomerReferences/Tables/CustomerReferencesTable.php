@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Filament\Resources\CustomerReferences\Tables;
 
+use App\Traits\HasDateFilters;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -14,9 +15,13 @@ use Filament\Tables\Table;
 
 class CustomerReferencesTable
 {
+    use HasDateFilters;
+
     public static function configure(Table $table): Table
     {
         return $table
+            ->defaultPaginationPageOption(25)
+            ->paginationPageOptions([10, 25, 50, 100])
             ->columns([
                 TextColumn::make('reference')
                     ->label('Reference')
@@ -25,25 +30,21 @@ class CustomerReferencesTable
                     ->copyable()
                     ->weight('bold')
                     ->icon(Heroicon::Hashtag),
-
                 TextColumn::make('name')
                     ->label('Customer')
                     ->searchable()
                     ->sortable()
                     ->icon(Heroicon::User),
-
                 TextColumn::make('mobile')
                     ->label('Mobile')
                     ->searchable()
                     ->copyable()
                     ->icon(Heroicon::Phone),
-
                 TextColumn::make('created_at')
                     ->label('Created')
                     ->dateTime('M d, Y H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-
                 TextColumn::make('updated_at')
                     ->label('Last Updated')
                     ->since()
@@ -51,7 +52,7 @@ class CustomerReferencesTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                self::getDateFilter('created_at', 'Created Date Range'),
             ])
             ->recordActions([
                 ViewAction::make(),

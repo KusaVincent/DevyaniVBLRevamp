@@ -29,21 +29,24 @@ final class Sanitizer
 
     public static function sanitizeSensitivePaths(string $text): string
     {
+        // Windows absolute paths: C:\path\to\file.ext -> C:\***\file***
         $text = preg_replace(
-            '#(?<!\w)([A-Za-z]:[\\\\/])(?:[^\s"\'<>|,:;]+[\\\\/])*[^\s"\'<>|,:;]+#',
-            '***',
+            '#(?<!\w)([A-Za-z]:[\\\\/])(?:[^\s"\'<>|,:;]+[\\\\/])+(?=[^\s"\'<>|,:;]+)([^\\\\/\s"\'<>|,:;.]+)(?:\.[^\s"\'<>|,:;]+)?#',
+            '$1***\\$2***',
             $text
         );
 
+        // UNC network paths: \\server\share\path\file.ext -> \\***\file***
         $text = preg_replace(
-            '#\\\\\\\\[^\\s"\'<>|,:;]+(?:\\\\[^\\s"\'<>|,:;]+)+#',
-            '***',
+            '#(\\\\\\\\)(?:[^\s"\'<>|,:;]+[\\\\/])+(?=[^\s"\'<>|,:;]+)([^\\\\/\s"\'<>|,:;.]+)(?:\.[^\s"\'<>|,:;]+)?#',
+            '$1***\\$2***',
             (string) $text
         );
 
+        // Unix absolute paths: /var/log/app/file.ext -> /*** /file***
         $text = preg_replace(
-            '#(?<![\w:])/(?:[A-Za-z0-9._-]+/)+[A-Za-z0-9._-]+#',
-            '***',
+            '#(?<![\w:])/(?:[A-Za-z0-9._-]+/)+(?=[A-Za-z0-9._-]+)([A-Za-z0-9_-]+)(?:\.[A-Za-z0-9._-]+)?#',
+            '/***$1***',
             (string) $text
         );
 

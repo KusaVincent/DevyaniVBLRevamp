@@ -40,6 +40,7 @@ final class SmsQueue extends Model implements Auditable
     protected function casts(): array
     {
         return [
+            'amount' => 'float',
             'response' => 'array',
             'status' => Status::class,
             'created_at' => 'datetime',
@@ -55,7 +56,7 @@ final class SmsQueue extends Model implements Auditable
     protected function customerName(): Attribute
     {
         return Attribute::make(
-            set: fn (?string $value): string => ''
+            set: fn (?string $value): string => ($value ?? '')
                     |> mb_trim(...)
                     |> (fn ($x): string => mb_strtolower($x, 'UTF-8'))
                     |> ucwords(...),

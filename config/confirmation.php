@@ -31,5 +31,6 @@ return [
     ],
     'sap' => [
         'path' => env('CONFIRMATION_SAP_PATH', ''),
+        'appended_name' => env('CONFIRMATION_SAP_APPENDED_NAME', '_C2B.csv'),
     ],
 ];

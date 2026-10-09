@@ -40,8 +40,8 @@ final class BusinessProfileSeeder extends Seeder
             ],
             [
                 'type' => BusinessProfileType::NCBA_TILL,
-                'business_short_code' => '880100',
-                'username' => 'DevyaniTill',
+                'business_short_code' => '4888999',
+                'username' => 'VBLTill',
                 'password' => '6Pm4WXtbeZ00cd7uF8zjwSleQk8',
                 'credit_account' => '1953840154',
                 'sap_file' => 'app/public/confirmation/TILL_C2B.csv',

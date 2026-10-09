@@ -148,7 +148,7 @@ The application relies on specific Artisan tasks for SAP file creation, notifica
 
 ### Automated Scheduler Container
 
-In Docker environments, the scheduler runs continuously as a dedicated background service defined in `docker-compose.yml`[cite: 2]:
+In Docker environments, the scheduler runs continuously as a dedicated background service defined in `docker-compose.prod.yml`[cite: 2]:
 
 ```yaml
   scheduler:

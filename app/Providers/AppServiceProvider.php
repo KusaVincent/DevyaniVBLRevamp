@@ -21,6 +21,7 @@ use App\Contracts\Sms\SmsProcessingServiceInterface;
 use App\Contracts\Sms\SmsQueueServiceInterface;
 use App\Enum\UserRole;
 use App\Models\User;
+use App\Observers\UserObserver;
 use App\Policies\AuditPolicy;
 use App\Services\Business\BusinessProfileService;
 use App\Services\Confirmation\AuthenticationService;
@@ -76,6 +77,8 @@ final class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        User::observe(UserObserver::class);
+
         DB::prohibitDestructiveCommands(
             $this->app->isProduction(),
         );

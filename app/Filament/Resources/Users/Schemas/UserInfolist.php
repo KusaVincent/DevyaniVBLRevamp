@@ -24,17 +24,50 @@ class UserInfolist
                             ->label('Full Name')
                             ->icon(Heroicon::User)
                             ->weight('medium'),
+
                         TextEntry::make('email')
                             ->label('Email Address')
                             ->icon(Heroicon::Envelope)
                             ->copyable(),
+
                         TextEntry::make('role')
                             ->label('Role')
                             ->badge()
                             ->icon(Heroicon::UserGroup),
+
                         TextEntry::make('status')
                             ->badge()
                             ->icon(Heroicon::UserCircle),
+                    ])
+                    ->columns(),
+
+                Section::make('Account Security & Lockout Status')
+                    ->description('Detailed lock status, activity log, and password lifecycle metrics.')
+                    ->icon(Heroicon::ShieldExclamation)
+                    ->schema([
+                        TextEntry::make('locked_at')
+                            ->label('Lock Status')
+                            ->badge()
+                            ->formatStateUsing(fn ($state): string => $state ? 'Locked' : 'Active / Unlocked')
+                            ->color(fn ($state): string => $state ? 'danger' : 'success')
+                            ->icon(fn ($state): \Filament\Support\Icons\Heroicon => $state ? Heroicon::LockClosed : Heroicon::CheckCircle),
+
+                        TextEntry::make('lock_reason')
+                            ->label('Lock Reason')
+                            ->placeholder('No active lockout')
+                            ->icon(Heroicon::InformationCircle),
+
+                        TextEntry::make('last_active_at')
+                            ->label('Last Activity')
+                            ->dateTime('M d, Y • H:i')
+                            ->placeholder('Never active')
+                            ->icon(Heroicon::Clock),
+
+                        TextEntry::make('password_changed_at')
+                            ->label('Last Password Change')
+                            ->dateTime('M d, Y • H:i')
+                            ->placeholder('Never changed')
+                            ->icon(Heroicon::Key),
                     ])
                     ->columns(),
 
@@ -45,15 +78,18 @@ class UserInfolist
                         IconEntry::make('has_email_authentication')
                             ->label('Email Authentication')
                             ->boolean(),
+
                         TextEntry::make('email_verified_at')
                             ->label('Verified At')
                             ->dateTime('M d, Y • H:i')
                             ->placeholder('Not verified')
                             ->icon(Heroicon::CheckBadge),
+
                         TextEntry::make('created_at')
                             ->label('Account Created')
                             ->dateTime('M d, Y • H:i')
                             ->icon(Heroicon::Calendar),
+
                         TextEntry::make('updated_at')
                             ->label('Last Updated')
                             ->dateTime('M d, Y • H:i')

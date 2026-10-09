@@ -12,7 +12,7 @@ A Laravel API middleware application that processes incoming payment notificatio
 - Health check endpoints for integration monitoring
 - Production-ready Docker containerization with PostgreSQL & Nginx
 - Multi-stage build Dockerfile based on PHP 8.4 Alpine
-- Dual-stage optimization pipeline (`build-optimize.sh` during image build & `runtime-optimize.sh` on container boot via entrypoint)
+- Dual-stage optimization pipeline (`build-optimize.sh` during image build & `entrypoint.sh` on container boot via entrypoint)
 
 ---
 
@@ -39,8 +39,8 @@ php artisan event:cache || true
 php artisan icons:cache || true
 ```
 
-### 2. Runtime Boot Script (`docker/runtime-optimize.sh`)
-Executed when containers spawn in `docker-compose.yml` to apply framework optimizations with active environment context:
+### 2. Runtime Boot Script (`docker/entrypoint.sh`)
+Executed when containers spawn in `docker-compose.prod.yml` to apply framework optimizations with active environment context:
 
 ---
 
@@ -73,7 +73,7 @@ Executed when containers spawn in `docker-compose.yml` to apply framework optimi
 - **Containerization:** Docker Compose V2
 
 ```
-docker compose run --rm --entrypoint "" app php artisan migrate --seed --force
+docker compose run --rm --entrypoint "" app php artisan migrate:fresh --seed --force
 docker compose restart app
 docker compose ps
 

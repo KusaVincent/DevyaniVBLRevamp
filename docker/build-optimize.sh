@@ -1,6 +1,6 @@
 #!/bin/sh
-set -e
+set -eu
 
 echo "=== Running Build-Time Optimization ==="
-php artisan optimize:clear || true
-php artisan event:cache || true
+
+php artisan event:cache
