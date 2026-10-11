@@ -138,8 +138,6 @@ final class ConfirmationTransactionsTable
                     ->label('Processing Status')
                     ->options(ProcessSMSTxn::class),
 
-                self::getDateFilter('transaction_time', 'Transaction Date Range'),
-
                 self::getDateFilter('created_at', 'Created Date Range'),
             ])
             ->recordActions([
