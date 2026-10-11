@@ -20,55 +20,82 @@ class BusinessTillsTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->striped()
             ->columns([
                 TextColumn::make('till')
-                    ->label('Till')
-                    ->searchable()
                     ->sortable()
+                    ->copyable()
+                    ->searchable()
+                    ->size('lg')
                     ->weight('bold')
-                    ->copyable()
+                    ->color('primary')
+                    ->label('Till Number')
+                    ->copyMessage('Till number copied')
+                    ->copyMessageDuration(1500)
                     ->icon(Heroicon::DevicePhoneMobile),
-                TextColumn::make('cust_code')
-                    ->label('Customer Code')
+
+                TextColumn::make('businessProfile.business_short_code')
+                    ->badge()
+                    ->sortable()
                     ->searchable()
+                    ->color('info')
+                    ->label('Business')
+                    ->icon(Heroicon::BuildingOffice)
+                    ->placeholder('No business assigned'),
+
+                TextColumn::make('cust_code')
                     ->sortable()
                     ->copyable()
-                    ->placeholder('—')
-                    ->icon(Heroicon::Identification),
-                TextColumn::make('businessProfile.business_short_code')
-                    ->label('Business')
+                    ->toggleable()
                     ->searchable()
-                    ->sortable()
-                    ->badge()
-                    ->icon(Heroicon::BuildingOffice),
+                    ->label('Customer Code')
+                    ->icon(Heroicon::Identification)
+                    ->copyMessage('Customer code copied')
+                    ->placeholder('Not provided'),
+
                 TextColumn::make('for')
-                    ->label('For')
+                    ->wrap()
                     ->searchable()
-                    ->placeholder('—')
-                    ->icon(Heroicon::User),
+                    ->label('Assigned To')
+                    ->icon(Heroicon::User)
+                    ->placeholder('Not specified'),
+
                 TextColumn::make('additional_details')
-                    ->label('Additional Details')
+                    ->wrap()
                     ->searchable()
-                    ->placeholder('—')
-                    ->limit(50)
-                    ->tooltip(fn (TextColumn $column): ?string => $column->getState()),
+                    ->limit(45)
+                    ->label('Additional Details')
+                    ->placeholder('No additional details')
+                    ->tooltip(fn (TextColumn $column): ?string =>
+                        filled($column->getState())
+                            ? (string) $column->getState()
+                            : null
+                    ),
+
                 TextColumn::make('created_at')
-                    ->label('Created')
-                    ->dateTime('M d, Y H:i')
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->label('Created')
+                    ->dateTime('d M Y, H:i')
+                    ->icon(Heroicon::CalendarDays)
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->description(fn ($record): string => $record->created_at?->diffForHumans() ?? '—'),
+
                 TextColumn::make('updated_at')
-                    ->label('Last Updated')
                     ->since()
                     ->sortable()
+                    ->dateTimeTooltip()
+                    ->label('Last Updated')
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 self::getDateFilter('created_at', 'Created Date Range'),
             ])
             ->recordActions([
-                ViewAction::make(),
-                EditAction::make(),
+                ViewAction::make()
+                    ->tooltip('View till'),
+
+                EditAction::make()
+                    ->tooltip('Edit till'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

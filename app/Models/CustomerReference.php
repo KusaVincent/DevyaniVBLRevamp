@@ -26,7 +26,7 @@ final class CustomerReference extends Model implements Auditable
     protected function name(): Attribute
     {
         return Attribute::make(
-            set: fn (?string $value): string => ''
+            set: fn (?string $value): string => ($value ?? '')
                     |> mb_trim(...)
                     |> (fn ($x): string => mb_strtolower($x, 'UTF-8'))
                     |> ucwords(...),

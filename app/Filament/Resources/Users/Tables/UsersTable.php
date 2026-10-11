@@ -8,7 +8,6 @@ use App\Models\User;
 use App\Notifications\AccountUnlockedNotification;
 use App\Traits\HasDateFilters;
 use Filament\Actions\Action;
-use Filament\Actions\BulkActionGroup;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Forms\Components\Textarea;
@@ -27,87 +26,93 @@ class UsersTable
     public static function configure(Table $table): Table
     {
         return $table
-            ->defaultPaginationPageOption(25)
-            ->paginationPageOptions([10, 25, 50, 100])
+            ->striped()
             ->columns([
                 TextColumn::make('name')
-                    ->label('User')
-                    ->searchable()
                     ->sortable()
-                    ->weight('medium')
-                    ->icon(Heroicon::User),
+                    ->searchable()
+                    ->label('User')
+                    ->weight('bold')
+                    ->icon(Heroicon::User)
+                    ->description(fn (User $record): string => $record->email),
 
                 TextColumn::make('email')
-                    ->searchable()
                     ->sortable()
                     ->copyable()
+                    ->searchable()
+                    ->toggleable()
+                    ->label('Email Address')
                     ->icon(Heroicon::Envelope),
 
                 TextColumn::make('role')
                     ->badge()
-                    ->searchable()
                     ->sortable()
-                    ->icon(Heroicon::UserGroup),
+                    ->searchable()
+                    ->label('Role'),
 
                 TextColumn::make('status')
                     ->badge()
-                    ->searchable()
                     ->sortable()
-                    ->icon(Heroicon::UserCircle),
+                    ->searchable()
+                    ->label('Status'),
 
-                // Lockout Status Indicator Column
                 TextColumn::make('locked_at')
-                    ->label('Account Lock')
                     ->badge()
-                    ->formatStateUsing(fn ($state): string => $state ? 'Locked' : 'Active')
-                    ->color(fn ($state): string => $state ? 'danger' : 'success')
-                    ->icon(fn ($state): \Filament\Support\Icons\Heroicon => $state ? Heroicon::LockClosed : Heroicon::LockOpen)
-                    ->sortable(),
+                    ->sortable()
+                    ->label('Account Lock')
+                    ->placeholder('Not Locked')
+                    ->icon(
+                        fn ($state): Heroicon => $state !== null
+                            ? Heroicon::LockClosed
+                            : Heroicon::LockOpen
+                    )
+                    ->color(fn ($state): string => $state !== null ? 'danger' : 'success')
+                    ->formatStateUsing(fn ($state): string => $state !== null ? 'Locked' : 'Unlocked')
+                    ->description(fn (User $record): string => $record->locked_at?->diffForHumans() ?? 'Account available'),
 
                 TextColumn::make('last_active_at')
-                    ->label('Last Active')
                     ->since()
-                    ->placeholder('Never')
                     ->sortable()
-                    ->toggleable(),
+                    ->toggleable()
+                    ->icon(Heroicon::Clock)
+                    ->label('Last Active')
+                    ->placeholder('Never'),
 
                 IconColumn::make('has_email_authentication')
-                    ->label('Email Auth')
                     ->boolean()
-                    ->sortable(),
+                    ->sortable()
+                    ->toggleable()
+                    ->label('Email MFA'),
 
                 TextColumn::make('email_verified_at')
-                    ->label('Email Verification')
-                    ->dateTime('M d, Y H:i')
                     ->sortable()
+                    ->toggleable()
+                    ->label('Email Verified')
+                    ->dateTime('d M Y, H:i')
+                    ->icon(Heroicon::Envelope)
                     ->placeholder('Not verified')
-                    ->toggleable(),
+                    ->description(fn (User $record): string => $record->email_verified_at?->diffForHumans()  ?? 'Not verified'),
 
                 TextColumn::make('created_at')
-                    ->label('Created')
-                    ->dateTime('M d, Y')
                     ->sortable()
-                    ->toggleable(),
+                    ->toggleable()
+                    ->label('Created')
+                    ->dateTime('d M Y')
+                    ->icon(Heroicon::CalendarDays)
+                    ->toggleable(isToggledHiddenByDefault: true),
 
                 TextColumn::make('updated_at')
-                    ->label('Last Updated')
                     ->since()
                     ->sortable()
+                    ->label('Last Updated')
                     ->toggleable(isToggledHiddenByDefault: true),
 
-                // Sensitive authentication & lockout reason fields
                 TextColumn::make('lock_reason')
+                    ->limit(50)
                     ->label('Lock Reason')
-                    ->placeholder('None')
-                    ->toggleable(isToggledHiddenByDefault: true),
-
-                TextColumn::make('app_authentication_secret')
-                    ->label('Authentication Secret')
-                    ->toggleable(isToggledHiddenByDefault: true),
-
-                TextColumn::make('app_authentication_recovery_codes')
-                    ->label('Recovery Codes')
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->placeholder('No lock reason')
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->tooltip(fn (User $record): ?string => $record->lock_reason),
             ])
             ->filters([
                 TernaryFilter::make('is_locked')
@@ -121,64 +126,69 @@ class UsersTable
                     ),
 
                 TernaryFilter::make('has_email_authentication')
-                    ->label('Email Authentication Enabled'),
+                    ->trueLabel('Enabled')
+                    ->falseLabel('Disabled')
+                    ->label('Email Authentication')
+                    ->placeholder('All users'),
 
                 self::getDateFilter('created_at', 'Created Date Range'),
             ])
             ->recordActions([
                 ViewAction::make(),
+
                 EditAction::make(),
 
-                // UNLOCK ACCOUNT ACTION
+                // Unlock account
                 Action::make('unlock')
                     ->label('Unlock')
-                    ->icon(Heroicon::LockOpen)
                     ->color('success')
-                    ->visible(fn (User $record): bool => $record->isLocked())
                     ->requiresConfirmation()
+                    ->icon(Heroicon::LockOpen)
                     ->modalHeading('Unlock User Account')
-                    ->modalDescription(fn (User $record): string => "Are you sure you want to unlock {$record->name}? Reason for lock: \"{$record->lock_reason}\"")
+                    ->modalSubmitActionLabel('Unlock Account')
+                    ->visible(fn (User $record): bool => $record->isLocked())
+                    ->modalDescription(
+                        fn (User $record): string => sprintf(
+                            'Unlock %s? Lock reason: %s',
+                            $record->name,
+                            $record->lock_reason ?: 'No reason provided',
+                        )
+                    )
                     ->action(function (User $record): void {
                         $record->unlockAccount();
-
-                        // Send unlock notification
                         $record->notify(new AccountUnlockedNotification(auth()->user()?->name));
-
                         Notification::make()
-                            ->title('Account Unlocked Successfully')
-                            ->body("{$record->name}'s account is now active and a notification email has been sent.")
+                            ->send()
                             ->success()
-                            ->send();
+                            ->title('Account Unlocked Successfully')
+                            ->body("{$record->name}'s account is now unlocked. " . 'An email notification has been dispatched.');
                     }),
 
-                // MANUAL LOCK ACCOUNT ACTION
+                // Manually lock account
                 Action::make('lock')
                     ->label('Lock')
-                    ->icon(Heroicon::LockClosed)
                     ->color('danger')
-                    ->hidden(fn (User $record): bool => $record->isLocked())
                     ->requiresConfirmation()
+                    ->icon(Heroicon::LockClosed)
                     ->modalHeading('Lock User Account')
-                    ->form([
+                    ->modalSubmitActionLabel('Lock Account')
+                    ->visible(fn (User $record): bool => ! $record->isLocked())
+                    ->modalDescription(fn (User $record): string => "You are about to lock {$record->name}'s account.")
+                    ->schema([
                         Textarea::make('lock_reason')
+                            ->required()
+                            ->maxLength(1000)
                             ->label('Reason for Lockout')
-                            ->placeholder('e.g., Security audit, suspicious activity, administrative request')
-                            ->required(),
+                            ->placeholder('e.g. Security audit, suspicious activity, administrative request'),
                     ])
                     ->action(function (User $record, array $data): void {
                         $record->lockAccount($data['lock_reason']);
-
                         Notification::make()
-                            ->title('Account Locked')
-                            ->body("{$record->name}'s account has been manually locked.")
+                            ->send()
                             ->warning()
-                            ->send();
+                            ->title('Account Locked')
+                            ->body("{$record->name}'s account has been manually locked.");
                     }),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    //
-                ]),
             ])
             ->defaultSort('created_at', 'desc');
     }

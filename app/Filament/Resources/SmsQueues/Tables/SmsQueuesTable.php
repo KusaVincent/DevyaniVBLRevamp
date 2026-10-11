@@ -25,79 +25,105 @@ class SmsQueuesTable
         return $table
             ->poll('60s')
             ->columns([
-                TextColumn::make('recipient_name')
-                    ->label('Recipient')
-                    ->searchable()
+                TextColumn::make('mpesa_ref')
                     ->sortable()
-                    ->weight('medium')
-                    ->icon(Heroicon::User),
-                TextColumn::make('recipient_mobile')
-                    ->label('Mobile')
-                    ->searchable()
                     ->copyable()
-                    ->icon(Heroicon::Phone),
-                TextColumn::make('customer_name')
-                    ->label('Customer')
                     ->searchable()
+                    ->weight('bold')
+                    ->color('primary')
+                    ->icon(Heroicon::Hashtag)
+                    ->label('M-Pesa Reference'),
+
+                TextColumn::make('recipient_name')
                     ->sortable()
-                    ->icon(Heroicon::UserCircle),
+                    ->searchable()
+                    ->weight('medium')
+                    ->icon(Heroicon::User)
+                    ->label('Recipient Name')
+                    ->placeholder('Unknown'),
+
+                TextColumn::make('recipient_mobile')
+                    ->copyable()
+                    ->searchable()
+                    ->label('Mobile')
+                    ->icon(Heroicon::Phone),
+
+                TextColumn::make('customer_name')
+                    ->sortable()
+                    ->searchable()
+                    ->label('Customer Name')
+                    ->icon(Heroicon::UserCircle)
+                    ->placeholder('Unknown'),
 
                 TextColumn::make('amount')
-                    ->label('Amount')
+                    ->sortable()
+                    ->alignEnd()
+                    ->prefix('KES ')
                     ->numeric(
                         decimalPlaces: 2,
                         decimalSeparator: '.',
                         thousandsSeparator: ',',
                     )
-                    ->prefix('KES ')
-                    ->sortable()
-                    ->alignEnd(),
-                TextColumn::make('mpesa_ref')
-                    ->label('M-Pesa Ref')
-                    ->searchable()
-                    ->copyable()
-                    ->sortable()
-                    ->icon(Heroicon::Hashtag),
+                    ->weight('semibold'),
+
                 TextColumn::make('bill_reference')
-                    ->label('Bill Reference')
-                    ->searchable()
                     ->copyable()
-                    ->sortable(),
-                TextColumn::make('status')
-                    ->label('Status')
-                    ->badge()
+                    ->sortable()
                     ->searchable()
-                    ->sortable(),
-                TextColumn::make('process')
-                    ->label('Process')
+                    ->toggleable()
+                    ->placeholder('—')
+                    ->label('Bill Reference'),
+
+                TextColumn::make('status')
                     ->badge()
                     ->sortable(),
+
+                TextColumn::make('process')
+                    ->badge()
+                    ->sortable(),
+
                 TextColumn::make('attempts')
-                    ->label('Attempts')
+                    ->badge()
                     ->numeric()
                     ->sortable()
-                    ->alignCenter(),
+                    ->alignCenter()
+                    ->color(fn (int $state): string => match (true) {
+                        $state === 0 => 'gray',
+                        $state < 3 => 'info',
+                        default => 'danger',
+                    }),
+
                 TextColumn::make('processed_at')
+                    ->sortable()
                     ->label('Processed')
-                    ->dateTime('M d, Y H:i')
-                    ->sortable()
-                    ->placeholder('Not processed'),
+                    ->dateTime('d M Y, H:i')
+                    ->icon(Heroicon::CheckCircle)
+                    ->placeholder('Not processed')
+                    ->description(fn (SmsQueue $record): string => $record->processed_at?->diffForHumans() ?? 'Not processed'),
+
                 TextColumn::make('next_retry_at')
+                    ->sortable()
                     ->label('Next Retry')
-                    ->dateTime('M d, Y H:i')
-                    ->sortable()
-                    ->placeholder('—'),
+                    ->dateTime('d M Y, H:i')
+                    ->icon(Heroicon::ArrowPath)
+                    ->placeholder('Not scheduled')
+                    ->description(fn (SmsQueue $record): string => $record->next_retry_at?->diffForHumans() ?? 'Not scheduled'),
+
                 TextColumn::make('created_at')
-                    ->label('Queued')
-                    ->dateTime('M d, Y H:i')
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->label('Queued')
+                    ->dateTime('d M Y, H:i')
+                    ->icon(Heroicon::CalendarDays)
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->description(fn (SmsQueue $record): string => $record->created_at?->diffForHumans() ?? '—'),
             ])
             ->filters([
                 SelectFilter::make('status')
                     ->options(Status::class),
+
                 SelectFilter::make('process')
                     ->options(ProcessSMSTxn::class),
+
                 self::getDateFilter('created_at', 'Queued Date Range'),
                 self::getDateFilter('processed_at', 'Processed Date Range'),
             ])
@@ -106,47 +132,44 @@ class SmsQueuesTable
 
                 Action::make('reprocess')
                     ->label('Process')
-                    ->icon(Heroicon::ArrowPath)
                     ->color('success')
-                    ->visible(
-                        fn (SmsQueue $record): bool => auth()->user()?->can('reprocess-queues') && $record->process === ProcessSMSTxn::NO
-                    )
                     ->requiresConfirmation()
-                    ->modalHeading('Reprocess SMS')
-                    ->modalDescription(
-                        'Are you sure you want to mark this SMS for processing again?'
+                    ->icon(Heroicon::Play)
+                    ->modalHeading('Enable SMS Processing')
+                    ->modalSubmitActionLabel('Enable Processing')
+                    ->visible(
+                        fn (SmsQueue $record): bool =>
+                            auth()->user()?->can('reprocess-queues') === true
+                            && $record->process === ProcessSMSTxn::NO
                     )
-                    ->modalSubmitActionLabel('Process')
                     ->action(function (SmsQueue $record): void {
                         $record->update([
                             'process' => ProcessSMSTxn::YES,
                         ]);
-                    }),
+                    })
+                    ->modalDescription('This will enable processing for this SMS. The queue worker must be running to process it.'),
+
                 Action::make('retry')
                     ->label('Retry')
-                    ->icon(Heroicon::ArrowPath)
                     ->color('warning')
-                    ->visible(
-                        fn (SmsQueue $record): bool => auth()->user()?->can('retry-queues') &&
-                            ($record->status === Status::PROCESSED || $record->status === Status::ABANDONED)
-                    )
                     ->requiresConfirmation()
+                    ->icon(Heroicon::ArrowPath)
                     ->modalHeading('Retry SMS')
-                    ->modalDescription(
-                        'This will change the SMS status from Processed back to Pending.'
+                    ->modalSubmitActionLabel('Retry SMS')
+                    ->visible(
+                        fn (SmsQueue $record): bool =>
+                            auth()->user()?->can('retry-queues') === true
+                            && in_array($record->status, [Status::PROCESSED, Status::ABANDONED], true)
                     )
-                    ->modalSubmitActionLabel('Retry')
                     ->action(function (SmsQueue $record): void {
                         $record->update([
                             'status' => Status::PENDING,
-                            'attempts' => 1
+                            'attempts' => 1,
+                            'processed_at' => null,
+                            'next_retry_at' => null,
                         ]);
-                    }),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    //
-                ]),
+                    })
+                    ->modalDescription('This will return the SMS to Pending so it can be processed again.'),
             ])
             ->defaultSort('created_at', 'desc');
     }

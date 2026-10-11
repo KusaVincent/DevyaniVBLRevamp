@@ -71,10 +71,17 @@ RUN apk add --no-cache \
         bcmath \
     && apk del .build-deps
 
-# Install the PHP Redis extension
-RUN apk add --no-cache --virtual .redis-build-deps $PHPIZE_DEPS \
-    && pecl install redis \
+# Install the PHP Redis extension via direct source tarball download (bypassing PECL & Git SSL issues)
+RUN apk add --no-cache --virtual .redis-build-deps $PHPIZE_DEPS curl \
+    && mkdir -p /tmp/phpredis \
+    && curl -L https://github.com/phpredis/phpredis/archive/refs/tags/6.3.0RC1.tar.gz | tar xz -C /tmp/phpredis --strip-components=1 \
+    && cd /tmp/phpredis \
+    && phpize \
+    && ./configure \
+    && make -j$(nproc) \
+    && make install \
     && docker-php-ext-enable redis \
+    && rm -rf /tmp/phpredis \
     && apk del .redis-build-deps
 
 # Use standard PHP production settings

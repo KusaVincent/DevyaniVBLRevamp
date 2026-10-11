@@ -44,6 +44,7 @@ final class User extends Authenticatable implements Auditable, FilamentUser, Has
     use \OwenIt\Auditing\Auditable;
 
     public ?string $plainTextPasswordForNotification = null;
+    protected array $auditExclude = ['password', 'remember_token'];
 
     #[Override]
     protected $attributes = [

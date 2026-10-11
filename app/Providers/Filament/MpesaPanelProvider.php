@@ -35,12 +35,12 @@ final class MpesaPanelProvider extends PanelProvider
     {
         return $panel
             ->spa()
-            ->profile(Profile::class)
             ->default()
             ->id('mpesa')
             ->passwordReset()
             ->path('mpesa')
             ->font('Poppins')
+            ->profile(Profile::class)
             ->sidebarCollapsibleOnDesktop()
             ->brandLogoHeight('3rem')
             ->login(CustomLogin::class)

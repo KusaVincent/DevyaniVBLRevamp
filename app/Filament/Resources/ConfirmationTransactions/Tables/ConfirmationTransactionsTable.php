@@ -9,11 +9,11 @@ use App\Enum\Status;
 use App\Models\ConfirmationTransaction;
 use App\Traits\HasDateFilters;
 use Filament\Actions\Action;
-use Filament\Actions\BulkActionGroup;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use Illuminate\Support\Carbon;
 
 final class ConfirmationTransactionsTable
 {
@@ -23,83 +23,123 @@ final class ConfirmationTransactionsTable
     {
         return $table
             ->poll('60s')
-            ->defaultPaginationPageOption(25)
-            ->paginationPageOptions([10, 25, 50, 100])
             ->columns([
                 TextColumn::make('transaction_id')
-                    ->label('Transaction ID')
-                    ->icon(Heroicon::Hashtag)
-                    ->searchable()
                     ->sortable()
                     ->copyable()
-                    ->weight('medium'),
+                    ->searchable()
+                    ->weight('bold')
+                    ->color('primary')
+                    ->icon(Heroicon::Hashtag)
+                    ->label('Transaction ID')
+                    ->copyMessageDuration(1500)
+                    ->copyMessage('Transaction ID copied'),
+
                 TextColumn::make('status')
-                    ->label('Status')
                     ->badge()
+                    ->sortable()
                     ->searchable()
-                    ->sortable(),
+                    ->label('Status'),
+
                 TextColumn::make('process')
-                    ->label('Process')
                     ->badge()
-                    ->sortable(),
+                    ->sortable()
+                    ->label('Processing'),
+
                 TextColumn::make('customer_name')
-                    ->label('Customer')
-                    ->icon(Heroicon::User)
+                    ->wrap()
+                    ->sortable()
                     ->searchable()
-                    ->sortable(),
+                    ->label('Customer')
+                    ->weight('medium')
+                    ->icon(Heroicon::User)
+                    ->placeholder('Unknown customer'),
+
                 TextColumn::make('bill_reference')
+                    ->sortable()
+                    ->copyable()
+                    ->searchable()
+                    ->placeholder('—')
                     ->label('Bill Reference')
                     ->icon(Heroicon::DocumentText)
-                    ->searchable()
-                    ->sortable()
-                    ->copyable(),
+                    ->copyMessage('Bill reference copied'),
+
                 TextColumn::make('amount')
+                    ->sortable()
+                    ->alignEnd()
                     ->label('Amount')
                     ->money('KES')
-                    ->sortable()
-                    ->alignEnd(),
+                    ->weight('bold')
+                    ->color('success'),
+
                 TextColumn::make('transaction_time')
+                    ->sortable()
+                    ->icon(Heroicon::Clock)
+                    ->dateTime('d M Y, H:i')
                     ->label('Transaction Time')
-                    ->dateTime('M d, Y H:i')
-                    ->sortable()
-                    ->icon(Heroicon::Clock),
+                    ->description(fn (ConfirmationTransaction $record): string =>
+                        filled($record->transaction_time) ? Carbon::parse($record->transaction_time)->diffForHumans() : '—'
+                    ),
+
                 TextColumn::make('business_short_code')
-                    ->label('Business Short Code')
-                    ->icon(Heroicon::BuildingOffice)
-                    ->searchable()
-                    ->sortable()
-                    ->copyable(),
-                TextColumn::make('businessProfile.type')
-                    ->label('Business Type')
                     ->badge()
-                    ->searchable()
-                    ->sortable(),
-                TextColumn::make('narrative')
-                    ->label('Narrative')
-                    ->searchable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('ft_ref')
-                    ->label('FT Reference')
-                    ->searchable()
+                    ->sortable()
                     ->copyable()
+                    ->searchable()
+                    ->color('info')
+                    ->label('Business')
+                    ->placeholder('—')
+                    ->icon(Heroicon::BuildingOffice),
+
+                TextColumn::make('businessProfile.type')
+                    ->badge()
+                    ->toggleable()
+                    ->placeholder('—')
+                    ->label('Business Type'),
+
+                TextColumn::make('narrative')
+                    ->searchable()
+                    ->limit(45)
+                    ->label('Narrative')
+                    ->placeholder('—')
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->tooltip(fn (TextColumn $column): ?string => filled($column->getState())
+                        ? (string) $column->getState()
+                        : null
+                    ),
+
+                TextColumn::make('ft_ref')
+                    ->copyable()
+                    ->searchable()
+                    ->placeholder('—')
+                    ->label('FT Reference')
                     ->toggleable(isToggledHiddenByDefault: true),
+
                 TextColumn::make('created_at')
+                    ->sortable()
                     ->label('Created')
-                    ->dateTime('M d, Y H:i')
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->dateTime('d M Y, H:i')
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->description(fn (ConfirmationTransaction $record): string => $record->created_at?->diffForHumans() ?? '—'),
+
                 TextColumn::make('updated_at')
-                    ->label('Updated')
-                    ->dateTime('M d, Y H:i')
+                    ->since()
                     ->sortable()
+                    ->dateTimeTooltip()
+                    ->label('Updated')
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 SelectFilter::make('status')
+                    ->label('Transaction Status')
                     ->options(Status::class),
+
                 SelectFilter::make('process')
+                    ->label('Processing Status')
                     ->options(ProcessSMSTxn::class),
+
                 self::getDateFilter('transaction_time', 'Transaction Date Range'),
+
                 self::getDateFilter('created_at', 'Created Date Range'),
             ])
             ->recordActions([
@@ -108,43 +148,38 @@ final class ConfirmationTransactionsTable
                     ->icon(Heroicon::Play)
                     ->color('success')
                     ->visible(
-                        fn (ConfirmationTransaction $record): bool => $record->process === ProcessSMSTxn::NO
+                        fn (ConfirmationTransaction $record): bool =>
+                            $record->process === ProcessSMSTxn::NO
                     )
                     ->requiresConfirmation()
-                    ->modalHeading('Process Transaction')
-                    ->modalDescription(
-                        'Are you sure you want to mark this transaction for processing?'
-                    )
+                    ->modalIcon(Heroicon::Play)
                     ->modalSubmitActionLabel('Process')
+                    ->modalHeading('Process Transaction')
                     ->action(function (ConfirmationTransaction $record): void {
                         $record->update([
                             'process' => ProcessSMSTxn::YES,
                         ]);
-                    }),
+                    })
+                    ->modalDescription('Are you sure you want to mark this transaction for processing?'),
 
                 Action::make('retry')
                     ->label('Retry')
-                    ->icon(Heroicon::ArrowPath)
                     ->color('warning')
-                    ->visible(
-                        fn (ConfirmationTransaction $record): bool => $record->status === Status::PROCESSED
-                    )
                     ->requiresConfirmation()
-                    ->modalHeading('Retry Transaction')
-                    ->modalDescription(
-                        'This will change the transaction status from Processed back to Pending.'
-                    )
+                    ->icon(Heroicon::ArrowPath)
+                    ->modalIcon(Heroicon::ArrowPath)
                     ->modalSubmitActionLabel('Retry')
+                    ->modalHeading('Retry Transaction')
+                    ->visible(
+                        fn (ConfirmationTransaction $record): bool =>
+                            $record->status === Status::PROCESSED
+                    )
                     ->action(function (ConfirmationTransaction $record): void {
                         $record->update([
                             'status' => Status::PENDING,
                         ]);
-                    }),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    //
-                ]),
+                    })
+                    ->modalDescription('This will change the transaction status from Processed back to Pending.'),
             ])
             ->defaultSort('created_at', 'desc');
     }

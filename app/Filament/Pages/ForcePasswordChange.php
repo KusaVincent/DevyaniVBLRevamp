@@ -14,9 +14,15 @@ use Filament\Pages\Page;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
+use Throwable;
 
+/**
+ * @property mixed $form
+ */
 class ForcePasswordChange extends Page implements HasForms
 {
     use InteractsWithForms;
@@ -79,6 +85,9 @@ class ForcePasswordChange extends Page implements HasForms
             ->statePath('data');
     }
 
+    /**
+     * @throws Throwable
+     */
     public function submit(): void
     {
         $data = $this->form->getState();
@@ -86,14 +95,18 @@ class ForcePasswordChange extends Page implements HasForms
         /** @var User $user */
         $user = auth()->user();
 
-        $user->recordPasswordHistory($data['new_password']);
+        DB::transaction(function () use ($user, $data): void {
+            $user->recordPasswordHistory($data['new_password']);
 
-        $user->update([
-            'password' => Hash::make($data['new_password']),
-            'must_change_password' => false,
-            'password_changed_at' => now(),
-            'password_expiry_reminder_sent_at' => null,
-        ]);
+            $user->update([
+                'password_changed_at' => now(),
+                'must_change_password' => false,
+                'password' => $data['new_password'],
+                'password_expiry_reminder_sent_at' => null,
+            ]);
+
+            Auth::guard(filament()->getAuthGuard())->logoutOtherDevices($data['new_password']);
+        });
 
         Notification::make()
             ->title('Password updated successfully.')

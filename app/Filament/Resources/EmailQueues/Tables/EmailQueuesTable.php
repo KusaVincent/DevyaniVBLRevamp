@@ -8,7 +8,6 @@ use App\Enum\Status;
 use App\Models\EmailQueue;
 use App\Traits\HasDateFilters;
 use Filament\Actions\Action;
-use Filament\Actions\BulkActionGroup;
 use Filament\Actions\ViewAction;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
@@ -25,67 +24,91 @@ class EmailQueuesTable
             ->poll('60s')
             ->columns([
                 TextColumn::make('subject')
-                    ->label('Subject')
-                    ->searchable()
                     ->sortable()
-                    ->weight('medium')
-                    ->limit(50)
-                    ->icon(Heroicon::Envelope),
-                TextColumn::make('header')
-                    ->label('Header')
                     ->searchable()
-                    ->limit(40)
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->limit(45)
+                    ->weight('bold')
+                    ->label('Email Subject')
+                    ->icon(Heroicon::Envelope)
+                    ->tooltip(fn (EmailQueue $record): string => $record->subject),
+
                 TextColumn::make('status')
-                    ->label('Status')
                     ->badge()
-                    ->searchable()
                     ->sortable(),
+
                 TextColumn::make('attempts')
-                    ->label('Attempts')
+                    ->badge()
                     ->numeric()
                     ->sortable()
-                    ->alignCenter(),
+                    ->alignCenter()
+                    ->color(fn (int $state): string => match (true) {
+                        $state === 0 => 'gray',
+                        $state < 3 => 'info',
+                        default => 'danger',
+                    }),
+
                 TextColumn::make('next_retry_at')
+                    ->sortable()
                     ->label('Next Retry')
-                    ->dateTime('M d, Y H:i')
-                    ->sortable()
-                    ->placeholder('—'),
+                    ->dateTime('d M Y, H:i')
+                    ->icon(Heroicon::ArrowPath)
+                    ->placeholder('Not scheduled')
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->description(fn (EmailQueue $record): string => $record->next_retry_at?->diffForHumans() ?? 'Not scheduled'),
+
                 TextColumn::make('processed_at')
-                    ->label('Processed')
-                    ->dateTime('M d, Y H:i')
                     ->sortable()
-                    ->placeholder('Not processed'),
+                    ->label('Processed')
+                    ->dateTime('d M Y, H:i')
+                    ->icon(Heroicon::CheckCircle)
+                    ->placeholder('Not processed')
+                    ->description(fn (EmailQueue $record): string => $record->processed_at?->diffForHumans() ?? 'Not processed'),
+
+                TextColumn::make('header')
+                    ->searchable()
+                    ->limit(35)
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->tooltip(fn (EmailQueue $record): ?string => $record->header),
+
                 TextColumn::make('attachment')
                     ->searchable()
-                    ->limit(35)
-                    ->placeholder('None')
-                    ->toggleable(),
+                    ->toggleable()
+                    ->limit(30)
+                    ->placeholder('No attachment')
+                    ->tooltip(fn (EmailQueue $record): ?string => $record->attachment),
+
                 TextColumn::make('archived_at_file')
-                    ->label('File Archived_At')
                     ->searchable()
-                    ->limit(35)
-                    ->placeholder('None')
-                    ->toggleable(),
+                    ->toggleable()
+                    ->limit(30)
+                    ->label('Archived File')
+                    ->placeholder('No archived file')
+                    ->tooltip(fn (EmailQueue $record): ?string => $record->archived_at_file),
+
                 TextColumn::make('message')
-                    ->label('Message')
                     ->searchable()
-                    ->limit(60)
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->limit(50)
+                    ->placeholder('No message')
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->tooltip(fn (EmailQueue $record): ?string => $record->message),
+
                 TextColumn::make('created_at')
                     ->label('Queued')
-                    ->dateTime('M d, Y H:i')
+                    ->dateTime('d M Y, H:i')
+                    ->description(fn (EmailQueue $record): string =>  $record->created_at?->diffForHumans() ?? '—')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+
                 TextColumn::make('updated_at')
-                    ->label('Last Updated')
                     ->since()
                     ->sortable()
+                    ->label('Last Updated')
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 SelectFilter::make('status')
                     ->options(Status::class),
+
                 self::getDateFilter('created_at', 'Queued Date Range'),
                 self::getDateFilter('processed_at', 'Processed Date Range'),
             ])
@@ -94,29 +117,25 @@ class EmailQueuesTable
 
                 Action::make('retry')
                     ->label('Retry')
-                    ->icon(Heroicon::ArrowPath)
                     ->color('warning')
-                    ->visible(
-                        fn (EmailQueue $record): bool => auth()->user()?->can('retry-queues') &&
-                            ($record->status === Status::PROCESSED || $record->status === Status::ABANDONED)
-                    )
                     ->requiresConfirmation()
+                    ->icon(Heroicon::ArrowPath)
                     ->modalHeading('Retry Email')
-                    ->modalDescription(
-                        'This will change the email status from Processed back to Pending.'
+                    ->modalSubmitActionLabel('Retry Email')
+                    ->visible(
+                        fn (EmailQueue $record): bool =>
+                            auth()->user()?->can('retry-queues') === true
+                            && in_array($record->status, [Status::PROCESSED, Status::ABANDONED], true)
                     )
-                    ->modalSubmitActionLabel('Retry')
                     ->action(function (EmailQueue $record): void {
                         $record->update([
                             'status' => Status::PENDING,
-                            'attempts' => 1
+                            'attempts' => 1,
+                            'processed_at' => null,
+                            'next_retry_at' => null,
                         ]);
-                    }),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    //
-                ]),
+                    })
+                    ->modalDescription('This will return the email to Pending so it can be processed again.'),
             ])
             ->defaultSort('created_at', 'desc');
     }

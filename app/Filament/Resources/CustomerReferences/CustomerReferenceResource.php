@@ -12,6 +12,7 @@ use App\Filament\Resources\CustomerReferences\Schemas\CustomerReferenceInfolist;
 use App\Filament\Resources\CustomerReferences\Tables\CustomerReferencesTable;
 use App\Models\CustomerReference;
 use BackedEnum;
+use Filament\Panel;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -29,16 +30,27 @@ class CustomerReferenceResource extends Resource
     protected static ?string $model = CustomerReference::class;
 
     #[Override]
-    protected static ?string $navigationLabel = 'Customer References';
+    protected static string|null|UnitEnum $navigationGroup = 'M-Pesa';
 
     #[Override]
-    protected static string|null|UnitEnum $navigationGroup = 'M-Pesa';
+    protected static ?string $modelLabel = 'SMS Details Maintenance';
+
+    #[Override]
+    protected static ?string $navigationLabel = 'SMS Details Maintenance';
+
+    #[Override]
+    protected static ?string $pluralModelLabel = 'SMS Details Maintenance';
 
     #[Override]
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedIdentification;
 
     #[Override]
     protected static ?string $recordTitleAttribute = 'reference';
+
+    public static function getSlug(?Panel $panel = null): string
+    {
+        return 'sms-details';
+    }
 
     public static function form(Schema $schema): Schema
     {

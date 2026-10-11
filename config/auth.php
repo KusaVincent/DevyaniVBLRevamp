@@ -118,4 +118,9 @@ return [
 
     'mfa_enabled' => env('AUTH_MFA_ENABLED', 0),
     'mfa_email_expiry' => env('AUTH_MFA_EMAIL_EXPIRY', 5),
+
+    'custom' => [
+        'max_failed_attempts' => env('MAX_FAILED_ATTEMPTS', 3),
+        'failure_window_seconds' => env('AUTH_FAILURE_WINDOW_SECONDS', 900),
+    ],
 ];

@@ -20,39 +20,52 @@ class CustomerReferencesTable
     public static function configure(Table $table): Table
     {
         return $table
-            ->defaultPaginationPageOption(25)
-            ->paginationPageOptions([10, 25, 50, 100])
+            ->striped()
             ->columns([
                 TextColumn::make('reference')
-                    ->label('Reference')
-                    ->searchable()
                     ->sortable()
                     ->copyable()
+                    ->searchable()
                     ->weight('bold')
-                    ->icon(Heroicon::Hashtag),
+                    ->color('primary')
+                    ->label('Reference')
+                    ->icon(Heroicon::Hashtag)
+                    ->copyMessage('Reference copied')
+                    ->description('Customer code'),
+
                 TextColumn::make('name')
-                    ->label('Customer')
-                    ->searchable()
                     ->sortable()
-                    ->icon(Heroicon::User),
+                    ->searchable()
+                    ->weight('medium')
+                    ->icon(Heroicon::User)
+                    ->label('Customer Name')
+                    ->description(fn ($record): string => filled($record->mobile) ? 'Registered customer'  : 'No mobile number'),
+
                 TextColumn::make('mobile')
-                    ->label('Mobile')
-                    ->searchable()
                     ->copyable()
-                    ->icon(Heroicon::Phone),
+                    ->searchable()
+                    ->icon(Heroicon::Phone)
+                    ->label('Mobile Number')
+                    ->copyMessage('Mobile number copied')
+                    ->placeholder('Not provided'),
+
                 TextColumn::make('created_at')
-                    ->label('Created')
-                    ->dateTime('M d, Y H:i')
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->dateTime('d M Y, H:i')
+                    ->label('Date Registered')
+                    ->icon(Heroicon::CalendarDays)
+                    ->description(fn ($record): string => $record->created_at?->diffForHumans() ?? '—'),
+
                 TextColumn::make('updated_at')
-                    ->label('Last Updated')
                     ->since()
                     ->sortable()
+                    ->label('Last Updated')
+                    ->icon(Heroicon::Clock)
+                    ->placeholder('Never')
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                self::getDateFilter('created_at', 'Created Date Range'),
+                self::getDateFilter('created_at', 'Registration Date Range'),
             ])
             ->recordActions([
                 ViewAction::make(),
@@ -63,6 +76,7 @@ class CustomerReferencesTable
                     DeleteBulkAction::make(),
                 ]),
             ])
-            ->defaultSort('created_at', 'desc');
+            ->defaultSort('created_at', 'desc')
+            ->striped();
     }
 }

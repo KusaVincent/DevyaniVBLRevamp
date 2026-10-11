@@ -8,6 +8,7 @@ use App\Filament\Resources\ConfirmationTransactions\Pages\ListConfirmationTransa
 use App\Filament\Resources\ConfirmationTransactions\Tables\ConfirmationTransactionsTable;
 use App\Models\ConfirmationTransaction;
 use BackedEnum;
+use Filament\Panel;
 use Filament\Resources\Resource;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
@@ -30,10 +31,21 @@ final class ConfirmationTransactionResource extends Resource
     protected static ?string $recordTitleAttribute = 'transaction_id';
 
     #[Override]
+    protected static ?string $modelLabel = 'Received Transaction';
+
+    #[Override]
     protected static ?string $navigationLabel = 'Received Transactions';
 
     #[Override]
+    protected static ?string $pluralModelLabel = 'Received Transactions';
+
+    #[Override]
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBanknotes;
+
+    public static function getSlug(?Panel $panel = null): string
+    {
+        return 'received_transactions';
+    }
 
     #[Override]
     public static function table(Table $table): Table
