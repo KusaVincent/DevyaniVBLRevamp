@@ -112,3 +112,7 @@ database/seeders
 # Docker Configs
 # ============================================================
 docker/nginx/*
+Dockerfile
+DevyaniVBLRevamp
+README*
+sap_file.sh

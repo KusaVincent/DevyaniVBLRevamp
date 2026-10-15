@@ -10,8 +10,8 @@ Schedule::command('sms:process')
     ->withoutOverlapping();
 
 Schedule::command('sap:process')
+    ->everyMinute()
     ->runInBackground()
-    ->everyFiveMinutes()
     ->withoutOverlapping();
 
 Schedule::command('email:confirmation')

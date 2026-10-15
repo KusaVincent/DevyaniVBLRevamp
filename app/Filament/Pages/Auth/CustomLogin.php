@@ -14,10 +14,6 @@ use Illuminate\Validation\ValidationException;
 
 class CustomLogin extends BaseLogin
 {
-    private const MAX_FAILED_ATTEMPTS = 3;
-
-    private const FAILURE_WINDOW_SECONDS = 900; // 15 minutes
-
     public function authenticate(): ?LoginResponse
     {
         $data = $this->form->getState();
@@ -58,15 +54,13 @@ class CustomLogin extends BaseLogin
 
     private function registerFailedAttempt(User $user, string $key): void
     {
-        $maxFailedAttempts = config('auth.custom.max_failed_attempts', 3);
-        $failureWindowSeconds = config('auth.custom.failure_window_seconds', 900);
+        $maxFailedAttempts = max(1, (int) config('auth.custom.max_failed_attempts', 3));
+        $failureWindowSeconds = max(1, (int) config('auth.custom.failure_window_seconds', 900));
 
         $attempts = RateLimiter::hit($key, $failureWindowSeconds);
 
         if ($attempts >= $maxFailedAttempts) {
-            $user->lockAccount(
-                'Locked due to ' . $maxFailedAttempts . ' consecutive failed login attempts'
-            );
+            $user->lockAccount('Locked due to ' . $maxFailedAttempts . ' consecutive failed login attempts');
             RateLimiter::clear($key);
         }
     }
