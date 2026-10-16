@@ -22,7 +22,7 @@ final class SapCsvFiles extends Page implements HasTable
     use InteractsWithTable;
 
     #[\Override]
-    protected static ?string $title = 'CSV Files';
+    protected static ?string $title = 'SAP Files';
 
     #[\Override]
     protected string $view = 'filament.pages.sap-csv-files';
@@ -34,7 +34,7 @@ final class SapCsvFiles extends Page implements HasTable
     protected static string|UnitEnum|null $navigationGroup = 'File Management';
 
     #[\Override]
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedDocumentText;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::DocumentText;
 
     public function table(Table $table): Table
     {
@@ -62,7 +62,7 @@ final class SapCsvFiles extends Page implements HasTable
             ->recordActions([
                 Action::make('download')
                     ->color(Color::Sky)
-                    ->label('Download CSV')
+                    ->label('Download File')
                     ->icon(Heroicon::ArrowDownTray)
                     ->action(function (array $record) {
                         $directory = config('confirmation.sap.processed_path', '');

@@ -90,6 +90,9 @@ final class MpesaPanelProvider extends PanelProvider
                     ->label('Queues')
                     ->icon(Heroicon::CommandLine),
                 NavigationGroup::make()
+                    ->label('File Management')
+                    ->icon(Heroicon::OutlinedDocumentText),
+                NavigationGroup::make()
                     ->label('Administration')
                     ->icon(Heroicon::OutlinedCog6Tooth),
             ])

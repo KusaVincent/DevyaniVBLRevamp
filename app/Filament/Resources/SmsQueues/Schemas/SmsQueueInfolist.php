@@ -93,6 +93,7 @@ class SmsQueueInfolist
                             ->description('Response returned during SMS processing.')
                             ->icon(Heroicon::ArrowPath)
                             ->schema([
+
                                 TextEntry::make('response')
                                     ->label('Response')
                                     ->formatStateUsing(function ($state): string {
@@ -100,14 +101,21 @@ class SmsQueueInfolist
                                             return 'No response recorded';
                                         }
 
-                                        if (is_array($state)) {
-                                            return json_encode(
-                                                $state,
-                                                JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES
-                                            );
+                                        $data = is_array($state) ? $state : json_decode((string) $state, true);
+
+                                        if (! is_array($data)) {
+                                            return (string) $state;
                                         }
 
-                                        return (string) $state;
+                                        $filtered = [
+                                            'response-code' => $data['response-code'] ?? null,
+                                            'response-description' => $data['response-description'] ?? null,
+                                            'mobile' => [
+                                                'message' => data_get($data, 'mobile.message', ''),
+                                            ],
+                                        ];
+
+                                        return json_encode($filtered, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) ?: 'No response recorded';
                                     })
                                     ->fontFamily('mono')
                                     ->copyable()

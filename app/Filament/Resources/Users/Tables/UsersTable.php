@@ -130,8 +130,6 @@ class UsersTable
                     ->falseLabel('Disabled')
                     ->label('Email Authentication')
                     ->placeholder('All users'),
-
-                self::getDateFilter('created_at', 'Created Date Range'),
             ])
             ->recordActions([
                 ViewAction::make(),
