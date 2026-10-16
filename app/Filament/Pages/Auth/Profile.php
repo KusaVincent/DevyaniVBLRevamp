@@ -12,10 +12,11 @@ use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Filament\Support\Enums\Width;
 use Illuminate\Validation\Rules\Password;
+use Override;
 
 final class Profile extends BaseEditProfile
 {
-    #[\Override]
+    #[Override]
     protected Width|string|null $maxContentWidth = Width::Full;
 
     public function form(Schema $schema): Schema

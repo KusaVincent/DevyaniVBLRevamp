@@ -9,10 +9,12 @@ use App\Models\EmailQueue;
 use App\Traits\HasDateFilters;
 use Filament\Actions\Action;
 use Filament\Actions\ViewAction;
+use Filament\Support\Colors\Color;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\File;
 
 class EmailQueuesTable
 {
@@ -95,7 +97,7 @@ class EmailQueuesTable
                 TextColumn::make('created_at')
                     ->label('Queued')
                     ->dateTime('d M Y, H:i')
-                    ->description(fn (EmailQueue $record): string =>  $record->created_at?->diffForHumans() ?? '—')
+                    ->description(fn (EmailQueue $record): string => $record->created_at?->diffForHumans() ?? '—')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
 
@@ -123,8 +125,7 @@ class EmailQueuesTable
                     ->modalHeading('Retry Email')
                     ->modalSubmitActionLabel('Retry Email')
                     ->visible(
-                        fn (EmailQueue $record): bool =>
-                            auth()->user()?->can('retry-queues') === true
+                        fn (EmailQueue $record): bool => auth()->user()?->can('retry-queues') === true
                             && in_array($record->status, [Status::PROCESSED, Status::ABANDONED], true)
                     )
                     ->action(function (EmailQueue $record): void {
@@ -136,6 +137,26 @@ class EmailQueuesTable
                         ]);
                     })
                     ->modalDescription('This will return the email to Pending so it can be processed again.'),
+
+                Action::make('downloadArchivedFile')
+                    ->label('Download')
+                    ->color(Color::Sky)
+                    ->icon(Heroicon::ArrowDownTray)
+                    ->visible(fn (EmailQueue $record): bool => filled($record->archived_at_file))
+                    ->action(function (EmailQueue $record) {
+                        $primaryPath = $record->archived_at_file;
+                        $secondaryPath = dirname($primaryPath).'/archive/'.basename($primaryPath);
+
+                        $path = match (true) {
+                            File::isFile($primaryPath) => $primaryPath,
+                            File::isFile($secondaryPath) => $secondaryPath,
+                            default => null,
+                        };
+
+                        abort_unless($path !== null, 404, 'Archived file not found.');
+
+                        return response()->download($path, basename($path));
+                    }),
             ])
             ->defaultSort('created_at', 'desc');
     }

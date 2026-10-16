@@ -39,7 +39,7 @@ class CustomerReferencesTable
                     ->weight('medium')
                     ->icon(Heroicon::User)
                     ->label('Customer Name')
-                    ->description(fn ($record): string => filled($record->mobile) ? 'Registered customer'  : 'No mobile number'),
+                    ->description(fn ($record): string => filled($record->mobile) ? 'Registered customer' : 'No mobile number'),
 
                 TextColumn::make('mobile')
                     ->copyable()

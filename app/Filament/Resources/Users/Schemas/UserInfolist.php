@@ -50,7 +50,7 @@ class UserInfolist
                             ->badge()
                             ->formatStateUsing(fn ($state): string => $state ? 'Locked' : 'Active / Unlocked')
                             ->color(fn ($state): string => $state ? 'danger' : 'success')
-                            ->icon(fn ($state): \Filament\Support\Icons\Heroicon => $state ? Heroicon::LockClosed : Heroicon::CheckCircle),
+                            ->icon(fn ($state): Heroicon => $state ? Heroicon::LockClosed : Heroicon::CheckCircle),
 
                         TextEntry::make('lock_reason')
                             ->label('Lock Reason')

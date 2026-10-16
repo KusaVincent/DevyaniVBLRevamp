@@ -9,7 +9,6 @@ use App\Enum\Status;
 use App\Models\SmsQueue;
 use App\Traits\HasDateFilters;
 use Filament\Actions\Action;
-use Filament\Actions\BulkActionGroup;
 use Filament\Actions\ViewAction;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
@@ -138,8 +137,7 @@ class SmsQueuesTable
                     ->modalHeading('Enable SMS Processing')
                     ->modalSubmitActionLabel('Enable Processing')
                     ->visible(
-                        fn (SmsQueue $record): bool =>
-                            auth()->user()?->can('reprocess-queues') === true
+                        fn (SmsQueue $record): bool => auth()->user()?->can('reprocess-queues') === true
                             && $record->process === ProcessSMSTxn::NO
                     )
                     ->action(function (SmsQueue $record): void {
@@ -157,8 +155,7 @@ class SmsQueuesTable
                     ->modalHeading('Retry SMS')
                     ->modalSubmitActionLabel('Retry SMS')
                     ->visible(
-                        fn (SmsQueue $record): bool =>
-                            auth()->user()?->can('retry-queues') === true
+                        fn (SmsQueue $record): bool => auth()->user()?->can('retry-queues') === true
                             && in_array($record->status, [Status::PROCESSED, Status::ABANDONED], true)
                     )
                     ->action(function (SmsQueue $record): void {

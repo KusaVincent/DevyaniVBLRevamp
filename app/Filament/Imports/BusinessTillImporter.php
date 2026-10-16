@@ -9,17 +9,18 @@ use App\Models\BusinessTill;
 use Filament\Actions\Imports\ImportColumn;
 use Filament\Actions\Imports\Importer;
 use Filament\Actions\Imports\Models\Import;
+use Override;
 
 class BusinessTillImporter extends Importer
 {
-    #[\Override]
+    #[Override]
     protected static ?string $model = BusinessTill::class;
 
     public static function getColumns(): array
     {
         return [
             ImportColumn::make('businessProfile')
-                ->relationship(resolveUsing: fn(string $state): ?BusinessProfile => BusinessProfile::where('business_short_code', mb_trim($state))->first())
+                ->relationship(resolveUsing: fn (string $state): ?BusinessProfile => BusinessProfile::where('business_short_code', mb_trim($state))->first())
                 ->label('Business Short Code')
                 ->requiredMapping(),
 

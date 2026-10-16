@@ -30,10 +30,13 @@ class CustomerReferenceResource extends Resource
     protected static ?string $model = CustomerReference::class;
 
     #[Override]
-    protected static string|null|UnitEnum $navigationGroup = 'M-Pesa';
+    protected static ?string $recordTitleAttribute = 'reference';
 
     #[Override]
     protected static ?string $modelLabel = 'SMS Details Maintenance';
+
+    #[Override]
+    protected static string|null|UnitEnum $navigationGroup = 'M-Pesa';
 
     #[Override]
     protected static ?string $navigationLabel = 'SMS Details Maintenance';
@@ -44,12 +47,29 @@ class CustomerReferenceResource extends Resource
     #[Override]
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedIdentification;
 
-    #[Override]
-    protected static ?string $recordTitleAttribute = 'reference';
-
     public static function getSlug(?Panel $panel = null): string
     {
         return 'sms-details';
+    }
+
+    public static function canViewAny(): bool
+    {
+        return true;
+    }
+
+    public static function canCreate(): bool
+    {
+        return auth()->user()?->can('manage-sms-details') ?? false;
+    }
+
+    public static function canEdit($record): bool
+    {
+        return auth()->user()?->can('manage-sms-details') ?? false;
+    }
+
+    public static function canDelete($record): bool
+    {
+        return auth()->user()?->can('manage-sms-details') ?? false;
     }
 
     public static function form(Schema $schema): Schema

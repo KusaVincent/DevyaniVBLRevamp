@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Imports;
 
 use App\Models\CustomerReference;
@@ -10,6 +12,7 @@ use Illuminate\Support\Number;
 
 class CustomerReferenceImporter extends Importer
 {
+    #[\Override]
     protected static ?string $model = CustomerReference::class;
 
     public static function getColumns(): array
@@ -27,21 +30,21 @@ class CustomerReferenceImporter extends Importer
         ];
     }
 
+    public static function getCompletedNotificationBody(Import $import): string
+    {
+        $body = 'Your SMS Details import has completed and '.Number::format($import->successful_rows).' '.str('row')->plural($import->successful_rows).' imported.';
+
+        if ($failedRowsCount = $import->getFailedRowsCount()) {
+            $body .= ' '.Number::format($failedRowsCount).' '.str('row')->plural($failedRowsCount).' failed to import.';
+        }
+
+        return $body;
+    }
+
     public function resolveRecord(): CustomerReference
     {
         return CustomerReference::firstOrNew([
             'reference' => $this->data['reference'],
         ]);
-    }
-
-    public static function getCompletedNotificationBody(Import $import): string
-    {
-        $body = 'Your SMS Details import has completed and ' . Number::format($import->successful_rows) . ' ' . str('row')->plural($import->successful_rows) . ' imported.';
-
-        if ($failedRowsCount = $import->getFailedRowsCount()) {
-            $body .= ' ' . Number::format($failedRowsCount) . ' ' . str('row')->plural($failedRowsCount) . ' failed to import.';
-        }
-
-        return $body;
     }
 }

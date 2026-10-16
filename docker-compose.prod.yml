@@ -19,6 +19,7 @@ services:
         volumes:
             - storage_data:/var/www/html/storage
             - /opt/devyanivbl/.env:/var/www/html/.env:ro
+            - ${SAP_PATH}:${CONFIRMATION_PROCESSED_SAP_PATH}
         depends_on:
             postgres:
                 condition: service_healthy

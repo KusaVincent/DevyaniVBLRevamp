@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Filament\Resources\BusinessProfiles\Tables;
 
 use App\Enum\BusinessProfileStatus;
-use App\Enum\BusinessProfileType;
 use App\Traits\HasDateFilters;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;

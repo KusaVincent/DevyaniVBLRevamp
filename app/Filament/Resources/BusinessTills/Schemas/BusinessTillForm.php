@@ -39,7 +39,7 @@ class BusinessTillForm
                             ->live(onBlur: true)
                             ->afterStateUpdated(function (?string $state, Set $set): void {
                                 if (! empty($state)) {
-                                    $set('cust_code', '8' . mb_trim($state));
+                                    $set('cust_code', '8'.mb_trim($state));
                                 }
                             }),
 

@@ -16,8 +16,8 @@ use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
+use Override;
 use Throwable;
 
 /**
@@ -29,10 +29,10 @@ class ForcePasswordChange extends Page implements HasForms
 
     public ?array $data = [];
 
-    #[\Override]
+    #[Override]
     protected static bool $shouldRegisterNavigation = false;
 
-    #[\Override]
+    #[Override]
     protected string $view = 'filament.pages.force-password-change';
 
     public function mount(): void

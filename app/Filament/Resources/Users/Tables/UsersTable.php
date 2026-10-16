@@ -91,7 +91,7 @@ class UsersTable
                     ->dateTime('d M Y, H:i')
                     ->icon(Heroicon::Envelope)
                     ->placeholder('Not verified')
-                    ->description(fn (User $record): string => $record->email_verified_at?->diffForHumans()  ?? 'Not verified'),
+                    ->description(fn (User $record): string => $record->email_verified_at?->diffForHumans() ?? 'Not verified'),
 
                 TextColumn::make('created_at')
                     ->sortable()
@@ -161,7 +161,7 @@ class UsersTable
                             ->send()
                             ->success()
                             ->title('Account Unlocked Successfully')
-                            ->body("{$record->name}'s account is now unlocked. " . 'An email notification has been dispatched.');
+                            ->body("{$record->name}'s account is now unlocked. ".'An email notification has been dispatched.');
                     }),
 
                 // Manually lock account

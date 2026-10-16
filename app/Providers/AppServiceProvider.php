@@ -107,10 +107,12 @@ final class AppServiceProvider extends ServiceProvider
 
         Gate::define('manage-business-profiles', fn (User $user): bool => $user->role === UserRole::ADMIN);
 
-        Gate::define('manage-business-tills', fn (User $user): bool => $user->role === UserRole::ADMIN);
-
         Gate::define('retry-queues', fn (User $user): bool => in_array($user->role, [UserRole::NORMAL, UserRole::ADMIN], true));
 
         Gate::define('reprocess-queues', fn (User $user): bool => in_array($user->role, [UserRole::NORMAL, UserRole::ADMIN], true));
+
+        Gate::define('manage-sms-details', fn (User $user): bool => in_array($user->role, [UserRole::NORMAL, UserRole::ADMIN], true));
+
+        Gate::define('manage-business-tills', fn (User $user): bool => in_array($user->role, [UserRole::NORMAL, UserRole::ADMIN], true));
     }
 }

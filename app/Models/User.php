@@ -14,12 +14,10 @@ use Filament\Auth\MultiFactor\Email\Concerns\InteractsWithEmailAuthentication;
 use Filament\Auth\MultiFactor\Email\Contracts\HasEmailAuthentication;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
-use Illuminate\Config\Repository;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Attributes\Guarded;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
@@ -44,6 +42,7 @@ final class User extends Authenticatable implements Auditable, FilamentUser, Has
     use \OwenIt\Auditing\Auditable;
 
     public ?string $plainTextPasswordForNotification = null;
+
     protected array $auditExclude = ['password', 'remember_token'];
 
     #[Override]
@@ -102,8 +101,9 @@ final class User extends Authenticatable implements Auditable, FilamentUser, Has
         if ($daysRemaining > $noticeDays || $daysRemaining <= 0) {
             return false;
         }
+
         // Don't resend if already notified within the current expiration window
-        return !$this->password_expiry_reminder_sent_at || !$this->password_expiry_reminder_sent_at->gt(now()->subDays($noticeDays));
+        return ! $this->password_expiry_reminder_sent_at || ! $this->password_expiry_reminder_sent_at->gt(now()->subDays($noticeDays));
     }
 
     public function isLocked(): bool

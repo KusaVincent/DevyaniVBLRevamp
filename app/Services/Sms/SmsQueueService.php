@@ -47,7 +47,7 @@ final readonly class SmsQueueService implements SmsQueueServiceInterface
             'mpesa_ref' => $request->transactionId,
             'bill_reference' => $request->billReference,
 
-            'created_at' => $request->createdAt ?? Carbon::createFromFormat('YmdHis', (string)$request->transactionTime) ?? now(),
+            'created_at' => $request->createdAt ?? Carbon::createFromFormat('YmdHis', $request->transactionTime) ?? now(),
         ]);
     }
 }

@@ -11,7 +11,7 @@ use Illuminate\Support\Carbon;
 
 trait HasDateFilters
 {
-    public static function getDateFilter(string $column = 'created_at', string $label = 'Date Range', ?int $defaultDays = null): Filter
+    public static function getDateFilter(string $column = 'created_at', string $label = 'Date Range', ?int $defaultDays = 3): Filter
     {
         $prefix = str($column)->replace('.', '_')->toString();
 
@@ -20,22 +20,20 @@ trait HasDateFilters
             ->schema([
                 DatePicker::make("{$prefix}_from")
                     ->label("{$label} — From")
-                    ->default(
-                        $defaultDays !== null
-                            ? fn (): string => Carbon::now()->subDays($defaultDays)->toDateString()
-                            : null
+                    ->default(fn (): string => Carbon::now()
+                        ->subDays($defaultDays ?? 3)->toDateString()
                     ),
+
                 DatePicker::make("{$prefix}_until")
-                    ->label("{$label} — Until"),
+                    ->label("{$label} — Until")
+                    ->default(fn (): string => Carbon::now()->toDateString()),
             ])
-            ->query(fn(Builder $query, array $data): Builder => $query
-                ->when(
-                    $data["{$prefix}_from"] ?? null,
-                    fn (Builder $query, $date): Builder => $query->whereDate($column, '>=', $date),
-                )
-                ->when(
-                    $data["{$prefix}_until"] ?? null,
-                    fn (Builder $query, $date): Builder => $query->whereDate($column, '<=', $date),
-                ));
+            ->query(
+                fn (Builder $query, array $data): Builder => $query
+                    ->when($data["{$prefix}_from"] ?? null, fn (Builder $query, $date): Builder => $query->whereDate($column, '>=', $date),
+                    )
+                    ->when($data["{$prefix}_until"] ?? null, fn (Builder $query, $date): Builder => $query->whereDate($column, '<=', $date),
+                    )
+            );
     }
 }

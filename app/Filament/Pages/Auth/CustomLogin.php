@@ -20,7 +20,7 @@ class CustomLogin extends BaseLogin
 
         $user = User::where('email', $data['email'])->first();
         $credentialsValid = $user !== null && Hash::check($data['password'], $user->password);
-        $key = 'login-failures:' . sha1(Str::lower($data['email']));
+        $key = 'login-failures:'.sha1(Str::lower($data['email']));
 
         if ($user?->isLocked()) {
             if ($credentialsValid) {
@@ -35,12 +35,12 @@ class CustomLogin extends BaseLogin
 
         try {
             $response = parent::authenticate();
-        } catch (ValidationException $e) {
+        } catch (ValidationException $validationException) {
             if ($user !== null && ! $credentialsValid) {
                 $this->registerFailedAttempt($user, $key);
             }
 
-            throw $e;
+            throw $validationException;
         }
 
         if ($credentialsValid) {
@@ -60,7 +60,7 @@ class CustomLogin extends BaseLogin
         $attempts = RateLimiter::hit($key, $failureWindowSeconds);
 
         if ($attempts >= $maxFailedAttempts) {
-            $user->lockAccount('Locked due to ' . $maxFailedAttempts . ' consecutive failed login attempts');
+            $user->lockAccount('Locked due to '.$maxFailedAttempts.' consecutive failed login attempts');
             RateLimiter::clear($key);
         }
     }

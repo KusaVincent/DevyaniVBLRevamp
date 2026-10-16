@@ -77,8 +77,7 @@ final class ConfirmationTransactionsTable
                     ->icon(Heroicon::Clock)
                     ->dateTime('d M Y, H:i')
                     ->label('Transaction Time')
-                    ->description(fn (ConfirmationTransaction $record): string =>
-                        filled($record->transaction_time) ? Carbon::parse($record->transaction_time)->diffForHumans() : '—'
+                    ->description(fn (ConfirmationTransaction $record): string => filled($record->transaction_time) ? Carbon::parse($record->transaction_time)->diffForHumans() : '—'
                     ),
 
                 TextColumn::make('business_short_code')
@@ -146,8 +145,7 @@ final class ConfirmationTransactionsTable
                     ->icon(Heroicon::Play)
                     ->color('success')
                     ->visible(
-                        fn (ConfirmationTransaction $record): bool =>
-                            $record->process === ProcessSMSTxn::NO
+                        fn (ConfirmationTransaction $record): bool => $record->process === ProcessSMSTxn::NO
                     )
                     ->requiresConfirmation()
                     ->modalIcon(Heroicon::Play)
@@ -169,8 +167,7 @@ final class ConfirmationTransactionsTable
                     ->modalSubmitActionLabel('Retry')
                     ->modalHeading('Retry Transaction')
                     ->visible(
-                        fn (ConfirmationTransaction $record): bool =>
-                            $record->status === Status::PROCESSED
+                        fn (ConfirmationTransaction $record): bool => $record->status === Status::PROCESSED
                     )
                     ->action(function (ConfirmationTransaction $record): void {
                         $record->update([

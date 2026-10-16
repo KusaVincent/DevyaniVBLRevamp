@@ -66,8 +66,7 @@ class BusinessTillsTable
                     ->limit(45)
                     ->label('Additional Details')
                     ->placeholder('No additional details')
-                    ->tooltip(fn (TextColumn $column): ?string =>
-                        filled($column->getState())
+                    ->tooltip(fn (TextColumn $column): ?string => filled($column->getState())
                             ? (string) $column->getState()
                             : null
                     ),

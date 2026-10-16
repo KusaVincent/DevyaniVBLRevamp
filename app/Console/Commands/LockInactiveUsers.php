@@ -6,13 +6,14 @@ namespace App\Console\Commands;
 
 use App\Models\User;
 use Illuminate\Console\Command;
+use Override;
 
 class LockInactiveUsers extends Command
 {
-    #[\Override]
+    #[Override]
     protected $signature = 'auth:lock-inactive-users {--days=30 : Days of inactivity before locking}';
 
-    #[\Override]
+    #[Override]
     protected $description = 'Lock user accounts that have been inactive for 30 days or more';
 
     public function handle(): int

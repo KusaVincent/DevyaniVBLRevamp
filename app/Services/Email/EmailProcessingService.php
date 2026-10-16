@@ -169,23 +169,14 @@ final readonly class EmailProcessingService implements EmailProcessingServiceInt
 
     private function handleFailure(EmailQueue $email, int $attempt, EmailDeliveryException $e): void
     {
-        $status = $attempt >= $this->maxAttempts()
-            ? Status::ABANDONED
-            : Status::FAILED;
+        $status = $attempt >= $this->maxAttempts() ? Status::ABANDONED : Status::FAILED;
 
         $email->update([
             'status' => $status,
             'error' => $e->getMessage(),
-            'response' => json_encode(
-                $e->response,
-                JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE,
-            ),
-            'next_retry_at' => $status === Status::FAILED
-                ? now()->addMinutes($this->retryDelay($attempt))
-                : null,
-            'processed_at' => $status === Status::ABANDONED
-                ? now()
-                : null,
+            'processed_at' => $status === Status::ABANDONED ? now() : null,
+            'response' => json_encode($e->response, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE),
+            'next_retry_at' => $status === Status::FAILED ? now()->addMinutes($this->retryDelay($attempt)) : null,
         ]);
 
         $this->logger->error('Email delivery failed.', [
@@ -200,9 +191,7 @@ final readonly class EmailProcessingService implements EmailProcessingServiceInt
 
     private function handleUnexpectedFailure(EmailQueue $email, int $attempt, Throwable $e): void
     {
-        $status = $attempt >= $this->maxAttempts()
-            ? Status::ABANDONED
-            : Status::FAILED;
+        $status = $attempt >= $this->maxAttempts() ? Status::ABANDONED : Status::FAILED;
 
         $email->update([
             'status' => $status,
@@ -213,23 +202,16 @@ final readonly class EmailProcessingService implements EmailProcessingServiceInt
                 'exception' => $e::class,
                 'message' => $e->getMessage(),
             ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE),
-            'next_retry_at' => $status === Status::FAILED
-                ? now()->addMinutes($this->retryDelay($attempt))
-                : null,
-            'processed_at' => $status === Status::ABANDONED
-                ? now()
-                : null,
+            'processed_at' => $status === Status::ABANDONED ? now() : null,
+            'next_retry_at' => $status === Status::FAILED ? now()->addMinutes($this->retryDelay($attempt)) : null,
         ]);
 
-        $this->logger->error(
-            'Unexpected email processing failure.',
-            [
-                'email_id' => $email->id,
-                'attempt' => $attempt,
-                'exception' => $e::class,
-                'message' => $e->getMessage(),
-            ]
-        );
+        $this->logger->error('Unexpected email processing failure.', [
+            'email_id' => $email->id,
+            'attempt' => $attempt,
+            'exception' => $e::class,
+            'message' => $e->getMessage(),
+        ]);
 
         report($e);
     }

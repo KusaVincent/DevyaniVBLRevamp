@@ -7,13 +7,14 @@ namespace App\Console\Commands;
 use App\Models\User;
 use App\Notifications\PasswordExpiringNotification;
 use Illuminate\Console\Command;
+use Override;
 
 class SendPasswordExpirationReminders extends Command
 {
-    #[\Override]
+    #[Override]
     protected $signature = 'auth:send-password-expiration-reminders {--days=7 : Days before expiration to notify}';
 
-    #[\Override]
+    #[Override]
     protected $description = 'Send email notifications to users whose passwords are expiring soon';
 
     public function handle(): int
