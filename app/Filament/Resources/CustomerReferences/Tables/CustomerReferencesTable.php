@@ -65,7 +65,7 @@ class CustomerReferencesTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                self::getDateFilter('created_at', 'Registration Date Range'),
+                //
             ])
             ->recordActions([
                 ViewAction::make(),
