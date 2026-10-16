@@ -93,31 +93,63 @@ class SmsQueueInfolist
                             ->description('Response returned during SMS processing.')
                             ->icon(Heroicon::ArrowPath)
                             ->schema([
-
                                 TextEntry::make('response')
                                     ->label('Response')
-                                    ->formatStateUsing(function ($state): string {
-                                        if (blank($state)) {
-                                            return 'No response recorded';
-                                        }
+                                    ->state(function ($record): string {
+                                        $data = $record->response;
 
-                                        $data = is_array($state) ? $state : json_decode((string) $state, true);
+                                        // Decode until we get an array (handles double-encoded JSON)
+                                        $attempts = 0;
+                                        while (is_string($data) && $attempts++ < 3) {
+                                            $decoded = json_decode(trim($data), true);
+
+                                            if (json_last_error() !== JSON_ERROR_NONE) {
+                                                break;
+                                            }
+
+                                            $data = $decoded;
+                                        }
 
                                         if (! is_array($data)) {
-                                            return (string) $state;
+                                            return blank($data) ? 'No response recorded' : (string) $data;
                                         }
 
+                                        // Find a key at any depth, case-insensitive
+                                        $find = function (array $arr, string $key) use (&$find) {
+                                            foreach ($arr as $k => $v) {
+                                                if (strcasecmp((string) $k, $key) === 0) {
+                                                    return $v;
+                                                }
+
+                                                if (is_array($v)) {
+                                                    $found = $find($v, $key);
+
+                                                    if ($found !== null) {
+                                                        return $found;
+                                                    }
+                                                }
+                                            }
+
+                                            return null;
+                                        };
+
+                                        $mobile = $find($data, 'mobile');
+
                                         $filtered = [
-                                            'response-code' => $data['response-code'] ?? null,
-                                            'response-description' => $data['response-description'] ?? null,
-                                            'mobile' => [
-                                                'message' => data_get($data, 'mobile.message', ''),
+                                            'response-code'        => $find($data, 'response-code'),
+                                            'response-description' => $find($data, 'response-description'),
+                                            'mobile'               => [
+                                                'message' => is_array($mobile) ? $find($mobile, 'message') : null,
                                             ],
                                         ];
 
-                                        return json_encode($filtered, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) ?: 'No response recorded';
+                                        return json_encode(
+                                            $filtered,
+                                            JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+                                        ) ?: 'No response recorded';
                                     })
                                     ->fontFamily('mono')
+                                    ->extraAttributes(['style' => 'white-space: pre-wrap; word-break: break-word;'])
                                     ->copyable()
                                     ->columnSpanFull(),
                             ])
