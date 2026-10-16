@@ -114,8 +114,6 @@ class BusinessProfilesTable
                     ->trueLabel('Active only')
                     ->falseLabel('Inactive only')
                     ->placeholder('All profiles'),
-
-                self::getDateFilter('created_at', 'Created Date Range'),
             ])
             ->recordActions([
                 ViewAction::make()

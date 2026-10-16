@@ -112,7 +112,6 @@ class EmailQueuesTable
                     ->options(Status::class),
 
                 self::getDateFilter('created_at', 'Queued Date Range'),
-                self::getDateFilter('processed_at', 'Processed Date Range'),
             ])
             ->recordActions([
                 ViewAction::make(),

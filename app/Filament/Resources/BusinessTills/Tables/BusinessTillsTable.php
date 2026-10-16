@@ -87,7 +87,7 @@ class BusinessTillsTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                self::getDateFilter('created_at', 'Created Date Range'),
+                //
             ])
             ->recordActions([
                 ViewAction::make()
